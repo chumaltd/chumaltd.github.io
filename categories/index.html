@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Categories | civilis</title>
+  <meta name="theme-color" content="rgb(38, 29, 32)">
+  <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+  <link rel="stylesheet" href="/common/base.css">
+</head>
+<body id ="o" class="o"><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <i id="drawer_switch" class="material-icons">menu</i>
+    <a href="/">
+      <img src="/common/civilis.svg">
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<main class="container section" role="main">
+  <div class="columns">
+    <div class="column is-one-quarter">
+      <nav class="menu">
+        <ul class="menu-list">
+          
+          <li><a href="/ja/">Jas</a></li>
+          
+        </ul>
+      </nav>
+      </div>
+
+      <section class="column is-three-quarters">
+        <header class="list" style="z-index: 50;">
+          <h1 class="title is-4">Categories</h1>
+        </header>
+        <article>
+        </article>
+        <nav class="container section">
+          
+
+        </nav>
+      </section>
+  </div>
+</main>
+
+        </div><footer class="footer">
+  <div class="container">
+      <img src="/common/civilis.svg">
+  </div>
+</footer><script type="module">
+import {menuList, menuLabel, drawerInit} from '/lib/ui.js';
+
+if (!window.menu_item) {
+  window.menu_item = [
+    ['Top', "\/", { icon: 'home' }],
+  ];
+}
+const menuData = menuList(window.menu_item);
+drawerInit([menuLabel("Index"), menuData]);
+</script>
+</body>
+</html>

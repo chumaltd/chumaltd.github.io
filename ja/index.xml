@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jas on civilis</title>
+    <link>https://chumaltd.github.io/ja/</link>
+    <description>Recent content in Jas on civilis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 24 Apr 2020 03:34:50 +0900</lastBuildDate>
+    
+	<atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CIVILIS</title>
+      <link>https://chumaltd.github.io/ja/civilis/</link>
+      <pubDate>Fri, 24 Apr 2020 03:34:50 +0900</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/civilis/</guid>
+      <description>間抜けなことになってしまったなあ、と思っている。 皆それぞれの立場で日々努力をしてきたつもりになってい</description>
+    </item>
+    
+  </channel>
+</rss>
