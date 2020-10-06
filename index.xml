@@ -6,10 +6,19 @@
     <description>Recent content on civilis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 27 Apr 2020 00:44:31 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2020 13:39:44 +0900</lastBuildDate>
     
 	<atom:link href="https://chumaltd.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>オープンソースERPの必要</title>
+      <link>https://chumaltd.github.io/ja/opensource-erp-lucasuite/</link>
+      <pubDate>Tue, 06 Oct 2020 13:39:44 +0900</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/opensource-erp-lucasuite/</guid>
+      <description>Luca SuiteというERPをオープンソースで開発していて、名称先約の意図で昨日RubyGemsにもプッ</description>
+    </item>
     
     <item>
       <title>電子政府が埋めるべき穴</title>
