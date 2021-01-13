@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>コードであるべき法律 | civilis</title>
+  <meta name="theme-color" content="rgb(38, 29, 32)">
+  <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+  <link rel="stylesheet" href="/common/base.css">
+  <meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/public-libraries/" />
+<meta property="og:title" content="コードであるべき法律" />
+<meta property="og:description" content="必要上、Rubyで税額計算するライブラリを書いている。また、オープンソースで配布している。 まずは年末" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+
+</head>
+<body id ="o" class="o"><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <i id="drawer_switch" class="material-icons">menu</i>
+    <a href="/">
+      <img src="/common/civilis.svg">
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<main class="container section">
+  <div class="columns">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters">
+        <h1 id="pagetitle" class="title">
+          コードであるべき法律
+        </h1>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-one-quarter">
+      <aside class="toc sticky">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;コードであるべき法律</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#実現のハードルなど存在しない">実現のハードルなど存在しない</a></li>
+    <li><a href="#なぜコードであるべきか">なぜコードであるべきか？</a></li>
+    <li><a href="#将来の見通し">将来の見通し</a></li>
+  </ul>
+</nav>
+      </aside>
+    </div>
+    <div id="content" class="column is-three-quarters">
+      
+      <article>
+        <p>必要上、Rubyで税額計算するライブラリを書いている。また、オープンソースで配布している。<br>
+まずは<a href="https://github.com/chumaltd/jp-national-tax/blob/master/lib/jp_national_tax/income_tax/income_nenmatsu_2020.rb">年末調整のコード</a>の例を見て欲しい。</p>
+<p>初見で気づいて欲しいポイントとして、かなり日本語で書いてある。<br>
+これは実際に動作するし、すでに使っている。いま年次の給与支払報告書を提出したところだ。</p>
+<p>論旨を明確にすると、このライブラリが国税庁とユーザーコミュニティ(普通の人々)から提供される社会にならなくてはならないと考えている。<br>
+現状は、<a href="https://www.nta.go.jp/publication/pamph/gensen/nencho2020/pdf/82-83.pdf">パンフレット</a>として提供され、毎年紙で送られてくる。<br>
+なお、役所の公式情報はどんどん消えていくため、いずれリンク切れになるだろう。</p>
+<h2 id="実現のハードルなど存在しない">実現のハードルなど存在しない</h2>
+<p>コードはもちろんプログラミング言語であり、難しいスキルと捉えられていることが多い。<br>
+だが、冒頭のコードの意味がとれないということがあるのだろうか？<br>
+まったくの素人であっても10分ほど眺めれば、構造はとれるのではないだろうか。</p>
+<p>このケースの良い点は、RubyのUTF-8対応が徹底しているため、関数名を含めて主要な部分に日本語を使っても支障がないことだろう。
+文法上のキーワードは英語だが、これを漢字かなに置き換えて読みやすくなるとは到底思えず、日本語を利用するならこの程度がベストバランスに見える。</p>
+<p>法律技術としては、他の読み方ができない程度に自明であることも重要だが、その点も支障がないだろう。<br>
+要するに、このライブラリの範囲に専門的スキルはとくにない。</p>
+<h2 id="なぜコードであるべきか">なぜコードであるべきか？</h2>
+<p>端的に言えば、コードになっていないと計算に全然使えない、というのは当たり前であり、「それはそうだ」と思える人にとってはそれ以上の説明はない。パンフレットを読んで計算する、ということを望んでいる人などいない。<br>
+給与計算などは、支払総額とせいぜい労働時間(もう時間でもないと思うが)を決めたら、あとは全自動で計算できなくてはならない。現実には全然そうなっていないのだが、それらはすべて言い訳にすぎない。</p>
+<p>一点、健全な市民として意識しておくべきことは、全自動になっていない作業はすべて徴税コストであり、市民のインフラのため使える税金が減っているということだ。まきあげられつつバラまいている。<br>
+日本は歴史に残るほどに年々国債を積みあげていっているのだから、そんな徒労は本来許されない。</p>
+<p>また、多少事情の異なるムダとして、計算ロジックのデザインが悪い。<br>
+実は、年末調整の計算のうち、ひとまず実装をあきらめた部分がある。分かりやすいのは、<a href="https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/gensen/pdf/1648_73_r02.pdf">基礎控除申告書</a>に掲載されている配偶者控除の計算だろう。<br>
+このリンクもいずれ消えてしまうだろうが、年々複雑になって同じフォーマットが登場し続けることだろう。</p>
+<p>配偶者控除は、本人の収入、配偶者の収入、配偶者の年齢という3つの入力値がないと計算できない。<br>
+もはや、このあたりはパンフレットも一切の説明を投げてしまっていて、表から読んでくれということになっている。<br>
+もし、立法時点でライブラリコードを同時に書くプロセスになっていたなら、そんな奇怪なロジックは作る前に反省するはずだ。</p>
+<p>コードとして不自然なルールは、何かが歪んでいる。<br>
+歪めている力は、福祉の視点だろう。分かりやすいのは高齢化への対処だが、各人の属性を採り入れると計算コストは増える。年末調整は、すでに組み合わせ爆発を起こしている。<br>
+良かれと思って自らの首を締めるのだ。</p>
+<h2 id="将来の見通し">将来の見通し</h2>
+<p>事態がここに至ることを考えれば、正直、好転への期待はない。<br>
+行政にデザインがなく、実行不可能なルールを年々選択してきているのだから歯止めはきかない。より複雑怪奇になっていくはずだ。</p>
+<p>冒頭の論に戻って、税務ルールは国税庁でライブラリ実装しなくてはならないと思う。実装する過程で善し悪しを議論し判断すべきだ。<br>
+政治家もその範囲ではコードを理解し切らなければならない。</p>
+<p>おそらく未来はそうなっていると思うが、それは日本のことではないという感覚もある。<br>
+僕自身はある程度ライブラリの実装を続けるが、すでに&quot;やってられん&quot;ロジックになっている部分があるため、どこまで追えるのかは不透明だ。</p>
+<p>C言語が登場したのは1972年だというから、50年前の技術だ。パソコンの価格破壊が進んだのは2000年頃だから、少なく見積っても20年は経っている。<br>
+あるべき未来は提出期限を過ぎた宿題でもある。</p>
+
+      </article>
+    </div>
+  </div>
+</main>
+
+        </div><footer class="footer">
+  <div class="container">
+      <img src="/common/civilis.svg">
+  </div>
+</footer><script type="module">
+import {menuList, menuLabel, drawerInit} from '/lib/ui.js';
+
+if (!window.menu_item) {
+  window.menu_item = [
+    ['Top', "\/", { icon: 'home' }],
+  ];
+}
+const menuData = menuList(window.menu_item);
+drawerInit([menuLabel("Index"), menuData]);
+</script>
+</body>
+</html>
