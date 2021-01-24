@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>オブジェクト階層の沼 | civilis</title>
+  <meta name="theme-color" content="rgb(38, 29, 32)">
+  <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+  <link rel="stylesheet" href="/common/base.css">
+  <meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/nested-object-mud/" />
+<meta property="og:title" content="オブジェクト階層の沼" />
+<meta property="og:description" content="ソフトウェア開発のうち、妙手がなく、とにかく生産性が落ちる分野の1つが、階層の深いオブジェクトの操作" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+
+</head>
+<body id ="o" class="o"><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <i id="drawer_switch" class="material-icons">menu</i>
+    <a href="/">
+      <img src="/common/civilis.svg">
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<main class="container section">
+  <div class="columns">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters">
+        <h1 id="pagetitle" class="title">
+          オブジェクト階層の沼
+        </h1>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-one-quarter">
+      <aside class="toc sticky">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;オブジェクト階層の沼</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#相互に埋没する問題">相互に埋没する問題</a></li>
+    <li><a href="#スタティックなファイルを超えるしかない">スタティックなファイルを超えるしかない</a></li>
+  </ul>
+</nav>
+      </aside>
+    </div>
+    <div id="content" class="column is-three-quarters">
+      
+      <article>
+        <p>ソフトウェア開発のうち、妙手がなく、とにかく生産性が落ちる分野の1つが、階層の深いオブジェクトの操作だ。<br>
+データの集合は、主に配列と連想配列(Rubyではハッシュ、Javascriptではオブジェクト)がある。配列は同じデータが並んでいるもので、連想配列はIDなどのキーに対応するデータを持つ構造になっている。</p>
+<p>配列は、キーが0, 1, 2, 3,&hellip;である連想配列とも言えるのだが、どの言語でも配列を操作する関数と連想配列を操作する関数とは同じではない。<br>
+概念的に同じようなものだと思っていても、書くべきコードはパートにより多種多様だ。</p>
+<p>階層の深いオブジェクトというのは、マトリョーシカのように配列の中に連想配列があるような複合構造のデータで、その構造に制約がないためすぐに複雑化する。</p>
+<p>単に構成要素が多いということだけでなく、以下のような難点がつきまとう。</p>
+<ul>
+<li>配列と連想配列が混じることによる複雑さ</li>
+<li>任意の部分が空集合になりうる。不用意にアクセスすると異常動作</li>
+<li>目的に応じて変形しなくてはならない</li>
+</ul>
+<p>たとえば、データ構造の5%を変更するコストはトータルの5%であって欲しいが、取り扱い方が変わればどれほど時間がかかるのか今ひとつ見通しが立たなくなる。<br>
+大規模システムほど設計が問われるのは、将来の変更を予知して採り入れてしまい、構造変更を起きにくくするためだと言って良いだろう。</p>
+<h2 id="相互に埋没する問題">相互に埋没する問題</h2>
+<p>少し違った角度から生産性のネックを観察すると、複雑なオブジェクトほどコード量が増えるという素朴な編集技術上の難点も大きい。</p>
+<p>オブジェクト指向や関数プログラミングといったいくつかの設計パラダイムがあるが、どのようなパラダイムを採用しても結局のところソースファイルには行と列の2次元しかない。<br>
+いずれの手法でも主のパラダイム以外の面は凝集性を失うため、次元が増えるほどにフリーランチの余地はなくなる。</p>
+<p>たとえば、認証やログなどのセキュリティ機能は cross-cutting concern として知られているが、これはどのパーツにも必要になる機能がコードの全体に散らばっている様子を捉えている。<br>
+一般化すれば、副次的な機能がソースコードの紙面の範囲に収まらない問題と言える。</p>
+<p>パラダイムの裏側に隠れてしまった次元の保証は、現状、洞察力でカバーせざるを得ない。エンジニアの追加で問題解決できないことは人月の神話として知られている。</p>
+<h2 id="スタティックなファイルを超えるしかない">スタティックなファイルを超えるしかない</h2>
+<p>ネストの問題は、プログラムコードの扱う次元が多いことに比べてファイルが2次元しかないというギャップから生まれている。<br>
+この問題の解決は、射影技術の向上、すなわちソースコードの編集過程でインタラクティブに変換することだと思う。</p>
+<p>たとえばオブジェクト指向と関数プログラミングは別のバラダイムではなく、2つのビューとして相互に変換可能になるべきだろう。</p>
+<p>このような等価変換が可能になるためには、数学的に証明された体系が必要になる。<br>
+プログラムコードは無矛盾であることを求めているから、各次元に着目して記号体系を射影する構造はとくに問題なく存在するのではないか。</p>
+<p>おそらく同様の発想はすでにあるのだと思う。ただ、商業ソフトウェアになりづらいネックも理解できる。<br>
+現在のプログラムは概ね100%人手で書いたファイルであり、バグがあれば書き手の責任であることは明確だ。これをツールが積極的に変換するとなれば、問題の所在は分かりにくくなる。</p>
+<p>水かけ論で訴訟が頻発するようなツールは作りたくないだろう。</p>
+<p>一方で、健全な結論は自明であり、どのような変換を施そうともコードの書き手の責任であることは変わるべきではない。<br>
+円滑な導入のためには、学術的な裏付けのもとにオープンソース実装を普及していく形態がスムーズだろう。</p>
+<p>コードの凝集性に進歩がなければ、大局的にみてソフトウェアの生産性は一切改善しない。<br>
+物理学の進展を考えれば、情報工学もそれくらいの進歩はできそうなものだと思う。</p>
+
+      </article>
+    </div>
+  </div>
+</main>
+
+        </div><footer class="footer">
+  <div class="container">
+      <img src="/common/civilis.svg">
+  </div>
+</footer><script type="module">
+import {menuList, menuLabel, drawerInit} from '/lib/ui.js';
+
+if (!window.menu_item) {
+  window.menu_item = [
+    ['Top', "\/", { icon: 'home' }],
+  ];
+}
+const menuData = menuList(window.menu_item);
+drawerInit([menuLabel("Index"), menuData]);
+</script>
+</body>
+</html>

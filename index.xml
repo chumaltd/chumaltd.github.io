@@ -6,7 +6,16 @@
     <description>Recent content on civilis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 13 Jan 2021 17:20:18 +0900</lastBuildDate><atom:link href="https://chumaltd.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jan 2021 02:25:35 +0900</lastBuildDate><atom:link href="https://chumaltd.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>オブジェクト階層の沼</title>
+      <link>https://chumaltd.github.io/ja/nested-object-mud/</link>
+      <pubDate>Mon, 18 Jan 2021 02:25:35 +0900</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/nested-object-mud/</guid>
+      <description>ソフトウェア開発のうち、妙手がなく、とにかく生産性が落ちる分野の1つが、階層の深いオブジェクトの操作</description>
+    </item>
+    
     <item>
       <title>コードであるべき法律</title>
       <link>https://chumaltd.github.io/ja/public-libraries/</link>
