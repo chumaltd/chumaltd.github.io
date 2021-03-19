@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Androidタブレットの評価 2021年 | civilis</title>
+  <meta name="theme-color" content="rgb(38, 29, 32)">
+  <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+  <link rel="stylesheet" href="/common/base.css">
+  <meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/android-tablet-review-2021/" />
+<meta property="og:title" content="Androidタブレットの評価 2021年" />
+<meta property="og:description" content="仕事用のクライアント機器として、Androidタブレットを使う比率が上がっている。現時点のタブレット" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+
+</head>
+<body id ="o" class="o"><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <i id="drawer_switch" class="material-icons">menu</i>
+    <a href="/">
+      <img src="/common/civilis.svg">
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<main class="container section">
+  <div class="columns">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters">
+        <h1 id="pagetitle" class="title">
+          Androidタブレットの評価 2021年
+        </h1>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-one-quarter">
+      <aside class="toc sticky">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;Androidタブレットの評価 2021年</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#開発機をクラウドに置くとandroidでも遜色がない">開発機をクラウドに置くとAndroidでも遜色がない</a>
+      <ul>
+        <li><a href="#chrome-devtoolsがない">Chrome DevToolsがない</a></li>
+      </ul>
+    </li>
+    <li><a href="#コピーペーストができない">コピー&amp;ペーストができない</a></li>
+    <li><a href="#画像編集には良い手がない">画像編集には良い手がない</a></li>
+    <li><a href="#windowsの業務ソフトは一部税務のみ残る">Windowsの業務ソフトは一部税務のみ残る</a></li>
+    <li><a href="#まとめ">まとめ</a></li>
+  </ul>
+</nav>
+      </aside>
+    </div>
+    <div id="content" class="column is-three-quarters">
+      
+      <article>
+        <p>仕事用のクライアント機器として、Androidタブレットを使う比率が上がっている。現時点のタブレットの主な特徴を挙げると以下のような点がある。</p>
+<ul>
+<li>基本形はタッチデバイスであり、立った状態でも使える。キーボード・マウスを付けると、操作体系がPCと近くなる</li>
+<li>フルサイズのディスプレイに接続できる。ただし、GalaxyTabのDeXに依存している。OS標準機能にする予定があるようだが未実現。この機能の有無は大きな違いがある</li>
+<li>ARMベースでパワーマネジメントが行き届いているため、すぐに使えてバッテリーが保つ</li>
+<li>インカメラ内蔵で、ビデオ会議のアプリが適切に動作する</li>
+<li>Gmailやオフィス代替のGoogle Workspaceのクライアントが、ある程度適切に動作する</li>
+</ul>
+<p>基本的にハードウェアについては、ノートPCよりもタブレットの方が優れている。ソフトウェア面はPCと同じではないため、PCで使っていたものをやめてしまえるなら、スマートデバイスでも概ね支障はない。</p>
+<h2 id="開発機をクラウドに置くとandroidでも遜色がない">開発機をクラウドに置くとAndroidでも遜色がない</h2>
+<p>ソフトウェア開発については、ネイティブアプリのような特殊な依存を持つ分野を除くと、基本的にはLinuxが最適であり、クラウド上に開発環境を作るのが最もパワフルと言える。</p>
+<p>MacOSは開発ツールが豊富だが、dockerがVMになってしまったりGPLのツールが排除されていたりという難があり、Linuxではない部分に限界がある。</p>
+<p>クラウド上に開発環境ができると、クライアント側に必要なものはSSHクライアントだけになる。AndroidにはJuiceSSHなどのクライアントがあり、ほぼ問題ない。<br>
+タブレットとしてはiPadの方が全体的な完成度が高いのだろうと思うが、高機能なSSHクライアントが有料サブスクリプションとなっていて、要のパートに難がある。</p>
+<p>なおこの構成上、コードエディタは<a href="https://unicorn.limited/jp/rd/linux/20200705-spacemacs.html">emacsになった</a>。まさか今さらemacsを使うことになるとは全く考えていなかった。<br>
+LSPが進化したおかげで、VSCodeと同様のコード支援がemacsやviでも使えるようになっている。また、日本語入力についても<a href="https://unicorn.limited/jp/rd/linux/20200808-skk.html">SKKを使う</a>とAndroidの日本語入力に依存することなく適切に編集できる。</p>
+<h3 id="chrome-devtoolsがない">Chrome DevToolsがない</h3>
+<p>Androidの惜しい点は、ChromeのDevToolsが使えない点だろう。ブラウザはほぼPCと同等なのだが、JavascriptのデバッグにはDevToolsが必要になるため開発上のネックになる。</p>
+<h2 id="コピーペーストができない">コピー&amp;ペーストができない</h2>
+<p>Androidでできないことの最大のネックは、アプリ間のコピー&amp;ペーストだろう。<br>
+ペーストできる場合もあるのだが、かなりの場合、コピーできない。そのため、プレゼン資料の制作は非常に難しい。<br>
+Googleスライドは概ね問題なく動作するのだが、コピー&amp;ペーストを含めAndroidアプリに編集機能の制約があるため、相当難がある。</p>
+<p>MS Officeではない点も含め、コンサルティングの仕事ではほとんど使いものにならないのではないかと思う。<br>
+現地でプレゼンするだけであれば良いが、コンサルティングワークには資料を作るプロセスも避けられない。</p>
+<h2 id="画像編集には良い手がない">画像編集には良い手がない</h2>
+<p>画像編集はgimpがあればひと通り可能だが、Androidにはこのジャンルのソフトウェアがないため、ほとんど何もできない。チャート描画はdraw.ioが先々は有望かもしれない。</p>
+<h2 id="windowsの業務ソフトは一部税務のみ残る">Windowsの業務ソフトは一部税務のみ残る</h2>
+<p>以前はWindowsを必要とする分野はそれなりに多かったと思うのだが、今となっては一部の業務ソフトや特殊な分野に限られるのではないか。<br>
+ビジネスでは少なくとも税務に対応できる会計ツールは必要となるので、<a href="https://github.com/chumaltd/luca">LucaSuite</a>を開発した。その結果、最低限Windowsを使う必要があるのは、eTaxとeLtaxの確定申告時に絞られた。</p>
+<h2 id="まとめ">まとめ</h2>
+<p>Androidタブレットには随所に粗もあるが、日常業務のかなりの部分を実行できている。<br>
+また、タブレットを積極的に使う理由として、タブレットで可能なことはスマートフォンでも可能、という意義がある。
+スマホは画面が狭いためさすがに常用は厳しいが、いざという時スマホだけでも実行可能な範囲は広いほど助かる。</p>
+
+      </article>
+    </div>
+  </div>
+</main>
+
+        </div><footer class="footer">
+  <div class="container">
+      <img src="/common/civilis.svg">
+  </div>
+</footer><script type="module">
+import {menuList, menuLabel, drawerInit} from '/lib/ui.js';
+
+if (!window.menu_item) {
+  window.menu_item = [
+    ['Top', "\/", { icon: 'home' }],
+  ];
+}
+const menuData = menuList(window.menu_item);
+drawerInit([menuLabel("Index"), menuData]);
+</script>
+</body>
+</html>
