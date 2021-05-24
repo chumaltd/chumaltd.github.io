@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html><head>
   <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>CIVILIS | civilis</title>
   <meta name="theme-color" content="rgb(38, 29, 32)">
   <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
 <link rel='stylesheet' href='/lib/bulma.min.css'>
-  <link rel="stylesheet" href="/common/base.css">
+
+  <link rel='stylesheet' href='/lib/cm.css'>
+  <link rel="stylesheet" href='/lib/base.css' >
   <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/en/civilis/" />
 <meta property="og:title" content="CIVILIS" />
@@ -15,14 +18,15 @@
 Everyone intends to make efforts every day from their respective social positions. Thus, the resulting social system was also one that efficiently spreads epidemics throughout the world.
 COVID-19 is the returning of SARS in 2002 in terms of the virus type, the route of transmission, and the prevention of epidemics." />
 <meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
-
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<link rel="canonical" href=https://chumaltd.github.io/en/civilis/ >
 </head>
-<body id ="o" class="o"><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+<body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
   <section class="container">
   <div class="navbar-brand">
     <span class="navbar-item">
-    <i id="drawer_switch" class="material-icons">menu</i>
-    <a href="/">
+    <cm-drawer></cm-drawer>
+    <a href='/'>
       <img src="/common/civilis.svg">
     </a>
     </span>
@@ -34,19 +38,44 @@ COVID-19 is the returning of SARS in 2002 in terms of the virus type, the route 
   </section>
 </header>
 <div>
-<main class="container section">
+<nav class="container" style="overflow: hidden">
   <div class="columns">
     <div class="column is-one-quarter is-hidden-mobile">
     </div>
+    <div class="column is-three-quarters p-3">
+      <nav id="breadcrumb" class="breadcrumb is-small">
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li><a href="/en/">Ens</a></li>
+  <li class="current">&nbsp;CIVILIS</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/en/","name": "Ens" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/en/civilis/","name": "CIVILIS" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+      
+      ">
+<main class="container section">
+  <div class="columns layered">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
     <div class="column is-three-quarters">
-        <h1 id="pagetitle" class="title">
+        <h1 id="pagetitle" class="title idx is-4 py-5 mb-4">
           CIVILIS
         </h1>
     </div>
   </div>
   <div class="columns">
-    <div class="column is-one-quarter">
-      <aside class="toc sticky">
+    <div class="column is-one-quarter layered">
+      <aside class="toc sticky" style="position: sticky; top: 3em">
         <div class="header"><i class="material-icons">toc</i>&nbsp;CIVILIS</div>
         <nav id="TableOfContents">
   <ul>
@@ -57,7 +86,6 @@ COVID-19 is the returning of SARS in 2002 in terms of the virus type, the route 
       </aside>
     </div>
     <div id="content" class="column is-three-quarters">
-      
       <article>
         <p>We have silly situations at last.</p>
 <p>Everyone intends to make efforts every day from their respective social positions.
@@ -90,25 +118,34 @@ It is necessary to restore the citizen&rsquo;s perspective, since the perspectiv
 In this form, the supply punctures instantly when the whole goes into crisis.</p>
 <p>Apparently, the last remaining theme after the long history of humanity is &ldquo;self-help efforts&rdquo;.</p>
 
-      </article>
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<section class="pages-label">
+    <a href="/en/civilis/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/en/civilis/">
+            <div class="title is-6 idx" href="/en/civilis/">CIVILIS</div>
+            <div style="font-size: .8em">We have silly situations at last.
+Everyone intends to make efforts every day from their respective social positions. Thus, the resulting social system was also one that efficiently spreads epidemics throughout the world.
+COVID-19 is the returning of SARS in 2002 in terms of the virus type, the route of transmission, and the prevention of epidemics.……</div>
+    </a>
+</section>
+
+          </div></article>
     </div>
   </div>
 </main>
+</div>
 
-        </div><footer class="footer">
+        </div><footer class="footer lazy-block">
   <div class="container">
-      <img src="/common/civilis.svg">
+    <div><img id="footer_logo" src="/common/civilis.svg" loading="lazy"></div>
   </div>
-</footer><script type="module">
-import {menuList, menuLabel, drawerInit} from '/lib/ui.js';
-
-if (!window.menu_item) {
-  window.menu_item = [
-    ['Top', "\/", { icon: 'home' }],
-  ];
-}
-const menuData = menuList(window.menu_item);
-drawerInit([menuLabel("Index"), menuData]);
-</script>
+</footer><script type="module" src=/lib/cm.js ></script>
 </body>
 </html>

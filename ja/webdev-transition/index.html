@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Web開発の変遷 | civilis</title>
+  <meta name="theme-color" content="rgb(38, 29, 32)">
+  <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+  <link rel='stylesheet' href='/lib/cm.css'>
+  <link rel="stylesheet" href='/lib/base.css' >
+  <meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/webdev-transition/" />
+<meta property="og:title" content="Web開発の変遷" />
+<meta property="og:description" content="Webサービスの大がかりなアーキテクチャ更新を進めており、山を越えつつある。 既存サービスの互換性を維" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/webdev-transition/ >
+</head>
+<body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer></cm-drawer>
+    <a href='/'>
+      <img src="/common/civilis.svg">
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container" style="overflow: hidden">
+  <div class="columns">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters p-3">
+      <nav id="breadcrumb" class="breadcrumb is-small">
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li><a href="/ja/">Jas</a></li>
+  <li class="current">&nbsp;Web開発の変遷</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/ja/","name": "Jas" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/webdev-transition/","name": "Web開発の変遷" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+      
+      ">
+<main class="container section">
+  <div class="columns layered">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters">
+        <h1 id="pagetitle" class="title idx is-4 py-5 mb-4">
+          Web開発の変遷
+        </h1>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-one-quarter layered">
+      <aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;Web開発の変遷</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#プロダクト数はどのような制約を受けるのか">プロダクト数はどのような制約を受けるのか</a></li>
+    <li><a href="#移行先は何ら確立していない">移行先は何ら確立していない</a></li>
+    <li><a href="#田舎化が進行する日本">田舎化が進行する日本</a></li>
+    <li><a href="#水面下で問われる設計能力">水面下で問われる設計能力</a></li>
+  </ul>
+</nav>
+      </aside>
+    </div>
+    <div id="content" class="column is-three-quarters">
+      <article>
+        <p>Webサービスの大がかりなアーキテクチャ更新を進めており、山を越えつつある。<br>
+既存サービスの互換性を維持しながら部分的に差し替える必要があり、着手から2年近くかかっている。</p>
+<p>論点はいくつもあるが、分かりやすいのは脱Railsの側面だろう。<br>
+ここまでは Ruby on Rails のマイクロサービス群を作ってきた。これはコード構成の面では効果があったが、けっきょくミドルウェア以下のインフラ面で限界を迎えた。</p>
+<h2 id="プロダクト数はどのような制約を受けるのか">プロダクト数はどのような制約を受けるのか</h2>
+<p>1つには、サービス間の互換性の維持が難しい。直面したのはセッションの互換性で、ライブラリのバージョン統一を継続しないといけない。<br>
+マイクロサービスの目的として、個別にメンテナンスを進めても他サービスに影響がなく、順次進化していけることを求めていた。しかし主にセキュリティ面の要求で、サービス群の一括更新が避けられない展開がありうる。</p>
+<p>セッションアルゴリズム変更のケースは、不具合を発見しだい即座に修正リリースで乗り切ったが、不具合は出ていたしユーザーからの問い合わせもあった。<br>
+サービスの数を増やしていけば、いずれ対応不能に陥るのは間違いない。</p>
+<p>もう1点はリソース消費、とくにRAMのフットプリントがネックになってきた。<br>
+kubernetesの浸透により、インフラの潮流はコンテナになった。帰趨は決しているものの、まだ品質が万全ではない面がありリソース管理は注意を要する。</p>
+<p>RAMを使い切れば新規コンテナが起動しないため、もちろん新サービスを投入できない。ただ、実際にはそれ以前に挙動が不安定になる。</p>
+<p>顧客サポートのため<code>rails console</code>を起動したらサービスがクラッシュしたことがある。<br>
+操作したRailsコンテナだけがクラッシュするならまだマシだ。期待と異なり、サーバーノード上の全コンテナがクラッシュする展開となった。<br>
+もちろん即座にコンテナ再構成が走るので、大局的に見れば堅牢ではあるものの、局所的には脆弱きわまりない。</p>
+<h2 id="移行先は何ら確立していない">移行先は何ら確立していない</h2>
+<p>これまで選択していた技術がRailsだったからRailsの限界を観測しているが、Railsに限った問題ではない。<br>
+VM上で動作する言語やリッチなオブジェクトを生成する言語は、程度の差こそあれメモリ肥大化やランタイムのガベージコレクションがある。</p>
+<p>よって、Python, PHP, Java, Go, C#などを避け、基本的にRustを採用することとした。<br>
+すでにいくつかのサービスを置き換えており、Rustベースのサービスは極めて快調と言える。</p>
+<p>Rustの難点は、ライブラリが出揃っていない点だ。<br>
+低レイヤのツールチェインは完備しており腕前があれば何でも可能だが、すべてのエンジニアに使いこなせる設計力があるわけではないだろう。</p>
+<p>現時点でRustを選択するということは、自らコンプリートしなくてはならない選択でもある。<br>
+莫大なローンを抱えるかわりに、分割払いをとれるようなものだ。</p>
+<p>ただこれは僕が、代表取締役という何からも保護されていない存在だから可能な選択でもある。<br>
+従業員には労働時間の規制がかかっているため、時間内におさまらないような技術選択は日本では不可能になったのかもしれない。</p>
+<h2 id="田舎化が進行する日本">田舎化が進行する日本</h2>
+<p>ここまでは分かりやすさのため、脱Railsと言ってきた。<br>
+これは一面であり、アーキテクチャ移行は総合的に設計している。たとえば、一般的なWebフレームワークが採用しているMVC(Model-View-Controller)やO/Rマッパーも併せて捨てた。</p>
+<p>全体的に説明を割愛するが、ネイティブアプリと同様のアーキテクチャに誘導している。<br>
+Rustに限らず、MVCから出ると情報がないため、一つひとつパーツ別に設計する必要がある。</p>
+<p>情報は乏しいのだが、乏しい中にも日本はさらに立ち遅れている印象は強い。<br>
+いくつかのキーとなるミドルウェアについて、要素技術に関する情報すら日本語では存在していない。</p>
+<p>ひとつには、ひと昔前のWeb2.0ブームを最後に出版業界がどうやら技術書を出せなくなっていて、入口を見失っている。<br>
+ただ単に買われないから無くなったのだろう。この間、マンガの電子書籍市場が立ち上がっている。</p>
+<p>「ソフトウェア技術は英語を前提とするスキルである」という要因が強まったに過ぎず、日本人は学生時代に英語をたくさん学んでいるので、とくに問題はない。<br>
+ただ、アウトプットの質を見る限り、実際にはこのスキル獲得プロセスには何か大きな欠陥があるのだろう。</p>
+<h2 id="水面下で問われる設計能力">水面下で問われる設計能力</h2>
+<p>願わくば、いま手がけているアーキテクチャがある時点で主流になって欲しいと考えている。<br>
+そうならなければ、もう一度やり直す。ただ、やり直せるかは別問題だ。</p>
+<p>おそらくJavascript上にRails相当のフレームワークが確立した方が良い。いまのところ展開がよれていて、まとまりを欠いている。<br>
+DartがJavascriptを置き換えたかった動機は、まだ課題としてそのまま残っているのだろう。</p>
+<p>要するに、Webサービスの技術は過渡期であり、おそらく決定版はまだ出てこない。<br>
+米国などの大規模サービスの個別実装を参考に、各自ホーミングすべき状況なのだと考えている。</p>
+<p>ロードマップの面で難しいのは、コモディティスキルのMVCフレームワークがプロダクトの最終形と連続性がないケースだろう。<br>
+長い目で見れば、少なくとも2つの異なるサービスを開発し、互換性のレイヤを追加して移行することになる。</p>
+<p>展開を見通すためには、フルスタックの各レイヤについて深く理解することが第一の前提条件と言える。</p>
+
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<section class="pages-label">
+    <a href="/ja/webdev-transition/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/webdev-transition/">
+            <div class="title is-6 idx" href="/ja/webdev-transition/">Web開発の変遷</div>
+            <div style="font-size: .8em">Webサービスの大がかりなアーキテクチャ更新を進めており、山を越えつつある。 既存サービスの互換性を維……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/android-tablet-review-2021/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/android-tablet-review-2021/">
+            <div class="title is-6 idx" href="/ja/android-tablet-review-2021/">Androidタブレットの評価 2021年</div>
+            <div style="font-size: .8em">仕事用のクライアント機器として、Androidタブレットを使う比率が上がっている。現時点のタブレット……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/nested-object-mud/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/nested-object-mud/">
+            <div class="title is-6 idx" href="/ja/nested-object-mud/">オブジェクト階層の沼</div>
+            <div style="font-size: .8em">ソフトウェア開発のうち、妙手がなく、とにかく生産性が落ちる分野の1つが、階層の深いオブジェクトの操作……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/public-libraries/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/public-libraries/">
+            <div class="title is-6 idx" href="/ja/public-libraries/">コードであるべき法律</div>
+            <div style="font-size: .8em">必要上、Rubyで税額計算するライブラリを書いている。また、オープンソースで配布している。 まずは年末……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/opensource-erp-lucasuite/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/opensource-erp-lucasuite/">
+            <div class="title is-6 idx" href="/ja/opensource-erp-lucasuite/">オープンソースERPの必要</div>
+            <div style="font-size: .8em">Luca SuiteというERPをオープンソースで開発していて、名称先約の意図で昨日RubyGemsにもプッ……</div>
+    </a>
+</section>
+
+          </div></article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block">
+  <div class="container">
+    <div><img id="footer_logo" src="/common/civilis.svg" loading="lazy"></div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>

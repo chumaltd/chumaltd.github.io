@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html><head>
   <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Categories | civilis</title>
   <meta name="theme-color" content="rgb(38, 29, 32)">
   <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
 <link rel='stylesheet' href='/lib/bulma.min.css'>
-  <link rel="stylesheet" href="/common/base.css">
+
+  <link rel='stylesheet' href='/lib/cm.css'>
+  <link rel="stylesheet" href='/lib/base.css' >
   <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/categories/" />
 <meta property="og:title" content="Categories" />
 <meta property="og:description" content="" />
-<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
-
+<link rel="canonical" href=https://chumaltd.github.io/categories/ >
 </head>
-<body id ="o" class="o"><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+<body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
   <section class="container">
   <div class="navbar-brand">
     <span class="navbar-item">
-    <i id="drawer_switch" class="material-icons">menu</i>
-    <a href="/">
+    <cm-drawer></cm-drawer>
+    <a href='/'>
       <img src="/common/civilis.svg">
     </a>
     </span>
@@ -47,33 +49,35 @@
       </div>
 
       <section class="column is-three-quarters">
-        <header class="list" style="z-index: 50;">
-          <h1 class="title is-4">Categories</h1>
+        <nav id="breadcrumb" class="breadcrumb is-small">
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li class="current">&nbsp;Categories</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/categories/","name": "Categories" }
+}]}
+</script>
+</nav>
+
+        <header id="genre" class="pl-1 py-2 mb-4" style="z-index: 50;">
+          <h1 class="title is-5">Categories</h1>
         </header>
         <article>
         </article>
-        <nav class="container section">
-          
+        
 
-        </nav>
+        
+
       </section>
   </div>
 </main>
 
-        </div><footer class="footer">
+        </div><footer class="footer lazy-block">
   <div class="container">
-      <img src="/common/civilis.svg">
+    <div><img id="footer_logo" src="/common/civilis.svg" loading="lazy"></div>
   </div>
-</footer><script type="module">
-import {menuList, menuLabel, drawerInit} from '/lib/ui.js';
-
-if (!window.menu_item) {
-  window.menu_item = [
-    ['Top', "\/", { icon: 'home' }],
-  ];
-}
-const menuData = menuList(window.menu_item);
-drawerInit([menuLabel("Index"), menuData]);
-</script>
+</footer><script type="module" src=/lib/cm.js ></script>
 </body>
 </html>

@@ -1,63 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://chumaltd.github.io/ja/android-tablet-review-2021/</loc>
-    <lastmod>2021-03-20T00:54:25+09:00</lastmod>
-  </url>
-  
   <url>
     <loc>https://chumaltd.github.io/</loc>
-    <lastmod>2021-03-20T00:54:25+09:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-05-24T12:40:04+09:00</lastmod>
+  </url><url>
     <loc>https://chumaltd.github.io/ja/</loc>
+    <lastmod>2021-05-24T12:40:04+09:00</lastmod>
+  </url><url>
+    <loc>https://chumaltd.github.io/ja/webdev-transition/</loc>
+    <lastmod>2021-05-24T12:40:04+09:00</lastmod>
+  </url><url>
+    <loc>https://chumaltd.github.io/ja/android-tablet-review-2021/</loc>
     <lastmod>2021-03-20T00:54:25+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://chumaltd.github.io/ja/nested-object-mud/</loc>
     <lastmod>2021-01-18T02:25:35+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://chumaltd.github.io/ja/public-libraries/</loc>
     <lastmod>2021-01-13T17:20:18+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://chumaltd.github.io/ja/opensource-erp-lucasuite/</loc>
     <lastmod>2020-10-06T13:39:44+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://chumaltd.github.io/ja/fill-digital-government/</loc>
     <lastmod>2020-04-27T00:44:31+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://chumaltd.github.io/en/civilis/</loc>
     <lastmod>2020-04-24T03:34:50+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://chumaltd.github.io/ja/civilis/</loc>
     <lastmod>2020-04-24T03:34:50+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://chumaltd.github.io/en/</loc>
     <lastmod>2020-04-24T03:34:50+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://chumaltd.github.io/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://chumaltd.github.io/tags/</loc>
   </url>
-  
 </urlset>

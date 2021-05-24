@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html><head>
   <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>オブジェクト階層の沼 | civilis</title>
   <meta name="theme-color" content="rgb(38, 29, 32)">
   <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
 <link rel='stylesheet' href='/lib/bulma.min.css'>
-  <link rel="stylesheet" href="/common/base.css">
+
+  <link rel='stylesheet' href='/lib/cm.css'>
+  <link rel="stylesheet" href='/lib/base.css' >
   <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/ja/nested-object-mud/" />
 <meta property="og:title" content="オブジェクト階層の沼" />
 <meta property="og:description" content="ソフトウェア開発のうち、妙手がなく、とにかく生産性が落ちる分野の1つが、階層の深いオブジェクトの操作" />
 <meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
-
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/nested-object-mud/ >
 </head>
-<body id ="o" class="o"><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+<body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
   <section class="container">
   <div class="navbar-brand">
     <span class="navbar-item">
-    <i id="drawer_switch" class="material-icons">menu</i>
-    <a href="/">
+    <cm-drawer></cm-drawer>
+    <a href='/'>
       <img src="/common/civilis.svg">
     </a>
     </span>
@@ -32,19 +36,44 @@
   </section>
 </header>
 <div>
-<main class="container section">
+<nav class="container" style="overflow: hidden">
   <div class="columns">
     <div class="column is-one-quarter is-hidden-mobile">
     </div>
+    <div class="column is-three-quarters p-3">
+      <nav id="breadcrumb" class="breadcrumb is-small">
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li><a href="/ja/">Jas</a></li>
+  <li class="current">&nbsp;オブジェクト階層の沼</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/ja/","name": "Jas" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/nested-object-mud/","name": "オブジェクト階層の沼" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+      
+      ">
+<main class="container section">
+  <div class="columns layered">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
     <div class="column is-three-quarters">
-        <h1 id="pagetitle" class="title">
+        <h1 id="pagetitle" class="title idx is-4 py-5 mb-4">
           オブジェクト階層の沼
         </h1>
     </div>
   </div>
   <div class="columns">
-    <div class="column is-one-quarter">
-      <aside class="toc sticky">
+    <div class="column is-one-quarter layered">
+      <aside class="toc sticky" style="position: sticky; top: 3em">
         <div class="header"><i class="material-icons">toc</i>&nbsp;オブジェクト階層の沼</div>
         <nav id="TableOfContents">
   <ul>
@@ -55,7 +84,6 @@
       </aside>
     </div>
     <div id="content" class="column is-three-quarters">
-      
       <article>
         <p>ソフトウェア開発のうち、妙手がなく、とにかく生産性が落ちる分野の1つが、階層の深いオブジェクトの操作だ。<br>
 データの集合は、主に配列と連想配列(Rubyではハッシュ、Javascriptではオブジェクト)がある。配列は同じデータが並んでいるもので、連想配列はIDなどのキーに対応するデータを持つ構造になっている。</p>
@@ -91,25 +119,72 @@
 <p>コードの凝集性に進歩がなければ、大局的にみてソフトウェアの生産性は一切改善しない。<br>
 物理学の進展を考えれば、情報工学もそれくらいの進歩はできそうなものだと思う。</p>
 
-      </article>
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<section class="pages-label">
+    <a href="/ja/webdev-transition/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/webdev-transition/">
+            <div class="title is-6 idx" href="/ja/webdev-transition/">Web開発の変遷</div>
+            <div style="font-size: .8em">Webサービスの大がかりなアーキテクチャ更新を進めており、山を越えつつある。 既存サービスの互換性を維……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/android-tablet-review-2021/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/android-tablet-review-2021/">
+            <div class="title is-6 idx" href="/ja/android-tablet-review-2021/">Androidタブレットの評価 2021年</div>
+            <div style="font-size: .8em">仕事用のクライアント機器として、Androidタブレットを使う比率が上がっている。現時点のタブレット……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/nested-object-mud/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/nested-object-mud/">
+            <div class="title is-6 idx" href="/ja/nested-object-mud/">オブジェクト階層の沼</div>
+            <div style="font-size: .8em">ソフトウェア開発のうち、妙手がなく、とにかく生産性が落ちる分野の1つが、階層の深いオブジェクトの操作……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/public-libraries/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/public-libraries/">
+            <div class="title is-6 idx" href="/ja/public-libraries/">コードであるべき法律</div>
+            <div style="font-size: .8em">必要上、Rubyで税額計算するライブラリを書いている。また、オープンソースで配布している。 まずは年末……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/opensource-erp-lucasuite/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/opensource-erp-lucasuite/">
+            <div class="title is-6 idx" href="/ja/opensource-erp-lucasuite/">オープンソースERPの必要</div>
+            <div style="font-size: .8em">Luca SuiteというERPをオープンソースで開発していて、名称先約の意図で昨日RubyGemsにもプッ……</div>
+    </a>
+</section>
+
+          </div></article>
     </div>
   </div>
 </main>
+</div>
 
-        </div><footer class="footer">
+        </div><footer class="footer lazy-block">
   <div class="container">
-      <img src="/common/civilis.svg">
+    <div><img id="footer_logo" src="/common/civilis.svg" loading="lazy"></div>
   </div>
-</footer><script type="module">
-import {menuList, menuLabel, drawerInit} from '/lib/ui.js';
-
-if (!window.menu_item) {
-  window.menu_item = [
-    ['Top', "\/", { icon: 'home' }],
-  ];
-}
-const menuData = menuList(window.menu_item);
-drawerInit([menuLabel("Index"), menuData]);
-</script>
+</footer><script type="module" src=/lib/cm.js ></script>
 </body>
 </html>
