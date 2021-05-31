@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Javascript開発の変遷 | civilis</title>
+  <meta name="theme-color" content="rgb(38, 29, 32)">
+  <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+  <link rel='stylesheet' href='/lib/cm.css'>
+  <link rel="stylesheet" href='/lib/base.css' >
+  <meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/javascript-transition/" />
+<meta property="og:title" content="Javascript開発の変遷" />
+<meta property="og:description" content="Web開発の変遷で、バックエンド中心のアーキテクチャの推移を整理していた。 バックエンドの再構築と並行" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/javascript-transition/ >
+</head>
+<body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer></cm-drawer>
+    <a href='/'>
+      <img src="/common/civilis.svg">
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container" style="overflow: hidden">
+  <div class="columns">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters p-3">
+      <nav id="breadcrumb" class="breadcrumb is-small">
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li><a href="/ja/">Jas</a></li>
+  <li class="current">&nbsp;Javascript開発の変遷</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/ja/","name": "Jas" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/javascript-transition/","name": "Javascript開発の変遷" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+      
+      ">
+<main class="container section">
+  <div class="columns layered">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters">
+        <h1 id="pagetitle" class="title idx is-4 py-5 mb-4">
+          Javascript開発の変遷
+        </h1>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-one-quarter layered">
+      <aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;Javascript開発の変遷</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#方言の増加とサバイバルの動向">方言の増加とサバイバルの動向</a></li>
+    <li><a href="#javascriptが丸ごと置き換えられる可能性">Javascriptが丸ごと置き換えられる可能性</a></li>
+  </ul>
+</nav>
+      </aside>
+    </div>
+    <div id="content" class="column is-three-quarters">
+      <article>
+        <p><a href="./webdev-transition.md">Web開発の変遷</a>で、バックエンド中心のアーキテクチャの推移を整理していた。<br>
+バックエンドの再構築と並行して、Javascript開発がヘビーになる。</p>
+<p>おそらくJavascriptは一番難解な言語だろう。<br>
+主な要因は、ブラウザのプロダクトとバージョンごとに実行環境が無数にあり、それとは別に方言が増え続けていることによる。<br>
+完全に組み合わせ爆発が起きている。</p>
+<p>機能強化の方向で複雑性が増すのはまっとうと言えるが、残念ながらJavascriptについては着手までに考慮・実装・検証すべきことがあまりに多い。<br>
+直近では、Safariの機能対応に不備があり2日がかりで追加実装していた。この間、コードは１行も書いていない。</p>
+<p>多くのプログラミング言語は、オープンな実行環境上でツール整備を進めるか、またはベンダーが実行環境とセットで開発ツールを提供するかのいずれかだ。<br>
+しかしJavascriptは、クローズドなブラウザ実行環境上にオープンソースの開発ツールが群生しており、根本的なところから手探りになっている。</p>
+<p>Internet Explorerが25年かけて脱落してきたが、2番手以下のブラウザはJavascript開発の直接のネックになる。<br>
+今後は、Safariがどのようなスピードで進化していけるかが、Javascriptの生産性に直結するだろう。
+PCでは代替ブラウザを選べるが、iPhone/iPadはSafariが独占しておりOSバージョンとセットになっているため問題は根深い。</p>
+<p>ブラウザのバージョンアップごとに状況が変わりゆく「動く標的」ということもあり、クリーンな解決は今後とも望めないだろう。<br>
+ただしプロダクト内の後方互換性はかなり強固であるため、一度動作させたものはある程度の安全性を見込める。</p>
+<h2 id="方言の増加とサバイバルの動向">方言の増加とサバイバルの動向</h2>
+<p>Javascriptは非常に方言の多い言語と言える。現時点の代表例にTypescriptがある。<br>
+また、JavascriptはWebUIを作る言語でもあり、ReactJSが導入したJSXが標準化されつつある。<br>
+さらにこれらとは別の標準として、Javascript自体の文法も年々追加されている。</p>
+<p>Javascript言語自体の変遷のポイントは、<!-- raw HTML omitted -->いずれも決定打にはならない<!-- raw HTML omitted -->ということだ。<br>
+それぞれの方言が提供する改良がいずれもごく限られた範囲の部分的なものであるため、全体を見渡すと実はおおむね進歩していないとも言える。</p>
+<p>おそらく大局的なトレンドから見ると、JSXなどによりJavascriptがHTMLを包含したことが1つの進歩だろう。<br>
+CSSも包含しつつあるが、完全に消化不良の実装になっており、これはこのままブレークスルーできずに終わるのではないか。</p>
+<p>Typescriptなどのクラス機能の強化は、Reactが一度取り入れた後に事実上切り捨てており、限定的な用途にシュリンクしていくように見える。<br>
+各種方言のうちどの書き方を採用すべきかは、各開発プロジェクトが選択すべき事項であり、言語の進化が自然に生産性向上に結びつくわけではない。</p>
+<p>Typescriptがとくに苦しい点は、せいぜいプロジェクト内のコードしか制御できない点だろう。<br>
+依存ライブラリやランタイムの不整合に対する対策が立たないため、全体の品質制御にあまり効果がない。</p>
+<h2 id="javascriptが丸ごと置き換えられる可能性">Javascriptが丸ごと置き換えられる可能性</h2>
+<p>Javascriptは進化し続けている言語ではあるが、展開によっては使われなくなるシナリオがある。<br>
+WebUIについては、新技術のHTMLCanvasとWebAssemblyを利用することにより、JavascriptとHTMLのレイヤをバイパスするアプローチが登場している。<br>
+初期段階の実装として、すでにFlutter webのcanvasKitとMicrosoftのBlazorがある。</p>
+<p>HTMLCanvas+WebAssemblyは、Javascriptの標準化が順調に進まなかった場合のプランBとして機能する。<br>
+Javascriptの標準化とは市場2位のブラウザ実装のことであり、現時点ではiOS Safariの牛歩戦術への対処のように見える。<br>
+すでにSafariはWebComponentsの標準化を巻き戻した実績がある。</p>
+<p>FlutterにせよBlazorにせよ、Javascriptのツールチェインとは徹頭徹尾まったく異なる技術で構成されている。<br>
+これは、そもそも今存在しているJavascriptのツール群が砂上の楼閣になっているからだろう。<br>
+Javascriptも変化しているが、目的をもった進化というより、単に分化しているように見える。</p>
+<p>どの技術がクリティカルマスを越えるのかは不明だが、代替技術が実用に耐える安定動作を獲得したときJavascript資産は無に帰す可能性がある。<br>
+その場合、既存のJSコードを移行するパスはなく、すべて廃棄して新たに開発する必要があるだろう。</p>
+<p>これまで相当な努力が投入されてきたにも関わらず、WebUIの分野では有意義な進展が乏しかった。<br>
+おそらくJavascriptの技術スタックは過去と未来のランタイムの複雑さに呑まれ、自壊の途上にあるのだと思う。</p>
+<p>代替手段も定まっていないため、現時点ではただただ混沌としている。</p>
+
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<section class="pages-label">
+    <a href="/ja/javascript-transition/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/javascript-transition/">
+            <div class="title is-6 idx" href="/ja/javascript-transition/">Javascript開発の変遷</div>
+            <div style="font-size: .8em">Web開発の変遷で、バックエンド中心のアーキテクチャの推移を整理していた。 バックエンドの再構築と並行……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/webdev-transition/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/webdev-transition/">
+            <div class="title is-6 idx" href="/ja/webdev-transition/">Web開発の変遷</div>
+            <div style="font-size: .8em">Webサービスの大がかりなアーキテクチャ更新を進めており、山を越えつつある。 既存サービスの互換性を維……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/android-tablet-review-2021/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/android-tablet-review-2021/">
+            <div class="title is-6 idx" href="/ja/android-tablet-review-2021/">Androidタブレットの評価 2021年</div>
+            <div style="font-size: .8em">仕事用のクライアント機器として、Androidタブレットを使う比率が上がっている。現時点のタブレット……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/nested-object-mud/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/nested-object-mud/">
+            <div class="title is-6 idx" href="/ja/nested-object-mud/">オブジェクト階層の沼</div>
+            <div style="font-size: .8em">ソフトウェア開発のうち、妙手がなく、とにかく生産性が落ちる分野の1つが、階層の深いオブジェクトの操作……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/public-libraries/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/public-libraries/">
+            <div class="title is-6 idx" href="/ja/public-libraries/">コードであるべき法律</div>
+            <div style="font-size: .8em">必要上、Rubyで税額計算するライブラリを書いている。また、オープンソースで配布している。 まずは年末……</div>
+    </a>
+</section>
+
+          </div></article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block">
+  <div class="container">
+    <div><img id="footer_logo" src="/common/civilis.svg" loading="lazy"></div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>

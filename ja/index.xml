@@ -6,7 +6,16 @@
     <description>Recent content in Jas on civilis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 24 May 2021 12:40:04 +0900</lastBuildDate><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 May 2021 00:07:58 +0900</lastBuildDate><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript開発の変遷</title>
+      <link>https://chumaltd.github.io/ja/javascript-transition/</link>
+      <pubDate>Mon, 31 May 2021 00:07:58 +0900</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/javascript-transition/</guid>
+      <description>Web開発の変遷で、バックエンド中心のアーキテクチャの推移を整理していた。 バックエンドの再構築と並行</description>
+    </item>
+    
     <item>
       <title>Web開発の変遷</title>
       <link>https://chumaltd.github.io/ja/webdev-transition/</link>
