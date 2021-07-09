@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>2020年代のWeb技術 | civilis</title>
+  <meta name="theme-color" content="rgb(38, 29, 32)">
+  <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+  <link rel='stylesheet' href='/lib/cm.css'>
+  <link rel="stylesheet" href='/lib/base.css' >
+  <meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/webdev-2020s/" />
+<meta property="og:title" content="2020年代のWeb技術" />
+<meta property="og:description" content="アーキテクチャ移行を俯瞰して、今後どう進展するのかを考えていた。 総合的に見ると、Webのアーキテクチ" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/webdev-2020s/ >
+</head>
+<body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer></cm-drawer>
+    <a href='/'>
+      <img src="/common/civilis.svg">
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container" style="overflow: hidden">
+  <div class="columns">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters p-3">
+      <nav id="breadcrumb" class="breadcrumb is-small">
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li><a href="/ja/">Jas</a></li>
+  <li class="current">&nbsp;2020年代のWeb技術</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/ja/","name": "Jas" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/webdev-2020s/","name": "2020年代のWeb技術" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+      
+      ">
+<main class="container section">
+  <div class="columns layered">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters">
+        <h1 id="pagetitle" class="title idx is-4 py-5 mb-4">
+          2020年代のWeb技術
+        </h1>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-one-quarter layered">
+      <aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;2020年代のWeb技術</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#フロントエンドの進化">フロントエンドの進化</a></li>
+    <li><a href="#コアロジックの移動">コアロジックの移動</a></li>
+    <li><a href="#サーバーサイドはマイクロサービス化が進む">サーバーサイドはマイクロサービス化が進む</a></li>
+    <li><a href="#その先の変数">その先の変数</a></li>
+  </ul>
+</nav>
+      </aside>
+    </div>
+    <div id="content" class="column is-three-quarters">
+      <article>
+        <p>アーキテクチャ移行を俯瞰して、今後どう進展するのかを考えていた。<br>
+総合的に見ると、Webのアーキテクチャはネイティブアプリとほぼ同様になり、一部は共用する形態になるだろう。</p>
+<p>ただしそれを実現するためには、クライアントサイドに主機能を移し、ネイティブアプリと同様のセッション機構を実装する必要がある。<br>
+既存のWebサービスはその過程でMVCフレームワークを捨てることになる。新旧のサービスには連続性がなく、移行プランが立たずに塩漬けになる展開も多いだろう。</p>
+<h2 id="フロントエンドの進化">フロントエンドの進化</h2>
+<p>従来のアーキテクチャを破壊的に移行した際、じつは最初の選択を間違えていたのではないかと考えた。<br>
+既存資産を捨てるのはコスト面では得ではないからだ。</p>
+<p>2020年代のWebのキードライバーは、ブラウザ上でアプリケーションが実用的に動作するようになったことだろう。<br>
+これは2015年頃にSPA(Single Page Application)として登場した技術の延長にあるものだ。</p>
+<p>SPAにはすでに5年以上の蓄積があるが一般普及しておらず、Webサービスの総数から見れば現状主流とは言いがたい。<br>
+登場当初はレンダリング性能が悪く、採用メリットが無かったような印象がある。
+Angularでテスト実装を作ったが、動作が緩慢でテスト止まりになった。</p>
+<p>フロントエンドについては、この5年で進化したのはハードウェアなのだと思う。<br>
+とくにスマートデバイスの処理性能と画面の広さが格段に向上した。</p>
+<p>Webの場合は、多種多様なデバイスからアクセス可能であるため、一部のデバイスでしか動作しない機能を投入するとなると、フォールバックの画面が必要になり現実的ではない。<br>
+当時のスマートフォンやInternetExplorerをサポートする制約上、SPAを導入できなかったと言える。</p>
+<p>ただ、RPG『グランブルーファンタジー』のサービス開始が2014年で、ブラウザ上で巨大なアプリが動作していたから、性能チューニングに手間をかけていれば当初から採用できたのかもしれない。</p>
+<h2 id="コアロジックの移動">コアロジックの移動</h2>
+<p>一方、ソフトウェア・ツールの面では当時からさほど進化しておらず、この点は今後課題となるだろう。</p>
+<p>従来のMVCとSPAは両立しない。<br>
+SPAを選択しインタラクティブな方向に進化する場合、コアロジックをクライアント側に実装することになる。</p>
+<p>クライアントは一般的にJavascriptで書くのだが、Javascriptは品質確保に難がある。<br>
+Javascriptのツールやライブラリは細分化され過ぎている。各パッケージのIssueを見ると依存ライブラリの問題の影響を受けているケースが多く、自力で解決できないバグが多々ある。<br>
+よってツールの組み合わせが増えるほど、トラブルの難易度が幾何級数的に上がっていく。</p>
+<p>中心的な対策は、テストコードの充実になるだろう。<br>
+Typescriptのように型機能の対策もあるが、型は実行時エラーや依存ライブラリの問題に無力であり、Javascriptの構造問題にフィットしていない。</p>
+<p>ただし、SPA型アーキテクチャはテストコードを書きづらい。サーバーサイドのMVCフレームワークではサーバー単体で主要なテストを完結できるが、コアロジックがクライアントにある場合には、クライアント=サーバーの組み合わせを評価する必要がある。<br>
+この点は個々のプロジェクトの地道な努力でカバーするしかないだろう。</p>
+<h2 id="サーバーサイドはマイクロサービス化が進む">サーバーサイドはマイクロサービス化が進む</h2>
+<p>マイクロサービスもデータの分断という副作用があるため、ここまで普及し切れない技術であった。<br>
+しかし、コアロジックがクライアント側に移動することで、データを統合する機能がクライアントに移り、マイクロサービスを利用しやすくなる。</p>
+<p>また、マイクロサービスは性能面でスケールさせやすいことも有利に働くだろう。kubernetesがデファクト化したため、コンテナ追加は手軽または自動になる。</p>
+<p>サーバーサイドには言語やフレームワークの選択肢が多くあるが、どれを選択するかはマイナーな問題になるだろう。<br>
+おそらく主要な関心は相対的にRDBMSに移る。RDBMSはWeb登場から基本的に変わらない技術であり続けているが、今後とも変わらない。</p>
+<p>ビューやストアドプロシージャなどの古典的な技術がもう一度注目されるのが妥当と考える。</p>
+<h2 id="その先の変数">その先の変数</h2>
+<p>以上の推定は、ソフトウェアの実行環境としてサーバーとクライアントがあり、クライアントのハード進化が起きたことを前提としている。</p>
+<p>この先、サーバー・ハードが格段に進歩した場合には、従来型のアーキテクチャが優勢になる可能性もあり得る。<br>
+ただし実際にはサーバーに処理を集約する方式が有利になるほど進化することはないように見ている。</p>
+<p>ここまでの経緯を観察していると、とくにRAMのコストパフォーマンス向上が近年止まってきて、これがクライアント重視のトレンドの背景になっているように見える。<br>
+容量単価が10分の1程度に下がればサーバー側もより大きな構成をとりやすくなるだろうが、そのような兆候はない。また、多くのVMベースの言語ではRAM消費が大きくなるほどガベージコレクションによる性能劣化の影響を受けやすくなるため、ハードの進化がストレートに効かない可能性も高い。</p>
+<p>残る可能性はエッジコンピューティングだろう。エッジコンピューティングは、ソフトウェア・アーキテクチャの観点で見るとレイヤが増えるネックが大きい。<br>
+一部の処理をオフロードするような導入形態になると思うが、クライアントまたはサーバーのライブラリに包含されるとすると独立のシナリオとして検討する必要はおそらくない。<br>
+クライアントサイドのWebAssemblyについてもこの枠内で整理できるだろう。</p>
+<p>総合的に検討すると、冒頭の結論どおりWebアプリもネイティブアプリと同様のアーキテクチャになり、相当の期間安定的な方式になるのではないか。</p>
+
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<section class="pages-label">
+    <a href="/ja/webdev-2020s/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/webdev-2020s/">
+            <div class="title is-6 idx" href="/ja/webdev-2020s/">2020年代のWeb技術</div>
+            <div style="font-size: .8em">アーキテクチャ移行を俯瞰して、今後どう進展するのかを考えていた。 総合的に見ると、Webのアーキテクチ……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/javascript-transition/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/javascript-transition/">
+            <div class="title is-6 idx" href="/ja/javascript-transition/">Javascript開発の変遷</div>
+            <div style="font-size: .8em">Web開発の変遷で、バックエンド中心のアーキテクチャの推移を整理していた。 バックエンドの再構築と並行……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/webdev-transition/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/webdev-transition/">
+            <div class="title is-6 idx" href="/ja/webdev-transition/">Web開発の変遷</div>
+            <div style="font-size: .8em">Webサービスの大がかりなアーキテクチャ更新を進めており、山を越えつつある。 既存サービスの互換性を維……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/android-tablet-review-2021/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/android-tablet-review-2021/">
+            <div class="title is-6 idx" href="/ja/android-tablet-review-2021/">Androidタブレットの評価 2021年</div>
+            <div style="font-size: .8em">仕事用のクライアント機器として、Androidタブレットを使う比率が上がっている。現時点のタブレット……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/nested-object-mud/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/nested-object-mud/">
+            <div class="title is-6 idx" href="/ja/nested-object-mud/">オブジェクト階層の沼</div>
+            <div style="font-size: .8em">ソフトウェア開発のうち、妙手がなく、とにかく生産性が落ちる分野の1つが、階層の深いオブジェクトの操作……</div>
+    </a>
+</section>
+
+          </div></article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block">
+  <div class="container">
+    <div><img id="footer_logo" src="/common/civilis.svg" loading="lazy"></div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>

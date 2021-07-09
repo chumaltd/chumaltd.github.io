@@ -6,7 +6,16 @@
     <description>Recent content on civilis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 31 May 2021 00:07:58 +0900</lastBuildDate><atom:link href="https://chumaltd.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jul 2021 17:52:08 +0900</lastBuildDate><atom:link href="https://chumaltd.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2020年代のWeb技術</title>
+      <link>https://chumaltd.github.io/ja/webdev-2020s/</link>
+      <pubDate>Fri, 09 Jul 2021 17:52:08 +0900</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/webdev-2020s/</guid>
+      <description>アーキテクチャ移行を俯瞰して、今後どう進展するのかを考えていた。 総合的に見ると、Webのアーキテクチ</description>
+    </item>
+    
     <item>
       <title>Javascript開発の変遷</title>
       <link>https://chumaltd.github.io/ja/javascript-transition/</link>
