@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>サービス自動化のインターフェース | civilis</title>
+  <meta name="theme-color" content="rgb(38, 29, 32)">
+  <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+  <link rel='stylesheet' href='/lib/cm.css'>
+  <link rel="stylesheet" href='/lib/base.css' >
+  <meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/service-auto-if/" />
+<meta property="og:title" content="サービス自動化のインターフェース" />
+<meta property="og:description" content="アウトプットの品質は、バラつきによって測れる。 バラつきを狭い範囲に制御するには、プロセスの多くを自動" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/service-auto-if/ >
+</head>
+<body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer></cm-drawer>
+    <a href='/'>
+      <img src="/common/civilis.svg">
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container" style="overflow: hidden">
+  <div class="columns">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters p-3">
+      <nav id="breadcrumb" class="breadcrumb is-small">
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li><a href="/ja/">Jas</a></li>
+  <li class="current">&nbsp;サービス自動化のインターフェース</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/ja/","name": "Jas" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/service-auto-if/","name": "サービス自動化のインターフェース" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+      
+      ">
+<main class="container section">
+  <div class="columns layered">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters">
+        <h1 id="pagetitle" class="title idx is-4 py-5 mb-4">
+          サービス自動化のインターフェース
+        </h1>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-one-quarter layered">
+      <aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;サービス自動化のインターフェース</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#インターフェース">インターフェース</a>
+      <ul>
+        <li><a href="#数値入力に関する補足">数値入力に関する補足</a></li>
+      </ul>
+    </li>
+    <li><a href="#実装例tkn-runner">実装例「tkn-runner」</a></li>
+    <li><a href="#チャットボットとの関係">チャットボットとの関係</a></li>
+    <li><a href="#サービス品質の制御">サービス品質の制御</a></li>
+  </ul>
+</nav>
+      </aside>
+    </div>
+    <div id="content" class="column is-three-quarters">
+      <article>
+        <p>アウトプットの品質は、バラつきによって測れる。<br>
+バラつきを狭い範囲に制御するには、プロセスの多くを自動化し、パラメータの組み合わせを少数に抑えることが有効と言える。</p>
+<p>&ldquo;少数&quot;の適切な水準は未知ではあるが、数十、数百、数千というオーダーに分類整理できる。<br>
+経験的に、数百のバリエーションを持つプロセスセットは制御できているとは言いがたく、無秩序な状態に近い。<br>
+よって、10〜100パターンの自動プロセスを構築することが、高品質なサービスを持続的に提供する前提条件となるだろう。</p>
+<p>個別のプロセスは通称「タスク」と呼ばれ、請求決済などの業務手続きや、ソフトウェアビルドなどの技術処理といった広範な作業ターゲットを含む。</p>
+<h2 id="インターフェース">インターフェース</h2>
+<p>以上の条件から、サービス自動化のインターフェースとはタスク起動のインターフェースであり、100種類程度のタスクを的確に素早く選択できる手段を考えれば良い。</p>
+<p>無数の試行錯誤から結論的に言えば、100種オーダーの選択型インターフェースとしては、マウス主体のGUIではなくキーボード入力可能なCUIの方が優れている。</p>
+<p>一般的なキーボードは、アルファベット26文字と10種類の数字、その他記号類を直接入力できる。<br>
+たとえば、このうち数字選択のインターフェースを考えると、1回の入力につき0〜9の10種のタスクを指定できる。</p>
+<p>選択メニューの階層化により、2回入力するケースで100種(10x10)、3回入力すると1,000種(10x10x10)の選択インターフェースとなる。<br>
+これは従来からあるコンテクストメニューだが、100種類オーダーのタスク選択を効率的に実装可能な方式と再評価できる。</p>
+<p>現実的にはコンテキストメニューは2ストローク以降がスパースになるため、3ストロークで100種前後のメニューを提供する実装が現実的な姿になるだろう。</p>
+<h3 id="数値入力に関する補足">数値入力に関する補足</h3>
+<p>数値入力に限定するのは、スマートデバイスをサポートする想定による。<br>
+現在普及しているQWERTY式ハードキーボードの文字種をフルに割り当てれば、もちろんストロークは減らせる。
+そして、ハードキーボードを利用できる環境では、よりスムーズなインターフェースを提供できる可能性がある。</p>
+<p>スマートフォンなどのデバイスをサポートする場合には、画面上に描画されるソフトキーボードが前提となる。ソフトキーボードは人間の指の可動範囲の制約を受けている。<br>
+ソフトキーボードの入力正確性はキーあたりの描画面積の広さに依存しており、文字種を増やすほど不安定さが増す。</p>
+<p>これらの制約条件を総合すると、数値入力を主体とする3ストローク程度のメニュー選択がバランスがとれている。</p>
+<h2 id="実装例tkn-runner">実装例「tkn-runner」</h2>
+<p>コンセプト実装として、<a href="https://github.com/chumaltd/tkn-runner">tkn-runner</a>というオープンソースツールを作成した。<br>
+これは自動実行ツールの一種であるTektonのCLIに、数値入力インターフェースを実装したプラグインだ。</p>
+<p>プロセス自動化についてはTektonが拡張性の高いフレームワークを提供しており、そもそもの入力インターフェースが2ストロークになっている。</p>
+<p>Tektonが2ストローク構造(Pipeline/PipelineRun)になっているのは、タスク再利用の観点で進歩してきたものであり、ここで検討したインターフェースとマッチしているのは偶然である。</p>
+<p>2ストローク&quot;M x N&quot;のMとNを増やす(たとえばアルファベットを加えた36x36への拡張)はTektonの基本機能の範囲で自然だが、3ストロークに拡張するにはプラグイン実装の努力が必要、という関係になる。</p>
+<h2 id="チャットボットとの関係">チャットボットとの関係</h2>
+<p>従来の周辺技術として、チャットボット・インターフェースがある。<br>
+じっさいにTekton上の実装は、Jenkins向けチャットボットのリプレースとして進めている。</p>
+<p>チャットボットには明確なデザインを見出せないが、ここで検討した10x10x10入力方式は、チャットボットのうち、チャットとボットの要素を除去した方式と言える。</p>
+<p>チャットボットは人格を想起させるような対話装飾をテーマとしている。事務的なCLIと比較評価すると、サービス運用プロセスでは人格的装飾は純粋にノイズの可能性があると捉えている。</p>
+<h2 id="サービス品質の制御">サービス品質の制御</h2>
+<p>以上、サービス高品質化を目的とするインターフェース設計を概観した。<br>
+これはプロセス数のバリエーションに強い制約をかけ、自動化するアプローチの要素技術と言える。</p>
+<p>対比すべきアプローチは、現場の担当者に任せ、ドキュメント化により人・人間で継承する従来方式である。<br>
+どちらの方式が優れているのかは先験的ではない。言えることは、従来のアプローチが各現場の努力にも関わらず実際問題として相当バラついている、ということだ。</p>
+<p>有意義な方向にアウトプットを均質化し、そのバリエーションが数百オーダーでどの程度の活動目的をカバーできるのは、個別のタスク実装の洗練にかかっている。</p>
+
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<section class="pages-label">
+    <a href="/ja/service-auto-if/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/service-auto-if/">
+            <div class="title is-6 idx" href="/ja/service-auto-if/">サービス自動化のインターフェース</div>
+            <div style="font-size: .8em">アウトプットの品質は、バラつきによって測れる。 バラつきを狭い範囲に制御するには、プロセスの多くを自動……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/webdev-2020s/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/webdev-2020s/">
+            <div class="title is-6 idx" href="/ja/webdev-2020s/">2020年代のWeb技術</div>
+            <div style="font-size: .8em">アーキテクチャ移行を俯瞰して、今後どう進展するのかを考えていた。 総合的に見ると、Webのアーキテクチ……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/javascript-transition/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/javascript-transition/">
+            <div class="title is-6 idx" href="/ja/javascript-transition/">Javascript開発の変遷</div>
+            <div style="font-size: .8em">Web開発の変遷で、バックエンド中心のアーキテクチャの推移を整理していた。 バックエンドの再構築と並行……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/webdev-transition/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/webdev-transition/">
+            <div class="title is-6 idx" href="/ja/webdev-transition/">Web開発の変遷</div>
+            <div style="font-size: .8em">Webサービスの大がかりなアーキテクチャ更新を進めており、山を越えつつある。 既存サービスの互換性を維……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/android-tablet-review-2021/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/android-tablet-review-2021/">
+            <div class="title is-6 idx" href="/ja/android-tablet-review-2021/">Androidタブレットの評価 2021年</div>
+            <div style="font-size: .8em">仕事用のクライアント機器として、Androidタブレットを使う比率が上がっている。現時点のタブレット……</div>
+    </a>
+</section>
+
+          </div></article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block">
+  <div class="container">
+    <div><img id="footer_logo" src="/common/civilis.svg" loading="lazy"></div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>

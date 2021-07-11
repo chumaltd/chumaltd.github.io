@@ -6,7 +6,16 @@
     <description>Recent content in Jas on civilis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 09 Jul 2021 17:52:08 +0900</lastBuildDate><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jul 2021 14:14:33 +0900</lastBuildDate><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>サービス自動化のインターフェース</title>
+      <link>https://chumaltd.github.io/ja/service-auto-if/</link>
+      <pubDate>Sun, 11 Jul 2021 14:14:33 +0900</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/service-auto-if/</guid>
+      <description>アウトプットの品質は、バラつきによって測れる。 バラつきを狭い範囲に制御するには、プロセスの多くを自動</description>
+    </item>
+    
     <item>
       <title>2020年代のWeb技術</title>
       <link>https://chumaltd.github.io/ja/webdev-2020s/</link>
