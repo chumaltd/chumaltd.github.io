@@ -4,8 +4,8 @@
 	--dk-disable-font: rgba(255,255,255,var(--dk-alpha-disable));
 	--dk-surface: rgb(244, 143, 177);
 	--dk-base: #000;
-	--dk-alpha-main: 0.87;
-	--dk-alpha-sub: 0.6;
+	--dk-alpha-main: 0.94;
+	--dk-alpha-sub: 0.65;
 	--dk-alpha-disable: 0.38;
 	--dk-link: rgba(143, 244, 210, var(--dk-alpha-main));
 	--bg-0dp: var(--dk-base);
@@ -37,7 +37,6 @@
 
 	  --drawer-bg: var(--bg-6dp);
 }
-
 
 header { z-index: 5 }
 main { z-index: 0 }
