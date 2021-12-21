@@ -6,7 +6,16 @@
     <description>Recent content in Jas on civilis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 11 Jul 2021 14:14:33 +0900</lastBuildDate><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Dec 2021 16:53:27 +0900</lastBuildDate><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>情報量の不足</title>
+      <link>https://chumaltd.github.io/ja/lack-of-entropy/</link>
+      <pubDate>Tue, 21 Dec 2021 16:53:27 +0900</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/lack-of-entropy/</guid>
+      <description>ソフトウェア・コードの重要性は日々増している。 高性能な半導体の普及が大きい。先進国では一様に人口が減</description>
+    </item>
+    
     <item>
       <title>サービス自動化のインターフェース</title>
       <link>https://chumaltd.github.io/ja/service-auto-if/</link>

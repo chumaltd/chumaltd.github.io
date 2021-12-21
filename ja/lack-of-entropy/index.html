@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>情報量の不足 | civilis</title>
+  
+  <meta name="theme-color" content="rgb(38, 29, 32)">
+  <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+  <link rel='stylesheet' href='/lib/cm.css'>
+  <link rel="stylesheet" href='/lib/base.css' >
+  <meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/lack-of-entropy/" />
+<meta property="og:title" content="情報量の不足" />
+<meta property="og:description" content="ソフトウェア・コードの重要性は日々増している。 高性能な半導体の普及が大きい。先進国では一様に人口が減" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/lack-of-entropy/ >
+</head>
+<body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer></cm-drawer>
+    <a href='/'>
+      <img src="/common/civilis.svg">
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container" style="overflow: hidden">
+  <div class="columns">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters p-3">
+      <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li><a href="/ja/">Jas</a></li>
+  <li class="current">&nbsp;情報量の不足</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/ja/","name": "Jas" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/lack-of-entropy/","name": "情報量の不足" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+      
+      ">
+<main class="container section">
+  <div class="columns layered">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters">
+        <h1 id="pagetitle" class="title idx is-4 py-5 mb-4">
+          情報量の不足
+        </h1>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-one-quarter layered">
+      <aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;情報量の不足</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#情報量不足の例">情報量不足の例</a>
+      <ul>
+        <li><a href="#本来必要な情報量">本来必要な情報量</a></li>
+      </ul>
+    </li>
+    <li><a href="#情報量不足は暗黙知で補完されている">情報量不足は暗黙知で補完されている</a></li>
+    <li><a href="#コード量はもっと増える必要がある">コード量はもっと増える必要がある</a></li>
+  </ul>
+</nav>
+      </aside>
+    </div>
+    <div id="content" class="column is-three-quarters">
+      <article>
+        <p>ソフトウェア・コードの重要性は日々増している。<br>
+高性能な半導体の普及が大きい。先進国では一様に人口が減少し始めいるため、知的労働の相当部分をコードが置き換えていく必要があるだろう。</p>
+<p>コードの不具合や脆弱性、生産性低下などにはおそらく１つの共通要因がある。<br>
+それは情報量の不足である。</p>
+<h2 id="情報量不足の例">情報量不足の例</h2>
+<p>コードの簡易的な例として、ネットワークの設定例を仮定する。<br>
+ソフトウェアごとに書き方は異なるが、簡素なYAML形式では以下のような書き方になる。</p>
+<pre><code class="language-yaml">host: example.com
+</code></pre>
+<p>この例で指定している値はアルファベット10文字プラス区切り文字の&quot;.&ldquo;であり、区切り文字などを除くと情報量は10バイト（80ビット）である。</p>
+<p>現在の多くのソフトウェアではこれ以外の書き方が許されないため、この10バイト程度の記述は妥当な設定として受け入れられている。</p>
+<h3 id="本来必要な情報量">本来必要な情報量</h3>
+<p>妥当な情報量（エントロピー）は、事象の確率から計算できる。<br>
+上のネットワーク設定の例では、適切なドメイン文字列を誤りなく記述しなくてはならない。</p>
+<p>ドメインはアルファベット26文字、数字10文字、またはハイフンの計37種類の文字の組み合わせからなる。<br>
+モデルを簡略化してドメイン文字列(&rdquo;.&ldquo;を除く)を20文字長とすると、あり得るパターンは <code>37^20</code>(37の20乗) = 2,312穣程度となる。</p>
+<p>この文字列パターンから特定の１ドメインを指定するために必要な情報量は、<code>log2(37^20) = 104.189</code>ビット程度となる。<br>
+この仮定では24ビット程度の情報不足が生じている。</p>
+<p>実際には、YAMLに指定しうる文字種や文字長はもっと制約が緩いため、必要な情報量はもっと多くなるはずだ。<br>
+そして、一般的に設定項目は１項目といわず無数にあるため、情報不足は幾何級数的に拡大する構造になっているだろう。</p>
+<h2 id="情報量不足は暗黙知で補完されている">情報量不足は暗黙知で補完されている</h2>
+<p>このように、コードには慢性的なエントロピー不足の構造があると考えられる。<br>
+情報不足であるにも関わらず正常動作しているコードは、試行錯誤などによる偶然の結果である。<br>
+試行錯誤は生産性の低下の形で表面化する。</p>
+<p>またナレッジマネジメントのいう「暗黙知」は、この情報量不足を補填するようなクロス・エントロピーの形で計測できるだろう。<br>
+試行錯誤は、失敗ケースの除外として表現でき、これはヘーゲルの止揚の形式とも合う。</p>
+<p>より一般的に「智恵」「インテリジェンス」といった概念も一定水準以上のエントロピーとして知覚されているのではないか。</p>
+<h2 id="コード量はもっと増える必要がある">コード量はもっと増える必要がある</h2>
+<p>現在のエンジニアの慣行として、コードはより簡素であることが好まれている。<br>
+これは、主観的に人間が苦痛と感じる情報量を超えている状況を示唆している。</p>
+<p>しかし既述のとおり、求めるインテリジェンス水準に比して、実はコード量は絶対的に不足している可能性が高い。</p>
+<p>YAMLの例の延長では、XMLのようにスキーマ情報を付加する工夫はまず必要だろう。<br>
+スキーマは、暗黙知の形式知化に相当する。</p>
+<p>何をもって十分条件を満たすかはケースにより異なる。<br>
+現時点の本質的なネックは、たとえば<u>YAMLに追加情報を書くことが許容されない</u>といった点にある。</p>
+<p>意味のあるコードを追加できる手段を増やすことが、より知的に進化する際のブレークスルーとなろう。</p>
+
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<section class="pages-label">
+    <a href="/ja/lack-of-entropy/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/lack-of-entropy/">
+            <div class="title is-6 idx" href="/ja/lack-of-entropy/">情報量の不足</div>
+            <div style="font-size: .8em">ソフトウェア・コードの重要性は日々増している。 高性能な半導体の普及が大きい。先進国では一様に人口が減……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/service-auto-if/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/service-auto-if/">
+            <div class="title is-6 idx" href="/ja/service-auto-if/">サービス自動化のインターフェース</div>
+            <div style="font-size: .8em">アウトプットの品質は、バラつきによって測れる。 バラつきを狭い範囲に制御するには、プロセスの多くを自動……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/webdev-2020s/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/webdev-2020s/">
+            <div class="title is-6 idx" href="/ja/webdev-2020s/">2020年代のWeb技術</div>
+            <div style="font-size: .8em">アーキテクチャ移行を俯瞰して、今後どう進展するのかを考えていた。 総合的に見ると、Webのアーキテクチ……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/javascript-transition/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/javascript-transition/">
+            <div class="title is-6 idx" href="/ja/javascript-transition/">Javascript開発の変遷</div>
+            <div style="font-size: .8em">Web開発の変遷で、バックエンド中心のアーキテクチャの推移を整理していた。 バックエンドの再構築と並行……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/webdev-transition/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/webdev-transition/">
+            <div class="title is-6 idx" href="/ja/webdev-transition/">Web開発の変遷</div>
+            <div style="font-size: .8em">Webサービスの大がかりなアーキテクチャ更新を進めており、山を越えつつある。 既存サービスの互換性を維……</div>
+    </a>
+</section>
+
+          </div></article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block">
+  <div class="container">
+    <div><img id="footer_logo" src="/common/civilis.svg" loading="lazy"></div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>
