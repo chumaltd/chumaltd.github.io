@@ -4,7 +4,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>電子政府が埋めるべき穴 | civilis</title>
+  <title>泥沼のインテリジェンス | civilis</title>
   
   <meta name="theme-color" content="rgb(38, 29, 32)">
   <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
@@ -13,12 +13,12 @@
   <link rel='stylesheet' href='/lib/cm.css'>
   <link rel="stylesheet" href='/lib/base.css' >
   <meta name="twitter:card" content="summary" />
-<meta property="og:url" content="https://chumaltd.github.io/ja/fill-digital-government/" />
-<meta property="og:title" content="電子政府が埋めるべき穴" />
-<meta property="og:description" content="先ほど、協会けんぽ 保険料額表変換ツールという極めてローカルなツールをGPLライセンスで公開した。 じつ" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/network-engineering/" />
+<meta property="og:title" content="泥沼のインテリジェンス" />
+<meta property="og:description" content="ようやくネットワーク構築が完備した。これ以上は目ぼしい改善の余地はないだろうというところまで来た。 ネ" />
 <meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
 <meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
-<link rel="canonical" href=https://chumaltd.github.io/ja/fill-digital-government/ >
+<link rel="canonical" href=https://chumaltd.github.io/ja/network-engineering/ >
 </head>
 <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
   <section class="container">
@@ -46,12 +46,12 @@
 <ul>
   <li><a href="/">HOME</a></li>
   <li><a href="/ja/">Jas</a></li>
-  <li class="current">&nbsp;電子政府が埋めるべき穴</li></ul>
+  <li class="current">&nbsp;泥沼のインテリジェンス</li></ul>
 <script type="application/ld+json">
 {"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
 {"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
 {"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/ja/","name": "Jas" }},
-{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/fill-digital-government/","name": "電子政府が埋めるべき穴" }
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/network-engineering/","name": "泥沼のインテリジェンス" }
 }]}
 </script>
 </nav>
@@ -68,44 +68,58 @@
     </div>
     <div class="column is-three-quarters">
         <h1 id="pagetitle" class="title idx is-4 py-5 mb-4">
-          電子政府が埋めるべき穴
+          泥沼のインテリジェンス
         </h1>
     </div>
   </div>
   <div class="columns">
     <div class="column is-one-quarter layered">
       <aside class="toc sticky" style="position: sticky; top: 3em">
-        <div class="header"><i class="material-icons">toc</i>&nbsp;電子政府が埋めるべき穴</div>
+        <div class="header"><i class="material-icons">toc</i>&nbsp;泥沼のインテリジェンス</div>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#リファレンス実装の必要性">リファレンス実装の必要性</a></li>
+    <li><a href="#泥沼のインテリジェンス">泥沼のインテリジェンス</a></li>
+    <li><a href="#奇跡は多いほど良い">奇跡は多いほど良い</a></li>
   </ul>
 </nav>
       </aside>
     </div>
     <div id="content" class="column is-three-quarters">
       <article>
-        <p>先ほど、<a href="https://github.com/chumaltd/jhia-fee-table">協会けんぽ 保険料額表変換ツール</a>という極めてローカルなツールをGPLライセンスで公開した。<br>
-じつは僕が必要としているのは、東京のごく一部のテーブルだけ。それが配布データがExcelにパックされてしまっている都合上、ツール変換せざるを得ず、けっきょく47都道府県分できてしまうので、オープンソースで行こう、と考えた。</p>
-<p>ローカルと言えども協会けんぽは「3,850万人の加入者、200万事業所からなる」最大勢力で、健康保険加入は義務だから、これは電子政府の一角と言える。<br>
-日本の電子政府にはExcelがたくさんあり、プログラムで読み込めない。今回作ったツールも、ExcelをCSVに変換したうえでさらに変換している。</p>
-<p>プログラムから簡単に読めることは大きなポイントだ。紙がなくなったから良いというものではない。<br>
-近年のクラウド化の進展は、データフォーマットの規格化が基礎的な原動力になっている。<br>
-プログラミング言語やOSを問わなくなれば、ツールの拡充が進む。<br>
-中でも重要な分野では、データ規格に止まらずSDK(Software Development Kit)というアプリケーションの部品も配布される。<br>
-SDKがあるということは、そのデータがどのように利用されるかが予め定義されているということだ。</p>
-<p>保険行政の電子政府は、的確に金額計算して徴収する目的のものだから、使われ方は明確だし、そこまでやらないといけない。</p>
-<h2 id="リファレンス実装の必要性">リファレンス実装の必要性</h2>
-<p>最終的な目的としては、税金や保険料は手間をかけずに自動徴収するツールを政府が無償提供しなくてはならないと思う。<br>
-このツールのテーマである給与計算について言えば、本来は給与の総額さえ定まれば、所得税も健康保険料も年金保険料もすべて導出できるものだ。</p>
-<p>政策論になるが、僕が大学の税法の講義で習ったのは、徴税効率がもっとも高いのは<a href="https://ja.wikipedia.org/wiki/%E4%BA%BA%E9%A0%AD%E7%A8%8E">人頭税</a>ということだ。<br>
-今そうなっていないのは、言い訳も含めて理由はある。ただ、徴収にかかる事務コストは最終的に納税者の負担になるから、比較的純度の高い悪事ととらえるべきだろう。<br>
-仕事のための仕事は撲滅すべきだし、この先日本にはどんどん余力がなくなっていく。</p>
-<p>やるべきことができていない点についても色々考えたのだが、結論としてできる人がいないのだろう。<br>
-おおざっぱに言えば、米国・中国・インドあたりの人口がなければ、各分野に潤沢に人材が行き渡らない。そこで大多数の国では物ごとがうまく進まず、日本もそのような国の１つに過ぎないのだと思う。</p>
-<p>先だって、市場の失敗・政府の失敗に言及したが、これもまたその１つである。</p>
-<p>必要なのは機能するリファレンス実装だが、市場にも政府にもそれを供給する者はない。<br>
-寂しい話でもあるが、制度として確立したチームワークなどその程度のパワーなのだろう。</p>
+        <p>ようやくネットワーク構築が完備した。これ以上は目ぼしい改善の余地はないだろうというところまで来た。</p>
+<p>ネットワークの目的は明確だ。背後にサーバーがあり、リクエストに応じて適切にサーバーを呼び出し、そして結果を返す。<br>
+多少技術的に言えば、多くのケースでHTTP200 OKが得られれば足りる。</p>
+<p>一見単純に見える目的が完成しないのは、準備プロセスに組み合わせ爆発があるからだ。<br>
+正解の組み合わせ以外はエラーとなり、設定が完備するその瞬間までネットワークはエラーを返し続ける。</p>
+<p>また、エラーを裏返せば正しい設定になるという関係ではない。<br>
+仮に選択肢が2つなのであれば、失敗は次の一手の成功を約束する。しかし、そのような構造をしていない。</p>
+<p>構造の理解こそ重要だ。</p>
+<h2 id="泥沼のインテリジェンス">泥沼のインテリジェンス</h2>
+<p>ネットワークサービスや機器は、高機能であるほど設定の選択肢も増える。これは表裏一体と言える。</p>
+<p>特定用途のセットアップに適した設定の組み合わせはごく限られるから、高機能なサービスを利用しようとすることが相対的にノイズ（エラーが生じる設定）の比率を高める。</p>
+<p>この構造は、目的のバリエーションが少ないのにうまく行かない理由なら無数にある、泥沼型のオペレーション環境と言える。</p>
+<p>完遂したこと自体が上出来と言えなくもないが、膨大な手間を消費している。<br>
+競争分析の点では参入障壁を１つ越えたのだと評価するのだろう。同じことを他社がやろうとすれば同じ沼に足をとられることは間違いない。</p>
+<p>ただ、どうなのだろう。</p>
+<p>「もっと短時間に達成できないものか」という願望はある。そして同時に、そのような道はないことも経験してきている。</p>
+<p>おそらく経営学の競争論は、人的・物的資源のゼロサム・ゲーム下で起きるモノポリーに還元される。<br>
+「できる人がやるしかない」という結論なら、戦術の進歩には役立たない。</p>
+<p>泥沼をショートカットできるインテリジェンスは確かにある。ただし、苦労の大半を相殺するような特効薬ではないし、効き方も一様ではない。</p>
+<p>複合要素を分解し、フィードバック情報を増やす操作により状況理解を深める戦術が基本線となるため、局所的に見れば作業は必ず増える。</p>
+<p>確率の低い状態に導くためにはより多くの情報量が求められ、そのために体系的な不適合サンプルが欠かせない。</p>
+<h2 id="奇跡は多いほど良い">奇跡は多いほど良い</h2>
+<p>ネットワークエンジニアリングにはとくに試行錯誤が求められる。<br>
+サンクコストを評価し、これまで実装を2つ捨ててきた。</p>
+<p>奇跡とは膨大な犠牲の末に得られる特殊な選択肢である。宝くじのように誰かが受動的に選ばれる幸運とは分けて考えるべきだ。</p>
+<p>そしてより重要なことは、奇跡のメタ構造である。<br>
+高度なネットワーク実装は有用ではあるが、成功を約束するわけではない。</p>
+<p>奇跡は多いほど良い。</p>
+<p>ネットワーク構築で奇跡を達成したのであれば、まったく別の分野でも奇跡を起こさなければならない。<br>
+ネットワーク・エンジニアリングで得られた暗黙知など、他の分野にはまったく役立たない。</p>
+<p>政策や経営といったマネジメントのレイヤでは、個別の奇跡に達成感はない。</p>
+<p>これはダイバーシティの必要性の本質でもある。<br>
+ダイバーシティとは多芸の才であって、属性の多様性ではない。</p>
+<p>これから成すべきことは、新たな泥沼に分け入り、適切な犠牲の払い方を設計することだ。</p>
 
 
           <div class="related_articles">

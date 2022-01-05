@@ -6,7 +6,16 @@
     <description>Recent content in Jas on civilis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 Dec 2021 16:53:27 +0900</lastBuildDate><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Jan 2022 11:43:45 +0900</lastBuildDate><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>泥沼のインテリジェンス</title>
+      <link>https://chumaltd.github.io/ja/network-engineering/</link>
+      <pubDate>Wed, 05 Jan 2022 11:43:45 +0900</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/network-engineering/</guid>
+      <description>ようやくネットワーク構築が完備した。これ以上は目ぼしい改善の余地はないだろうというところまで来た。 ネ</description>
+    </item>
+    
     <item>
       <title>情報量の不足</title>
       <link>https://chumaltd.github.io/ja/lack-of-entropy/</link>
