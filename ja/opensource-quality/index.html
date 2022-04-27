@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>品質とオープンソース | civilis</title>
+  
+  <meta name="theme-color" content="rgb(38, 29, 32)">
+  <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+  <link rel='stylesheet' href='/lib/cm.css'>
+  <link rel="stylesheet" href='/lib/base.css' >
+  <meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/opensource-quality/" />
+<meta property="og:title" content="品質とオープンソース" />
+<meta property="og:description" content="ソフトウェア開発では、機能拡充と品質向上は両立しなくてはならない２大目標だ。 いずれにせよ時間的犠牲が" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/opensource-quality/ >
+</head>
+<body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer></cm-drawer>
+    <a href='/'>
+      <img src="/common/civilis.svg">
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container" style="overflow: hidden">
+  <div class="columns">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters p-3">
+      <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li><a href="/ja/">Jas</a></li>
+  <li class="current">&nbsp;品質とオープンソース</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/ja/","name": "Jas" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/opensource-quality/","name": "品質とオープンソース" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+      
+      ">
+<main class="container section">
+  <div class="columns layered">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters">
+        <h1 id="pagetitle" class="title idx is-4 py-5 mb-4">
+          品質とオープンソース
+        </h1>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-one-quarter layered">
+      <aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;品質とオープンソース</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#品質制御の実情">品質制御の実情</a></li>
+    <li><a href="#パーツの調達に左右される">パーツの調達に左右される</a></li>
+    <li><a href="#オープンソースの品質確保">オープンソースの品質確保</a>
+      <ul>
+        <li><a href="#難しいケース">難しいケース</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </aside>
+    </div>
+    <div id="content" class="column is-three-quarters">
+      <article>
+        <p>ソフトウェア開発では、機能拡充と品質向上は両立しなくてはならない２大目標だ。</p>
+<p>いずれにせよ時間的犠牲が欠かせないため、ある瞬間に機能と品質のどちらを優先するか折に触れて選択を迫られる。</p>
+<p>最近は「品質確保を先行させた方が良いのだろう」という結論に至ることが多い。<br>
+これはおそらく、人件費が何よりも高い、とくにアウトプットあたりのコストに換算するとさらに割高になる、という経済的な制約条件による。</p>
+<p>品質上の欠陥はそのままやり過ごすことはできず、サポートなど何らかの代替資源でカバーしなくてはならない。<br>
+ソフトウェアは機能に合わせて肥大化していくから、パーツごとの至らない品質ネックは組み合わせ爆発により大きなトラブルに成長し得る。<br>
+そして、組織はピーク業務に合わせて人海戦術をとりがちであるため、潜在ワーストケースの大きさの分だけビジネスは減速する。</p>
+<p>これが機能優先で進行した場合のシナリオだ。</p>
+<p>先進国でこの前提を変えるには生きることのコストを下げる必要があり、そしてそれを示唆する兆候はまったくない。</p>
+<p>品質を優先する場合には、「世にリリースしなければ問題は起きない」という点も含めてトラブルのピークを制御できるため、行動あたりのロスを低減できる。</p>
+<h2 id="品質制御の実情">品質制御の実情</h2>
+<p>品質は良し悪しで捉えがちだが、ベストプラクティスによってシックス・シグマが適切だと思う。<br>
+つまり主役はバラつきの度合いだ。</p>
+<p>バラつきはエントロピーや情報量の挙動と同じであり、好ましい状態を技術的に識別できる。</p>
+<p>基本的な手法はシステムテストが適している。<br>
+実際の環境に近い条件を揃え、テストケースと頻度を増やすことでバラつきを効果的に追跡できる。</p>
+<p>実際の環境は完全に一致させる手もあるが、それすら実環境のごく一例に過ぎないため、要するにパーツを網羅的に組み合わせることが第一と言える。</p>
+<p>目標の達成度合いは簡単に言えば「１つの失敗も許容できない」水準になる。</p>
+<p>そしてここのところテストが通過しないケースが増えていて、構造を掘り下げて追跡してきた。</p>
+<h2 id="パーツの調達に左右される">パーツの調達に左右される</h2>
+<p>今どきのソフトウェアは無数のライブラリ、その多くがオープンソースを組み合わせて開発する。</p>
+<p>その結果、品質のかなりのウエイトをオープンソースのフィッティングが占めていることを改めて確認した。</p>
+<p>オープンソースの品質は一概に言えない。<br>
+各ソフトウェアで体系的に品質確保している例や、採用しているプロジェクトのフィードバックの蓄積によってバラつきを制御できているケースもあるし、中にはただただ自由なプロジェクトもある。</p>
+<p>ただ、バラつきの大きいライブラリの影響を直接受けることは、状況を分析して理解できた。</p>
+<p>品質の高いオープンソースを厳選したら気楽と言えるかもしれないが、人類史のなかでオープンソースの歴史は浅く、そこまでの蓄積はまだない。<br>
+自製、外注、オープンソース参画のいずれかの立場から選択することになる。</p>
+<p>ソフトウェア開発は1960年代から広まっていったが、90年代までの多くは自製や外注で作られ、機器・システムの陳腐化に伴ってただ破棄されてきた。</p>
+<p>オープンソースの場合は即座に社会資本の蓄積が進み、ここまでのコモディティ化の進展にも貢献してきたし、未来の社会機能として生き残って行くだろう。</p>
+<p>また多用途で使われることじたいが品質にとってはプラスでもあり、手間はかかってもオープンソースには独特のメリットがある。</p>
+<h2 id="オープンソースの品質確保">オープンソースの品質確保</h2>
+<p>オープンソースはバージョンアップごとに機能が変わることが多くあり、使い方の工夫で自分のプロダクトにフィットさせられることも多い。<br>
+ただ、バージョンごとにライブラリに合わせているといたちごっこになる展開があり、その場合、バラつきは制御できない。</p>
+<p>各ライブラリは複数の目的に使えるように進められていることが多いが、そのうち特定の目的では自分のプロジェクトの方がより実態をつかんでいることがあり、同時にバラつきも起きやすい。</p>
+<p>自分の用途を一般化した具体的な修正を提案できれば、安定的なインターフェースを確保できる。限定的な条件で起きるバグ修正の場合も同じだ。</p>
+<p>提案は各ライブラリの発展性に沿っている必要があるため、対象についてよく理解することは当然の前提となる。<br>
+いずれにしても品質の再現性を確認する時点で、コード追跡や設計思想などは追跡することにはなる。</p>
+<p>また、提案するのは自由だが、採用されるとしても時間がかかり、その形は変わることもある。<br>
+この点については別途対策が必要で、けっきょくのところ最小限の自作パッチを当てた独自バージョンを派生させた方が制御しやすいと考えている。</p>
+<p>このように、自分のプロダクトから見たオープンソースの品質を能動的に制御するには相応の手間がかかる。<br>
+しかし、受け身で待っていても進展がない。</p>
+<p>GitHubにはプロジェクトの議論経緯も公開されており、けっきょくのところ主な開発者の力量から今後起きることと起きないことは相当推測できる。<br>
+時おり著名プロダクトの開発体制の手薄さが話題になるが、相対的に手薄であることはいずれも大差ない。</p>
+<p>のるかそるかは時の運ではあるが、何か建設的にものが言えるような状況であれば、それができるのは世界で自分しかいない、と考えた方が良い。<br>
+典型的には１人で孤独に頑張っているライブラリは本当に多い。</p>
+<h3 id="難しいケース">難しいケース</h3>
+<p>オープンソースは「受け入れてもらえれば」という前提があり、そうでない場合にはまったく違う手を考えなくてはならない。<br>
+広く使われているものでもたまにプロジェクトが分裂することがあり、その多くはパッチの拒否が続く場合だ。</p>
+<p>GitHubの議論から、主な開発者がとんでもないヤツだと分かることが稀にある。<br>
+問題の原因は特定できるが、解決のしようがない、という類型になる。</p>
+<p>こういうものの取り扱いはかなり困る。代替策があるなら採用していないだろう。<br>
+ある例では、動作確認のとれている旧バージョンに戻してバージョン固定とした。</p>
+<p>先送りの対象については、一定の期間のうちに解決がなければ、その部分を丸ごと迂回して避けられるような根本的に別の設計を考える必要が出てくるだろう。</p>
+
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<section class="pages-label">
+    <a href="/ja/opensource-quality/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/opensource-quality/">
+            <div class="title is-6 idx" href="/ja/opensource-quality/">品質とオープンソース</div>
+            <div style="font-size: .8em">ソフトウェア開発では、機能拡充と品質向上は両立しなくてはならない２大目標だ。 いずれにせよ時間的犠牲が……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/popular-sickness-unto-death/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/popular-sickness-unto-death/">
+            <div class="title is-6 idx" href="/ja/popular-sickness-unto-death/">死に至りやすい病</div>
+            <div style="font-size: .8em">一昨晩、猛烈な歯痛で目を覚ます。 不可解としか言いようがなかった。まったく医者に行かないから、虫歯の可……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/network-engineering/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/network-engineering/">
+            <div class="title is-6 idx" href="/ja/network-engineering/">泥沼のインテリジェンス</div>
+            <div style="font-size: .8em">ようやくネットワーク構築が完備した。これ以上は目ぼしい改善の余地はないだろうというところまで来た。 ネ……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/lack-of-entropy/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/lack-of-entropy/">
+            <div class="title is-6 idx" href="/ja/lack-of-entropy/">情報量の不足</div>
+            <div style="font-size: .8em">ソフトウェア・コードの重要性は日々増している。 高性能な半導体の普及が大きい。先進国では一様に人口が減……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/service-auto-if/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/service-auto-if/">
+            <div class="title is-6 idx" href="/ja/service-auto-if/">サービス自動化のインターフェース</div>
+            <div style="font-size: .8em">アウトプットの品質は、バラつきによって測れる。 バラつきを狭い範囲に制御するには、プロセスの多くを自動……</div>
+    </a>
+</section>
+
+          </div></article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block">
+  <div class="container">
+    <div><img id="footer_logo" src="/common/civilis.svg" loading="lazy"></div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>
