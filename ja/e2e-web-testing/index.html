@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>脱Node.js | civilis</title>
+  
+  <meta name="theme-color" content="rgb(38, 29, 32)">
+  <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+  <link rel='stylesheet' href='/lib/cm.css'>
+  <link rel="stylesheet" href='/lib/base.css' >
+  <meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/e2e-web-testing/" />
+<meta property="og:title" content="脱Node.js" />
+<meta property="og:description" content="JavascriptコードのテストはさすがにJavascriptで書いていたのだが、いまそれを捨てて" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/e2e-web-testing/ >
+</head>
+<body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer></cm-drawer>
+    <a href='/'>
+      <img src="/common/civilis.svg">
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container" style="overflow: hidden">
+  <div class="columns">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters p-3">
+      <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li><a href="/ja/">Jas</a></li>
+  <li class="current">&nbsp;脱Node.js</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/ja/","name": "Jas" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/e2e-web-testing/","name": "脱Node.js" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+      
+      ">
+<main class="container section">
+  <div class="columns layered">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters">
+        <h1 id="pagetitle" class="title idx is-4 py-5 mb-4">
+          脱Node.js
+        </h1>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-one-quarter layered">
+      <aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;脱Node.js</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#e2eテストのために用意すべきものは多い">E2Eテストのために用意すべきものは多い</a></li>
+    <li><a href="#脱nodejsは相当進んだ">脱Node.jsは相当進んだ</a></li>
+  </ul>
+</nav>
+      </aside>
+    </div>
+    <div id="content" class="column is-three-quarters">
+      <article>
+        <p>JavascriptコードのテストはさすがにJavascriptで書いていたのだが、いまそれを捨ててE2Eテストに移行している。<br>
+E2Eテストは、実際のアプリケーションやサーバー構成を再現した環境で実行するテストを指し、今回の最大の違いはブラウザ上で動作させる点だ。</p>
+<p>これまでは、jsdomというJavascriptで書かれた模擬ブラウザ環境で実行してきた。<br>
+アプリケーションの複雑化が進むにつれて挙動が不安定な部分が増えており、同じテストが通過したり失敗したりする動作になっていた。<br>
+そしてこれはアプリが不安定なわけではなくjsdomだけで起きるエラーであったため、テストコードを調整するという無駄な現象を引き起こす。</p>
+<p>さらに、あるライブラリのバージョンアップにより、そもそもテスト実行が不可能になった。<br>
+現時点のJavascript開発はNode.js上で動作させるものが大半であり、Node.jsのモジュール形式であるCommonJSを前提としているところがある。<br>
+近年、ブラウザにESModuleという新たな標準が導入されたことで、ライブラリごとの採用モジュールが変わりつつある。</p>
+<p>jsdomはNode.jsを前提としているため、一部のライブラリがCommonJSをサポートしないという展開にもろかった。<br>
+もはやテストは開始すらしない。<br>
+世の中一般では顕在化していないが、今後同様の壁に直面するプロジェクトは増えるだろう。</p>
+<p>テスト向けのビルドを工夫してなんとか既存のテストを活かす手もある。<br>
+ただ先々の展開を考えると、モジュールの混在はより複雑な組み合わせになるだろうし、そもそもjsdomのエミュレートの品質が良くない。</p>
+<p>これまでにテストに手間どっていたケースが多発していたため、この機にjsdomはもうやめようと考えた。</p>
+<h2 id="e2eテストのために用意すべきものは多い">E2Eテストのために用意すべきものは多い</h2>
+<p>E2Eテストは実際の環境とほぼ同等と言えるため、もともと導入したいとは思っていた。サーバー一式とアプリケーション配信を完備する必要があるため着手していなかった。<br>
+今回はJavascriptで書かないと決めた以上、E2E以外に手がないので１つひとつ地道に構築することとなった。</p>
+<p>バックエンドプロセスについては完全にコンテナ化しているため、設定以外はデッドコピーで構築できた。よってサーバー側は、主にファイル配信を追加開発した。</p>
+<p>ブラウザの実行環境は、Javascriptの延長でまずdeno-puppeteerを構築してみたが、これは動作しなかった。<br>
+denoのテストランナーは今インターフェースが決まった段階で、使いやすそうではあるがまだ非同期処理のテストが事実上動作しない。</p>
+<p>けっきょく、E2Eフレームワークには実績のあるSeleniumを採用した。<br>
+Seleniumは複数の言語をサポートしており、もっともメジャーなLL言語のPythonを選択。</p>
+<p>今までPythonは体系的に使ったことはなくRubyの方が慣れている。ただ、Rubyはディストリビューションに最新版が入らないことが多く、動作環境の再現にやや難を感じている。<br>
+直近リリースされたUbuntu22.04LTSにも、昨冬版のRuby v3.1ではなく一昨年のv3.0が入っている。</p>
+<p>Pythonはさすがにシェアが高いだけありストレートに動作する。ここまでテストケースを移植した範囲では、奇妙な動作がなく安定している。<br>
+Seleniumが呼び出すブラウザを通した挙動もjsdomより圧倒的に安定しており、ゆっくり実行させるための不毛なコードを一掃できた。</p>
+<p>WebAssemblyもモックではなく実際にテスト対象に追加できるようになった。</p>
+<h2 id="脱nodejsは相当進んだ">脱Node.jsは相当進んだ</h2>
+<p>ソフトウェアは開放系であるため、利用パーツの変化に合わせてプロジェクト構成を大幅に変えていくのは当然と言える。<br>
+ただ、同じものを2回実装しているのだから、初回は失敗だったと認識している。</p>
+<p>最初から、またはもっと初期段階でSeleniumで実装しておく手はあった。</p>
+<p>Javascript開発ではNode.jsを組み込むことになりがちなのだが、Node.jsは依存しただけ後の問題に帰結している。<br>
+ここまでにビルドは既にDenoに移行しており、今回テストもPythonになった。</p>
+<p>あと残っているのは、npmによるパッケージ管理だけだ。npmは品質に直結しないが、gitの挙動に難があり問題はすでに起きている。<br>
+npm派生を除外するとパッケージ管理のオルタナティブはDenoしかないので、ImportMapsを真面目に評価して、可能であれば早期にNode.js完全撤廃を達成した方が良いと考えている。</p>
+
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<section class="pages-label">
+    <a href="/ja/e2e-web-testing/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/e2e-web-testing/">
+            <div class="title is-6 idx" href="/ja/e2e-web-testing/">脱Node.js</div>
+            <div style="font-size: .8em">JavascriptコードのテストはさすがにJavascriptで書いていたのだが、いまそれを捨てて……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/opensource-quality/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/opensource-quality/">
+            <div class="title is-6 idx" href="/ja/opensource-quality/">品質とオープンソース</div>
+            <div style="font-size: .8em">ソフトウェア開発では、機能拡充と品質向上は両立しなくてはならない２大目標だ。 いずれにせよ時間的犠牲が……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/popular-sickness-unto-death/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/popular-sickness-unto-death/">
+            <div class="title is-6 idx" href="/ja/popular-sickness-unto-death/">死に至りやすい病</div>
+            <div style="font-size: .8em">一昨晩、猛烈な歯痛で目を覚ます。 不可解としか言いようがなかった。まったく医者に行かないから、虫歯の可……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/network-engineering/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/network-engineering/">
+            <div class="title is-6 idx" href="/ja/network-engineering/">泥沼のインテリジェンス</div>
+            <div style="font-size: .8em">ようやくネットワーク構築が完備した。これ以上は目ぼしい改善の余地はないだろうというところまで来た。 ネ……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/lack-of-entropy/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/lack-of-entropy/">
+            <div class="title is-6 idx" href="/ja/lack-of-entropy/">情報量の不足</div>
+            <div style="font-size: .8em">ソフトウェア・コードの重要性は日々増している。 高性能な半導体の普及が大きい。先進国では一様に人口が減……</div>
+    </a>
+</section>
+
+          </div></article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block">
+  <div class="container">
+    <div><img id="footer_logo" src="/common/civilis.svg" loading="lazy"></div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>
