@@ -6,7 +6,16 @@
     <description>Recent content on civilis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 04 May 2022 18:36:36 +0900</lastBuildDate><atom:link href="https://chumaltd.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Aug 2022 09:19:03 +0000</lastBuildDate><atom:link href="https://chumaltd.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>書かなければ消滅するメカニズム</title>
+      <link>https://chumaltd.github.io/ja/sustained-by-description/</link>
+      <pubDate>Thu, 04 Aug 2022 09:19:03 +0000</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/sustained-by-description/</guid>
+      <description>「書かない組織は必ず衰退する」という共通の特徴を見て来ている。書くという行動には拒絶感があり、それが</description>
+    </item>
+    
     <item>
       <title>脱Node.js</title>
       <link>https://chumaltd.github.io/ja/e2e-web-testing/</link>
