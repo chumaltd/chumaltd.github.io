@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>フェイク・テクノロジー | civilis</title>
+  
+  <meta name="theme-color" content="rgb(38, 29, 32)">
+  <link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+  <link rel='stylesheet' href='/lib/cm.css'>
+  <link rel="stylesheet" href='/lib/base.css' >
+  <meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/fake-technology/" />
+<meta property="og:title" content="フェイク・テクノロジー" />
+<meta property="og:description" content="ひと月近くかけて、著名ライブラリのReact.jsを除去する実装を継続し、ようやく完了した。 今年の夏" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/fake-technology/ >
+</head>
+<body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer></cm-drawer>
+    <a href='/'>
+      <img src="/common/civilis.svg">
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container" style="overflow: hidden">
+  <div class="columns">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters p-3">
+      <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li><a href="/">HOME</a></li>
+  <li><a href="/ja/">Jas</a></li>
+  <li class="current">&nbsp;フェイク・テクノロジー</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/ja/","name": "Jas" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/fake-technology/","name": "フェイク・テクノロジー" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+      
+      ">
+<main class="container section">
+  <div class="columns layered">
+    <div class="column is-one-quarter is-hidden-mobile">
+    </div>
+    <div class="column is-three-quarters">
+        <h1 id="pagetitle" class="title idx is-4 py-5 mb-4">
+          フェイク・テクノロジー
+        </h1>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-one-quarter layered">
+      <aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;フェイク・テクノロジー</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#webの描画ライブラリは何も成熟していない">Webの描画ライブラリは何も成熟していない</a></li>
+    <li><a href="#ユーザーコミュニティに頼れなくなってきた">ユーザーコミュニティに頼れなくなってきた</a></li>
+  </ul>
+</nav>
+      </aside>
+    </div>
+    <div id="content" class="column is-three-quarters">
+      <article>
+        <p>ひと月近くかけて、著名ライブラリのReact.jsを除去する実装を継続し、ようやく完了した。<br>
+今年の夏は、観測史上2番目の暑さであったこともあり、ジリジリとした灼熱地獄の耐久戦だった。</p>
+<p>この手の作業は、実施したところで機能に何も違いがなく、メリットがゼロであるかのように感じやすい。<br>
+そのため「技術負債の返済」と呼ばれている。</p>
+<p>しかし実際には機能外の要件もあらかじめ存在している。<br>
+このケースでは、Flaky testのかたちで品質不良を検出しており、React除去により収束した。</p>
+<p>Reactは画面をレンダリングする役割を持つが、そのレンダリングが安定しない。</p>
+<p>技術要素は時間をかけて進化していく性質があるが、中にはいつまで経っても主目的の効果が得られないものもある。<br>
+そのような技術を、僕はフェイク・テクノロジーと捉えて注意している。</p>
+<p>Reactの場合は、注意していたものの選択ミスがあった例と言える。</p>
+<h2 id="webの描画ライブラリは何も成熟していない">Webの描画ライブラリは何も成熟していない</h2>
+<p>選択ミスによりフェイク・テクノロジーを埋め込んでしまうと、今回のようにどこかで必ずやり直しを迫られる。<br>
+その展開はつねに意識しているので、選択ミスがあった以上、行きがかりの経緯に見落としがあったということだ。</p>
+<p>思い返すとReactを採用した当時、目ぼしいオルタナティブはangular.js程度で、要するに選択肢そのものが乏しかった。<br>
+そのため、採用理由が安直であった。</p>
+<p>そしていま振り返れば、Reactの本質的な問題はv16.8で導入されたHooksというAPIへの移行である。<br>
+Hooksは、レンダリングのオーバーランを抑制する方法に乏しい。これは端的に設計ミスだと思う。</p>
+<p>しかしこの観点は数ある問題の中で目立ちにくいポイントであり、現時点でも一般的に意識されていない。<br>
+Hooksへの移行により品質はデグレードするが、Reactのプロジェクトを素朴にアップグレードすることで無意識に採り入れる展開となる。</p>
+<p>Reactのコア開発者ならこの問題には気づいていると僕は見ている。<br>
+Hooks移行から3年経過し、v17, v18とバージョンアップしたが根本的な対策はない。この先も改善はないと考えるのが自然だ。</p>
+<p>一方で、オルタナティブにもさして進展がなく、相変わらずReactがメジャーであり続けている。<br>
+シェアと技術を総合的に考えると、今後はVue.jsがもっとも優れているように見えるが、現時点ではマイナーである。</p>
+<p>状況を総合すると、Webブラウザ向けの描画ライブラリという分野じたいが、さして優れた技術ではないという結論に至った。<br>
+Reactは登場からすでに9年以上たっている。基礎的な描画が安定しないという状況は、他の分野であれば考えにくい。</p>
+<p>これはJavascriptで描画するという手法じたいにそもそも無理があり、この間ブラウザプラットフォームに進展がなかったことが原因だと思う。<br>
+WebはAndroid/iOSのネイティブアプリと競合しているため、Webアプリという分野に技術投資のキャップがかかっているように見える。</p>
+<p>そしてReactの停滞を見る限り、現状の手法すべてが吹けば飛ぶような存在であるのではないかと思う。</p>
+<h2 id="ユーザーコミュニティに頼れなくなってきた">ユーザーコミュニティに頼れなくなってきた</h2>
+<p>著名なソフトウェアの場合、アーキテクチャに欠陥があると体系的な批判を書く人が英語圏で出てくるものだったが、近年はそれも見かけなくなった。<br>
+分野そのものが行き詰まっていて、対案を出しにくい状況なのかもしれない。</p>
+<p>また、情報爆発ならぬノイズ爆発も背景にあると思う。<br>
+出版業界が日に日に弱くなっていることと、Web検索にノイズが増えていることの相乗効果で、物の見え方そのものが歪む傾向が強まっているように見える。</p>
+<p>世の中の誰かが気づくことがあてにならないとすると、失敗することじたいが情報源であり、フェイク・テクノロジー識別の必要経費になったとも言える。<br>
+逆説的ながら、ムダな実装こそが長期的に見ると適切な技術選択のプロセスの一部なのかもしれない。</p>
+<p>ひとつ分かっていることは、フェイク技術を利用する機会・期間が増えるほどやり直さねばならない範囲も広がるため、早期発見・早期除去が重要だということだ。<br>
+これまでは技術採用前の検証を重視してきたが、不適切な状態の検出と特定のような事後的な監視アプローチがより重要になったと言える。</p>
+
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<section class="pages-label">
+    <a href="/ja/fake-technology/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/fake-technology/">
+            <div class="title is-6 idx" href="/ja/fake-technology/">フェイク・テクノロジー</div>
+            <div style="font-size: .8em">ひと月近くかけて、著名ライブラリのReact.jsを除去する実装を継続し、ようやく完了した。 今年の夏……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/civilization-spore/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/civilization-spore/">
+            <div class="title is-6 idx" href="/ja/civilization-spore/">文明の芽胞</div>
+            <div style="font-size: .8em">書かなければ消滅するメカニズムでは、サバイバルの必要水準が想像以上に高いこと、知的創造をクリアするに……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/sustained-by-description/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/sustained-by-description/">
+            <div class="title is-6 idx" href="/ja/sustained-by-description/">書かなければ消滅するメカニズム</div>
+            <div style="font-size: .8em">「書かない組織は必ず衰退する」という共通の特徴を見て来ている。書くという行動には拒絶感があり、それが……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/e2e-web-testing/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/e2e-web-testing/">
+            <div class="title is-6 idx" href="/ja/e2e-web-testing/">脱Node.js</div>
+            <div style="font-size: .8em">JavascriptコードのテストはさすがにJavascriptで書いていたのだが、いまそれを捨てて……</div>
+    </a>
+</section>
+<section class="pages-label">
+    <a href="/ja/opensource-quality/">
+        <div class="page-thumbnail">
+        </div>
+    </a>
+    <a href="/ja/opensource-quality/">
+            <div class="title is-6 idx" href="/ja/opensource-quality/">品質とオープンソース</div>
+            <div style="font-size: .8em">ソフトウェア開発では、機能拡充と品質向上は両立しなくてはならない２大目標だ。 いずれにせよ時間的犠牲が……</div>
+    </a>
+</section>
+
+          </div></article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block">
+  <div class="container">
+    <div><img id="footer_logo" src="/common/civilis.svg" loading="lazy"></div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>

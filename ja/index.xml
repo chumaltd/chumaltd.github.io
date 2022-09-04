@@ -6,7 +6,16 @@
     <description>Recent content in Jas on civilis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 05 Aug 2022 00:58:56 +0000</lastBuildDate><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Sep 2022 06:51:22 +0000</lastBuildDate><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>フェイク・テクノロジー</title>
+      <link>https://chumaltd.github.io/ja/fake-technology/</link>
+      <pubDate>Sun, 04 Sep 2022 06:51:22 +0000</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/fake-technology/</guid>
+      <description>ひと月近くかけて、著名ライブラリのReact.jsを除去する実装を継続し、ようやく完了した。 今年の夏</description>
+    </item>
+    
     <item>
       <title>文明の芽胞</title>
       <link>https://chumaltd.github.io/ja/civilization-spore/</link>
