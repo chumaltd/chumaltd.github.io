@@ -49,6 +49,7 @@ main { z-index: 0 }
 	margin: auto; text-align: center;
 	font-size: .8em;
 	color: #888;
+  font-family: 'Cinzel Decorative','Lato','Marcellus',"Hiragino Sans","BIZ UDPGothic",sans-serif;
 }
 .ja .idx {
 	font-weight: 700;
@@ -63,6 +64,9 @@ main.no-nav {
 	margin: auto;
 }
 #footer_logo { max-width: 200px }
+
+.inscription { font-family: 'Cinzel Decorative',"Hiragino Sans","BIZ UDPGothic",sans-serif; font-weight: 700 }
+.humanist { font-family: 'Marcellus','Lato',"Hiragino Sans","BIZ UDPGothic",sans-serif; font-weight: 500, letter-spacing: .1em }
 
 @media print {
   :root {
@@ -92,6 +96,8 @@ main.no-nav {
 	  color: var(--lt-main-font-color);
   }
   #l-drawer { background: #fff }
+  #site-header { --logo-color: white }
+  footer { --logo-color: #555 }
 }
 
 @media screen {
@@ -103,6 +109,8 @@ main.no-nav {
         --navbar-bg: var(--bg-1dp);
         --primary-color: var(--dk-surface);
         --semi-transparent-bg: rgba(30,30,30,.6);
+        --button-color: #000;
+        --button-background: #ddeeff;
   }
   body#o {
 	background-color: var(--bg-2dp);
@@ -165,8 +173,8 @@ article #related { margin-top: 4.5em; margin-bottom: 1em }
     padding: 1.2em .5em;
     border-bottom: dotted 1px var(--main-font-color);
 }
-#o.serif h1, #o.serif h2, #o.serif h3, #o.serif h4, #o.serif h5 {
-	font-family: 'Lora','Noto Serif JP','Hiragino Sans',YuGothic,serif;
+.serif h1, .serif h2, .serif h3, .serif h4, .serif h5 {
+	  font-family: 'Lora','Noto Serif JP','Hiragino Mincho ProN',"BIZ UDPMincho",serif;
 	font-weight: 700;
 }
 
