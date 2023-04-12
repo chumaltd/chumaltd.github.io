@@ -42,10 +42,9 @@
 </header>
 <div>
 <nav class="container" style="overflow: hidden">
-  <div class="columns">
-    <div class="column is-one-quarter is-hidden-mobile">
-    </div>
-    <div class="column is-three-quarters p-3">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
         <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
 <ul>
   <li class="breadcrumb-item"><a href="/">HOME</a></li>
@@ -66,18 +65,17 @@
 <div class="container coverart" style="
       
       ">
-<main class="container section">
-  <div class="columns layered">
-    <div class="column is-one-quarter is-hidden-mobile">
-    </div>
-    <div class="column is-three-quarters">
-        <h1 id="pagetitle" class="h2 idx py-5 mb-4">
+<main class="container">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
           オブジェクト階層の沼
         </h1>
     </div>
   </div>
-  <div class="columns">
-    <div class="column is-one-quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
         <div class="header"><i class="material-icons">toc</i>&nbsp;オブジェクト階層の沼</div>
         <nav id="TableOfContents">
   <ul>
@@ -86,8 +84,8 @@
   </ul>
 </nav>
       </aside>
-    </div>
-    <div id="content" class="column is-three-quarters">
+    </nav>
+    <div id="content" class="three-quarter">
       <article>
         <p>ソフトウェア開発のうち、妙手がなく、とにかく生産性が落ちる分野の1つが、階層の深いオブジェクトの操作だ。<br>
 データの集合は、主に配列と連想配列(Rubyではハッシュ、Javascriptではオブジェクト)がある。配列は同じデータが並んでいるもので、連想配列はIDなどのキーに対応するデータを持つ構造になっている。</p>
@@ -128,6 +126,14 @@
               <h4 id="related" class="idx"></h4>
               
               
+<a href="/ja/sound-quality/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/sound-quality/">サウンドの品質</div>
+            <div class="f5">デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。 音楽については、……</div>
+	</div>
+</a>
 <a href="/ja/tacit-dimension/" class="compbox bordered py-2">
         <picture>
         </picture>
@@ -141,7 +147,7 @@
         </picture>
         <div>
             <div class="h3 idx mb-2" href="/ja/aurelius-mediations/">マルクス・アウレリウス『自省録』</div>
-            <div class="f5">ローマ皇帝マルクス・アウレリウスが長年にわたり書きつづった著作。 「皇帝としてどのように役割を果たすべ……</div>
+            <div class="f5">ローマ皇帝 マルクス・アウレリウスが長年にわたり書きつづった著作。 「皇帝としてどのように役割を果たすべ……</div>
 	</div>
 </a>
 <a href="/ja/fake-technology/" class="compbox bordered py-2">
@@ -158,14 +164,6 @@
         <div>
             <div class="h3 idx mb-2" href="/ja/civilization-spore/">文明の芽胞</div>
             <div class="f5">書かなければ消滅するメカニズムでは、サバイバルの必要水準が想像以上に高いこと、知的創造をクリアするに……</div>
-	</div>
-</a>
-<a href="/ja/sustained-by-description/" class="compbox bordered py-2">
-        <picture>
-        </picture>
-        <div>
-            <div class="h3 idx mb-2" href="/ja/sustained-by-description/">書かなければ消滅するメカニズム</div>
-            <div class="f5">「書かない組織は必ず衰退する」という共通の特徴を見て来ている。書くという行動には拒絶感があり、それが……</div>
 	</div>
 </a>
 

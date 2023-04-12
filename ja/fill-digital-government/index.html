@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/ja/fill-digital-government/" />
 <meta property="og:title" content="電子政府が埋めるべき穴" />
-<meta property="og:description" content="先ほど、協会けんぽ 保険料額表変換ツールという極めてローカルなツールをGPLライセンスで公開した。 じつ" />
+<meta property="og:description" content="先ほど、 協会けんぽ 保険料額表変換ツールという極めてローカルなツールをGPLライセンスで公開した。 じつ" />
 <meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
 <meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
 <link rel="canonical" href=https://chumaltd.github.io/ja/fill-digital-government/ />
@@ -42,10 +42,9 @@
 </header>
 <div>
 <nav class="container" style="overflow: hidden">
-  <div class="columns">
-    <div class="column is-one-quarter is-hidden-mobile">
-    </div>
-    <div class="column is-three-quarters p-3">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
         <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
 <ul>
   <li class="breadcrumb-item"><a href="/">HOME</a></li>
@@ -66,18 +65,17 @@
 <div class="container coverart" style="
       
       ">
-<main class="container section">
-  <div class="columns layered">
-    <div class="column is-one-quarter is-hidden-mobile">
-    </div>
-    <div class="column is-three-quarters">
-        <h1 id="pagetitle" class="h2 idx py-5 mb-4">
+<main class="container">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
           電子政府が埋めるべき穴
         </h1>
     </div>
   </div>
-  <div class="columns">
-    <div class="column is-one-quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
         <div class="header"><i class="material-icons">toc</i>&nbsp;電子政府が埋めるべき穴</div>
         <nav id="TableOfContents">
   <ul>
@@ -85,10 +83,11 @@
   </ul>
 </nav>
       </aside>
-    </div>
-    <div id="content" class="column is-three-quarters">
+    </nav>
+    <div id="content" class="three-quarter">
       <article>
-        <p>先ほど、<a href="https://github.com/chumaltd/jhia-fee-table">協会けんぽ 保険料額表変換ツール</a>という極めてローカルなツールをGPLライセンスで公開した。<br>
+        <p>先ほど、
+<a href="https://github.com/chumaltd/jhia-fee-table">協会けんぽ 保険料額表変換ツール</a>という極めてローカルなツールをGPLライセンスで公開した。<br>
 じつは僕が必要としているのは、東京のごく一部のテーブルだけ。それが配布データがExcelにパックされてしまっている都合上、ツール変換せざるを得ず、けっきょく47都道府県分できてしまうので、オープンソースで行こう、と考えた。</p>
 <p>ローカルと言えども協会けんぽは「3,850万人の加入者、200万事業所からなる」最大勢力で、健康保険加入は義務だから、これは電子政府の一角と言える。<br>
 日本の電子政府にはExcelがたくさんあり、プログラムで読み込めない。今回作ったツールも、ExcelをCSVに変換したうえでさらに変換している。</p>
@@ -101,7 +100,8 @@ SDKがあるということは、そのデータがどのように利用され�
 <h2 id="リファレンス実装の必要性">リファレンス実装の必要性</h2>
 <p>最終的な目的としては、税金や保険料は手間をかけずに自動徴収するツールを政府が無償提供しなくてはならないと思う。<br>
 このツールのテーマである給与計算について言えば、本来は給与の総額さえ定まれば、所得税も健康保険料も年金保険料もすべて導出できるものだ。</p>
-<p>政策論になるが、僕が大学の税法の講義で習ったのは、徴税効率がもっとも高いのは<a href="https://ja.wikipedia.org/wiki/%E4%BA%BA%E9%A0%AD%E7%A8%8E">人頭税</a>ということだ。<br>
+<p>政策論になるが、僕が大学の税法の講義で習ったのは、徴税効率がもっとも高いのは
+<a href="https://ja.wikipedia.org/wiki/%E4%BA%BA%E9%A0%AD%E7%A8%8E">人頭税</a>ということだ。<br>
 今そうなっていないのは、言い訳も含めて理由はある。ただ、徴収にかかる事務コストは最終的に納税者の負担になるから、比較的純度の高い悪事ととらえるべきだろう。<br>
 仕事のための仕事は撲滅すべきだし、この先日本にはどんどん余力がなくなっていく。</p>
 <p>やるべきことができていない点についても色々考えたのだが、結論としてできる人がいないのだろう。<br>
@@ -115,6 +115,14 @@ SDKがあるということは、そのデータがどのように利用され�
               <h4 id="related" class="idx"></h4>
               
               
+<a href="/ja/sound-quality/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/sound-quality/">サウンドの品質</div>
+            <div class="f5">デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。 音楽については、……</div>
+	</div>
+</a>
 <a href="/ja/tacit-dimension/" class="compbox bordered py-2">
         <picture>
         </picture>
@@ -128,7 +136,7 @@ SDKがあるということは、そのデータがどのように利用され�
         </picture>
         <div>
             <div class="h3 idx mb-2" href="/ja/aurelius-mediations/">マルクス・アウレリウス『自省録』</div>
-            <div class="f5">ローマ皇帝マルクス・アウレリウスが長年にわたり書きつづった著作。 「皇帝としてどのように役割を果たすべ……</div>
+            <div class="f5">ローマ皇帝 マルクス・アウレリウスが長年にわたり書きつづった著作。 「皇帝としてどのように役割を果たすべ……</div>
 	</div>
 </a>
 <a href="/ja/fake-technology/" class="compbox bordered py-2">
@@ -145,14 +153,6 @@ SDKがあるということは、そのデータがどのように利用され�
         <div>
             <div class="h3 idx mb-2" href="/ja/civilization-spore/">文明の芽胞</div>
             <div class="f5">書かなければ消滅するメカニズムでは、サバイバルの必要水準が想像以上に高いこと、知的創造をクリアするに……</div>
-	</div>
-</a>
-<a href="/ja/sustained-by-description/" class="compbox bordered py-2">
-        <picture>
-        </picture>
-        <div>
-            <div class="h3 idx mb-2" href="/ja/sustained-by-description/">書かなければ消滅するメカニズム</div>
-            <div class="f5">「書かない組織は必ず衰退する」という共通の特徴を見て来ている。書くという行動には拒絶感があり、それが……</div>
 	</div>
 </a>
 

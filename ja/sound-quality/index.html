@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>サウンドの品質 | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/sound-quality/" />
+<meta property="og:title" content="サウンドの品質" />
+<meta property="og:description" content="デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。 音楽については、" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/sound-quality/ />
+
+    </head>
+    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer></cm-drawer>
+    <a href='/' style="height: 2.5rem">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li class="breadcrumb-item"><a href="/">HOME</a></li>
+  <li class="breadcrumb-item"><a href="/ja/">Jas</a></li>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;サウンドの品質</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/ja/","name": "Jas" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/sound-quality/","name": "サウンドの品質" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+      
+      ">
+<main class="container">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
+          サウンドの品質
+        </h1>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;サウンドの品質</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#聞こえているのかいないのか">聞こえているのかいないのか</a>
+      <ul>
+        <li><a href="#暗黙に知覚している可能性">暗黙に知覚している可能性</a></li>
+      </ul>
+    </li>
+    <li><a href="#サウンド聴覚ではないだろう">「サウンド＝聴覚」ではないだろう</a></li>
+    <li><a href="#高ビットレートの歪み">高ビットレートの歪み</a></li>
+    <li><a href="#chatgptの見解">ChatGPTの見解</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。<br>
+音楽については、最初のデジタルメディアがCD（コンパクトディスク）だったため、CD比のハイレゾ（high resolution）移行が一部で始まっている現状だ。</p>
+<p>デジタル音源のビットレートと品質は、CDが16bit/44.1kHzで登場した際に収録を可視聴域にデフォルメしたため、レコード比で品質が悪い、典型的には「乾いた音」と言われた。</p>
+<p>メディアの容量制約は、CD登場から40年経過して物理媒体が流通の主役でなくなったことで解放されつつある。<br>
+目的に合わせてビットレート品質を選べる時代になった。</p>
+<p>それにつれて、レコードからCDの議論と逆方向の品質評価がハイレゾ・フォーマットの関心となっている。<br>
+乾いた音の裏返しで「艶のある音」と書かれるのは、雑誌が一言で何かを言いたかったための表現だろう。</p>
+<p>音楽に一切関心がないため、消費者の立場では何であれ気にしないが、エンジニアリングの際の指針は必要になる。</p>
+<h2 id="聞こえているのかいないのか">聞こえているのかいないのか</h2>
+<p>CD音質とハイレゾ音源・レコードの比較を単純化すると、超音波など可視聴域外のデータの有無が主な違いと言える。<br>
+１つの素朴な結論は「聞こえていない音だからサウンド品質には影響がない」というCDの立場だ。</p>
+<p>この立場に立つとハイレゾ化により品質が上がることはない。</p>
+<p>エンジニアリングでは方式そのものの違いに加えて、現実の構成を考慮する必要がある。<br>
+再生環境がハイレゾ部分の超音波を演奏する機能がないことは多く、聞こえるか否か以前に届いていない、そのため品質は上がっていないというケースは多いだろう。</p>
+<p>現時点の音楽再生の多くの場面では、ハイレゾは主機能ではなくマイナーにとどまるのは間違いないだろう。</p>
+<h3 id="暗黙に知覚している可能性">暗黙に知覚している可能性</h3>
+<p>超音波を聞き分けられないことを前提しても、メディアはその情報を捨てずに持っておいた方が良い理由はなお残る。<br>
+ポランニーの主張した
+<a href="/ja/tacit-dimension/">暗黙知</a>があるからだ。</p>
+<p>聞き分けられるか否か、というのは意識による知覚の問題で、これは聞き分けられないという結論に従って良い。<br>
+一方で、意識というものが知覚の一部に過ぎないことは科学実験から分かっている。自分と思っている主観的対象は自分という生体の全てではない。</p>
+<p>聞き分けられないが聞こえている、という意識外の知覚経路については現状何も明らかになっておらず、サウンド体験を底上げする可能性はある。</p>
+<p>ただし既述のとおり再生環境の制約はあり、多くの機器はその違いを演奏できない。<br>
+超音波再生環境を構築するか、または未来に期待するための先行的な準備となる。</p>
+<h2 id="サウンド聴覚ではないだろう">「サウンド＝聴覚」ではないだろう</h2>
+<p>このようにハイレゾの聴覚経路があるとした場合、おもに暗黙知経路と考えられる。<br>
+しかしその点を考慮に入れるのであれば、聴覚以外の経路である「共感覚」も考慮しないとバランスを欠く。</p>
+<p>共感覚は１つの刺激に対して複数の感覚が生じる知覚現象で、幻肢のように失った器官にも感覚がある例で知られる。<br>
+音楽の例で言えば、モーツァルトの味を味覚として感じうるという話になる。</p>
+<p>共感覚は個々人により異なる現象であるため基本的にエンジニアリングの対象にはなりにくい。</p>
+<p>ただ、各演奏・音楽シーンの視覚刺激は、多くの人にとって再現性の高い共感覚の構成記憶となる可能性が高いように思う。<br>
+視覚神経は脳との配線がもっとも多い。</p>
+<p>結論的に言うなら、ライブや動画などのビジュアル体験の方がハイレゾによる音波再現の忠実さを上回るだろう、ということだ。</p>
+<p>サウンド品質の議論は、収録の際の音場に忠実であることを目標としてきたが、それだけで知覚の構造を100%満たすわけではない。<br>
+その技術に求めていたものがライブ感なのであれば、ライブに行ったことがあるか否かの方がより知覚に影響を与えるだろうし、その再現にハイレゾは必要ないだろう。</p>
+<p>もっと極端なことを言えば、視覚記憶がデフォルメされることを考慮に入れて、画質の冴えない演奏ビデオでさえ、ハイレゾ音源を上回るサウンド品質を提供することがあるだろう。これは実験して検証できるはずだ。</p>
+<p>ファミリーコンピュータが広めたチップチューンの知覚品質も共感覚の実験対象になり得る。</p>
+<h2 id="高ビットレートの歪み">高ビットレートの歪み</h2>
+<p>CDにサンプリングの技術制約があったことにより、ハイレゾという相対的な品質概念が生じた。<br>
+かつてCDもハイレゾを夢見たことがあり、20bitリマスターといった派生形が登場している。</p>
+<p>これは編集過程で高ビットレートのデータとして扱うから高品質というロジックの商品だが、あくまで最終的な出荷フォーマットは16bit/44.1kHzだ。</p>
+<p>出荷時の波形に高ビットフォーマット時の形状を反映する点にこだわりがある。ただ、当然だが超音波部分の情報はカットされる。<br>
+編集を受ける部分は超音波に近い部分、つまり意識は聞き分けられない周波数帯の変形となる。</p>
+<p>いずれにせよ聞こえない部分の努力が主であるため、毒にも薬にもなりにくい話ではある。しかし、音場の忠実さを求める立場からは二重に歪む操作であり技術的には微細に劣化しているように見える。</p>
+<p>おそらく売り手の観点からは、この相当苦しいフォーマットを出した当時から、高ビットレートの提供価値の限界をすでに一度結論づけていたのではないかと思う。</p>
+<p>ここまでlossyな圧縮フォーマット各種について省略してきたが、高ビットレートの違いがマイナーなのであれば一定の低ビットレートも同様に聞き分けられない違いの範疇と考えるのが自然だろう。<br>
+DA変換後のアナログ波形は慣性の都合上、ほぼ時間的に連続なはずであり、失われていると思っているものは演奏上可能な形で復元されていると思える。</p>
+<p>もはやオーディオフォーマットではなくなるものの、ビットレートに余裕ができるなら、その帯域に絵を載せた方がサウンド品質は上がると思う。</p>
+<h2 id="chatgptの見解">ChatGPTの見解</h2>
+<p>ハイレゾについて、ChatGPTのサマリーを求めてみた。以下のとおりではあるが、結論として背景の混乱ぶりを伝えるのみだった。<br>
+音響心理の分野で聴覚以外のサウンド品質に着目した研究が存在しないようにも見える。</p>
+<p>What is your conslusive impression about whether High-resolution audio improves total sound experience quality or not. I want to also have the reason why.</p>
+<blockquote>
+<p>As an AI language model, I do not have personal impressions or beliefs. However, I can provide information and insights about high-resolution audio and its impact on sound quality.</p>
+<p>High-resolution audio refers to digital audio formats that offer higher sampling rates and greater bit depth than CD-quality audio (44.1 kHz/16-bit). Proponents of high-resolution audio argue that it can provide a more detailed and nuanced sound experience that is closer to the original recording. However, there is ongoing debate among experts about whether the human ear can actually perceive the difference between high-resolution audio and CD-quality audio.</p>
+<p>Some studies have shown that the human ear may not be able to distinguish between high-resolution and CD-quality audio in blind listening tests. Additionally, factors such as the quality of the original recording, the mastering process, and the playback equipment can all influence the overall sound experience, regardless of the format of the audio.</p>
+<p>That being said, some listeners may still prefer high-resolution audio for various reasons, such as the perception of higher quality or simply the enjoyment of the format. Ultimately, the impact of high-resolution audio on sound quality is subjective and can vary based on individual preferences and listening conditions.</p>
+</blockquote>
+<p>It&rsquo;s not conslusive. I&rsquo;d like to know whether good or not good. And what is the critical deciision point?</p>
+<blockquote>
+<p>As an AI language model, I do not have the ability to make subjective judgments or provide a definitive answer as to whether high-resolution audio is &ldquo;good&rdquo; or &ldquo;not good.&rdquo; The impact of high-resolution audio on sound quality is a topic of ongoing debate among experts, and the decision to use high-resolution audio ultimately depends on individual preferences and needs.</p>
+<p>However, there are a few critical factors to consider when deciding whether to use high-resolution audio. One important factor is the quality of the original recording. High-resolution audio is only beneficial if the original recording was made at a high enough resolution to begin with. If the original recording was made at a lower resolution, upsampling it to high-resolution audio may not result in a noticeable improvement in sound quality.</p>
+<p>Another important factor to consider is the quality of the playback equipment. High-resolution audio requires playback equipment that is capable of reproducing the higher sampling rates and bit depths of the format. If the playback equipment is not capable of handling high-resolution audio, there may not be a noticeable improvement in sound quality.</p>
+<p>Ultimately, the decision to use high-resolution audio should be based on individual preferences and needs, taking into account factors such as the quality of the original recording, the playback equipment, and personal listening preferences.</p>
+</blockquote>
+<p>Give the URL of that study on sound quality with blind test.</p>
+<blockquote>
+<p>There have been multiple studies conducted on the ability of listeners to distinguish between high-resolution and CD-quality audio in blind listening tests. Here are some examples of studies that have been published:</p>
+<p>A study published in the Journal of the Audio Engineering Society in 2016 found that listeners could not reliably distinguish between high-resolution audio and CD-quality audio in a double-blind test. The study can be accessed at the following URL: 
+<a href="https://www.aes.org/e-lib/browse.cfm?elib=18439">https://www.aes.org/e-lib/browse.cfm?elib=18439</a></p>
+<p>A study published in the Journal of the Audio Engineering Society in 2019 found that listeners could not reliably distinguish between high-resolution audio and CD-quality audio in a double-blind test, even when using high-end equipment. The study can be accessed at the following URL: 
+<a href="https://www.aes.org/e-lib/browse.cfm?elib=20467">https://www.aes.org/e-lib/browse.cfm?elib=20467</a></p>
+<p>It&rsquo;s worth noting that not all studies have reached the same conclusions, and the debate on this topic is ongoing.</p>
+</blockquote>
+<p>Give the URL of the study that proposed High-resolution audio is better format.</p>
+<blockquote>
+<p>While there have been studies that have suggested that high-resolution audio may offer benefits over CD-quality audio, it&rsquo;s worth noting that the debate on this topic is ongoing, and there is not a clear consensus among experts. Here are a few studies that have suggested that high-resolution audio may offer benefits:</p>
+<p>A study published in the Journal of the Audio Engineering Society in 2012 found that listeners preferred high-resolution audio over CD-quality audio in a double-blind test. The study can be accessed at the following URL: 
+<a href="https://www.aes.org/e-lib/browse.cfm?elib=16385">https://www.aes.org/e-lib/browse.cfm?elib=16385</a></p>
+<p>A study published in the Journal of the Audio Engineering Society in 2014 found that high-resolution audio offered greater dynamic range and lower distortion than CD-quality audio. The study can be accessed at the following URL: 
+<a href="https://www.aes.org/e-lib/browse.cfm?elib=17239">https://www.aes.org/e-lib/browse.cfm?elib=17239</a></p>
+<p>A study published in the Journal of the Audio Engineering Society in 2015 found that high-resolution audio offered improved spatial resolution and timbre compared to CD-quality audio. The study can be accessed at the following URL: 
+<a href="https://www.aes.org/e-lib/browse.cfm?elib=17845">https://www.aes.org/e-lib/browse.cfm?elib=17845</a></p>
+<p>It&rsquo;s worth noting that these studies are just a few examples, and the debate on this topic is ongoing. The decision to use high-resolution audio should be based on individual preferences and needs, taking into account factors such as the quality of the original recording, the playback equipment, and personal listening preferences.</p>
+</blockquote>
+<p>How much the additional price for a High-resolution audio content should be, having iPhone 14.</p>
+<blockquote>
+<p>The price of high-resolution audio content can vary depending on factors such as the source of the content, the format of the content, and the specific platform or service offering the content. In general, high-resolution audio content may be priced higher than CD-quality audio content due to the higher costs associated with production and distribution.</p>
+<p>Regarding the iPhone 14, it&rsquo;s worth noting that as an AI language model, I do not have information on the pricing or availability of specific products that have not been announced or released yet. The iPhone 14 has not been announced, and thus, there is no official information on its pricing or specifications.</p>
+<p>However, it&rsquo;s worth noting that the iPhone is capable of playing high-resolution audio content, and there are a number of platforms and services that offer high-resolution audio content for purchase or streaming. The pricing for high-resolution audio content on these platforms can vary, but it is typically higher than the price of CD-quality audio content. It&rsquo;s up to individual users to determine whether the benefits of high-resolution audio justify the additional cost.</p>
+</blockquote>
+
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/sound-quality/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/sound-quality/">サウンドの品質</div>
+            <div class="f5">デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。 音楽については、……</div>
+	</div>
+</a>
+<a href="/ja/tacit-dimension/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/tacit-dimension/">『暗黙知の次元』</div>
+            <div class="f5">マイケル・ポランニー『暗黙知の次元』は、「知」の本来のパラダイムに光を当てた初期的な主張と言える。 2……</div>
+	</div>
+</a>
+<a href="/ja/aurelius-mediations/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/aurelius-mediations/">マルクス・アウレリウス『自省録』</div>
+            <div class="f5">ローマ皇帝 マルクス・アウレリウスが長年にわたり書きつづった著作。 「皇帝としてどのように役割を果たすべ……</div>
+	</div>
+</a>
+<a href="/ja/fake-technology/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/fake-technology/">フェイク・テクノロジー</div>
+            <div class="f5">ひと月近くかけて、著名ライブラリのReact.jsを除去する実装を継続し、ようやく完了した。 今年の夏……</div>
+	</div>
+</a>
+<a href="/ja/civilization-spore/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/civilization-spore/">文明の芽胞</div>
+            <div class="f5">書かなければ消滅するメカニズムでは、サバイバルの必要水準が想像以上に高いこと、知的創造をクリアするに……</div>
+	</div>
+</a>
+
+          </div></article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block"><div class="container">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>

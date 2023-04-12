@@ -1,5 +1,6 @@
 :root {
-		--dk-main-font-color: rgba(255,255,255,var(--dk-alpha-main));
+		--dk-main-font-color: rgb(220,220,220);
+	--dk-emphasis-font: rgb(245,245,245);
 	--dk-sub-font: rgba(255,255,255,var(--dk-alpha-sub));
 	--dk-disable-font: rgba(255,255,255,var(--dk-alpha-disable));
 	--dk-surface: rgb(244, 143, 177);
@@ -32,6 +33,7 @@
 	--lt-primary: rgb(150, 79, 76);
 	--lt-bg-article: white;
 	--lt-main-font-color: #333;
+	--lt-emphasis-font: rgb(5,5,5);
 	--lt-sub-font: #888;
 	--lt-link: rgb(255, 255, 255);
 
@@ -41,9 +43,14 @@
 header { z-index: 5 }
 main { z-index: 0 }
 #o .coverart {
-	padding-top: 300px;
+	padding: 0 1.5rem;
 	background-size: contain;
 	background-repeat: no-repeat;
+}
+#pagetitle {
+    color: white;
+    text-shadow: 2px 2px #555;
+    background: linear-gradient(60deg, rgba(70,70,70,0.4), rgba(10,10,10,.6), rgba(50,50,50,0.1));
 }
 .copyright {
 	margin: auto; text-align: center;
@@ -71,6 +78,7 @@ main.no-nav {
 @media print {
   :root {
         --main-font-color: var(--lt-main-font-color);
+        --emphasis-font: var(--lt-emphasis-font);
         --sub-font: var(--lt-sub-font);
         --link-font: var(--lt-link);
         --float-ui-bg: #fff;
@@ -85,8 +93,10 @@ main.no-nav {
 	opacity: .95;
   }
   #o #content, #o article>h2, #o header#genre {
-	color: var(--lt-main-font-color);
 	background: var(--lt-bg-article);
+  }
+  .o article>h2::before {
+    color: var(--lt-bg-article);
   }
   #o .pages-label {
 	border-bottom: solid 1px #ccc;
@@ -103,6 +113,7 @@ main.no-nav {
 @media screen {
   :root {
         --main-font-color: var(--dk-main-font-color);
+        --emphasis-font: var(--dk-emphasis-font);
         --sub-font: var(--dk-sub-font);
         --link-font: var(--dk-link);
         --float-ui-bg: var(--bg-6dp);
@@ -122,8 +133,10 @@ main.no-nav {
   #o header, #o .footer { background: var(--bg-1dp); }
   .gray-on-dark, #o #content img { filter: grayscale(55%); }
   #o #content, #o article>h2, #o header#genre {
-	color: rgba(255,255,255,var(--dk-alpha-main));
 	background: var(--bg-4dp-nt);
+  }
+  .o article>h2::before {
+    color: var(--bg-4dp-nt);
   }
   #o .pages-label {
 	border-bottom: solid 1px #444;
@@ -140,18 +153,43 @@ main.no-nav {
   }
 }
 
-.o .toc { font-size: 0.9em }
-.o .toc li { padding-top: 0.6em }
+.o .toc { font-size: .9em; margin: .5em }
+.o .toc li { padding-top: .6em }
+.o .toc li>ul { padding-left: .8em; font-size: .9em }
+#o article>h2, #o article>h3 {
+	color: var(--emphasis-font);
+}
+#o #content, #o header#genre {
+	color: var(--main-font-color);
+}
 .o article {
-	padding: 2.5em;
 	letter-spacing: .05rem
 }
-.o article>p { line-height: 2.2em }
-.o article>p, .o article>h2 { padding: .5rem; margin: 0 }
-.o article>h2 { padding: .8rem .5rem;
-                margin-top: 2em; margin-bottom: 1.2em;
+.o article>* { line-height: 2.2em; margin-left: 2.5em; margin-right: 2.5em }
+.o article>div.reveal { margin-left: 0; margin-right: 0 }
+.o article>p { padding: .5rem }
+.o article>h2 { padding: .8rem 0;
+                margin-top: 1.2em;
+                margin-left: 0; margin-right: 0;
+		font-size: 22px;
                 letter-spacing: 2px }
-.o article>h3 { padding: .5rem; margin-top: 1.5em; }
+.o article>h2::before, .o article>h3::before {
+  content: "§";
+  display: inline-block;
+  margin-right: 14px;
+}
+.o article>h2::before {
+  background: var(--primary-color, --main-font-color, gray);
+  opacity: .6;
+  padding: 3px 0;
+}
+.o article>h3::before {
+  color: var(--primary-color, --main-font-color, gray);
+  border-right: solid 1px var(--primary-color, --main-font-color, gray);
+  opacity: .6;
+  padding: 0 3px;
+}
+.o article>h3 { font-size: 18px; padding: 0; margin-top: 1.5em; margin-left: 0; }
 article #related { margin-top: 4.5em; margin-bottom: 1em }
 .o article ul li {
 	  list-style-type: disc; padding: .6rem 0;
@@ -164,7 +202,8 @@ article #related { margin-top: 4.5em; margin-bottom: 1em }
 }
 .o article>ul {
     border-top: dotted 1px var(--main-font-color);
-    margin: 1.5em 0;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
     padding: 0;
 }
 .o article>ul>li {
@@ -187,18 +226,23 @@ article>h2, header#genre {
 	z-index: 10;
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:543px) {
 	body.o { font-size: 14px }
-	.o main.section { padding: 3rem 0.75rem }
-	.o h1#pagetitle { font-size: 1.8em }
-	.o article { padding: 0; }
-	.o article>h2 { font-size: 1.1em; padding: 1.3rem .5rem; }
+	.o main.section { padding: 3rem .75rem }
+	.o #pagetitle h1 { font-size: 1.8em }
+	.o article>* { margin: .5em; }
+	.o article>h2 { font-size: 18px; padding: 1.3rem 0; }
+	.o article>h3 { font-size: 16px }
 	.o article>p {
 		padding: .5rem;
 		margin: 0;
 		letter-spacing: .09rem;
 	}
-	#o .coverart { padding-top: 120px; }
+	#o .coverart { padding: 0; }
+}
+
+@media screen and (max-width:767px) {
+        .o article>pre { margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0 }
 }
 
 .pages-label {

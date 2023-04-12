@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/ja/public-libraries/" />
 <meta property="og:title" content="コードであるべき法律" />
-<meta property="og:description" content="必要上、Rubyで税額計算するライブラリを書いている。また、オープンソースで配布している。 まずは年末" />
+<meta property="og:description" content="必要上、Rubyで税額計算するライブラリを書いている。また、オープンソースで配布している。 まずは 年末" />
 <meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
 <meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
 <link rel="canonical" href=https://chumaltd.github.io/ja/public-libraries/ />
@@ -42,10 +42,9 @@
 </header>
 <div>
 <nav class="container" style="overflow: hidden">
-  <div class="columns">
-    <div class="column is-one-quarter is-hidden-mobile">
-    </div>
-    <div class="column is-three-quarters p-3">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
         <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
 <ul>
   <li class="breadcrumb-item"><a href="/">HOME</a></li>
@@ -66,18 +65,17 @@
 <div class="container coverart" style="
       
       ">
-<main class="container section">
-  <div class="columns layered">
-    <div class="column is-one-quarter is-hidden-mobile">
-    </div>
-    <div class="column is-three-quarters">
-        <h1 id="pagetitle" class="h2 idx py-5 mb-4">
+<main class="container">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
           コードであるべき法律
         </h1>
     </div>
   </div>
-  <div class="columns">
-    <div class="column is-one-quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
         <div class="header"><i class="material-icons">toc</i>&nbsp;コードであるべき法律</div>
         <nav id="TableOfContents">
   <ul>
@@ -87,15 +85,17 @@
   </ul>
 </nav>
       </aside>
-    </div>
-    <div id="content" class="column is-three-quarters">
+    </nav>
+    <div id="content" class="three-quarter">
       <article>
         <p>必要上、Rubyで税額計算するライブラリを書いている。また、オープンソースで配布している。<br>
-まずは<a href="https://github.com/chumaltd/jp-national-tax/blob/master/lib/jp_national_tax/income_tax/income_nenmatsu_2020.rb">年末調整のコード</a>の例を見て欲しい。</p>
+まずは
+<a href="https://github.com/chumaltd/jp-national-tax/blob/master/lib/jp_national_tax/income_tax/income_nenmatsu_2020.rb">年末調整のコード</a>の例を見て欲しい。</p>
 <p>初見で気づいて欲しいポイントとして、かなり日本語で書いてある。<br>
 これは実際に動作するし、すでに使っている。いま年次の給与支払報告書を提出したところだ。</p>
 <p>論旨を明確にすると、このライブラリが国税庁とユーザーコミュニティ(普通の人々)から提供される社会にならなくてはならないと考えている。<br>
-現状は、<a href="https://www.nta.go.jp/publication/pamph/gensen/nencho2020/pdf/82-83.pdf">パンフレット</a>として提供され、毎年紙で送られてくる。<br>
+現状は、
+<a href="https://www.nta.go.jp/publication/pamph/gensen/nencho2020/pdf/82-83.pdf">パンフレット</a>として提供され、毎年紙で送られてくる。<br>
 なお、役所の公式情報はどんどん消えていくため、いずれリンク切れになるだろう。</p>
 <h2 id="実現のハードルなど存在しない">実現のハードルなど存在しない</h2>
 <p>コードはもちろんプログラミング言語であり、難しいスキルと捉えられていることが多い。<br>
@@ -111,7 +111,8 @@
 <p>一点、健全な市民として意識しておくべきことは、全自動になっていない作業はすべて徴税コストであり、市民のインフラのため使える税金が減っているということだ。まきあげられつつバラまいている。<br>
 日本は歴史に残るほどに年々国債を積みあげていっているのだから、そんな徒労は本来許されない。</p>
 <p>また、多少事情の異なるムダとして、計算ロジックのデザインが悪い。<br>
-実は、年末調整の計算のうち、ひとまず実装をあきらめた部分がある。分かりやすいのは、<a href="https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/gensen/pdf/1648_73_r02.pdf">基礎控除申告書</a>に掲載されている配偶者控除の計算だろう。<br>
+実は、年末調整の計算のうち、ひとまず実装をあきらめた部分がある。分かりやすいのは、
+<a href="https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/gensen/pdf/1648_73_r02.pdf">基礎控除申告書</a>に掲載されている配偶者控除の計算だろう。<br>
 このリンクもいずれ消えてしまうだろうが、年々複雑になって同じフォーマットが登場し続けることだろう。</p>
 <p>配偶者控除は、本人の収入、配偶者の収入、配偶者の年齢という3つの入力値がないと計算できない。<br>
 もはや、このあたりはパンフレットも一切の説明を投げてしまっていて、表から読んでくれということになっている。<br>
@@ -134,6 +135,14 @@
               <h4 id="related" class="idx"></h4>
               
               
+<a href="/ja/sound-quality/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/sound-quality/">サウンドの品質</div>
+            <div class="f5">デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。 音楽については、……</div>
+	</div>
+</a>
 <a href="/ja/tacit-dimension/" class="compbox bordered py-2">
         <picture>
         </picture>
@@ -147,7 +156,7 @@
         </picture>
         <div>
             <div class="h3 idx mb-2" href="/ja/aurelius-mediations/">マルクス・アウレリウス『自省録』</div>
-            <div class="f5">ローマ皇帝マルクス・アウレリウスが長年にわたり書きつづった著作。 「皇帝としてどのように役割を果たすべ……</div>
+            <div class="f5">ローマ皇帝 マルクス・アウレリウスが長年にわたり書きつづった著作。 「皇帝としてどのように役割を果たすべ……</div>
 	</div>
 </a>
 <a href="/ja/fake-technology/" class="compbox bordered py-2">
@@ -164,14 +173,6 @@
         <div>
             <div class="h3 idx mb-2" href="/ja/civilization-spore/">文明の芽胞</div>
             <div class="f5">書かなければ消滅するメカニズムでは、サバイバルの必要水準が想像以上に高いこと、知的創造をクリアするに……</div>
-	</div>
-</a>
-<a href="/ja/sustained-by-description/" class="compbox bordered py-2">
-        <picture>
-        </picture>
-        <div>
-            <div class="h3 idx mb-2" href="/ja/sustained-by-description/">書かなければ消滅するメカニズム</div>
-            <div class="f5">「書かない組織は必ず衰退する」という共通の特徴を見て来ている。書くという行動には拒絶感があり、それが……</div>
 	</div>
 </a>
 
