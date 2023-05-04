@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>クラウド（安いIT）の限界 | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/cloud-limitation/" />
+<meta property="og:title" content="クラウド（安いIT）の限界" />
+<meta property="og:description" content="最近、経営の観点でITを評価するできごとが多く起きている。 チームワーク化を進めるためにはITが重要、" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/cloud-limitation/ />
+
+    </head>
+    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer></cm-drawer>
+    <a href='/' style="height: 2.5rem">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li class="breadcrumb-item"><a href="/">HOME</a></li>
+  <li class="breadcrumb-item"><a href="/ja/">Jas</a></li>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;クラウド（安いIT）の限界</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/ja/","name": "Jas" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/cloud-limitation/","name": "クラウド（安いIT）の限界" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+      
+      ">
+<main class="container">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
+          クラウド（安いIT）の限界
+        </h1>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;クラウド（安いIT）の限界</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安いitの特徴">安いITの特徴</a></li>
+    <li><a href="#気がきかないitが生むビジネス面のネック">気がきかないITが生むビジネス面のネック</a></li>
+    <li><a href="#対策はあるのだが実行不能">対策はあるのだが実行不能</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>最近、経営の観点でITを評価するできごとが多く起きている。</p>
+<p>チームワーク化を進めるためにはITが重要、という点については
+<a href="/ja/sme-requires-it-integration/">以前書いた</a>。</p>
+<p>中小企業の多くがITナシで戦うなか、導入できているだけでもなんぼか良いのは間違いないのだが、導入してみると細かいアラも目についてくる。</p>
+<h2 id="安いitの特徴">安いITの特徴</h2>
+<p>最近は、ASPやSaaSといった「ログインすればすぐ使える」サービスがあるから格安でシステム構築できて良いよね、ということになっている。</p>
+<p>ただ、こういったクラウド的なサービスは、みんなのための最大公約数的なサービスになっていて、だいたい良いのだが、すごく良いわけじゃない傾向が強い。</p>
+<p>だいたいは、RDBMSというデータベースに、編集画面・一覧画面・検索画面が付いている。</p>
+<p>問題は、RDBMSだとデータをひたすら細切れに分割する傾向があるので、項目が膨大になりがちなことだ。</p>
+<p>たとえばネットショップの買い物で、沢山の項目の入力を求められることを想像すると近い。</p>
+<p>住所ひとつとっても、都道府県・市区町村・番地以下・建物名のように4項目くらいに分けて入力しないといけない。</p>
+<p>都道府県など47個しかないのだから「そっちでなんとかしといてくれ」と言いたいが、安いITはこういうところが気がきかない。</p>
+<h2 id="気がきかないitが生むビジネス面のネック">気がきかないITが生むビジネス面のネック</h2>
+<p>ビジネスで取り扱う情報は多い。</p>
+<p>1件あたりのデータ項目も多いし、件数も多い。</p>
+<p>多くのデータを取り扱えることじたいは、データベース価値が高くて良いことなのだが、往々にして人の注意力を越えてしまう。</p>
+<p>その結果、以下のような使いづらい点が出てくる。</p>
+<ul>
+<li>入力項目がたくさんありすぎて、真剣に入力すべき項目がどれなのかが分からなくなる</li>
+<li>一覧画面の表示件数が多すぎて探すのに時間がかかる</li>
+<li>一つひとつの機能ボタン類が小さくて、どうすればやりたいことができるのか分からなくなる</li>
+</ul>
+<p>こうなると、記入漏れなどがけっこう発生する。</p>
+<p>ちゃんと入力して使うことが建前のシステムで入力しきれないのは相当困る。</p>
+<p>たとえば、ある作業が終わったのかどうかを管理するラベルで、「完了」と入力し忘れた場合、未完了の作業が残っているように見えるので、対応しなくてはいけないようなメッセージを持ち始める。</p>
+<p>これだったら紙のチェックリストとハンコの方が良いのではないか、という説も正直否定できないと思う。</p>
+<p>経営的な観点からは、このようなITで失敗できない業務を管理したくない、という評価になる。</p>
+<h2 id="対策はあるのだが実行不能">対策はあるのだが実行不能</h2>
+<p>機能としては足りているのに、膨大な項目に埋没して使えない、という問題には、以下のような対策がある。</p>
+<ul>
+<li>装飾のカスタマイズで、重要な項目を目立たせる</li>
+<li>ワークフローを定義して、作業ごとに必要な項目に絞って表示する</li>
+<li>メッセージ文やダイアログを表示して、作業内容をガイドする</li>
+</ul>
+<p>ただ、実際にいま利用しているサービスですみずみカスタマイズできる内容を調べてみたのだが、こういった調整は一切できなかった。</p>
+<p>この辺りがASP、SaaSの限界なのだろうと思う。</p>
+<p>まぁ格安なりのメリットはとれているので高望みなんだろう。</p>
+<p>やりたいことを全部やろうとすると一気に費用がかさむ。</p>
+<p>当面は使いどころを絞って極力シンプルに使うのが賢いのだと思う。</p>
+<p>この次のステージの格安アプローチは、オープンソースの業務アプリケーションをカスタマイズして使うパターンだろう。</p>
+
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/sound-quality/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/sound-quality/">サウンドの品質</div>
+            <div class="f5">デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。 音楽については、……</div>
+	</div>
+</a>
+<a href="/ja/tacit-dimension/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/tacit-dimension/">『暗黙知の次元』</div>
+            <div class="f5">マイケル・ポランニー『暗黙知の次元』は、「知」の本来のパラダイムに光を当てた初期的な主張と言える。 2……</div>
+	</div>
+</a>
+<a href="/ja/aurelius-mediations/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/aurelius-mediations/">マルクス・アウレリウス『自省録』</div>
+            <div class="f5">ローマ皇帝 マルクス・アウレリウスが長年にわたり書きつづった著作。 「皇帝としてどのように役割を果たすべ……</div>
+	</div>
+</a>
+<a href="/ja/fake-technology/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/fake-technology/">フェイク・テクノロジー</div>
+            <div class="f5">ひと月近くかけて、著名ライブラリのReact.jsを除去する実装を継続し、ようやく完了した。 今年の夏……</div>
+	</div>
+</a>
+<a href="/ja/civilization-spore/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/civilization-spore/">文明の芽胞</div>
+            <div class="f5">書かなければ消滅するメカニズムでは、サバイバルの必要水準が想像以上に高いこと、知的創造をクリアするに……</div>
+	</div>
+</a>
+
+          </div></article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block"><div class="container">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>
