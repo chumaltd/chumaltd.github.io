@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>仮想化技術でなすべきこと | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/virtualization-purpose/" />
+<meta property="og:title" content="仮想化技術でなすべきこと" />
+<meta property="og:description" content="ハードウェアのコモディティ化により、相対的にソフトウェアの寿命が延びている。ハードの寿命が縮んできた" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/virtualization-purpose/ />
+
+    </head>
+    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer></cm-drawer>
+    <a href='/' style="height: 2.5rem">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li class="breadcrumb-item"><a href="/">HOME</a></li>
+  <li class="breadcrumb-item"><a href="/ja/">Jas</a></li>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;仮想化技術でなすべきこと</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/ja/","name": "Jas" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/virtualization-purpose/","name": "仮想化技術でなすべきこと" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+      
+      ">
+<main class="container">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
+          仮想化技術でなすべきこと
+        </h1>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;仮想化技術でなすべきこと</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#フリーズドライのような仮想化テクノロジー">フリーズドライのような仮想化テクノロジー</a></li>
+    <li><a href="#もっと言えばソフトウェアにも中食が欲しい">もっと言えばソフトウェアにも中食が欲しい</a></li>
+    <li><a href="#仮想化技術でなすべきこと">仮想化技術でなすべきこと</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>ハードウェアのコモディティ化により、相対的にソフトウェアの寿命が延びている。ハードの寿命が縮んできた要因としては以下のような理由があるだろう。</p>
+<ul>
+<li>半導体微細化の着実な進歩による、処理スピード上昇</li>
+<li>半導体微細化の着実な進歩による、機能の拡充</li>
+<li>標準規格の普及による、国際分業の進展と最終製品の低コスト化</li>
+<li>最終製品の低価格化による、単体ハードの信頼性低下トレンド</li>
+<li>OS商売のライフサイクルに伴う、ハード更新圧力</li>
+</ul>
+<p>つまり、ハードはより使い捨てに近いパーツとなり、使いたいソフトウェアを別のハードに移行することが身近な問題となった。</p>
+<h2 id="フリーズドライのような仮想化テクノロジー">フリーズドライのような仮想化テクノロジー</h2>
+<p>簡単に言えば、仮想化技術は、ソフトを別のハードに持っていっても何も変更せずに使い続けるための技術だ。</p>
+<p>セットアップの手間を一度だけとれば、ずっとそのまま使えるという点が最大のメリットだろう。</p>
+<p>作る際に瞬時に冷凍したら食べる際に元に戻せるフリーズドライ食品のようなものであるべきだ。</p>
+<h2 id="もっと言えばソフトウェアにも中食が欲しい">もっと言えばソフトウェアにも中食が欲しい</h2>
+<p>フリーズドライできるということは、作る人と食べる人を分けることも可能になるということだ。</p>
+<p>システムベンダーに作ってもらうのが外食だとすると、フリーズドライの仮想化アプライアンスを手に入れて、加熱と仕上げだけユーザー側で行う&quot;中食&quot;文化がソフトウェアにも欲しいと思う。</p>
+<p>アプリケーションに対するニーズは、多彩な選択肢があることと、すぐに使い始められることだろう。</p>
+<h2 id="仮想化技術でなすべきこと">仮想化技術でなすべきこと</h2>
+<p>現時点では、VM（仮想マシン）のアプライアンスは技術的に可能だが、広く普及はしていない。</p>
+<p>VM自体のオーバーヘッド懸念や、多数のハードにインストールする際の効率の悪さ（VMイメージのファイルサイズが大きい）がネックになっているのかもしれない。</p>
+<p>最近はこのようなオーバーヘッドを減らすアプローチとしてコンテナ仮想化も注目されてきている。</p>
+<p>ただ、VMだろうとコンテナだろうと、目指すべきことは設定や管理の手間を極力減らしてどのハードでも使えるようにすることだ。</p>
+<p>ユーザーの視点から見ると、ベースのイメージとして良いものが選べるようになっているか、仮想化技術の運用そのものに追加の手間があまりかからないようになっているか、という点が重要だ。</p>
+
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/sound-quality/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/sound-quality/">サウンドの品質</div>
+            <div class="f5">デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。 音楽については、……</div>
+	</div>
+</a>
+<a href="/ja/tacit-dimension/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/tacit-dimension/">『暗黙知の次元』</div>
+            <div class="f5">マイケル・ポランニー『暗黙知の次元』は、「知」の本来のパラダイムに光を当てた初期的な主張と言える。 2……</div>
+	</div>
+</a>
+<a href="/ja/aurelius-mediations/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/aurelius-mediations/">マルクス・アウレリウス『自省録』</div>
+            <div class="f5">ローマ皇帝 マルクス・アウレリウスが長年にわたり書きつづった著作。 「皇帝としてどのように役割を果たすべ……</div>
+	</div>
+</a>
+<a href="/ja/fake-technology/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/fake-technology/">フェイク・テクノロジー</div>
+            <div class="f5">ひと月近くかけて、著名ライブラリのReact.jsを除去する実装を継続し、ようやく完了した。 今年の夏……</div>
+	</div>
+</a>
+<a href="/ja/civilization-spore/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/civilization-spore/">文明の芽胞</div>
+            <div class="f5">書かなければ消滅するメカニズムでは、サバイバルの必要水準が想像以上に高いこと、知的創造をクリアするに……</div>
+	</div>
+</a>
+
+          </div></article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block"><div class="container">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>
