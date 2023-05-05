@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>システム開発の難点とは | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/system-dev-difficulties/" />
+<meta property="og:title" content="システム開発の難点とは" />
+<meta property="og:description" content="開発工程で手が止まりがちなのは、設計が必要な工程だ。 具体的には、オブジェクトの階層構造を実装するフェ" />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<meta property="og:image" content='https://chumaltd.github.io/common/social-logo.png' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/system-dev-difficulties/ />
+
+    </head>
+    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer></cm-drawer>
+    <a href='/' style="height: 2.5rem">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li class="breadcrumb-item"><a href="/">HOME</a></li>
+  <li class="breadcrumb-item"><a href="/ja/">Jas</a></li>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;システム開発の難点とは</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/","name": "civilis" }},
+{"@type": "ListItem","position":3,"item":{"@id": "https://chumaltd.github.io/ja/","name": "Jas" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/system-dev-difficulties/","name": "システム開発の難点とは" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+      
+      ">
+<main class="container">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
+          システム開発の難点とは
+        </h1>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-icons">toc</i>&nbsp;システム開発の難点とは</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#できないことの定義が最大の難所">”できないこと”の定義が最大の難所</a>
+      <ul>
+        <li><a href="#人は不確実性に著しく弱い">人は不確実性に著しく弱い</a></li>
+      </ul>
+    </li>
+    <li><a href="#データベースを選択したことによる実行リスクとコスト">データベースを選択したことによる実行リスクとコスト</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>開発工程で手が止まりがちなのは、設計が必要な工程だ。
+具体的には、オブジェクトの階層構造を実装するフェーズになると比較的時間がかかる。</p>
+<p>オブジェクトを実装するデータ構造はビジネスロジックのプログラムに細々とまだら状に入り込むので、後から変更しようと思うとけっきょく全体の改修という結論に陥りがちなので、開発プロジェクトのひとつの勝負どころと言える。</p>
+<p>データ構造について検討すべき着眼点としては以下のようなものがある。</p>
+<ul>
+<li>階層構造が適切に表現できているか？属性のうち子オブジェクトとして切り出すべきものはないか？将来的にn個に増える可能性があるならオブジェクトを分けた方が良い</li>
+<li>ステータス遷移は適切に表現できているか？ステータスを親オブジェクトの１属性として実装すると最新１時点のステータスしか管理できないが、それで足りるのか？</li>
+<li>必須属性を適切に定義できているか？いちど非必須としてサービスインしてしまうとnullが入るため、後もどりしにくい。一方で必須にしてしまうとデータ登録時点で属性を取り揃えておく必要があり、利用の流れ上、それが現実的なのかどうか、というトレードオフも考えておいた方が良い</li>
+<li>親オブジェクトを削除する際に子オブジェクトも消すべきなのか？</li>
+</ul>
+<p>なぜこのような選択に時間がかかるのだろうか？</p>
+<h2 id="できないことの定義が最大の難所">”できないこと”の定義が最大の難所</h2>
+<p>設計が本質的に難しいのは、実装する前に「できないこと」を決める必要がある点だと思う。
+もちろん「できること」＝機能も定義するのだが、実際にやってみると時間がかかるのは仕様から外すことの選択。</p>
+<p>前提として「将来サービスがどのように利用されるのか？」という点を見通したうえで、この選択を行う必要がある。
+できないことに決めた機能がある時点で必要となった場合、往々にして「作り直した方が早い」ということになりがちだ。</p>
+<p>発注サイドは「必要になったらその時点で拡張」という意識であることが多いが、じっさいには拡張できるということは「できないこと」ではないため、トレードオフとして成立していない。</p>
+<p>このトレードオフをうまく実行するためには、ビジネスがどのような展開になりうるのかを将棋や囲碁のようにケース別に想像する能力が必要になる。</p>
+<p>将来の局面を読む、という要素はシステム開発のもっとも重要なポイントだ。</p>
+<p>とくにインターネットビジネスの分野では、支持を集めたときに素早くユーザーを獲得できることがビジネスそのものの存続を分けるため、&ldquo;その時&quot;には実装できない。
+スケールさせなければいけないときに「これからエンジニア採用」と言っていたら勝負は終わってしまう。</p>
+<p>サービス立ち上げ前の流行るかどうかも分からない時期に性能やセキュリティを含めた非機能要件を作り込むのはかなりハードだが、一発当てに行こうとしているシステムはそこまでやるべきだと僕は思う。</p>
+<h3 id="人は不確実性に著しく弱い">人は不確実性に著しく弱い</h3>
+<p>ただ、&ldquo;将来&rdquo;、つまり不確実性をともなうものについて考えることが人は著しく不得意だ。</p>
+<p>システム開発に限らず、ビジネスの意思決定は不確実性をどう取り扱うかが最重要なのだが、これが難しい。</p>
+<p>この点については、行動意思決定論というアカデミックなテーマでも研究されているし、オークションの&quot;勝者の呪い&quot;といったアノマリーのエピソードからだけでもうかがえる。</p>
+<p>とくに、できないことを決める、捨てる、という頭の使い方は意識して実践し続けないと身につかない。</p>
+<p>98%以上の人は捨てるべきものを決める局面に来たとき、まずその場で答えを出そうとし、その場で答えがでないことに気づき、「これは難しい問題である」が結論だと錯覚し、数分以内に考えることを止める。</p>
+<p>「なぜそれが不要なのか？」という点について仮説検証をしていないから、いきなり言われてもできないし、いつまでたってもできるようにならない。</p>
+<p>できないことを決めるためには起こりうるメジャーなケースを比較しなければならないのだから、慣れていたとしても一筋縄ではいかない。</p>
+<h2 id="データベースを選択したことによる実行リスクとコスト">データベースを選択したことによる実行リスクとコスト</h2>
+<p>また技術上の課題については、RDBMS（リレーショナルデータベース管理システム）を正規化したいがために発生している。
+RDBMSは不整合のない状態ほど想定どおりに機能できるため、サービス開始後にデータ構造をクリーンに保っておくことが重要だ。</p>
+<p>このような、(1)テーブル実装の原理原則と(2)アプリコードの実現したいことのズレは「インピーダンス・ミスマッチ」として知られている。</p>
+<p>テーブル実装の原則にしたがうと、階層構造を持つオブジェクトをRDBMSに実装する際に、正規化して複数テーブルに分割する必要が出てくる。
+難点は、テーブル間の構造管理などをあらかじめ手動で設定・コーディングしておかなくてはならないこと。</p>
+<p>また、データ構造をクリーンに保ちたいがために入力画面が複雑になり、結果的に「作ったは良いが使われない」という事態も起こりがちだ。</p>
+<p>&ldquo;ITの進化&quot;とはよく言われるが、データ構造に関するソフトウェアの問題は基本的には変わっていない。</p>
+<p>インターネット以前に各企業の業務システムとして構築されたものがユーザーから見ると難しい感じがするのは、RDBMSの流儀にしたがって設計されたものに入力フォームをつけただけの構造のものが多いからだ。
+そして、Webシステムが普及した現時点でも代表的な構造はLAMPであり、要するにそのアーキテクチャはRDBMSの制約を受け続けている（LAMPのMがMySQLというデータベース）。</p>
+<p>RDBMSを使う限り開発フェーズのどこかでこの実装を経ることが避けられない。
+これは、プロジェクト進行手法としてアジャイルであれば解決する、ということもでもない。開発フェーズを2周繰り返して解決する、ということは倍速で走っているだけで本質的に何かを解決していない可能性がある。</p>
+<p>また、脱RDBMSの方向性もそれほど明るくはない。
+オブジェクトデータベースやNoSQLを採用するとデータ保存時の問題は回避できるものの、横断検索などの機能に新たな問題が生じる。</p>
+<p>けっきょくのところ、ソフトウェア・アーキテクチャの選定・設計は、個別のプロジェクトで一度はトップダウンで解決する必要があり、複雑性が高いだけに人的設計力が求められる、ということが現時点の結論と言える。</p>
+
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/sound-quality/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/sound-quality/">サウンドの品質</div>
+            <div class="f5">デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。 音楽については、……</div>
+	</div>
+</a>
+<a href="/ja/tacit-dimension/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/tacit-dimension/">『暗黙知の次元』</div>
+            <div class="f5">マイケル・ポランニー『暗黙知の次元』は、「知」の本来のパラダイムに光を当てた初期的な主張と言える。 2……</div>
+	</div>
+</a>
+<a href="/ja/aurelius-mediations/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/aurelius-mediations/">マルクス・アウレリウス『自省録』</div>
+            <div class="f5">ローマ皇帝 マルクス・アウレリウスが長年にわたり書きつづった著作。 「皇帝としてどのように役割を果たすべ……</div>
+	</div>
+</a>
+<a href="/ja/fake-technology/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/fake-technology/">フェイク・テクノロジー</div>
+            <div class="f5">ひと月近くかけて、著名ライブラリのReact.jsを除去する実装を継続し、ようやく完了した。 今年の夏……</div>
+	</div>
+</a>
+<a href="/ja/civilization-spore/" class="compbox bordered py-2">
+        <picture>
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/civilization-spore/">文明の芽胞</div>
+            <div class="f5">書かなければ消滅するメカニズムでは、サバイバルの必要水準が想像以上に高いこと、知的創造をクリアするに……</div>
+	</div>
+</a>
+
+          </div></article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block"><div class="container">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>
