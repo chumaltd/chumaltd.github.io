@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://chumaltd.github.io/covid19-2023/</loc>
+    <loc>https://chumaltd.github.io/en/covid19-2023/</loc>
     <lastmod>2023-05-06T05:07:36+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -12,10 +12,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://chumaltd.github.io/covid19-2023/"
+                href="https://chumaltd.github.io/en/covid19-2023/"
                 />
   </url><url>
-    <loc>https://chumaltd.github.io/civilis/</loc>
+    <loc>https://chumaltd.github.io/en/civilis/</loc>
     <lastmod>2020-04-24T03:34:50+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -25,10 +25,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://chumaltd.github.io/civilis/"
+                href="https://chumaltd.github.io/en/civilis/"
                 />
   </url><url>
-    <loc>https://chumaltd.github.io/categories/</loc>
+    <loc>https://chumaltd.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -37,10 +37,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://chumaltd.github.io/categories/"
+                href="https://chumaltd.github.io/en/categories/"
                 />
   </url><url>
-    <loc>https://chumaltd.github.io/</loc>
+    <loc>https://chumaltd.github.io/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -49,10 +49,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://chumaltd.github.io/"
+                href="https://chumaltd.github.io/en/"
                 />
   </url><url>
-    <loc>https://chumaltd.github.io/tags/</loc>
+    <loc>https://chumaltd.github.io/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -61,7 +61,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://chumaltd.github.io/tags/"
+                href="https://chumaltd.github.io/en/tags/"
                 />
   </url>
 </urlset>
