@@ -181,6 +181,18 @@
     <loc>https://chumaltd.github.io/ja/mitigate-smartphone-web-frustration/</loc>
     <lastmod>2012-04-15T11:37:51+00:00</lastmod>
   </url><url>
+    <loc>https://chumaltd.github.io/ja/bio/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chumaltd.github.io/en/bio/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://chumaltd.github.io/ja/bio/"
+                />
+  </url><url>
     <loc>https://chumaltd.github.io/ja/categories/</loc>
     <xhtml:link
                 rel="alternate"

@@ -28,6 +28,18 @@
                 href="https://chumaltd.github.io/en/civilis/"
                 />
   </url><url>
+    <loc>https://chumaltd.github.io/en/bio/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://chumaltd.github.io/ja/bio/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chumaltd.github.io/en/bio/"
+                />
+  </url><url>
     <loc>https://chumaltd.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
