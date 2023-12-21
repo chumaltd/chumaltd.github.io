@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>縮小均衡からの脱却 | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/fake-technology2/" />
+<meta property="og:title" content="縮小均衡からの脱却" />
+<meta property="og:description" content="Shepherd.jsを除去して driver.jsを再実装する作業を終えた。 これらはインタラクティブ" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/fake-technology2/ />
+
+    </head>
+    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer></cm-drawer>
+    <a href='/' style="height: 2.5rem">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li class="breadcrumb-item"><a href="/ja/">HOME</a></li>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;縮小均衡からの脱却</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/fake-technology2/","name": "縮小均衡からの脱却" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
+          縮小均衡からの脱却
+        </h1>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;縮小均衡からの脱却</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#サンクコストの際たるもの">サンクコストの際たるもの</a>
+      <ul>
+        <li><a href="#損失認識の矛盾">損失認識の矛盾</a></li>
+        <li><a href="#比較できないという不確実性">比較できないという不確実性</a></li>
+      </ul>
+    </li>
+    <li><a href="#再実装だけが正しさの確証へ導く">再実装だけが正しさの確証へ導く</a></li>
+    <li><a href="#視野を広げる">視野を広げる</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>
+<a href="https://shepherdjs.dev/">Shepherd.js</a>を除去して
+<a href="https://driverjs.com/">driver.js</a>を再実装する作業を終えた。<br>
+これらはインタラクティブツアーを実装するソフトウェアライブラリであり、機能は著しく似かよっている。<br>
+いずれかを選択して使えば良いものではあるのだが、じつはdriver.jsの方が圧倒的に優れている。これは両方実装した今になって分かることだ。</p>
+<p>この話は、昨年書いた
+<a href="/ja/fake-technology/">フェイク・テクノロジー</a>のエピソードと言える。<br>
+状況は何も改善していないので、ケースの積み上げで前進するしかない。</p>
+<p>今回の例では、両者の決定的な違いは、Shepherd.jsがスマートデバイスの狭い画面で適切な位置に表示できない点だ。<br>
+解説する対象がポップアップの裏に回って見えなかったり、画面から見切れたりする。<br>
+やむを得ない限界なのかと思っていたのだが、driver.jsはずっと適切にレイアウト計算できる。</p>
+<p>レイアウト計算が動作品質の大きなウェイトを占めるという事実には注目しづらい。<br>
+Shepherd.jsとdriver.jsの両方を用いて実装し、見比べたから気づいたことであって、決してその逆ではない。</p>
+<p>言いかえれば、あらかじめ効率的に比較して労力を節約できるような道筋は存在しない。<br>
+各ライブラリのPRサイトはそうとう適切に解説していて、掲載情報にもとづいて選択するなら優劣はつかないだろう。</p>
+<h2 id="サンクコストの際たるもの">サンクコストの際たるもの</h2>
+<p>最初に採用するライブラリがShepherd.jsとdriver.jsのいずれであるかは五分五分だ。</p>
+<p>driver.jsの方が高品質なのだが、現実にはShepherd.jsからdriver.jsに乗り換えるプロジェクトはあまりないだろう。<br>
+それは逆にdriver.jsからShepherd.jsに乗り換える選択を想像すれば理解できる。</p>
+<p>すでに動作している機能の実装にかけた過去の労力はとり返すことはできない。<br>
+
+<a href="https://en.wikipedia.org/wiki/Sunk_cost">サンクコスト</a>という。</p>
+<p>この問題を的確に扱うには、サンクコストの理解は欠かせない。<br>
+見通しのために説明は省略するが、過去の労力やコストを無かったものと捉え直し、無視することが判断のポイントだ。</p>
+<h3 id="損失認識の矛盾">損失認識の矛盾</h3>
+<p>サンクコスト効果に対するベストプラクティスによれば、初回のライブラリ導入は存在しなかったものと捉えるのが正しく判断する条件だ。<br>
+これは現実には、<u>初回プロジェクトは失敗したと捉えるべき</u>という意味に限りなく近い。</p>
+<p>一般的には、ライブラリを導入した結果エラーも出ずに動作しているなら、それは成功と認識する。<br>
+成功に見える成りゆきを失敗と認識すべき、という矛盾した論理の飛躍をつなぐものは認知の歪みである。</p>
+<p>テーマは誤認識なのだ。</p>
+<p>少し経営技術について補足する。<br>
+この意思決定は、除却損を認識するか否かという選択のケースがあり得る。<br>
+除却損となればより強く回避したい心情が働くだろう。会計技術が誤認識を強化するアノマリーと言える。</p>
+<p>そもそも<u>ソフトウェアを資産だと捉える認識が誤り</u>であり、その後の判断を歪める構造なのだと思う。<br>
+会計じたいが原因なのではなく、根底にある誤認識を会計技術が忠実に描写しているに違いない。</p>
+<h3 id="比較できないという不確実性">比較できないという不確実性</h3>
+<p>そしてもう一点、「使ってみない限りソフトウェアの優劣は評価できない」という性質が不確実性を決定的にしている。</p>
+<p>Shepherd.jsもdriver.jsもオープンソースであり、技術情報に不透明な点はなく、ドキュメントも充実している。だからこそ分かったことは、<u>評価する観点の網羅を保証するものは何もない</u>ということだ。</p>
+<p>不確実性の研究から、人間は複数の観点で総合評価することが苦手であることが分かっている。<br>
+いくつかの観点を確認したという行動だけで「評価できた」と錯覚する挙動を satisfice と呼ぶ。多くのソフトウェア選定プロセスが satisfice に終わっていることだろう。</p>
+<p>オープンソースであるため、
+<a href="https://github.com/chumaltd/shepherd">shepherdのコード</a>と
+<a href="https://github.com/chumaltd/driver.js">driver.jsのコード</a>を見比べてみたのだが、コードからも優劣を導くことはできないという結論に至った。なお、リポジトリは後のリファレンスのためフォークした。</p>
+<p>多くのエンジニアは、Shepherdのコードの方が品質が高い印象を受けるのではないかと思う。コード構成が現時点で人気のあるTypescriptのスタイルに近いからだ。<br>
+driver.jsのコードはTypescriptのインターフェースであっても、Javascriptをよく理解している人が書くスタイルになっている。おそらくTypescriptのコンバートに伴う不確定要素を制御する意図なのだと思う。</p>
+<p>そして、コーディングスタイルは両者の実用上の挙動の違いとは関係がない。コードレビューで事前評価する場合、コーディングスタイルやコメントに注目しやすくなり、そのことによりむしろ品質に目を向けられなくなる。<br>
+今回の例では、レイアウト計算の違いが重要であることを事後的に知っているが、それはコードのごく一部でしかないため注目することが事実上不可能だし、コード全体が機能したときどのような表示になるのかを読み取ることは無理だと分かった。</p>
+<p>また、テストコードは
+<a href="https://github.com/chumaltd/shepherd/tree/master/test">Shepherdのテスト</a>が優れていると誰もが言うだろう。
+<a href="https://github.com/chumaltd/driver.js/tree/master/tests">driver.jsのテスト</a>はダミーのままだ。<br>
+評価軸の網羅性を保証できないこととテストの網羅性を保証できないことは同一の原因から来ていると思う。とくにUIをチェックするテストについては、人が目で見た際の妥当性を検査するための語彙が欠けているため、品質に直結する分野のテストケースを記述できないことが多い。</p>
+<h2 id="再実装だけが正しさの確証へ導く">再実装だけが正しさの確証へ導く</h2>
+<p>このように、後知恵を活用して選定の際の見落としをチェックした結果、さまざまな可能性が否定され、消去法により「あらかじめ品質に関する確証を得る手段はないのだ」という構造を理解できた。</p>
+<p>比較不可能な性質があるからこそ、ランダムにソフトウェアを選択することになり、一定の確率で不都合が生じることでサンクコストが発生するという関係にある。<br>
+そしてサンクコストを適切に認識したとしても、代替ライブラリを適切に評価する手段はない。</p>
+<p>自明な性質の積み上げで理解できる対象なら分析もできるが、ソフトウェアには自明ではない性質が多く含まれている。<br>
+けっきょくのところ、ソフトウェアの品質は未来から後ろ向きに振り返ることでしか評価できない。</p>
+<p>すべての選択肢を実装し、ベストなもの以外を破棄するのが手堅いアプローチなのだ。<br>
+ブラックジャックに例えれば、カードをひいた時に合計21を超えてしまえばアウトであるところを、21を超えたことを確認してから余分なカードを捨てることによって高得点を保証するようなものだ。</p>
+<p>ここではSheperd.jsとdriver.jsについて確認したが、他の選択肢についてはなおオープンであり、未来の時点で後発のライブラリをどう評価するかという形で直面することにもなろう。</p>
+<h2 id="視野を広げる">視野を広げる</h2>
+<p>議論を明確にするために具体的なソフトウェアを題材にしてきたが、広く一般的な難問にはこのような形をとるものが遍在しているように思う。</p>
+<p>たとえば進化生物学の研究には、多様性のボトルネックと環境への不適応の関係を説明する定量的な分析があるはずだ。おそらく適者生存は派生と死滅のセットであって、そこに目的と正解を見出すことが誤認識なのだろう。</p>
+<p>金融の
+<a href="https://en.wikipedia.org/wiki/Real_options_valuation">リアルオプション</a>も類似のアプローチをとっている。<br>
+経済学には解析的な手法で分析する理論が多いが、リアルオプションはとりうる選択肢をモンテカルロ法などで生成する。<br>
+モンテカルロ法では生成された予測値は確率的なパラメータに過ぎないが、結果に対数オーダーの差が生まれるのであれば仮説構造は安定する。リアルオプションが戦略策定に用いられるのは、対数オーダーの仮定と親和性が高いからだろう。</p>
+<p>このように大局的に見れば、むしろ演繹では理解できないうちに世界は生成し続けている。<br>
+「理解できた」という形式でクリアに理解できる対象は世界のごく一部であって、それを全体に適用すると誤る。</p>
+<p>フレームワークを把握したところでもう一度ソフトウェア選定のテーマに戻ると、要するにソフトウェアは淘汰死滅のプロセスを適切に経ていない揺籃期に過ぎないのだろうと想像がつく。</p>
+<p>インターネットやスマートデバイスが爆発的に普及したこともあって、多少のエンジニアリングの練習を積めば、誰でもパーツの組み合わせで思うがままのソフトウェアを作れると考えているのではないかと思う。<br>
+しかしそれには時期尚早と言える。</p>
+<p>過去10年ほどの停滞を考慮に入れると、各種のライブラリやフレームワークが想像どおり動作する時代になるまで、少なくともあと20年はかかるのではないかと思う。<br>
+当面は各プロジェクトが局所的な検証に追加コストを払う必要があるだろう。</p>
+
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/fake-technology2/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/fake-technology2/">縮小均衡からの脱却</div>
+            <div class="f5">Shepherd.jsを除去して driver.jsを再実装する作業を終えた。 これらはインタラクティブ……</div>
+	</div>
+</a>
+<a href="/ja/covid19-2023/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/covid19-2023/">COVID-19の行きがかり</div>
+            <div class="f5">日本では週明け2023年5月8日から、新型コロナウイルス感染症の区分が５類感染症となり、行政上ノーガ……</div>
+	</div>
+</a>
+<a href="/ja/sound-quality/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/sound-quality/">サウンドの品質</div>
+            <div class="f5">デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。 音楽については、……</div>
+	</div>
+</a>
+<a href="/ja/tacit-dimension/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/tacit-dimension/">『暗黙知の次元』</div>
+            <div class="f5">マイケル・ポランニー『暗黙知の次元』は、「知」の本来のパラダイムに光を当てた初期的な主張と言える。 2……</div>
+	</div>
+</a>
+<a href="/ja/aurelius-mediations/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/aurelius-mediations/">マルクス・アウレリウス『自省録』</div>
+            <div class="f5">ローマ皇帝 マルクス・アウレリウスが長年にわたり書きつづった著作。 「皇帝としてどのように役割を果たすべ……</div>
+	</div>
+</a>
+
+          </div></article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block"><div class="container">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>

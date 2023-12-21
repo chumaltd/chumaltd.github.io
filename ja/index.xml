@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>縮小均衡からの脱却</title>
+      <link>https://chumaltd.github.io/ja/fake-technology2/</link>
+      <pubDate>Wed, 20 Dec 2023 00:22:47 +0900</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/fake-technology2/</guid>
+      <description>Shepherd.jsを除去して driver.jsを再実装する作業を終えた。 これらはインタラクティブ</description>
+    </item>
+    
+    <item>
       <title>COVID-19の行きがかり</title>
       <link>https://chumaltd.github.io/ja/covid19-2023/</link>
       <pubDate>Sat, 06 May 2023 05:07:36 +0000</pubDate>
