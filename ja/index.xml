@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>評価しえぬもの</title>
+      <link>https://chumaltd.github.io/ja/beyond-evaluation/</link>
+      <pubDate>Wed, 24 Jan 2024 22:33:59 +0900</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/beyond-evaluation/</guid>
+      <description>E2Eテスト導入から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく</description>
+    </item>
+    
+    <item>
       <title>縮小均衡からの脱却</title>
       <link>https://chumaltd.github.io/ja/fake-technology2/</link>
       <pubDate>Wed, 20 Dec 2023 00:22:47 +0900</pubDate>

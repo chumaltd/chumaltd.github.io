@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>評価しえぬもの | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/beyond-evaluation/" />
+<meta property="og:title" content="評価しえぬもの" />
+<meta property="og:description" content="E2Eテスト導入から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/beyond-evaluation/ />
+
+    </head>
+    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer></cm-drawer>
+    <a href='/' style="height: 2.5rem">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li class="breadcrumb-item"><a href="/ja/">HOME</a></li>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;評価しえぬもの</li></ul>
+<script type="application/ld+json">
+{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/beyond-evaluation/","name": "評価しえぬもの" }
+}]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="container coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
+          評価しえぬもの
+        </h1>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;評価しえぬもの</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#webサービスのe2eの難点">WebサービスのE2Eの難点</a>
+      <ul>
+        <li><a href="#ブラウザじたいに難がある">ブラウザじたいに難がある</a></li>
+      </ul>
+    </li>
+    <li><a href="#評価しえぬものとのミックス">評価しえぬものとのミックス</a>
+      <ul>
+        <li><a href="#動作前提を絞る">動作前提を絞る</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>
+<a href="/ja/e2e-web-testing/">E2Eテスト導入</a>から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく、大規模な実装変更のガイドラインとして機能した点がもっとも分かりやすい効果であった。</p>
+<p>一方、E2Eテストを継続的にメンテナンスし続けることを通じて、品質の概念そのものが書きかわってきた。<br>
+品質を定量的にとらえる場合、シックスシグマが象徴的なアプローチと言える。要するに、パーツの変更や経時的な変化にさらされても動作のバラつきが少ない、減っていくことが理想という見方だ。</p>
+<p>他に良い指標がないためシックスシグマはベンチマークであり続けるのだろうが、計測のスケールによっては機能しないと考えるようになった。<br>
+少なくとも、素朴なE2Eテストの実装ではうまく評価できないケースに直面してきた。</p>
+<h2 id="webサービスのe2eの難点">WebサービスのE2Eの難点</h2>
+<p>品質評価の観点でE2E方式の難しいポイントは、適切なコードであっても不規則にエラーを検出することだ。<br>
+E2Eでは実際のブラウザでWebサービスにアクセスして利用するのだが、プログラムによる自動実行が高速動作することに伴うテストエラーが頻発する。</p>
+<p>コード上の処理が適切でないケースもあるためケースごとに確認するのだが、分析のためにスクリーンショット取得を追加すると正常に動作することも多い。<br>
+言いかえれば、コードに異常はないケースであっても、テスト自体をゆっくり動作させるようなチューニングを追加するよう迫られる。</p>
+<p>これが高速操作されると動作がクラッシュするということなら修正する意義はまだあるのだが、じっさいには短時間のアニメーション効果によりボタン位置がずれたのでツール操作対象がずれて押せない、というシナリオが多い。<br>
+Seleniumが描画の完了を待つ機能を持っていないということは大きな要因ではある。ただ、それだけではない。</p>
+<h3 id="ブラウザじたいに難がある">ブラウザじたいに難がある</h3>
+<p>E2Eのトラブルはバリエーションがあるのだが、昨日、コードを一切変更することなくエラーが収束したケースに直面し、根本的に見方を改めるに至った。</p>
+<p>つまり、ツールセットのブラウザをバージョンアップしたらエラーなく動作することがある。<br>
+もう少し視野を広げると、今回のケースはある時点でブラウザをバージョンアップしたことにより生じたエラーだったのだ。</p>
+<p>重要なのは「新しいツールを使えば環境から受ける悪影響が減る」という見方は完全に幻想だという点。<br>
+バージョンアップにより描画性能がデグレードし、適切なコードであっても高速操作時の挙動不安定が増幅する、ということの方が重要なのだ。</p>
+<h2 id="評価しえぬものとのミックス">評価しえぬものとのミックス</h2>
+<p>ブラウザのバージョンによって挙動が変わるということは、Seleniumが評価しているのはWebサービスではなくブラウザの品質である。<br>
+しかも、エラーになる箇所は自分が書いたコードではなく利用しているライブラリが提供しているアニメーション効果なのだ。<br>
+そもそも、Seleniumの動作じたいもリアルからかけ離れている。</p>
+<p>ここで人間性を取りもどして言えば、徹頭徹尾ばかげた話とも言える。<br>
+ただシックスシグマを念頭に置くなら、常用の条件よりも厳しい環境でこそバラつきを低減したいというチャレンジとして捉えるべきなのだ。</p>
+<p>Seleniumが示唆しているのは、より厳しい条件でバラつき低減を目指すなら、ライブラリやブラウザに手を入れていくべき、ということだろう。<br>
+それは計測対象の操作に占める処理量のウェイトが大きいのはブラウザだからという事実から来る。</p>
+<p>一方で実務の現実味から考えれば、ブラウザ開発に割って入る余力はどう考えても出ない。<br>
+けっきょくのところ、Seleniumが測っているのは評価しえぬものとの混合物であり、ヴィトゲンシュタインなら沈黙せざるを得ないというアドバイスを提示しそうなものだ。</p>
+<h3 id="動作前提を絞る">動作前提を絞る</h3>
+<p>ひとつ分かったことは、動作しやすいブラウザと動作しないブラウザがあり、動作するバージョンを確保しておくとヒントが増えるということだ。<br>
+実務上は動作しやすいバージョンを活用することにするが、その方針の意味は現時点では結論づけていない。</p>
+<p>おそらく多くのエンジニアは、動作環境を制御してオールグリーンになることが「正しい」選択であると考えるだろう。<br>
+僕はそれはもっとも浅はかな捉え方だと思う。結論づけたいという願望そのものが誤っている。</p>
+<p>シックスシグマの理想からすれば、動作しないはずのブラウザで操作させることは目標であり続けるのだが、それは良いマイルストーンとは言えない。<br>
+逆に、一部の動作しやすい環境で正常動作したとしても、それは別の環境でどこまで動作するかという点に何も保証を与えていない。</p>
+<p>おそらく現在のE2E実装は、リアルな人間による使われ方を想定した極限域といった適切な計測レンジをターゲットにできていない。<br>
+テストケースを個別にチューニングするのではなく、風洞実験のように全体のリアリティを向上することの方が大事になるはずだ。</p>
+
+
+          <div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/beyond-evaluation/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/beyond-evaluation/">評価しえぬもの</div>
+            <div class="f5">E2Eテスト導入から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく……</div>
+	</div>
+</a>
+<a href="/ja/fake-technology2/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/fake-technology2/">縮小均衡からの脱却</div>
+            <div class="f5">Shepherd.jsを除去して driver.jsを再実装する作業を終えた。 これらはインタラクティブ……</div>
+	</div>
+</a>
+<a href="/ja/covid19-2023/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/covid19-2023/">COVID-19の行きがかり</div>
+            <div class="f5">日本では週明け2023年5月8日から、新型コロナウイルス感染症の区分が５類感染症となり、行政上ノーガ……</div>
+	</div>
+</a>
+<a href="/ja/sound-quality/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/sound-quality/">サウンドの品質</div>
+            <div class="f5">デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。 音楽については、……</div>
+	</div>
+</a>
+<a href="/ja/tacit-dimension/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/tacit-dimension/">『暗黙知の次元』</div>
+            <div class="f5">マイケル・ポランニー『暗黙知の次元』は、「知」の本来のパラダイムに光を当てた初期的な主張と言える。 2……</div>
+	</div>
+</a>
+
+          </div></article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block"><div class="container">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>
