@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-color-mode="dark" data-dark-theme="dark">
     <head><meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,6 +13,7 @@
 
 <link rel='stylesheet' href='/lib/cm.css'>
 <link rel="stylesheet" href='/lib/base.css' />
+
 <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/ja/e2e-web-testing/" />
 <meta property="og:title" content="脱Node.js" />
@@ -20,9 +21,10 @@
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
 <link rel="canonical" href=https://chumaltd.github.io/ja/e2e-web-testing/ />
 
+
     </head>
     <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
-  <section class="container">
+  <section class="container-xl" style="width: 100%">
   <div class="navbar-brand">
     <span class="navbar-item">
     <cm-drawer></cm-drawer>
@@ -40,7 +42,7 @@
   </section>
 </header>
 <div>
-<nav class="container" style="overflow: hidden">
+<nav class="container-xl" style="overflow: hidden">
   <div class="d-sm-flex">
     <div class="quarter hide-sm"></div>
     <div class="p-3 three-quarter">
@@ -49,21 +51,24 @@
   <li class="breadcrumb-item"><a href="/ja/">HOME</a></li>
   <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;脱Node.js</li></ul>
 <script type="application/ld+json">
-{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement":[
+{"@context":"http://schema.org", "@graph":[
+	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
+	{"@type":"BreadcrumbList","itemListElement":[
 {"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
 {"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/e2e-web-testing/","name": "脱Node.js" }
 }]}
+]}
 </script>
 </nav>
 
     </div>
   </div>
 </nav>
-<div class="container coverart" style="
+<div class="coverart" style="
         background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
       
       ">
-<main class="container">
+<main class="container-xl">
     <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
     <div class="quarter hide-sm"></div>
     <div id="pagetitle" class="three-quarter px-3">
@@ -120,9 +125,7 @@ Seleniumが呼び出すブラウザを通した挙動もjsdomより圧倒的に�
 ここまでにビルドは既にDenoに移行しており、今回テストもPythonになった。</p>
 <p>あと残っているのは、npmによるパッケージ管理だけだ。npmは品質に直結しないが、gitの挙動に難があり問題はすでに起きている。<br>
 npm派生を除外するとパッケージ管理のオルタナティブはDenoしかないので、ImportMapsを真面目に評価して、可能であれば早期にNode.js完全撤廃を達成した方が良いと考えている。</p>
-
-
-          <div class="related_articles">
+<div class="related_articles">
               <h4 id="related" class="idx"></h4>
               
               
@@ -172,13 +175,15 @@ npm派生を除外するとパッケージ管理のオルタナティブはDeno�
 	</div>
 </a>
 
-          </div></article>
+          </div>
+
+      </article>
     </div>
   </div>
 </main>
 </div>
 
-        </div><footer class="footer lazy-block"><div class="container">
+        </div><footer class="footer lazy-block"><div class="container-xl">
       <div>
           <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
           

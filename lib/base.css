@@ -1,16 +1,10 @@
 @charset "UTF-8";
 :root {
-		--dk-main-font-color: rgb(220,220,220);
-	--dk-emphasis-font: rgb(245,245,245);
-	--dk-sub-font: rgba(255,255,255,var(--dk-alpha-sub));
-	--dk-disable-font: rgba(255,255,255,var(--dk-alpha-disable));
-	--dk-surface: rgb(244, 143, 177);
-	--dk-base: #000;
+		--dk-surface: rgb(244, 143, 177);
 	--dk-alpha-main: 0.94;
 	--dk-alpha-sub: 0.65;
 	--dk-alpha-disable: 0.38;
-	--dk-link: rgba(143, 244, 210, var(--dk-alpha-main));
-	--bg-0dp: var(--dk-base);
+	--bg-0dp: var(--bgColor-default, var(--color-canvas-default));
 	--bg-1dp: rgb(29, 24, 25);
       --bg-1dp-nt: rgb(29, 29, 29);
 --bg-2dp: rgb(33, 26, 29);
@@ -29,16 +23,18 @@
       --bg-16dp-nt: rgb(53, 53, 53);
 --bg-24dp: rgb(54, 38, 43);
       --bg-24dp-nt: rgb(55, 55, 55);
+	--float-ui-bg: var(--overlay-bgColor, var(--color-canvas-overlay, var(--bg-6bp)));
 
-	--lt-bg: rgb(255, 255, 255);
-	--lt-primary: rgb(150, 79, 76);
-	--lt-bg-article: white;
-	--lt-main-font-color: #333;
-	--lt-emphasis-font: rgb(5,5,5);
-	--lt-sub-font: #888;
-	--lt-link: rgb(255, 255, 255);
+	--sub-font: var(--fgColor-muted, var(--color-fg-muted, #888));
+	--link-color: rgb(255, 255, 255);
+	--link-color-dk: rgba(143, 244, 210, var(--dk-alpha-main));
 
-	  --drawer-bg: var(--bg-6dp);
+	        --drawer-bg: var(--bg-6dp);
+
+        --primary-color: rgb(150, 79, 76);
+        --primary-color-dk: var(--dk-surface);
+        --navbar-bg: var(--primary-color);
+        --semi-transparent-bg: rgba(240,240,240,.6);
 }
 
 header { z-index: 5 }
@@ -72,59 +68,34 @@ main.no-nav {
 	max-width: 1000px;
 	margin: auto;
 }
-#footer_logo { max-width: 200px }
 
 .inscription { font-family: 'Cinzel Decorative',"Hiragino Sans","BIZ UDPGothic",sans-serif; font-weight: 700 }
 .humanist { font-family: 'Marcellus','Lato',"Hiragino Sans","BIZ UDPGothic",sans-serif; font-weight: 500, letter-spacing: .1em }
 
+a.box, a .box,
+#o header#genre,
+#o .pages-label a,
+#o .pages-tile a {
+	color: var(--fgColor-default, var(--color-fg-default, hsl(0, 0%, 29%)));
+}
 @media print {
-  :root {
-        --main-font-color: var(--lt-main-font-color);
-        --emphasis-font: var(--lt-emphasis-font);
-        --sub-font: var(--lt-sub-font);
-        --link-font: var(--lt-link);
-        --float-ui-bg: #fff;
-        --navbar-bg: var(--lt-primary);
-        --primary-color: var(--lt-primary);
-        --semi-transparent-bg: rgba(240,240,240,.6);
-  }
-  body#o { background-color: var(--lt-bg) }
-  #o header { background: var(--lt-primary); }
+  #o header { background: var(--bgColor-primary); }
   #o .layered {
 	background-color: white;
 	opacity: .95;
   }
-  #o #content, #o article>h2, #o header#genre {
-	background: var(--lt-bg-article);
+  #o #content, article>h2, #o header#genre {
+	background-color: var(--bgColor-default, var(--color-canvas-default, white));
   }
-  .o article>h2::before {
-    color: var(--lt-bg-article);
+  article>h2::before {
+    color: var(--bgColor-default, var(--color-canvas-default, white));
   }
   #o .pages-label {
 	border-bottom: solid 1px #ccc;
   }
-  #o .pages-label a,
-  #o .pages-tile a {
-	  color: var(--lt-main-font-color);
-  }
-  #l-drawer { background: #fff }
-  #site-header { --logo-color: white }
-  footer { --logo-color: #555 }
 }
 
 @media screen {
-  :root {
-        --main-font-color: var(--dk-main-font-color);
-        --emphasis-font: var(--dk-emphasis-font);
-        --sub-font: var(--dk-sub-font);
-        --link-font: var(--dk-link);
-        --float-ui-bg: var(--bg-6dp);
-        --navbar-bg: var(--bg-1dp);
-        --primary-color: var(--dk-surface);
-        --semi-transparent-bg: rgba(30,30,30,.6);
-        --button-color: #000;
-        --button-background: #ddeeff;
-  }
   body#o {
 	background-color: var(--bg-2dp);
   }
@@ -132,20 +103,15 @@ main.no-nav {
 	background-color: var(--bg-2dp);
 	opacity: .95;
   }
-  #o header, #o .footer { background: var(--bg-1dp); }
   .gray-on-dark, #o #content img { filter: grayscale(55%); }
-  #o #content, #o article>h2, #o header#genre {
+  #o #content, article>h2, #o header#genre {
 	background: var(--bg-4dp-nt);
   }
-  .o article>h2::before {
+  article>h2::before {
     color: var(--bg-4dp-nt);
   }
   #o .pages-label {
 	border-bottom: solid 1px #444;
-  }
-  #o .pages-label a,
-  #o .pages-tile a {
-	  color: var(--dk-main-font-color);
   }
   #o .page-thumbnail img {
 	filter: grayscale(30%);
@@ -155,75 +121,82 @@ main.no-nav {
   }
 }
 
+header#global-nav { background-color: var(--bgColor-primary); }
+@media screen {
+  [data-color-mode=dark] {
+        --navbar-bg: var(--bg-1dp);
+        --semi-transparent-bg: rgba(30,30,30,.6);
+        --button-color: #000;
+        --button-background: #ddeeff;
+  }
+}
+
 .o .toc { font-size: .9em; margin: .5em }
 .o .toc li { padding-top: .6em }
 .o .toc li>ul { padding-left: .8em; font-size: .9em }
-#o article>h2, #o article>h3 {
-	color: var(--emphasis-font);
+article>h2, article>h3 {
+	color: var(--fgColor-emphasis);
 }
-#o #content, #o header#genre {
-	color: var(--main-font-color);
-}
-.o article {
+article {
 	letter-spacing: .05rem
 }
-.o article>* { line-height: 2.2em; margin-left: 2.5em; margin-right: 2.5em }
-.o article>div.reveal { margin-left: 0; margin-right: 0 }
-.o article>p { padding: .5rem }
-.o article>h2 { padding: .8rem 0;
+article>* { line-height: 2.2em; margin-left: 2.5em; margin-right: 2.5em }
+article>div.reveal { margin-left: 0; margin-right: 0 }
+article>p { padding: .5rem }
+article>h2 { padding: .8rem 0;
                 margin-top: 1.2em;
                 margin-left: 0; margin-right: 0;
 		font-size: 22px;
                 letter-spacing: 2px }
-.o article>h2::before, .o article>h3::before {
+article>h2::before, article>h3::before {
   content: "§";
   display: inline-block;
   margin-right: 14px;
 }
-.o article>h2::before {
-  background: var(--primary-color, --main-font-color, gray);
+article>h2::before {
+  background: var(--bgColor-primary, var(--color-fg-default, gray));
   opacity: .6;
   padding: 3px 0;
 }
-.o article>h3::before {
-  color: var(--primary-color, --main-font-color, gray);
-  border-right: solid 1px var(--primary-color, --main-font-color, gray);
+article>h3::before {
+  color: var(--bgColor-primary, var(--color-fg-default, gray));
+  border-right: solid 1px var(--bgColor-primary, var(--color-fg-default, gray));
   opacity: .6;
   padding: 0 3px;
 }
-.o article>h3 { font-size: 18px; padding: 0; margin-top: 1.5em; margin-left: 0; }
+article>h3 { font-size: 18px; padding: 0; margin-top: 1.5em; margin-left: 0; }
 article #related { margin-top: 4.5em; margin-bottom: 1em }
-.o article ul li {
+article ul li {
 	  list-style-type: disc;
 }
-.o article ul li:not(:last-child) {
+article ul li:not(:last-child) {
 	  padding-bottom: .6rem;
 }
-.o article ul,
-.o article ol {
+article ul,
+article ol {
 	list-style-position: outside;
 	padding: 0.6em 1.5rem 0;
 	padding-left: 2rem;
 	text-align: justify;
 }
-.o article>ol {
-    border-right: dotted 1px var(--main-font-color);
+article>ol {
+    border-right: dotted 1px var(--color-fg-default);
 }
-.o article>ul, .o article>ol {
+article>ul, article>ol {
     margin-top: 1.7em;
     margin-bottom: 1.7em;
 }
-.o article>ul:has(>li>ol),
-.o article>ul:has(>li>ul) {
-    border-top: dotted 1px var(--main-font-color);
+article>ul:has(>li>ol),
+article>ul:has(>li>ul) {
+    border-top: dotted 1px var(--color-fg-default);
 }
-.o article>ul:has(>li>ol),
-.o article>ul:has(>li>ul) {
+article>ul:has(>li>ol),
+article>ul:has(>li>ul) {
     padding: 0;
 }
-.o article>ul:has(>li>ol)>li,
-.o article>ul:has(>li>ul)>li {
-    border-bottom: dotted 1px var(--main-font-color);
+article>ul:has(>li>ol)>li,
+article>ul:has(>li>ul)>li {
+    border-bottom: dotted 1px var(--color-fg-default);
     display: block;
     list-style: none;
     padding: .8em .5em;
@@ -243,13 +216,13 @@ article>h2, header#genre {
 }
 
 @media screen and (max-width:543px) {
-	body.o { font-size: 14px }
+	body.o { font-size: 15px }
 	.o main.section { padding: 3rem .75rem }
 	.o #pagetitle h1 { font-size: 1.8em }
-	.o article>* { margin: .5em; }
-	.o article>h2 { font-size: 18px; padding: 1.3rem 0; }
-	.o article>h3 { font-size: 16px }
-	.o article>p {
+	article>* { margin: .5em; }
+	article>h2 { font-size: 18px; padding: 1.3rem 0; }
+	article>h3 { font-size: 16px }
+	article>p {
 		padding: .5rem;
 		margin: 0;
 		letter-spacing: .09rem;
@@ -258,7 +231,7 @@ article>h2, header#genre {
 }
 
 @media screen and (max-width:767px) {
-        .o article>pre { margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0 }
+        article>pre { margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0 }
 }
 
 .pages-label {
@@ -276,6 +249,7 @@ article>h2, header#genre {
 	width:100%;
 	height: 200px;
 	background-color: gray;
+	position: relative;
 }
 
 .page-thumbnail img {
