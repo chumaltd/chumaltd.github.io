@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html data-color-mode="dark" data-dark-theme="dark">
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>電子納税の現状 | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/tax-digitalization-jp/" />
+<meta property="og:title" content="電子納税の現状" />
+<meta property="og:description" content="LucaSuiteの初期リリースと導入から3年が経過し、バックオフィスはほぼ無人運用が定着している。" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/tax-digitalization-jp/ />
+
+
+    </head>
+    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl" style="width: 100%">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer style="margin-right: .7rem"></cm-drawer>
+    <a href='/' style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li class="breadcrumb-item"><a href="/ja/">HOME</a></li>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;電子納税の現状</li></ul>
+<script type="application/ld+json">
+{"@context":"http://schema.org", "@graph":[
+	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
+	{"@type":"BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/tax-digitalization-jp/","name": "電子納税の現状" }
+}]}
+]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
+          電子納税の現状
+        </h1>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;電子納税の現状</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#事業税の技術的補足">事業税の技術的補足</a></li>
+      </ul>
+    </li>
+    <li><a href="#電子政府が進んでいない">電子政府が進んでいない</a></li>
+    <li><a href="#税に対する意識が低すぎる国">税に対する意識が低すぎる国</a></li>
+    <li><a href="#申告納税の主体性を疑うべき">申告納税の主体性を疑うべき</a></li>
+    <li><a href="#期待はしていない">期待はしていない</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>LucaSuiteの初期リリースと導入から3年が経過し、バックオフィスはほぼ無人運用が定着している。<br>
+
+<a href="https://github.com/chumaltd/luca-jp">luca-jp</a>は日本向けのローカルモジュールで、法人確定申告のファイル生成機能も持つ。自社の決算期が来るたびに守備範囲を広げてきているのだが、3年目にしてようやくコアロジックにテストケースを実装できた。</p>
+<p>別表4・別表5-1・別表5-2については、主要なシナリオで期待どおりに動作している確認をとれた。<br>
+このツールの意図はメンテナンスフリーであり、今後大きく手を入れる予定がないため、設計の背景を記録しておく。</p>
+<p>この部分が難しいのは、いくつかの根本的な問題があり、税務をうがって理解しないとデザインが定まらない。</p>
+<p>1つには、e-TaxやelTaxのデータフォーマットにシステム設計がなく、紙の申請書とまったく同じ様式になっている点。<br>
+実務書の解説も申告書をワークシートとして転記していく方法を前提としていることが多く、不可解なワードが頻出する。</p>
+<p>税務申告は記入欄も多いのだが、かなりの部分は計算で導出すべき欄である。以前から主張しているように、計算上必要な項目のみに入力を限定し、導出項目は国税庁が配布するライブラリが計算する、という基本設計が必要だ。<br>
+e-Taxのフォーマットはかなりの頻度でバージョンアップするが、この設計は放棄されたまま一歩も前進していない。</p>
+<p>また、税務ルールが会計とは異なっているうえにロジカルではない点にも問題がある。</p>
+<p>別表4「所得の金額の計算に関する明細書」は会計と基準が異なる税務ルールに合わせて利益を修正する計算書なのだが、ルールが恣意的すぎる。<br>
+たとえば利益算出にあたり、税金じたいが費用（損金）であり利益を圧縮する効果がある。しかし、多くの税金は拒否リストに登録して損金として認めておらず骨抜きになっている。そして、事業税は拒否していないので、原則に立ち返って損金になる。</p>
+<p>事業税とそれ以外の違いについて、探せば説明は見つかるものの、論拠はなくその全てが言いわけである。<br>
+そしてこの問題のもっともダメな点は、事業税を損金として計算する手間が非常に大きいということだ。</p>
+<p>立法論としてベストな設計は、<u>あらゆる税金を損金として認めない</u>ことだ。これで計算が減る。<br>
+仕上がり徴収額が高いのか安いのかは、税率設定の議論に集約すべきなのだ。</p>
+<h3 id="事業税の技術的補足">事業税の技術的補足</h3>
+<p>税務がほとんど足し算と引き算ばかりであるにもかかわらず複雑なのは「負の減算」といった奇怪な概念が存在するからだ。<br>
+負の減算は要するに足し算であって計算はなにも難しくないが、指している対象がことごとく意味不明瞭である。
+そのすべてが会計との差異を調整すると元に戻す調整がセットで発生することから来ており、自縄自縛になっている。</p>
+<p>この点に気づいて仮払税金認容といった調整そのものを極力排除するように修正した。<br>
+ところが、先述の事業税だけは会計にフィットさせられず残ってしまった。</p>
+<p>事業税が損金であることは税法も同意しているが、中間納付が過大で還付があった場合の額が計算できないのだ。<br>
+税額は利益に税率をかけて計算するものであり、事業税は利益を減らす効果があり税額に影響がある。
+この循環参照があるために中間納付は還付額を特定できず、全額損金算入するか否認するかのいずれかしか採れない。法律上は税額部分だけ損金算入する処理を認めているが、計算不能なのでそのルールは死んでいる。</p>
+<p>これは徴税設計のバグだ。<br>
+税金の費用性などという概念を振り回す者がいるなら衒学趣味をこじらせている病に気づくべきだ。</p>
+<p>事業税は地方税であり、地方税は伏魔殿で持続不能であろう。全体的に作り直す必要がある。</p>
+<h2 id="電子政府が進んでいない">電子政府が進んでいない</h2>
+<p>別表5-1「利益積立金額及び資本金等の額の計算に関する明細書」・別表5-2「租税公課の納付状況等に関する明細書」は、一刻もはやく無くなるべきものだ。</p>
+<p>別表5-1は、先ほど述べた損金に認めたり認めなかったりする恣意的なルールによる期ずれを記録するものだ。<br>
+このフォーマットのすべてが導出項目であり、自由意思にもとづく選択の余地がない。国税庁が決めたルールを強制しているのだから、国税庁がライブラリを配布して計算するサービスを提供しなくてはならない筋のものと言える。</p>
+<p>別表5-1には、資本の期中異動の報告欄もあるが、いまや株主資本等変動計算書も提出しているから無為に重複している。</p>
+<p>別表5-2は納付状況を税別に報告するフォーマットで、これがまだ存在していることの問題は大きい。<br>
+さまざまな書類を紙で管理していた時代には主要記録として妥当なものだが、今となっては電子政府の機能により行政サービスとして提供すべきものである。</p>
+<p>法人番号の導入は2015年10月で、すでに8年が経過している。<br>
+国民総背番号制と呼ばれていた頃から明らかに徴税の追跡は主目的である。前評では過度な追跡が懸念されたが、実際には追跡するシステムを構築する能力がなかった。</p>
+<p>少なくとも別表5-1・別表5-2は、廃止日をあらかじめ宣言すべきだろう。<br>
+一部の企業はe-Tax申告が必須になったが、e-Tax申告するなら別表5-1・別表5-2を提出しない制度は今すぐ導入できる。</p>
+<p>役所は失敗を極度に恐れるが、この国は国民の
+<a href="https://ja.wikipedia.org/wiki/%E5%B9%B4%E9%87%91%E8%A8%98%E9%8C%B2%E5%95%8F%E9%A1%8C">年金記録を体系的に紛失</a>したことがある。<br>
+この先まだまだ国力は弱くなるから、問題などいくらでも起きる。</p>
+<h2 id="税に対する意識が低すぎる国">税に対する意識が低すぎる国</h2>
+<p>elTaxを廃止してe-Taxに吸収することも不可欠と言える。elTaxは設計が馬鹿げていて、法人番号の意図に反してIDが乱立している。</p>
+<p>徴税主体が津々浦々に存在していること自体がファンタジーであることにもっと注目すべきだ。徴税と自治を結びつけたい心情など言い訳で、そもそも自治能力に欠けている事実を自覚する必要がある。</p>
+<p>ただ、現代日本の徴税意識は本当に地獄の底に落ちている。<br>
+
+<a href="https://ja.wikipedia.org/wiki/%E3%81%B5%E3%82%8B%E3%81%95%E3%81%A8%E7%B4%8D%E7%A8%8E">ふるさと納税</a>が象徴的で、これは歴史に名を残す悪法と言える。</p>
+<p>後世、民主主義や市民主義がより成熟した社会になっていて欲しいが、その時にはアンチパターンの題材として採り上げるに違いない。<br>
+いま、日本人の多くはふるさと納税を肯定的に捉えてしまっている。</p>
+<p>租税という制度じたいが負担を分かちあうものであり、受益者負担により合理性を狙っている。<br>
+ふるさと納税は、ハードな義務を回避でき即物的な見返りがある点で、税ではない。横浜・名古屋・大阪・川崎をはじめ都市を中心に住民税の受益者負担の回避が起きている。</p>
+<p>国民の三大義務は「勤労・納税・教育」であり、納税が体系的に骨抜きになっていることは言うまでもない。ふるさと納税に異論が出ないことから、社会科の教育義務も空洞化久しいことも浮き掘りになる。</p>
+<p>これらの義務は歴史が示すサバイバルの知恵であって、他国の属国になり下がらないために最低限必要な自衛策である。<br>
+直接的な因果関係が分かりにくいものの、これらの義務を放棄する社会は全体として奴隷指向の集団と言える。</p>
+<p>このことは、より直接的な兵役の義務で考えた方が分かりやすい。
+いま日本には行きがかりの経緯で兵役がないが、侵略を受けた際に「ふるさと招集令状」などと言えるのか。</p>
+<p>税制は自民党が船頭となって策定しており、ふるさと納税は未来の奴隷社会をデザインしたアウトプットである。<br>
+そして自民党の主要グループは反社会的勢力と同じ手法でカネを巻き上げ、納税申告を回避し、発覚すれば手ぎわよくドリルで証拠隠滅する。<br>
+これは批判ではなく事実である。</p>
+<p>大本営のカレントな実行能力がこの程度であることは、電子政府の設計など望むべくもないことを示している。<br>
+ふるさと納税は氷山の一角にすぎず、安倍・菅政権で並行して起きた経緯により行政官僚組織が痩せてしまった可能性があり、これは修復不能だろう。</p>
+<p>税制は、何か新たな制度をつけ足すことで良くなるような幻想は誤りで、既存制度の撤廃を進めてもっと簡素化する必要がある。<br>
+おそらく本当のラストチャンスは、消費税率を多くの国と同レベルの15%にする際にセットで行う大規模改正だ。</p>
+<h2 id="申告納税の主体性を疑うべき">申告納税の主体性を疑うべき</h2>
+<p>現在の確定申告制度は「納税者が主体的に税金を計算することで租税の主役意識を喚起する」というファンタジーを前提としている部分がある。<br>
+この点は、納税者が本当に計算しているのか、計算したことによって主役意識を持っている事実はあるのか、という現実の実効性から評価すべきだ。実効性はないと思うし、よって守るべき前提は存在しない。</p>
+<p>この先マンパワーが減っていったときに、納税者と各自治体が直接やりとりしているelTaxというスキームがまず破綻するだろう。<br>
+現在の制度では、複数自治体に事業所がある場合、税金の配分を法人が計算し、各自治体に直接納付している。当然ながら電子納税を前提とすると、行政内サービスに分配機能を持たせた方が効率的である。</p>
+<p>また従業員の所得税については、源泉徴収により確定申告のかなりの部分を骨抜きにしている。原則はご立派なのかもしれないが、徹底していない原則は欺瞞にすぎない。</p>
+<p>地方を含む法人税制については、本来は第一に国際間競争の制約がある。<br>
+グローバル企業誘致の障害にならないためには、各国の相場から見て割安な税率と簡素な計算が欠かせない。<br>
+現状の税務計算にも色々と言いわけがあるだろうが、海外の企業が支持してくれるか否かという観点で根底からやり直しが必要だ。</p>
+<p>もし本当に納税の主体性を重視するなら「納税者は主体的に多めの額を納税してよい」というルールを導入して欲しい。現状これは否認されているため、納税者の主体性は侵害されている。</p>
+<p>多めに納付できるなら税務計算のすべてを近似計算に置きかえられ、事務コストを劇的に圧縮できて元がとれる。冒頭の事業税も計算可能になり、会計と税務の認識に違いがなくなる。<br>
+計算に誤りがあれば税務署が指摘する必要があるから、必然的に税制じたいが簡素になるだろう。要するに、現状の税制は計算、修正にかかる人的コストを無視して納税者に外部経済を押しつけている。</p>
+<h2 id="期待はしていない">期待はしていない</h2>
+<p>一納税者として立法論の観点で電子納税を評価したが、結論として期待はしていない。</p>
+<p>カジュアルな不備が体系的に存在するということは、すでに制度を維持する能力がないことを示唆している。<br>
+おそらく遂行能力を持つ人材が、政治と行政のいずれからも払底してしまって、すでに後の祭りなのだと思う。</p>
+<p>「本来なすべきことは簡素化である」という原則にコンセンサスができれば実行は難しくない。簡素とはそういう意味だからだ。<br>
+これは地方税の複雑化が持続困難であるという認識と裏表であり、その入口を通過できていない。</p>
+<div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/tax-digitalization-jp/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/tax-digitalization-jp/">電子納税の現状</div>
+            <div class="f5">LucaSuiteの初期リリースと導入から3年が経過し、バックオフィスはほぼ無人運用が定着している。……</div>
+	</div>
+</a>
+<a href="/ja/beyond-evaluation/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/beyond-evaluation/">評価しえぬもの</div>
+            <div class="f5">E2Eテスト導入から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく……</div>
+	</div>
+</a>
+<a href="/ja/fake-technology2/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/fake-technology2/">縮小均衡からの脱却</div>
+            <div class="f5">Shepherd.jsを除去して driver.jsを再実装する作業を終えた。 これらはインタラクティブ……</div>
+	</div>
+</a>
+<a href="/ja/covid19-2023/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/covid19-2023/">COVID-19の行きがかり</div>
+            <div class="f5">日本では週明け2023年5月8日から、新型コロナウイルス感染症の区分が５類感染症となり、行政上ノーガ……</div>
+	</div>
+</a>
+<a href="/ja/sound-quality/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/sound-quality/">サウンドの品質</div>
+            <div class="f5">デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。 音楽については、……</div>
+	</div>
+</a>
+
+          </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>
