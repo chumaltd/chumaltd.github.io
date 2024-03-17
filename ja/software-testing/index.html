@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html data-color-mode="dark" data-dark-theme="dark">
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ソフトウェア・テスティング | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/software-testing/" />
+<meta property="og:title" content="ソフトウェア・テスティング" />
+<meta property="og:description" content="ソフトウェアの動作確認を担うテストコードは、品質を制御する主要パーツだ。assert_equal 1 &#43;" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/software-testing/ />
+
+
+    </head>
+    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl" style="width: 100%">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer style="margin-right: .7rem"></cm-drawer>
+    <a href='/' style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li class="breadcrumb-item"><a href="/ja/">HOME</a></li>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;ソフトウェア・テスティング</li></ul>
+<script type="application/ld+json">
+{"@context":"http://schema.org", "@graph":[
+	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
+	{"@type":"BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/software-testing/","name": "ソフトウェア・テスティング" }
+}]}
+]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
+          ソフトウェア・テスティング
+        </h1>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;ソフトウェア・テスティング</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ソフトウェアテストの本質的な難しさ">ソフトウェアテストの本質的な難しさ</a></li>
+    <li><a href="#群盲と象">群盲と象</a></li>
+    <li><a href="#変更プロセスへの保証">変更プロセスへの保証</a></li>
+    <li><a href="#初歩にファシリテーションのハードル">初歩にファシリテーションのハードル</a></li>
+    <li><a href="#無視できないフレーキーテスト">無視できないフレーキーテスト</a></li>
+    <li><a href="#テスト実装のフロンティア">テスト実装のフロンティア</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>ソフトウェアの動作確認を担うテストコードは、品質を制御する主要パーツだ。<code>assert_equal 1 + 1, 2</code>といったコードで適切な動作を確認する。<br>
+実行時には取り外されていることから補助的なツールと見なされていて、無いよりは有った方がベターと捉えられているが、誤認である。</p>
+<p>テストコードに対するエンジニアの姿勢は、主観的には「書く」「書かない」の２派に分かれる。誰しもテストを記述する能力を持っているが意図的に書く手間を割かない、と主張する人たちが人数の観点では主流だ。</p>
+<p>しかし客観的に観察すると、書かないという自由意思は錯覚であり本当の原因は無能力だという不都合な真実がある。</p>
+<p>客観的に適切な分類は「書ける」「書けない」の２つであり、現実にはテストコードを記述する能力を持たないから書かないのだ。<br>
+テストコードを持たなければ品質トラブルは比例して増える。そして、どれほど大きな品質トラブルに直面しても、テストコードを書く挙動に切り替わることはない。</p>
+<h2 id="ソフトウェアテストの本質的な難しさ">ソフトウェアテストの本質的な難しさ</h2>
+<p>
+<a href="/ja/tax-digitalization-jp/">税額計算の例</a>をもっとも簡素にとらえた場合、利益が出て税金を納付する場合、赤字となり損失を翌年に繰り越す場合ではアウトプットが著く異なる。また、期の途中に中間納付する場合と中間納付しない場合にも異なる。<br>
+これだけに限っても少なくとも主成分が４種あり、要するに完全には直交しない４次元空間の挙動を検証する必要がある。</p>
+<p>人間の直感的な知覚能力は日常的な空間認識を借用しており、縦・横・高さ方向に直交している３次元が限度である。さらに描く力については、ほぼ２次元に制約される。<br>
+ソフトウェアの主要変数は３次元をかんたんに超えるし、直交しているわけでもなく相互に干渉し合っているという点で、素朴な人知を超えている。</p>
+<p>借用できる知覚能力で組み立てられない以上、ソフトウェア・システムを素朴に知覚できているような感覚は誤っている。<br>
+その際に知覚しているものは、代表性バイアスである。</p>
+<p>対象の構造と知覚構造の根本的なズレが、テストコードの必要性と難しさの両方を説明する共通要因と言える。</p>
+<p>この点について、テストコード構築の統一的な手法はいまだ確立していない。<br>
+数学の次元論の中に一定の答えが出ているのではないかと思うが、高等学校で習う数学の範疇を超えているので、今後追跡すべき課題と考えている。</p>
+<h2 id="群盲と象">群盲と象</h2>
+<p>テストコード記述には、高次元空間を分類して分析する必要がある。<br>
+ここから派生して、テストコードの全容を把握する方法がないことが、実行にあたり大きなネックになっている。</p>
+<p>ソフトウェアのパーツである関数内に<code>if</code>文などの分岐があればそこに次元が生じるわけだが、とりうる値の自由度をとらえづらいことに加えて、関数の接続による組み合わせ爆発が起きる。</p>
+<p>テストケースはソフトウェアが形成する空間のごく一部をカバーし、ケースを増やすことで網羅性を高めていく。<br>
+「群盲、象を評す」という古い形容はテスティングの状況にフィットする。</p>
+<p>全容が決まらなければ当然割合も決まらないため、「どの程度良くなったのか？」という疑問に答える方法はない。</p>
+<p>ソフトウェア本体のうち、テストコードが実行した割合を測るカバレッジという指標がよく使われているが、カバレッジは状態空間の全容を指しているわけではないため、テストプロセスのごく初期の段階にしか使えない。<br>
+１つの状態で適切に動作したからといって、他の状態でも期待に沿っているとまでは言えない、という関係にある。</p>
+<p>実例でよく遭遇するパターンとして、ソフトウェアにはボイラープレートと呼ばれる定型的な処理が多く含まれ、最初の１ケースを実行しただけで80%程度のカバレッジに到達することがある。<br>
+カバレッジの観点に沿ったとしても、残りの20%の変動を読みとることになり指標が線形でない。しかも100%は通過点に過ぎず、どの程度通過したのかは読みとれない。</p>
+<p>さらに分かりづらい話題がある。<br>
+現実の実行パターンはとりうる状態のごく一部に集中するため、わずかなテストコードを書くだけでも主観的な品質は劇的に向上するのだ。<br>
+テスティングというと異常系や境界値といった特徴的なタームから、網羅性に意義を見出しがちだが、想像に反して網羅性には答えがなく、わずかな正常系のみから得られる利益は多い。</p>
+<h2 id="変更プロセスへの保証">変更プロセスへの保証</h2>
+<p>テストコードは繰り返し実行することに意義がある。</p>
+<p>ソフトウェアは、最初に一度完成した仕様を永続的に維持する使い方は少なく、利用の変化に応じて機能を変える可塑性を求められる。<br>
+仕様が変わった部分は、機能実装にともなって従来のテストコードがフェイルする。この際、多くのテストケースは通過していて意図した部分のみフェイルしているという対比によって、変更の適切さを確認することがテストコードの価値だ。</p>
+<p>フェイルしたケースは、新たな設計にもとづいてテストケースをリライトする。手順が変わる場合もあるが、比較する値だけが変わる場合もある。</p>
+<p>変更時のテストは、手作業で動作テストする方式とテストコードの差がつきやすい部分でもある。<br>
+テスト作業は実行のつど人的コストがかかるため、確認範囲を限定することが多い。テスト設計時に無関係だろうと想定している部分はテスト作業では除外されうるが、テストコードの場合は機械的に実行する点が異なる。</p>
+<p>テストコードを利用した変更確認プロセスは、人間が高次元の状態を知覚できないネックへの対処にもなっている。</p>
+<p>限定されたケースのフェイルによって、着目すべき次元が絞られる。もちろん１変数の影響に切り分けられるのがもっとも理解しやすいが、２次元や３次元程度に圧縮されるだけでも対処可能な水準に引き寄せられる。</p>
+<p>理解できる前提を確立したうえで、新しい仕様に沿って適切な挙動がどうあるべきかを定義でき、テストケースや機能を書き換えられる。<br>
+機能が錯綜する段階に至ると、この手順で設計・実装・テストを同時に進める方法でなければ見通しがつかない場合もある。</p>
+<h2 id="初歩にファシリテーションのハードル">初歩にファシリテーションのハードル</h2>
+<p>リアルな動作品質を確認するには、実環境に近いセットアップで実行する必要がある。<br>
+たとえばWebサービスのテストであれば、じっさいにブラウザを動作させるSeleniumといったツールを用いた方が良い。このアプローチと対極にある、末端の関数をテストするユニットテストはほとんど無価値とも言える。</p>
+<p>Seleniumを例に挙げれば、テストコードはSeleniumが提供するライブラリを用いて開発することになり、その技術はテスト専用である。<br>
+要するにソフトウェア本体とは異なるツールセットの必要に迫られることが多い。また、Seleniumはブラウザテスト専用であり、別の形態のソフトウェアには通用しない。</p>
+<p>多くのアプリケーションがRDBMSを採用しており、特定の状態を再現するためにテストケースの前後で直接RDBMSを操作する方法が簡潔という状況にも直面する。この目的のコードもアプリケーション開発で用いる手法とかけ離れている。</p>
+<p>このようにテストコードを導入するにあたって、最初の１ケースを実装する以前に動作を再現するファシリテーションの努力が欠かせない。</p>
+<h2 id="無視できないフレーキーテスト">無視できないフレーキーテスト</h2>
+<p>フレーキーテストはテストケースのうち、実行のつど成功する場合と失敗する場合があるものを指す。</p>
+<p>その多くが、自分の書いたコードではなく採用しているソフトウェアの品質不良に由来している。直接には、ネットワークや描画などのIOタイムアウトとの関連が深い。<br>
+フレーキーテストが生じた場合、「成功するケースが多いから問題ない」とは言い切れず、ライブラリを変更して作り直す必要が生じる。</p>
+<p>著名ライブラリの
+<a href="/ja/fake-technology/">React.jsを全面的に除去</a>したことがあるが、除去により問題は終息し、それ以外の方法では効果がなかった。問題の所在を推定できたこともテストコードの成果と言える。<br>
+ミドルウェアの切り換えには地道な努力を要求される。これを省力化する手段はないものの、テストケースを完備していれば移行の正しさを確認しながら進められる。</p>
+<h2 id="テスト実装のフロンティア">テスト実装のフロンティア</h2>
+<p>ソフトウェアの品質には何らかの契約や約束がつきまとっていることから、不備があると後から直すことになっていつまでも仕事が終わらない。<br>
+テストコードを現実の利用方法に沿って記述できたなら、その部分は想定どおりの挙動を実効的に確保できる。</p>
+<p>よってテストケースのセットを整備することで、開発プロセスのひと区切りを迎えられる。</p>
+<p>ここで、状態空間の全容が不可知であるというネックが再び登場する。</p>
+<p>テストケースがまったく無い状態から書き始める段階は問題ない。重複することがないから、追加したテストケースは有効に状態空間の一部を検証する。<br>
+引き続き別のケースを追加するにあたって、類似の条件でテストしても検証済みの挙動が得られるだけで、挙動の網羅性は前進しない。</p>
+<p>既存指標のカバレッジはソフトウェアの全コード行を100%とする網羅性を測っているが、実際に知りたいのは状態空間に対するカバレッジなのだ。<br>
+ところが、状態空間の形状が分からない。</p>
+<p>よく使われるホットパスのシナリオは優先的に実装したいし、実装した部分がどの程度のシナリオをカバーしていて、どのような条件で未知の挙動を引き起こしうるのか、といったことを知りたいものの、これらが五里霧中になる。</p>
+<p>現状では探索的にシナリオを選定する方法しかなく、そのためまとまった時間をかけて集中的にテスト実装しないと攻略できない状況に直面する。<br>
+効果的に網羅性を高めるには、部分的といえども空間の形状を見渡す必要があり、その多くが実際に生じているわけではない反実仮想のケースであるため集中力を問われる。</p>
+<p>既述のとおり、仕様変更にあたってテストケースを変更する展開も迎えるため、すべてを忘れ去ったあとでもテストスイートの体系が読みとりやすく、見通しが良い構造を維持することも重要だ。</p>
+<p>これまでのテスト運用の事象を総合すると、この分野には熟練が当てはまりづらい。<br>
+一面ではスムーズに実装が進む熟練効果はあるのだが、見通せない全体に対する効果という本来の目的を直視するとき、その熟練度がカバーする範囲は無意味なほどに狭い。</p>
+<p>テストコードを書く慣習を手放さないチームでさえ、テストスイートをうまく構築できているとは考えにくい。<br>
+本稿は、はかどらなさの所在を探る目的で知るところを書き出したものだが、消去法で浮上するフロンティアはソフトウェアの構造解析なのだろうと結論づけたい。</p>
+<div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/software-testing/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/software-testing/">ソフトウェア・テスティング</div>
+            <div class="f5">ソフトウェアの動作確認を担うテストコードは、品質を制御する主要パーツだ。assert_equal 1 +……</div>
+	</div>
+</a>
+<a href="/ja/tax-digitalization-jp/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/tax-digitalization-jp/">電子納税の現状</div>
+            <div class="f5">LucaSuiteの初期リリースと導入から3年が経過し、バックオフィスはほぼ無人運用が定着している。……</div>
+	</div>
+</a>
+<a href="/ja/beyond-evaluation/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/beyond-evaluation/">評価しえぬもの</div>
+            <div class="f5">E2Eテスト導入から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく……</div>
+	</div>
+</a>
+<a href="/ja/fake-technology2/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/fake-technology2/">縮小均衡からの脱却</div>
+            <div class="f5">Shepherd.jsを除去して driver.jsを再実装する作業を終えた。 これらはインタラクティブ……</div>
+	</div>
+</a>
+<a href="/ja/covid19-2023/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/covid19-2023/">COVID-19の行きがかり</div>
+            <div class="f5">日本では週明け2023年5月8日から、新型コロナウイルス感染症の区分が５類感染症となり、行政上ノーガ……</div>
+	</div>
+</a>
+
+          </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>

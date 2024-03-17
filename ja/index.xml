@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>ソフトウェア・テスティング</title>
+      <link>https://chumaltd.github.io/ja/software-testing/</link>
+      <pubDate>Fri, 15 Mar 2024 10:02:10 +0900</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/software-testing/</guid>
+      <description>ソフトウェアの動作確認を担うテストコードは、品質を制御する主要パーツだ。assert_equal 1 +</description>
+    </item>
+    
+    <item>
       <title>電子納税の現状</title>
       <link>https://chumaltd.github.io/ja/tax-digitalization-jp/</link>
       <pubDate>Wed, 13 Mar 2024 23:02:51 +0900</pubDate>
