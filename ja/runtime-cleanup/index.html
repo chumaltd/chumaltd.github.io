@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html data-color-mode="dark" data-dark-theme="dark">
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ランタイム・クリーンアップ | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/runtime-cleanup/" />
+<meta property="og:title" content="ランタイム・クリーンアップ" />
+<meta property="og:description" content="コンテナイメージのクリーンアップを終えつつある。 ソフトウェア開発は60年以上の歴史を持つが、いまだに" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/runtime-cleanup/ />
+
+
+    </head>
+    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl" style="width: 100%">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer style="margin-right: .7rem"></cm-drawer>
+    <a href='/' style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li class="breadcrumb-item"><a href="/ja/">HOME</a></li>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;ランタイム・クリーンアップ</li></ul>
+<script type="application/ld+json">
+{"@context":"http://schema.org", "@graph":[
+	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
+	{"@type":"BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/runtime-cleanup/","name": "ランタイム・クリーンアップ" }
+}]}
+]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
+          ランタイム・クリーンアップ
+        </h1>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;ランタイム・クリーンアップ</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#イメージの種類を減らした">イメージの種類を減らした</a>
+      <ul>
+        <li><a href="#javascriptは優勝劣敗が進んだ">Javascriptは優勝劣敗が進んだ</a></li>
+        <li><a href="#rubyコンテナは不要化した">Rubyコンテナは不要化した</a></li>
+      </ul>
+    </li>
+    <li><a href="#実行環境の解決すべき課題">実行環境の解決すべき課題</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>コンテナイメージのクリーンアップを終えつつある。<br>
+ソフトウェア開発は60年以上の歴史を持つが、いまだに不要なコードやモジュールを削除する一般的な手法がない。</p>
+<p>コンテナイメージは目的別にパックした専用OSと言える。従来の多くの利用環境では、1台のハード・1つのOS上に多目的のソフトウェアを混載するセットアップが主流だ。アプリケーションの追加やバージョンアップは必要な一方、削除手法が手薄であるがために、もう不要なのに消せないモジュールが累積しがちだった。</p>
+<p>コンテナは各アプリケーションに必要なモジュールセットのみをパックするため、実行時には不要なソフトウェアを排除しやすくなる。古いソフトウェアは脆弱性と強く関連するため、特にセキュリティ確保に必要な機能だ。</p>
+<p>そして最後に産業廃棄物のような過去のコンテナイメージが残る。いずれはクリーンアップ用ツールが登場するだろうと考えていたが、何年待っても進展がない。「ぜったいに使われない」ことを保証するロジックがないため、イメージ削除は手作業にならざるを得ない。</p>
+<p>削除操作には、未来において失っていることのリスクをいま評価する必要があり、自動化できない宿痾になっている。</p>
+<h2 id="イメージの種類を減らした">イメージの種類を減らした</h2>
+<p>クリーンアップの過程で不要なものを積極的に廃止したのだが、とくにバリエーションが多かったもののうちJavascriptが1種類のみになり、Rubyは実質0種類になった。</p>
+<h3 id="javascriptは優勝劣敗が進んだ">Javascriptは優勝劣敗が進んだ</h3>
+<p>
+<a href="/ja/javascript-transition/">Javascript開発の変遷</a>を書いた時点では、Javascriptの新興開発ツールが無数に登場して見通しが悪かった。3年ほど経過したいま、新興ツール群は総崩れの情勢であり、何も変化は起きなかったとも言える。</p>
+<p>フロントエンド開発は「長い目で見るとアウトプットが何もない」という珍騒動がよく起きる。</p>
+<p>JavascriptはWebブラウザ向けの開発で必要になる。過去を振り返って大局的に見ると
+<a href="https://www.npmjs.com/">npm</a>パッケージレポジトリが最重要であり、npmを置き換えるレポジトリが確立しなかったことで
+<a href="https://nodejs.org/">Node.js</a>が防衛王者になった。</p>
+<p>
+<a href="https://deno.com/">Deno</a>はnpmとの互換性を向上する方針に舵を切ったため、実質的な守備範囲がビルドスクリプトのインタープリターに縮小した。その結果、コンテナイメージに同梱しておき、対応できるプロジェクトはDenoを用いて構築する位置づけに落ちついた。<br>
+npmクライアントがDeno上で安定動作する状況になれば、Node.jsの廃止も可能だろう。Denoの方が合理的に設計されているため、選べる状況ならDenoを優先したい。</p>
+<p>Node.jsやDenoの競争がトーンダウンしたのは、ブラウザ向けコンパイラの主機能を
+<a href="https://esbuild.github.io/">esbuild</a>や
+<a href="https://swc.rs/">swc</a>が担っていることが大きい。これらはgoやRustで作られており、ブラウザ向けJavascript開発の実行環境がもはやJavascriptではなくなっている。</p>
+<p>そのためコンテナイメージについては、単にDebian標準の<code>nodejs</code>をインストールするだけで実用上の不足がなく、非常に簡素になった。</p>
+<h3 id="rubyコンテナは不要化した">Rubyコンテナは不要化した</h3>
+<p>かつてサーバーサイド技術はRuby on Rails主体でスタートしたのだが、
+<a href="/ja/webdev-transition/">Web開発の変遷</a>で書いたとおりRubyやPython, PHP, Javaといった言語はコンテナに適していないため廃止した。<br>
+今回のイメージクリーンアップ作業で使用状況を確認していった結果、無数にあったRubyのコンテナイメージはゼロになった。</p>
+<p>削除したイメージの多さから分かるのは、前提ライブラリのセットアップに多大な手間をとられていたということだ。<br>
+Ruby言語が年1回バージョンアップするほか、Ruby on Railsは積極的に互換性のない新機能を採用し、他のライブラリもそれぞれのタイミングで更新される。</p>
+<p>Rubyなどのスクリプト言語の難点は、主要なライブラリがC言語で書かれており、セットアップの再現性が落ちる点にもある。コンテナイメージのビルドは頻繁に失敗していた。<br>
+またC言語が
+<a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%A2%E3%83%AA%E5%AE%89%E5%85%A8%E6%80%A7">メモリ安全</a>ではないことから、Cライブラリを同梱するRubyもまた断続的にセキュリティ脆弱性が発見され、コンテナイメージの更新が欠かせない。</p>
+<p>このようにサーバーサイドではメンテナンスコストが非常に大きいため使わなくなったが、
+<a href="https://github.com/chumaltd/luca">LucaSuite</a>のようなCLIツールではRubyは実用的と言える。</p>
+<p>コアのRuby機能に限定したスクリプトの場合、前提ライブラリのバージョンを問わなくなるため、単にDebian標準の<code>ruby</code>をインストールするだけで動作する。<br>
+ここまで簡素化できれば、Rubyの最新動向を追跡する必要はなくなる。</p>
+<h2 id="実行環境の解決すべき課題">実行環境の解決すべき課題</h2>
+<p>みずから書いたコードとは別に、動作に必要なランタイムやライブラリの維持・管理には無視できないコストがかかる。
+依存するソフトウェアを減らすことが有効な対策となる。</p>
+<p>ブラウザ向けJavascriptの開発は旧世代のツールを置き換えることで改善する。一方、サーバーサイドの開発は、広く普及している言語に選択肢がない。</p>
+<p>組み合わせ再現性の複雑さとメモリ安全性の欠如は最終的に許容できないと考えられ、長い目で見ると各種言語の実行環境は大きく変化するはずだ。<br>
+おそらく
+<a href="https://ja.wikipedia.org/wiki/WebAssembly">WebAssembly</a>に集約されるのではないか。調達しやすいCPUの選択肢にARMが加わったこともWebAssemblyのような中間言語を後押しする要因となる。</p>
+<p>ただしガベージコレクション(GC)は引き続きボトルネックとして残り続けるように思う。各言語が独自実装しているGCがWebAssemblyの実装に置き換わる。導入初期には、GCの違いによるトラブルを見ることになるだろう。</p>
+<p>簡素なセットアップやメモリ安全は得られるだろう。WebAssembly導入で保守の課題の多くは解決するが、最終的にオブジェクト指向そのもののネックはおそらく残る。</p>
+<p>オブジェクト指向言語は、オブジェクト初期化時からRAM消費が大きくGCまでオブジェクトを保持し続ける性質上、メモリのフットプリントが大きい。ハードの進化によりRAM容量と転送帯域に劇的な改善が起きるのであれば解決するが、これまでの経緯を考えると期待しづらい。</p>
+<p>また、これらの進化にはまだまだ時間がかかる。<br>
+エンジニアの適応と引きかえにできるのであれば、Rustはこれらの課題を既に解決している。要するにランタイムは無いに越したことはない。</p>
+<div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/runtime-cleanup/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/runtime-cleanup/">ランタイム・クリーンアップ</div>
+            <div class="f5">コンテナイメージのクリーンアップを終えつつある。 ソフトウェア開発は60年以上の歴史を持つが、いまだに……</div>
+	</div>
+</a>
+<a href="/ja/software-testing/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/software-testing/">ソフトウェア・テスティング</div>
+            <div class="f5">ソフトウェアの動作確認を担うテストコードは、品質を制御する主要パーツだ。assert_equal 1 +……</div>
+	</div>
+</a>
+<a href="/ja/tax-digitalization-jp/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/tax-digitalization-jp/">電子納税の現状</div>
+            <div class="f5">LucaSuiteの初期リリースと導入から3年が経過し、バックオフィスはほぼ無人運用が定着している。……</div>
+	</div>
+</a>
+<a href="/ja/beyond-evaluation/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/beyond-evaluation/">評価しえぬもの</div>
+            <div class="f5">E2Eテスト導入から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく……</div>
+	</div>
+</a>
+<a href="/ja/fake-technology2/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/fake-technology2/">縮小均衡からの脱却</div>
+            <div class="f5">Shepherd.jsを除去して driver.jsを再実装する作業を終えた。 これらはインタラクティブ……</div>
+	</div>
+</a>
+
+          </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>
