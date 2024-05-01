@@ -131,16 +131,19 @@ header#global-nav { background-color: var(--bgColor-primary); }
   }
 }
 
-.o .toc { font-size: .9em; margin: .5em }
+.o .toc { font-size: .9em; margin: 2.5em .5em }
 .o .toc li { padding-top: .6em }
 .o .toc li>ul { padding-left: .8em; font-size: .9em }
 article>h2, article>h3 {
 	color: var(--fgColor-emphasis);
 }
 article {
-	letter-spacing: .05rem
+	letter-spacing: .05rem;
+	line-height: 2.2em;
+	padding-top: 2.5rem;
 }
-article>* { line-height: 2.2em; margin-left: 2.5em; margin-right: 2.5em }
+article>* { margin-left: 2.5em; margin-right: 2.5em }
+article>pre { line-height: 1.5em; }
 article>div.reveal { margin-left: 0; margin-right: 0 }
 article>p { padding: .5rem }
 article>h2 { padding: .8rem 0;
