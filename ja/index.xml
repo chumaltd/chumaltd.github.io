@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>再インテグレーションテスト</title>
+      <link>https://chumaltd.github.io/ja/re-integration-testing/</link>
+      <pubDate>Sat, 15 Jun 2024 13:33:24 +0900</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/re-integration-testing/</guid>
+      <description>Webサービスの品質管理の主役として、 2年前にe2eテストを導入して引き続き機能している。 Ruby on Rai</description>
+    </item>
+    
+    <item>
       <title>ランタイム・クリーンアップ</title>
       <link>https://chumaltd.github.io/ja/runtime-cleanup/</link>
       <pubDate>Wed, 01 May 2024 12:25:57 +0900</pubDate>

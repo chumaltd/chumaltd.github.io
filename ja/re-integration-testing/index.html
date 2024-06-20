@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html data-color-mode="dark" data-dark-theme="dark">
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>再インテグレーションテスト | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/re-integration-testing/" />
+<meta property="og:title" content="再インテグレーションテスト" />
+<meta property="og:description" content="Webサービスの品質管理の主役として、 2年前にe2eテストを導入して引き続き機能している。 Ruby on Rai" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/re-integration-testing/ />
+
+
+    </head>
+    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl" style="width: 100%">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer style="margin-right: .7rem"></cm-drawer>
+    <a href='/' style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li class="breadcrumb-item"><a href="/ja/">HOME</a></li>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;再インテグレーションテスト</li></ul>
+<script type="application/ld+json">
+{"@context":"http://schema.org", "@graph":[
+	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
+	{"@type":"BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/re-integration-testing/","name": "再インテグレーションテスト" }
+}]}
+]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
+          再インテグレーションテスト
+        </h1>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;再インテグレーションテスト</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ライブラリの品質検査">ライブラリの品質検査</a>
+      <ul>
+        <li><a href="#原因特定に難がある">原因特定に難がある</a></li>
+      </ul>
+    </li>
+    <li><a href="#denoの進化が大きい">denoの進化が大きい</a></li>
+    <li><a href="#レンダリングの除外">レンダリングの除外</a></li>
+    <li><a href="#e2eテストとインテグレーションテストの併用">e2eテストとインテグレーションテストの併用</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>Webサービスの品質管理の主役として、
+<a href="/ja/e2e-web-testing/">2年前にe2eテストを導入</a>して引き続き機能している。<br>
+Ruby on Railsを作ったDHHが
+<a href="https://world.hey.com/dhh/system-tests-have-failed-d90af718">システムテストの限界を書いていて</a>、フレーキーであるという指摘はその通りだ。<br>
+じっさいにテストしていて、テストツールのSeleniumやChromeブラウザの動作をテストしているような事象を見ることの方が多い。</p>
+<p>DHHが指摘している問題とは別の限界があることに気づき、数日かけて別のテスト方式を追加実装していた。<br>
+Webサービスは複雑度が上がってきたため、e2eではカバーしきれない状況になった。</p>
+<p>テストケースは起きうる状態を再現して挙動をチェックするソフトウェアであり、状態を網羅する度合いを上げると検出力が高まる。
+たとえば2つのモジュールがそれぞれ自由度M, Nといった空間を持つとき、2つを組み合わせた状態空間は M x N に増える。
+ところが、e2eテストは実際の画面操作をシミュレートする都合上、表層のMパターンを再現するのがせいぜいといった限界がある。
+実行速度の遅さやフレーキネスもネックとなり、すべての空間を探索するのが事実上不可能だという結論に至った。</p>
+<h2 id="ライブラリの品質検査">ライブラリの品質検査</h2>
+<p>e2eの不足感は、依存しているライブラリのトラブルが増えてきたことによる。<br>
+当然ながら自分で書いたコードをカバーするようにテストを書くことになるため、背後に隠れたライブラリの挙動テストは手薄になる。</p>
+<p>従来の一般的な感覚では、ライブラリの挙動をテストしてもバグ検出の収穫は少ないという前提があった。<br>
+広く使われているソフトウェアほど問題が検出済になっている可能性が高いからだ。</p>
+<p>最近目につく問題は、このような実装済の機能の不備ではなく、機能が実装されないことによる不備という新たなパターンが多い。<br>
+標準規格であってもその導入スピードは各実装ごとに異なり、相対的に乗り遅れているライブラリがバグの原因となっている。</p>
+<p>経緯を確認してみると、要するに開発体力が落ちていてキャッチアップが万全と言えないプロジェクトが増えているように見える。</p>
+<h3 id="原因特定に難がある">原因特定に難がある</h3>
+<p>比較してみて気づいたのだが、どうやらSeleniumではJavascriptのコールトレースを取得できない。<br>
+各種ログを取得する機能はあるものの、<code>console.trace()</code>が出力するメッセージにログレベルが割り当てられておらず、詳細なログ出力を指定してもSeleniumに流れてこない。
+<code>console.trace()</code>が返す値は<code>undefined</code>であるため、ログに埋め込む手段もとれない。</p>
+<p>e2eでは適切に動作していることは確認できるが、エラーが起きた際の原因特定に弱点がある。</p>
+<h2 id="denoの進化が大きい">denoの進化が大きい</h2>
+<p>Javascript言語はブラウザ上で動作するコードとサーバーで動作するコードの両方の用途をカバーしてはいるものの、長らく両者の互換性は低いままだった。<br>
+サーバー用途はここまでNode.jsがデファクトスタンダードであり続けた。そして、npmなどの開発ツールはサーバーだけでなくブラウザコードも含めてNode.js準拠のものばかりだったため、ブラウザ向けコードもコンパイルしなければ動作しない状況が続いてきた。</p>
+<p>ECMAscriptとして標準仕様が改訂されていくなかで、いずれでもない新たな文法への統合が進んだ結果、ブラウザ向けの新規格コードがdenoサーバーでほぼ支障なく動作するところまで来た。</p>
+<p>今回インテグレーションテストを実際に書いてみるまで、「ブラウザコードがdeno上でそのまま動くのではないか」という憶測に半信半疑だった。これは過去何度もトライしてきたことで、エラーに直面して断念して来たからだ。</p>
+<p>決定打は、npm参照の安定性が大きく向上したことだろう。<br>
+denoはもともとnpmを排除したかったのだが、ライブラリ群が移行すべき新たなレジストリが定まらなかった。deno向けの新興レジストリがベンチャー企業として活動していたのだが、いずれも使いものにならないまま消えていった。<br>
+近年denoはnpmを扱えるように方針転換し、ようやく挙動が安定してきた。</p>
+<h2 id="レンダリングの除外">レンダリングの除外</h2>
+<p>e2eの難点に対処するために、テスト対象からレンダリング機能を除外したインテグレーションテストとして再構成した。<br>
+ブラウザのレンダリング機能はdomというモジュールが担っており、denoにもNode.jsにもライブラリは存在している。</p>
+<p>ここに至るまで数年がかりの試行錯誤を重ねてきた所感を一言で言えば、要するにdomがテストに適していない。</p>
+<p>Webに限らず、UI機能はXMLのような属性セットのツリーを操作する形式で実装されており、各テストケースの状態を簡潔に記述できない。簡潔に記述できないということは、状態空間を網羅するうえでネックになる。</p>
+<p>また、レンダリングじたいがとてもフレーキーだ。1件のテストケースが不安定になると他のケースも同時にfailする挙動が多く、コードの品質ではなくChromeとSeleniumの品質をテストすることになる。</p>
+<p>レンダリングを除外する方法は、ブラウザの<code>document</code>オブジェクトを参照しているコードがテスト対象に含まれないように構成することだ。<br>
+依存しているライブラリが不用意に<code>document</code>を参照しているケースがあり、その場合には間接的にも<code>import</code>のチェーンに混入しないようにする必要がある。</p>
+<p>新たに開発するアプリケーションであればテストケースと並行して開発することで、とくに苦労せず導入できるだろう。<br>
+既存のアプリケーションは、おそらくUIライブラリを分離する追加開発が必要になる。</p>
+<h2 id="e2eテストとインテグレーションテストの併用">e2eテストとインテグレーションテストの併用</h2>
+<p>UIコードを含まないインテグレーションテストをdeno上で実行すると、Seleniumを用いたe2eテストと比べて100倍程度高速に動作し、挙動も安定する。</p>
+<p>e2eテストは100ケースを超えてくると、実行や保守に不安定さが出る。本体のコードを拡張していくにつれ、網羅性の不足も目立ってくるが、需給ギャップを埋める手段がない。<br>
+denoを用いたインテグレーションテストは、数千ケース程度のCIを動作させられるのではないかと思う。また、<code>export</code>している任意の関数やオブジェクトをテストできるため、依存しているライブラリの詳細挙動のチェックも可能だ。</p>
+<p>Javascriptは登場からもう30年も経つが、ようやくまともなテストツールが整ってきたという印象だ。<br>
+ここまで置き換えが効かない言語になるとは誰も想像していなかった、ということだろう。</p>
+<p>e2eテストは実環境の挙動を確認できるため、実装できるなら併用した方が良い。網羅性は期待できないが、サンプリング実装にも意義がある。<br>
+レンダリングをテストに含めるのであれば実ブラウザを用いるべきで、jsdomなどのエミュレーションは無意味だろう。</p>
+<div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/re-integration-testing/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/re-integration-testing/">再インテグレーションテスト</div>
+            <div class="f5">Webサービスの品質管理の主役として、 2年前にe2eテストを導入して引き続き機能している。 Ruby on Rai……</div>
+	</div>
+</a>
+<a href="/ja/runtime-cleanup/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/runtime-cleanup/">ランタイム・クリーンアップ</div>
+            <div class="f5">コンテナイメージのクリーンアップを終えつつある。 ソフトウェア開発は60年以上の歴史を持つが、いまだに……</div>
+	</div>
+</a>
+<a href="/ja/software-testing/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/software-testing/">ソフトウェア・テスティング</div>
+            <div class="f5">ソフトウェアの動作確認を担うテストコードは、品質を制御する主要パーツだ。assert_equal 1 +……</div>
+	</div>
+</a>
+<a href="/ja/tax-digitalization-jp/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/tax-digitalization-jp/">電子納税の現状</div>
+            <div class="f5">LucaSuiteの初期リリースと導入から3年が経過し、バックオフィスはほぼ無人運用が定着している。……</div>
+	</div>
+</a>
+<a href="/ja/beyond-evaluation/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/beyond-evaluation/">評価しえぬもの</div>
+            <div class="f5">E2Eテスト導入から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく……</div>
+	</div>
+</a>
+
+          </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>
