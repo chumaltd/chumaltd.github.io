@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html data-color-mode="dark" data-dark-theme="dark">
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ドッグイヤーの終焉 | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/cloud-stagnation/" />
+<meta property="og:title" content="ドッグイヤーの終焉" />
+<meta property="og:description" content="Deno上のインテグレーションテストの実用性を評価するうちに、実はクラウドインフラの性能も悪いことに" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/cloud-stagnation/ />
+
+
+    </head>
+    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl" style="width: 100%">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer style="margin-right: .7rem"></cm-drawer>
+    <a href='/' style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li class="breadcrumb-item"><a href="/ja/">HOME</a></li>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;ドッグイヤーの終焉</li></ul>
+<script type="application/ld+json">
+{"@context":"http://schema.org", "@graph":[
+	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
+	{"@type":"BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/cloud-stagnation/","name": "ドッグイヤーの終焉" }
+}]}
+]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
+          ドッグイヤーの終焉
+        </h1>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;ドッグイヤーの終焉</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#クラウドが遅いのは自明とは言えない">クラウドが遅いのは自明とは言えない</a>
+      <ul>
+        <li><a href="#ハードの不備とセキュリティ攻撃がosボトルネックに">ハードの不備とセキュリティ攻撃がOSボトルネックに</a></li>
+      </ul>
+    </li>
+    <li><a href="#価格性能比が悪化している">価格性能比が悪化している</a>
+      <ul>
+        <li><a href="#デプロイメントに工夫が求められる">デプロイメントに工夫が求められる</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>
+<a href="/ja/re-integration-testing/">Deno上のインテグレーションテスト</a>の実用性を評価するうちに、実はクラウドインフラの性能も悪いことに気づいた。</p>
+<p>SeleniumのE2Eテストは挙動が安定せず、成功する場合と失敗する場合がある。そして、失敗の割合をクラウドインフラ上で実行するときとPC上で実行するときを比べると、クラウドの方が目に見えて多い。</p>
+<p>「そういうものか」と思うかもしれないが、これはソフトウェアエンジニアリングの観点からは相当異常で、このような挙動は他のプロジェクトで起きたことがない。</p>
+<p>ソフトウェアはCPU利用権を割当てられたときに時が進み、同じコードを実行すると同じ状態に帰着する。入力データを含めて同じコードが違う結果に至ることは原則ない。</p>
+<p>Seleniumで起きていることは、時間切れが生じることによる挙動の違いと考えられる。じっさいに一部のテストケースでは直接のエラー種別がTimeoutErrorだ。</p>
+<p>要するに、いまクラウドインフラはPCよりも明確に遅い。</p>
+<h2 id="クラウドが遅いのは自明とは言えない">クラウドが遅いのは自明とは言えない</h2>
+<p>テスト挙動が安定的に異なるという事態も理解しがたいが、クラウドが遅いのは輪をかけてアノマリーだ。</p>
+<p>クラウドサービスが提供するCPUはサーバー向けグレードを採用しており、スペック上はPCよりも格段に高速と言える。電力消費水準の点からも、ハードはPCよりも速いはずなのだ。</p>
+<p>ハードスペックとテスト挙動の逆転を埋め合わせる説明は提供されない。<br>
+消去法で考えると、クラウドプロバイダが実装する仮想化オーバーヘッドが主要因であるように思う。</p>
+<h3 id="ハードの不備とセキュリティ攻撃がosボトルネックに">ハードの不備とセキュリティ攻撃がOSボトルネックに</h3>
+<p>OS仮想化にはおそらく無視できないオーバーヘッドがあるものの、必要不可欠な機能でもあると思う。</p>
+<p>2018年あたりから<a href="https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)">Meltdown</a>などCPUじたいが持つ深刻なセキュリティ脆弱性が見つかった。あまりに広範なCPUに欠陥があるため、ハードそのものを完全に修正するような対策はとられていない。</p>
+<p>ハードが対策し切れない以上、CPU欠陥の対策もOSに含まれており、その一環としてCPU機能の無効化も含まれているはずだ。</p>
+<p>パブリッククラウドとして必要な対策を追加するとハード機能に大きな制約が加わり、サーバーとPCの性能が逆転するということだろう。</p>
+<p>その方針は妥当で異存はないが、性能劣化に言及していないのは欺瞞に見える。</p>
+<h2 id="価格性能比が悪化している">価格性能比が悪化している</h2>
+<p>1990年代から2000年代にかけてインターネットやスマートフォンが普及してきたのは、
+<a href="https://en.wikipedia.org/wiki/Moore%27s_law">ムーア則</a>が代表するハードの急速な進歩のおかげだ。</p>
+<p>いまでもIT産業にはハード高速化の幻想があるが、ムーア則は近年になって終焉している。<br>
+決定的な壁は、微細化を無限に進められるわけではない点にある。</p>
+<p>また、いかに半導体の密度が高まっても、既述のとおりセキュリティ対策で無効化するパーツが出てくるのであれば、肝心の性能が得られない。</p>
+<p>いま、IT調達の未来は過去の延長で考えられなくなっている。</p>
+<p>これは短期的な変化を述べているのではない。2018年のMeltdownの対策が2024年になった今まだクリーンに解決していないのではないか、という点がポイントだ。</p>
+<p>クラウドサービスのうちIaaSについては近年、進展がないように見える。<br>
+CPUの進化が停滞していることに加えて、OSのR&amp;Dに人的コストがかかるようになった結果、IaaSといえども最新ハードの計り売りを利用しているとは言えなくなったのではないか。</p>
+<p>ここ数年の経緯をまとめると、コンピュータが速くなり値下がりしていくという従来の期待は当面期待できなくなったように見える。<br>
+日本の利用者から見ると、値上がり傾向が続いている。日本の国力が落ちて購買力が丸ごと弱まった影響も大きい。</p>
+<h3 id="デプロイメントに工夫が求められる">デプロイメントに工夫が求められる</h3>
+<p>クラウドの価格には実は抑止力がないように見ている。直近のニュースではVMwareのM&amp;Aによりライセンスの大幅改定が起きた。</p>
+<p>コスト効率の観点で、今後もっとも不利になるのはサーバーレスアーキテクチャではないか。コストの主要部分がR&amp;Dとなれば利用する機能が多いほど割高になるだろう。</p>
+<p>これまでクラウドインフラは未来の終着駅に見えていたが、状況は変わったのだと思う。<br>
+マシンパワーを引き出せなければソフトウェアの価値は落ちる。</p>
+<p>今後新たに考えるべきことは、ベアメタルハード上にデプロイするような自動プロセスを構築することだろう。</p>
+<p>ただしこの6月に出版社KADOKAWAが攻撃された事件で、AWSを保全できている一方で自社データセンターのみ施設閉鎖に追い込まれた点は参考にすべきだ。セキュリティ要求の低いタスクの分離が前提と言える。</p>
+<p>この展開は、産業発展史としては順調とは言えない。</p>
+<div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/cloud-stagnation/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/cloud-stagnation/">ドッグイヤーの終焉</div>
+            <div class="f5">Deno上のインテグレーションテストの実用性を評価するうちに、実はクラウドインフラの性能も悪いことに……</div>
+	</div>
+</a>
+<a href="/ja/re-integration-testing/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/re-integration-testing/">再インテグレーションテスト</div>
+            <div class="f5">Webサービスの品質管理の主役として、 2年前にe2eテストを導入して引き続き機能している。 Ruby on Rai……</div>
+	</div>
+</a>
+<a href="/ja/runtime-cleanup/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/runtime-cleanup/">ランタイム・クリーンアップ</div>
+            <div class="f5">コンテナイメージのクリーンアップを終えつつある。 ソフトウェア開発は60年以上の歴史を持つが、いまだに……</div>
+	</div>
+</a>
+<a href="/ja/software-testing/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/software-testing/">ソフトウェア・テスティング</div>
+            <div class="f5">ソフトウェアの動作確認を担うテストコードは、品質を制御する主要パーツだ。assert_equal 1 +……</div>
+	</div>
+</a>
+<a href="/ja/tax-digitalization-jp/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/tax-digitalization-jp/">電子納税の現状</div>
+            <div class="f5">LucaSuiteの初期リリースと導入から3年が経過し、バックオフィスはほぼ無人運用が定着している。……</div>
+	</div>
+</a>
+
+          </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>
