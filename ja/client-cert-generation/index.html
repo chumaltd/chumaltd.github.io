@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html data-color-mode="dark" data-dark-theme="dark">
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>クライアント証明書を生成する | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/client-cert-generation/" />
+<meta property="og:title" content="クライアント証明書を生成する" />
+<meta property="og:description" content="年に数回、 X.509のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけ" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/client-cert-generation/ />
+
+
+    </head>
+    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl" style="width: 100%">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer style="margin-right: .7rem"></cm-drawer>
+    <a href='/' style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li class="breadcrumb-item"><a href="/ja/">HOME</a></li>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;クライアント証明書を生成する</li></ul>
+<script type="application/ld+json">
+{"@context":"http://schema.org", "@graph":[
+	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
+	{"@type":"BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/client-cert-generation/","name": "クライアント証明書を生成する" }
+}]}
+]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
+          クライアント証明書を生成する
+        </h1>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;クライアント証明書を生成する</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#使い捨てca">使い捨てCA</a></li>
+    <li><a href="#生成ステップ">生成ステップ</a>
+      <ul>
+        <li><a href="#秘密鍵生成の分離">秘密鍵生成の分離</a></li>
+      </ul>
+    </li>
+    <li><a href="#残る課題">残る課題</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>年に数回、
+<a href="https://en.wikipedia.org/wiki/X.509">X.509</a>のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけていたため、一度関連動向を含めてリサーチした。</p>
+<p>TLSのクライアント証明書認証は、究極はBasic認証と似たようなものではある。ただBasic認証はURLにセットできてしまう。セットアップ経路の手間の分だけ証明書の方がセキュアであろうと評価している。</p>
+<p>他の技術と独立してTLSレイヤに防壁を１枚追加できるメリットのため、しぶとく使い続けている。ただし、いざ使おうと思ったときに体系的な情報がなく、非常に難解である。過去何度か撤廃しようかと考えたこともある。</p>
+<p>暗号技術には改廃があるのだが、クライアント証明書はいつまでもRSAのままで良いのか、といった点が判然としない。</p>
+<h2 id="使い捨てca">使い捨てCA</h2>
+<p>これまで、古いOpenSSL由来の
+<a href="https://github.com/openssl/openssl/blob/OpenSSL_1_0_2-stable/apps/CA.sh">CA.sh</a>を手動で実行していた。履歴には1996年と書かれており、最近のバージョンにはもはや含まれていないのだがopensslのサブコマンドに大きな変更がないため、引き続き動作している。</p>
+<p>CA.shを読んでいくと結局ラッパーにすぎないことが分かるため、クライアント証明書生成の手順に沿って再構成した。<br>
+素朴に実行すると、随所で秘密鍵のパスフレーズを求められる点がとても分かりにくい。</p>
+<p>見通しを良くするために概要を述べると、<code>-batch</code>オプションを付けることでパスフレーズの無い秘密鍵を生成し、<code>-config</code>オプションで資格情報をファイルから供給すると対話プロンプトが出なくなる。<br>
+ただし、これが常に良い方法というわけではなく、利用上の制約はある。</p>
+<p>パスフレーズ無しについては方式を確認した結果として、
+<a href="https://en.wikipedia.org/wiki/Certificate_authority">CA</a>を継続運用せず、一期一会の証明書セットのみ利用する使い方に限定することでセキュリティレベルを上げられると考えた。</p>
+<p>CAは本来、多くの証明書を発行する前提で設計されており、秘密鍵アクセスを秘匿し、失効リストを追跡更新する必要がある。<br>
+公開鍵暗号方式は、秘密鍵にアクセスできなければ有効な署名を生成できないことを前提としており、パスフレーズは鍵アクセスをガードしている。<br>
+パスフレーズはコンピュータ草創期から主要な認証方式ではあるが、もはや絶対視できるほどの耐性も期待できない。秘密鍵そのものが存在しない方がよりセキュアだろう。</p>
+<p><code>-config</code>オプションは、カスタムの
+<a href="https://github.com/openssl/openssl/blob/openssl-3.3/apps/openssl.cnf">openssl.cnf</a>を指定するよくあるオプションだ。<br>
+適切な設定には、
+<a href="https://www.openssl.org/docs/man3.2/man5/x509v3_config.html">x509v3_config</a>の書式を理解する必要があるが、コア機能設定はデフォルトで動作する。<code>req_distinguished_name</code>セクションが証明書の掲載設定であり、個別に設定が必要だ。</p>
+<p>openssl.cnfの理解しづらい点は、opensslのサブコマンドごとに参照セクションを使い分けており、その対応が不明な点だろう。</p>
+<h2 id="生成ステップ">生成ステップ</h2>
+<p>opensslコマンドを使用したCA運用は単なるリファレンス実装でありフル機能を満たすものではないことが、openssl caのmanの末尾を確認すると分かる。長期的には別の手順が必要になることは間違いないが証明書じたいには問題がなく、使い捨てCAとしては機能する。</p>
+<p>CAは、秘密鍵作成(
+<a href="https://www.openssl.org/docs/man3.2/man1/openssl-genpkey.html">openssl genpkey</a>)、CA証明書リクエスト作成(
+<a href="https://www.openssl.org/docs/man3.2/man1/openssl-req.html">openssl req</a>)、CA作成(
+<a href="https://www.openssl.org/docs/man3.2/man1/openssl-ca.html">openssl ca -extensions v3_ca -selfsign</a>)の順に実行する。</p>
+<p>この時点で生成されるCA証明書はサーバーにセットアップし、アクセス時の信頼チェーン検証に用いる。</p>
+<p>クライアント証明書は、秘密鍵作成(openssl genpkey)、署名リクエスト(openssl req)、署名(openssl ca -policy)の順に実行する。</p>
+<p>最終的に、署名済みクライアント証明書をPKCS#12フォーマットに変換(
+<a href="https://www.openssl.org/docs/man3.2/man1/openssl-pkcs12.html">openssl pkcs12</a>)する。pkcs12もパスワードを求められるがオプションでスクリプトから指定できる。<br>
+どうやらChromeが秘密鍵を同梱したPKCS#12フォーマットを要求している。x509形式では秘密鍵を付けたり署名したりしてもインポートに失敗した。</p>
+<p>このプロセスでは中間ファイルが大量に生成されるが、最終的な証明書2種を入手したら残りのファイルは削除する。</p>
+<p>各サブコマンドの挙動を理解することや妥当性の評価は難しい。これはopensslの既存実装に難があるものの、代替実装も永らく定まっていないことから来ている。</p>
+<h3 id="秘密鍵生成の分離">秘密鍵生成の分離</h3>
+<p>参照したCA.shでは<code>openssl req</code>コマンドで秘密鍵を生成している。これをRSA以外のオプション指定のため<code>openssl genpkey</code>に分離した。<br>
+将来変わっていく部分は主に秘密鍵に集約されるため、一定の柔軟性を確保できるだろう。</p>
+<p>ここで、証明書の暗号アルゴリズムに何を使えるのかが不明であるという難点がある。TLSのクライアント証明書認証の規格動向が判然とせず、どうやら実装先行であるように見える。</p>
+<p>ミニマム構成の証明書は、クライアント証明書とCA証明書の2種類存在する。結果的に、それぞれの暗号アルゴリズムは一致していなくても動作している。署名が任意のバイト列を受けつけることを考えれば自明とも言える。ただ、プロトコルの想定に沿っているのか否かは確認できていない。</p>
+<p>また、個別実装がどのプロトコルを扱えるのかも判然としない。証明書に関するドキュメントがおおむね存在せず、たまたま動作する組み合わせを探すより他ない。</p>
+<p>今回のトライでは、Chromeは楕円曲線暗号の証明書をインポートできず、サーバーは楕円曲線暗号の証明書を扱えるものがあることが分かった。<br>
+クライアント証明書認証では署名の耐性が重要なので、CAをRSAから置き換えられたことによって現時点では強度向上を期待できる。</p>
+<h2 id="残る課題">残る課題</h2>
+<p>暗号アルゴリズムのトレンド変遷には対応できるようになったが、認証の利用モデルが変わった場合には依然として備えられていない。これには代替実装が定まってくる必要がある。</p>
+<p>証明書の生成プロセスは自動化できたので、更新デプロイまで自動化する道が拓けた。デプロイを自動化すると更新頻度を上げやすくなるため、よりセキュアになるだろう。<br>
+クラウドストレージに一定の疑念を持って考えれば、証明書ファイルを特定のユーザーにだけ配布するプロセスに課題が残っている。</p>
+<p>また本質的な課題として、標準規格のドキュメントがあるなら探索した方が良い。<br>
+カジュアルな説明はおそらく誤りを含んでいて問題がある。たとえばブラウザはインポート時に秘密鍵を要求し保持しているのだが、鍵の用途は不明だ。認証時に用いているとすればチャレンジレスポンスのステップがあるはずだが、そのような説明は見当たらない。</p>
+<p>いま、QUICのようにTCPプロトコルをUDP上に再実装する状況になっており、TLSもその前提で整理が進んでいるように見ている。
+過去の経緯はundocumentedな部分が多かったのだろうが、これからの実装については一定の合意が公開ドキュメントに残るのではないかと期待している。</p>
+<div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/client-cert-generation/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/client-cert-generation/">クライアント証明書を生成する</div>
+            <div class="f5">年に数回、 X.509のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけ……</div>
+	</div>
+</a>
+<a href="/ja/cloud-stagnation/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/cloud-stagnation/">ドッグイヤーの終焉</div>
+            <div class="f5">Deno上のインテグレーションテストの実用性を評価するうちに、実はクラウドインフラの性能も悪いことに……</div>
+	</div>
+</a>
+<a href="/ja/re-integration-testing/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/re-integration-testing/">再インテグレーションテスト</div>
+            <div class="f5">Webサービスの品質管理の主役として、 2年前にe2eテストを導入して引き続き機能している。 Ruby on Rai……</div>
+	</div>
+</a>
+<a href="/ja/runtime-cleanup/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/runtime-cleanup/">ランタイム・クリーンアップ</div>
+            <div class="f5">コンテナイメージのクリーンアップを終えつつある。 ソフトウェア開発は60年以上の歴史を持つが、いまだに……</div>
+	</div>
+</a>
+<a href="/ja/software-testing/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/software-testing/">ソフトウェア・テスティング</div>
+            <div class="f5">ソフトウェアの動作確認を担うテストコードは、品質を制御する主要パーツだ。assert_equal 1 +……</div>
+	</div>
+</a>
+
+          </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>

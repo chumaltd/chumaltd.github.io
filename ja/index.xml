@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>クライアント証明書を生成する</title>
+      <link>https://chumaltd.github.io/ja/client-cert-generation/</link>
+      <pubDate>Wed, 03 Jul 2024 23:53:37 +0900</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/client-cert-generation/</guid>
+      <description>年に数回、 X.509のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけ</description>
+    </item>
+    
+    <item>
       <title>ドッグイヤーの終焉</title>
       <link>https://chumaltd.github.io/ja/cloud-stagnation/</link>
       <pubDate>Mon, 01 Jul 2024 12:08:10 +0900</pubDate>
