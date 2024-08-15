@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>灼熱のVoIP</title>
+      <link>https://chumaltd.github.io/ja/voip-integration/</link>
+      <pubDate>Thu, 15 Aug 2024 09:59:52 +0900</pubDate>
+      
+      <guid>https://chumaltd.github.io/ja/voip-integration/</guid>
+      <description>電話は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいった</description>
+    </item>
+    
+    <item>
       <title>クライアント証明書を生成する</title>
       <link>https://chumaltd.github.io/ja/client-cert-generation/</link>
       <pubDate>Wed, 03 Jul 2024 23:53:37 +0900</pubDate>

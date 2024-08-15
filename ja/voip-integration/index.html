@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html data-color-mode="dark" data-dark-theme="dark">
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>灼熱のVoIP | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+<link rel='stylesheet' href='/lib/bulma.min.css'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/voip-integration/" />
+<meta property="og:title" content="灼熱のVoIP" />
+<meta property="og:description" content="電話は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいった" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/voip-integration/ />
+
+
+    </head>
+    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl" style="width: 100%">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer style="margin-right: .7rem"></cm-drawer>
+    <a href='/' style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+<div>
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li class="breadcrumb-item"><a href="/ja/">HOME</a></li>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;灼熱のVoIP</li></ul>
+<script type="application/ld+json">
+{"@context":"http://schema.org", "@graph":[
+	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
+	{"@type":"BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/voip-integration/","name": "灼熱のVoIP" }
+}]}
+]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+        <h1 class="h2 idx py-5 mb-4">
+          灼熱のVoIP
+        </h1>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;灼熱のVoIP</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#sipとasterisk">SIPとAsterisk</a></li>
+    <li><a href="#sipトランキングサービスが下火になっている">SIPトランキングサービスが下火になっている</a></li>
+    <li><a href="#よりコモディティ化を進めなくてはならない">よりコモディティ化を進めなくてはならない</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>
+<a href="https://en.wikipedia.org/wiki/Telephone">電話</a>は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいったいいつまで続くものだろうか？</p>
+<p>日本の事情は、携帯電話の普及によりすでに家庭では旧来のPSTN電話が減ってきた。一方で、企業は監督官庁の事務的な要請により電話の設置が事実上義務づけられている。</p>
+<p>携帯電話は個々人が番号を持つネットワークだが、企業はメンバーのうちの誰かが応対すべきであるため、冷静に要件を整理していくと
+<a href="https://en.wikipedia.org/wiki/Voice_over_IP">VoIP</a>が適している。<br>
+VoIPにもすでに30年ほどの歴史があるが、一向にコモディティ化する様子がない。</p>
+<p>東京の地獄の釜のような酷暑のなか、先週来VoIPへの切り替えを敢行していた。<br>
+ネットワークミドルウェアの一般的な性質どおり、完成の一歩手前まではまったく機能せず、終局状態を迎えるや唐突に安定動作し始める。作業中の手がかりの乏しさは、VoIP普及のハードルになっているはずだ。</p>
+<h2 id="sipとasterisk">SIPとAsterisk</h2>
+<p>現在、電話の運用を考えるとき、先々までサステナブルな技術は
+<a href="https://en.wikipedia.org/wiki/Session_Initiation_Protocol">SIP</a>ファミリーだろう。携帯電話のVoLTEにも採用されているとのことで、PSTNがIP網に置きかわる際の第一ターゲットになる。<br>
+セットアップ時にはSIPメッセージの解析がつきまとうので、あらかじめSIPプロトコルを理解しておくことが必要になる。</p>
+<p>単なる空想ではあるが、SIPが将来廃止されるとすれば、それは量子ネットワークの実現・普及によるものだと思う。地理的に離れた2点でデータが直接リンクするのであれば、パケット交換網が不要化する可能性がある。<br>
+おそらくそのレベルの変化がなければ、SIPを根本的に書きかえるメリットはないように見える。暫定ベストであることは簡単に陳腐化しないために重要だ。</p>
+<p>SIPを用いたオープンソースのPBX実装に
+<a href="https://www.asterisk.org/">Asterisk</a>がある。さすがに長くアップデートを継続してきただけあってよくできている。<br>
+VoIP構築じたいが難しいためAsterisk導入は大変難しいが、おそらく世界でもっともサステナブルなVoIP実装がAsteriskだからAsteriskを前提とするのが妥当と見る。</p>
+<p>Asteriskの技術面については
+<a href="https://www.unicorn.limited/jp/rd/cloud/20231206-asterisk">別稿</a>にまとめた。<br>
+Asteriskに限った話ではないが、ユーザーコミュニティが死に体になってしまっていて有用な情報に乏しい。いつもの展開ながら、しばらく運用したあとにネットワーク構成を変更する際、技術情報がないとロストテクノロジーになりかねない。<br>
+この記事が呼び水になって情報が充実しているなら幸いだが、十中八九は自分が書いた記事を参照することになる。僕はいつも自分にダイイングメッセージを送り続けている。</p>
+<h2 id="sipトランキングサービスが下火になっている">SIPトランキングサービスが下火になっている</h2>
+<p>企業の電話への期待は、外部のPSTN互換電話機からかけられる電話番号を持つことである。</p>
+<p>日本では、電話番号がほぼ通信回線とセットで販売されている。しかし企業用途で念頭に置くのは、社内VoIPネットワークと接続できるSIPトランキングというサービス形態である必要がある。</p>
+<p>電話番号を提供するSIPトランキングは近年続々とサービス終了している。どの事業者からも説明がない点が異様だ。<br>
+特徴的なのは2023年に新規加入を停止していることだろう。サービスを継続する事業者は、加入時の本人確認プロセスを強化したうえで再開している。</p>
+<p>SIPトランキングの衰微に先立って、日本では2017年頃からフィリピンやタイに日本人が拠点を置く特殊詐欺が横行しており、一部は強盗殺人事件に発展してきた。<br>
+これらの主な連絡経路に電話が使われたこともあり、携帯電話やIP電話を含む通信手段の販売に行政指導が入ったのではないか。過去に販売したIP電話などは本人確認の事務を追加する余力がなく、サービスごと終了に至ったように見える。</p>
+<h2 id="よりコモディティ化を進めなくてはならない">よりコモディティ化を進めなくてはならない</h2>
+<p>今後の普及動向は読みづらい。</p>
+<p>「企業の電話要件にはVoIP+SIPトランキング構成が適している」ということが自明ではないため、サービス提供者・利用者とも軽視していることが最大の背景と言える。</p>
+<p>現実的な経路としては、Asteriskのコモディティ化がもっとも効果的だろう。</p>
+<p>Asteriskじたいはオープンソースであるため、コモディティ化は導入技術のハードル解消を指す。セットアップを補助するディストリビューションの存在は知っているが、ブレークスルーしていないことを考慮すると不足があるのだろう。</p>
+<p>無数の機器やSIPトランキングとの組み合わせ爆発を低減するチャレンジはまだ足りていないように見える。</p>
+<p>たとえばSIPトランキングサービスが決まれば、それに適したAsteriskの設定パーツは本来明確に定まる。よってSIPトランキング業者がAsterisk向けのサンプル設定を提供すると問題は一部解決する。<br>
+現状は、SIPメッセージの仕様すら提供していない状況が当然になってしまっており、多大なトライ&amp;エラーの検証を求められる。</p>
+<p>そう遠くないうちにPSTN網はIPに置き換えられていくだろう。技術環境はVoIPに適したインフラが整備される一方で、人間のスキルが追いついていない。</p>
+<div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/voip-integration/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/voip-integration/">灼熱のVoIP</div>
+            <div class="f5">電話は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいった……</div>
+	</div>
+</a>
+<a href="/ja/client-cert-generation/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/client-cert-generation/">クライアント証明書を生成する</div>
+            <div class="f5">年に数回、 X.509のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけ……</div>
+	</div>
+</a>
+<a href="/ja/cloud-stagnation/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/cloud-stagnation/">ドッグイヤーの終焉</div>
+            <div class="f5">Deno上のインテグレーションテストの実用性を評価するうちに、実はクラウドインフラの性能も悪いことに……</div>
+	</div>
+</a>
+<a href="/ja/re-integration-testing/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/re-integration-testing/">再インテグレーションテスト</div>
+            <div class="f5">Webサービスの品質管理の主役として、 2年前にe2eテストを導入して引き続き機能している。 Ruby on Rai……</div>
+	</div>
+</a>
+<a href="/ja/runtime-cleanup/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/runtime-cleanup/">ランタイム・クリーンアップ</div>
+            <div class="f5">コンテナイメージのクリーンアップを終えつつある。 ソフトウェア開発は60年以上の歴史を持つが、いまだに……</div>
+	</div>
+</a>
+
+          </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+</div>
+
+        </div><footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>
