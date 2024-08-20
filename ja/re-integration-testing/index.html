@@ -12,7 +12,8 @@
 <link rel='stylesheet' href='/lib/bulma.min.css'>
 
 <link rel='stylesheet' href='/lib/cm.css'>
-<link rel="stylesheet" href='/lib/base.css' />
+<link rel="stylesheet" href='/ja/lib/cm.css' />
+<link rel="stylesheet" href='/ja/lib/base.css' />
 
 <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/ja/re-integration-testing/" />
@@ -23,7 +24,7 @@
 
 
     </head>
-    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+    <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
   <section class="container-xl" style="width: 100%">
   <div class="navbar-brand">
     <span class="navbar-item">
@@ -41,7 +42,8 @@
   </div>
   </section>
 </header>
-<div>
+
+<div id ="o" class="o">
 <nav class="container-xl" style="overflow: hidden">
   <div class="d-sm-flex">
     <div class="quarter hide-sm"></div>
@@ -72,9 +74,10 @@
     <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
     <div class="quarter hide-sm"></div>
     <div id="pagetitle" class="three-quarter px-3">
-        <h1 class="h2 idx py-5 mb-4">
+	<div class="mb-4">
+        <h1 class="h2 idx py-5">
           再インテグレーションテスト
-        </h1>
+        </h1><div style="text-align: right; font-weight: 600; font-style: italic">2024/06/15</div></div>
     </div>
   </div>
   <div class="d-sm-flex">
@@ -154,7 +157,10 @@ denoを用いたインテグレーションテストは、数千ケース程度�
 ここまで置き換えが効かない言語になるとは誰も想像していなかった、ということだろう。</p>
 <p>e2eテストは実環境の挙動を確認できるため、実装できるなら併用した方が良い。網羅性は期待できないが、サンプリング実装にも意義がある。<br>
 レンダリングをテストに含めるのであれば実ブラウザを用いるべきで、jsdomなどのエミュレーションは無意味だろう。</p>
-<div class="related_articles">
+
+
+	<div class="my-4" style="text-align: right; font-style: italic">
+	<span>⁋ 2024/06/15</span><span class="mx-2">↻ 2024/06/21</span></div><div class="related_articles">
               <h4 id="related" class="idx"></h4>
               
               
@@ -211,8 +217,8 @@ denoを用いたインテグレーションテストは、数千ケース程度�
   </div>
 </main>
 </div>
-
-        </div><footer class="footer lazy-block"><div class="container-xl">
+</div>
+<footer class="footer lazy-block"><div class="container-xl">
       <div>
           <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
           

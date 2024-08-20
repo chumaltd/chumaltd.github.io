@@ -12,7 +12,8 @@
 <link rel='stylesheet' href='/lib/bulma.min.css'>
 
 <link rel='stylesheet' href='/lib/cm.css'>
-<link rel="stylesheet" href='/lib/base.css' />
+<link rel="stylesheet" href='/ja/lib/cm.css' />
+<link rel="stylesheet" href='/ja/lib/base.css' />
 
 <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/ja/voip-integration/" />
@@ -23,7 +24,7 @@
 
 <link rel="alternate" hreflang="en" href="https://chumaltd.github.io/en/voip-integration/" />
     </head>
-    <body id ="o" class="o ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+    <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
   <section class="container-xl" style="width: 100%">
   <div class="navbar-brand">
     <span class="navbar-item">
@@ -41,7 +42,8 @@
   </div>
   </section>
 </header>
-<div>
+
+<div id ="o" class="o">
 <nav class="container-xl" style="overflow: hidden">
   <div class="d-sm-flex">
     <div class="quarter hide-sm"></div>
@@ -72,14 +74,15 @@
     <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
     <div class="quarter hide-sm"></div>
     <div id="pagetitle" class="three-quarter px-3">
-        <h1 class="h2 idx py-5 mb-4">
+	<div class="mb-4">
+        <h1 class="h2 idx py-5">
           灼熱のVoIP
-        </h1>
+        </h1><div style="text-align: right; font-weight: 600; font-style: italic">2024/08/15</div></div>
     </div>
   </div>
   <div class="d-sm-flex">
     <nav class="quarter layered">
-        <nav class="mb-5">
+        <nav class="mb-3 px-5 py-4">
             <a href="/en/voip-integration/" class="mx-4">English</a></nav><aside class="toc sticky" style="position: sticky; top: 3em">
         <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;灼熱のVoIP</div>
         <nav id="TableOfContents">
@@ -130,7 +133,10 @@ Asteriskに限った話ではないが、ユーザーコミュニティが死に
 <p>たとえばSIPトランキングサービスが決まれば、それに適したAsteriskの設定パーツは本来明確に定まる。よってSIPトランキング業者がAsterisk向けのサンプル設定を提供すると問題は一部解決する。<br>
 現状は、SIPメッセージの仕様すら提供していない状況が当然になってしまっており、多大なトライ&amp;エラーの検証を求められる。</p>
 <p>そう遠くないうちにPSTN網はIPに置き換えられていくだろう。技術環境はVoIPに適したインフラが整備される一方で、人間のスキルが追いついていない。</p>
-<div class="related_articles">
+
+
+	<div class="my-4" style="text-align: right; font-style: italic">
+	<span>⁋ 2024/08/15</span><span class="mx-2">↻ 2024/08/15</span></div><div class="related_articles">
               <h4 id="related" class="idx"></h4>
               
               
@@ -187,8 +193,8 @@ Asteriskに限った話ではないが、ユーザーコミュニティが死に
   </div>
 </main>
 </div>
-
-        </div><footer class="footer lazy-block"><div class="container-xl">
+</div>
+<footer class="footer lazy-block"><div class="container-xl">
       <div>
           <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
           

@@ -12,7 +12,8 @@
 <link rel='stylesheet' href='/lib/bulma.min.css'>
 
 <link rel='stylesheet' href='/lib/cm.css'>
-<link rel="stylesheet" href='/lib/base.css' />
+<link rel="stylesheet" href='/en/lib/cm.css' />
+<link rel="stylesheet" href='/en/lib/base.css' />
 
 <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/en/voip-integration/" />
@@ -24,7 +25,7 @@ In Japan, due to the widespread adoption of mobile phones, traditional PSTN phon
 
 <link rel="alternate" hreflang="ja" href="https://chumaltd.github.io/ja/voip-integration/" />
     </head>
-    <body id ="o" class="o en "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+    <body class="en "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
   <section class="container-xl" style="width: 100%">
   <div class="navbar-brand">
     <span class="navbar-item">
@@ -42,7 +43,8 @@ In Japan, due to the widespread adoption of mobile phones, traditional PSTN phon
   </div>
   </section>
 </header>
-<div>
+
+<div id ="o" class="o">
 <nav class="container-xl" style="overflow: hidden">
   <div class="d-sm-flex">
     <div class="quarter hide-sm"></div>
@@ -73,14 +75,15 @@ In Japan, due to the widespread adoption of mobile phones, traditional PSTN phon
     <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
     <div class="quarter hide-sm"></div>
     <div id="pagetitle" class="three-quarter px-3">
-        <h1 class="h2 idx py-5 mb-4">
+	<div class="mb-4">
+        <h1 class="h2 idx py-5">
           VoIP integration under the scorching sun
-        </h1>
+        </h1><div style="text-align: right; font-weight: 600; font-style: italic">Aug 15, 2024</div></div>
     </div>
   </div>
   <div class="d-sm-flex">
     <nav class="quarter layered">
-        <nav class="mb-5">
+        <nav class="mb-3 px-5 py-4">
             <a href="/ja/voip-integration/" class="mx-4">Japanese</a></nav><aside class="toc sticky" style="position: sticky; top: 3em">
         <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;VoIP integration under the scorching sun</div>
         <nav id="TableOfContents">
@@ -129,7 +132,10 @@ Given that phones were a primary means of communication for these crimes, it see
 <p>For example, once a SIP trunking service is chosen, the appropriate Asterisk configuration should be straightforward. If SIP trunking providers offered sample configurations for Asterisk, some of these challenges could be alleviated.<br>
 Currently, it&rsquo;s common for providers not even to supply SIP message specifications, forcing users to go through extensive trial and error.</p>
 <p>PSTN networks will likely be replaced by IP networks in the near future. While the infrastructure is becoming more suitable for VoIP, human skills have yet to catch up.</p>
-<div class="related_articles">
+
+
+	<div class="my-4" style="text-align: right; font-style: italic">
+	<span>⁋ Aug 15, 2024</span><span class="mx-2">↻ Aug 16, 2024</span></div><div class="related_articles">
               <h4 id="related" class="idx"></h4>
               
               
@@ -172,8 +178,8 @@ COVID-19 is the returning of SARS in 2002 in terms of the virus type, the route 
   </div>
 </main>
 </div>
-
-        </div><footer class="footer lazy-block"><div class="container-xl">
+</div>
+<footer class="footer lazy-block"><div class="container-xl">
       <div>
           <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
           
