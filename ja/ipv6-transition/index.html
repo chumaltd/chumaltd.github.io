@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html data-color-mode="dark" data-dark-theme="dark">
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>IPv6移行 | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/ipv6-transition/" />
+<meta property="og:title" content="IPv6移行" />
+<meta property="og:description" content="インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、技術的なト" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/ipv6-transition/ />
+
+
+    </head>
+    <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl" style="width: 100%">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+    <cm-drawer style="margin-right: .7rem"></cm-drawer>
+    <a href='/' style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+
+<div id ="o" class="o">
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li class="breadcrumb-item"><a href="/ja/">HOME</a></li>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;IPv6移行</li></ul>
+<script type="application/ld+json">
+{"@context":"http://schema.org", "@graph":[
+	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
+	{"@type":"BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/ipv6-transition/","name": "IPv6移行" }
+}]}
+]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+	<div class="mb-4">
+        <h1 class="h2 idx py-5">
+          IPv6移行
+        </h1><div style="text-align: right; font-weight: 600; font-style: italic">2024/08/27</div></div>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;IPv6移行</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#アクセス網のipv6切り替え">アクセス網のIPv6切り替え</a></li>
+    <li><a href="#データセンターのipv6切り替え">データセンターのIPv6切り替え</a></li>
+    <li><a href="#ipv4は過去のものになった">IPv4は過去のものになった</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、技術的なトラブルや関心はあまり存在しないだろう。<br>
+課題は、IPv4とIPv6が併存するデュアルスタックを長期間サポートせざるを得ない点にある。</p>
+<p>
+<a href="https://en.wikipedia.org/wiki/IPv4_address_exhaustion">IPv4枯渇</a>の公式宣言は2011年からスタートしている。モバイルインターネットは成長を続けており、新たに接続するデバイスはIPv6の比率が高まっていく。</p>
+<h2 id="アクセス網のipv6切り替え">アクセス網のIPv6切り替え</h2>
+<p>日本の場合、家やオフィスと回線接続するNTTが、2011年頃から光ファイバーアクセス商品のネットワーク層をIPv6に切り替えており、該当サービスに加入した拠点がIPv6アクセスになる。<br>
+日本のブロードバンド回線は、2002年頃に
+<a href="https://en.wikipedia.org/wiki/ADSL">ADSL</a>が急速に普及し、2005年頃から光ファイバーに切り替わってきた。初期から加入してきた回線では、おおむね3世代目の回線変更でIPv4からIPv6へ切り替わったのではないか。</p>
+<p>アクセス網の典型的なトラブルは、IPv4 over IPv6トンネルの実装から来る。</p>
+<p>IPv4とIPv6は併存していたとしても完全に独立したネットワークであるため、アクセス網がIPv6ネイティブになるとIPv4のサービスには接続できない。<br>
+IPv4 over IPv6サービスを追加することでIPv4ネットワークにアクセス可能になるが、プロバイダ事業者ごとに採用方式が異なる。いくつかの構成を検証してみて、結局のところIPv4 over IPv6トンネルのうち契約している方式をサポートするルーターが必須と言える。</p>
+<p>Wi-Fiアクセスポイントがインターネットルーター機能を備えているケースが多く、どうやら近年は消費者向けのWi-FiルーターがIPv4 over IPv6トンネルをサポートしている。<br>
+固定回線よりもWi-Fi規格の方が更新ペースが速いため、無線インフラの技術をキャッチアップして機器をリプレースしていると、IPv6切り替えの問題には遭遇しにくいだろう。</p>
+<p>一方、企業オフィスのネットワーク構築にはやや難がある。<br>
+ルーターがIPv4 over IPv6の一部方式をサポートしていない場合が多々あり、けっきょくはサポートしているルーターを導入するしかない。</p>
+<p>IPv4 over IPv6機能は、各種ネットワーク機能の中ではかなり瑣末な機能であるため、本来は重要な選定要件には加えたくないところだ。<br>
+目先は適切な機器が定まっていないため、ネットワークの大半の機能を凍結して使えない状態にした。</p>
+<p>プロバイダを契約する際、サービス説明にはIPv6切り替えの技術的トラブルには言及がないのだが、ルーターの機能で吸収できなければ他に実装手段がない。</p>
+<h2 id="データセンターのipv6切り替え">データセンターのIPv6切り替え</h2>
+<p>上述のとおり、アクセス網をIPv6に切り替えるとIPv4サービスへのアクセスに難が出る場合がある。<br>
+IPv6切り替え時にトラブルが起きるとIPv6に問題があると受けとる人が多そうだが、じっさいにはIPv6ピア間の通信には問題はなく、IPv4サービスに問題がある。</p>
+<p>データセンターでシステムを運用している企業の場合、アクセス網がIPv6なのであれば、データセンターのサービスもIPv6に切り替えるべきだ。IPv4互換性確保には何らかのプロキシ・ソフトウェアを利用するのが手軽だろう。<br>
+ただし一手で変更することはできず、多くの場合、個別のサービスを１つずつIPv6に移行することになるだろう。サービスの数が増えるほど手間もかさむ。</p>
+<p>IPv6への移行着手の前提として、IPv4/IPv6デュアルスタックをサポートする高機能なネットワークを調達できると作業しやすい。ネットワークがシングルスタックの場合には、必然的に別のインフラに移行する方式となり、切り替え範囲が広くなる。</p>
+<p>IPv6の挙動は個別のアプリケーションにより異なるため一概には言えない。じっさいにIPv6ネットワークへのルートが存在するだけでIPv4アクセスを排除する挙動のCLIがあり、作業ペースを想定どおりに進められない可能性を感じている。</p>
+<p>中にはIPv6では動作しないソフトウェアもあり得る。<br>
+IPv4は今後時間をかけてコストが増えていく可能性があり、また
+<a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT</a>設定が事実上ロストテクノロジーになることも考えられるため、IPv6互換性のないソフトウェアを特定しておくことは継続性に関わる。</p>
+<h2 id="ipv4は過去のものになった">IPv4は過去のものになった</h2>
+<p>ソフトウェアエンジニアであってもIPネットワークに関心を持つ割合は相当少ないだろう。多くのソフトウェアがより上位のプロトコルをターゲットにしているからだ。</p>
+<p>しかし、意識することなく低レイヤでIPv4を採用しているシステムは多いはずで、10年以上使い続けるつもりならいずれIPv6に移行せざるを得ない。<br>
+日常的に操作していないプロトコルの移行は手軽とは言えないので、今から着手するプロジェクトをIPv6上に構築することは将来の手間の節約につながるだろう。</p>
+<p>すでに構築してしまったサービスについては、IPv6移行は暗に予期されていたイベントであり、一度は対応することになるはずだ。</p>
+
+
+	<div class="my-4" style="text-align: right; font-style: italic">
+	<span>⁋ 2024/08/27</span></div><div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/ipv6-transition/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/ipv6-transition/">IPv6移行</div>
+            <div class="f5">インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、技術的なト……</div>
+	</div>
+</a>
+<a href="/ja/voip-integration/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/voip-integration/">灼熱のVoIP</div>
+            <div class="f5">電話は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいった……</div>
+	</div>
+</a>
+<a href="/ja/client-cert-generation/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/client-cert-generation/">クライアント証明書を生成する</div>
+            <div class="f5">年に数回、 X.509のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけ……</div>
+	</div>
+</a>
+<a href="/ja/cloud-stagnation/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/cloud-stagnation/">ドッグイヤーの終焉</div>
+            <div class="f5">Deno上のインテグレーションテストの実用性を評価するうちに、実はクラウドインフラの性能も悪いことに……</div>
+	</div>
+</a>
+<a href="/ja/re-integration-testing/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h3 idx mb-2" href="/ja/re-integration-testing/">再インテグレーションテスト</div>
+            <div class="f5">Webサービスの品質管理の主役として、 2年前にe2eテストを導入して引き続き機能している。 Ruby on Rai……</div>
+	</div>
+</a>
+
+          </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+</div>
+</div>
+<footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src=/lib/cm.js ></script>
+</body>
+</html>
