@@ -8,11 +8,11 @@
     <language>ja</language>
     <atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Migrate to IPv6</title>
+      <title>IPv6移行</title>
       <link>https://chumaltd.github.io/ja/ipv6-transition/</link>
       <pubDate>Tue, 27 Aug 2024 12:10:22 +0900</pubDate>
       <guid>https://chumaltd.github.io/ja/ipv6-transition/</guid>
-      <description>Eventually, all internet devices will communicate via IPv6. Once everything is unified under IPv6, there will likely be fewer technical issues or concerns at the IP layer.&#xA;The challenge lies in the fact that we will have to support dual-stack configurations, where both IPv4 and IPv6 coexist, for an extended period.</description>
+      <description>インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、IP層には</description>
     </item>
     <item>
       <title>灼熱のVoIP</title>
