@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>IPv6移行 | civilis</title>
+<title>Migrate to IPv6 | civilis</title>
 
 <meta name="theme-color" content="rgb(38, 29, 32)">
 <link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
@@ -15,12 +15,13 @@
 
 <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/ja/ipv6-transition/" />
-<meta property="og:title" content="IPv6移行" />
-<meta property="og:description" content="インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、IP層には" />
+<meta property="og:title" content="Migrate to IPv6" />
+<meta property="og:description" content="Eventually, all internet devices will communicate via IPv6. Once everything is unified under IPv6, there will likely be fewer technical issues or concerns at the IP layer.
+The challenge lies in the fact that we will have to support dual-stack configurations, where both IPv4 and IPv6 coexist, for an extended period." />
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
 <link rel="canonical" href=https://chumaltd.github.io/ja/ipv6-transition/ />
 
-
+<link rel="alternate" hreflang="en" href="https://chumaltd.github.io/en/ipv6-transition/" />
     </head>
     <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
   <section class="container-xl" style="width: 100%">
@@ -49,13 +50,13 @@
         <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
 <ul>
   <li class="breadcrumb-item"><a href="/ja/">HOME</a></li>
-  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;IPv6移行</li></ul>
+  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;Migrate to IPv6</li></ul>
 <script type="application/ld+json">
 {"@context":"http://schema.org", "@graph":[
 	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
 	{"@type":"BreadcrumbList","itemListElement":[
 {"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
-{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/ipv6-transition/","name": "IPv6移行" }
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/ipv6-transition/","name": "Migrate to IPv6" }
 }]}
 ]}
 </script>
@@ -74,91 +75,93 @@
     <div id="pagetitle" class="three-quarter px-3">
 	<div class="mb-4">
         <h1 class="h2 idx py-5">
-          IPv6移行
+          Migrate to IPv6
         </h1><div style="text-align: right; font-weight: 600; font-style: italic">2024/08/27</div></div>
     </div>
   </div>
   <div class="d-sm-flex">
-    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
-        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;IPv6移行</div>
+    <nav class="quarter layered">
+        <nav class="mb-3 px-5 py-4">
+            <a href="/en/ipv6-transition/" class="mx-4">English</a></nav><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;Migrate to IPv6</div>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#アクセス網のipv6切り替え">アクセス網のIPv6切り替え</a>
+    <li><a href="#switching-to-ipv6-in-access-network">Switching to IPv6 in Access Network</a>
       <ul>
-        <li><a href="#アドレス設定は複数方式が併存する">アドレス設定は複数方式が併存する</a></li>
-        <li><a href="#ルーターを自作するのも一手">ルーターを自作するのも一手</a></li>
+        <li><a href="#multiple-address-assignment-methods-will-coexist">Multiple address assignment methods will coexist</a></li>
+        <li><a href="#building-your-own-router-might-be-a-viable-option">Building your own router might be a viable option</a></li>
       </ul>
     </li>
-    <li><a href="#データセンターのipv6切り替え">データセンターのIPv6切り替え</a>
+    <li><a href="#switching-data-centers-to-ipv6">Switching data centers to IPv6</a>
       <ul>
-        <li><a href="#仮想ネットワーク構築には知見が必要">仮想ネットワーク構築には知見が必要</a></li>
+        <li><a href="#more-expertise-needed-for-building-virtual-networks">More expertise needed for building virtual networks</a></li>
       </ul>
     </li>
-    <li><a href="#ipv4は過去のものになった">IPv4は過去のものになった</a></li>
+    <li><a href="#ipv4-has-become-a-thing-of-the-past">IPv4 has become a thing of the past</a></li>
   </ul>
 </nav>
       </aside>
     </nav>
     <div id="content" class="three-quarter">
       <article>
-        <p>インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、IP層には技術的なトラブルや関心はあまり存在しないだろう。<br>
-課題は、IPv4とIPv6が併存するデュアルスタックを長期間サポートせざるを得ない点にある。</p>
-<p>
-<a href="https://en.wikipedia.org/wiki/IPv4_address_exhaustion">IPv4枯渇</a>の公式宣言は2011年からスタートしている。モバイルインターネットは成長を続けており、新たに接続するデバイスはIPv6の比率が高まっていく。</p>
-<p>IPv6を導入することの技術障壁は実はあまりない一方で、当面はIPv4をデフォルト設定としている機器が多く、意識して設定しないとIPv6に切り替わらない。<br>
-導入よりも移行の方がトラブルが多いため、可能なら最初からIPv6を選択したい。</p>
-<h2 id="アクセス網のipv6切り替え">アクセス網のIPv6切り替え</h2>
-<p>インターネットに接続する拠点のネットワークは、アクセス網のサービス商品選択で決まる。</p>
-<p>日本の場合、家やオフィスと回線接続するNTTが、2011年頃から光ファイバーアクセス商品のネットワーク層をIPv6に切り替えており、該当サービスに加入した拠点がIPv6アクセスになる。<br>
-日本のブロードバンド回線は、2002年頃に
-<a href="https://en.wikipedia.org/wiki/ADSL">ADSL</a>が急速に普及し、2005年頃から光ファイバーに切り替わってきた。初期から加入してきた回線では、おおむね3世代目の回線変更でIPv4からIPv6へ切り替わったのではないか。</p>
-<p>アクセス網の典型的なトラブルは、IPv4 over IPv6トンネルの実装から来る。</p>
-<p>IPv4とIPv6は併存していたとしても完全に独立したネットワークであるため、アクセス網がIPv6ネイティブになるとIPv4のサービスには接続できない。<br>
-IPv4 over IPv6サービスを追加することでIPv4ネットワークにアクセス可能になるが、いくつかの方式が並立しておりプロバイダ事業者ごとに採用方式が異なる。結局のところIPv4 over IPv6トンネルのうち契約している方式をサポートするルーターが必須と言える。</p>
-<p>Wi-Fiアクセスポイントがインターネットルーター機能を備えているケースが多く、どうやら近年は消費者向けのWi-Fiルーターが幅広くIPv4 over IPv6トンネルをサポートしている。<br>
-固定回線よりもWi-Fi規格の方が更新ペースが速いため、無線インフラの技術をキャッチアップして機器をリプレースしていると、IPv6切り替えの問題には遭遇しにくいだろう。</p>
-<p>一方、企業オフィスのネットワーク構築にはやや難がある。<br>
-ルーターがIPv4 over IPv6の一部方式をサポートしていない場合が多々あり、契約している方式と合わなければネット利用に支障が出る。プロバイダを契約する際、サービス説明にはIPv6切り替えの技術的トラブルには言及がないのだが、ルーターの機能で吸収できなければ他に実装手段がない。</p>
-<p>IPv4 over IPv6機能は、各種ネットワーク機能の中ではかなり瑣末な機能であるため、本来は重要な選定要件には加えたくないところだ。<br>
-IPv4接続プロバイダの時代にはルーターは1台しか接続できなかったのだが、IPv6ではスイッチングハブ経由で複数のルーターを接続できることも多い。そこで今回の移行では、IPv4アクセスしないネットワークを企業向けのルータで併設する構成をとった。</p>
-<h3 id="アドレス設定は複数方式が併存する">アドレス設定は複数方式が併存する</h3>
-<p>IPv4時代にはIPアドレスの割当てはDHCPを用いてきた。おそらくIPv6では
-<a href="https://en.wikipedia.org/wiki/DHCPv6">DHCPv6</a>と<a href="https://en.wikipedia.org/wiki/IPv6_address#Stateless_address_autoconfiguration_(SLAAC)">SLAAC</a>が併存する。<br>
-IPv6の規格はSLAACで、潤沢なアドレス空間を生かして各端末がアドレスを自ら決める。DHCPv6はルーターなどの管理機器が決めて配布する。</p>
-<p>DHCPv6を採用したいプラットフォームは、WindowsやVoIP機器などだ。要するにLAN管理者が集中管理したい用途ではアドレスも集中的に生成して追跡したい事情がある。一方、端末が移動するモバイル機器は、単一のルーターで集中管理し切れないシーンがあるためSLAACが適している。</p>
-<p>よって、IPv6ネットワークの管理方式は規格間の競争ではなく両方生き残るだろう。ネットワーク機器は両方式を同時にサポートできる必要がある。</p>
-<h3 id="ルーターを自作するのも一手">ルーターを自作するのも一手</h3>
-<p>一般的な方法とは言えないものの、アクセス網に必要な機能をカバーしようと思ったら、ルーターを自作すべきかもしれないと考えている。</p>
-<p>後述のとおり、kubernetesのIP網を整備するとルーターを作っているのとほとんど同じ工程をたどる。<br>
-また、法人ルーター機器の機能不足が目立っていることや、ARMの進歩によってハードだけはコモディティ化が進んでいることも既製品の相対的な陳腐化の要因と言える。</p>
-<p>従来はネットワーク機器を買うことがセキュリティ確保に役立ってきたが、今は既製品のセキュリティ品質が相当疑わしいという問題も大きい。
-日本のポピュラーな消費者ブランド機器はほぼソフトウェア脆弱性を抱え、またどの製品もバックドア機能を持つチップが搭載されている可能性は残る。</p>
-<p>ネットワークの安全を確認するには、ハードがクリアであることと、ルーティングの定義セットの全容を理解した方が良い。</p>
-<h2 id="データセンターのipv6切り替え">データセンターのIPv6切り替え</h2>
-<p>企業は、拠点だけでなくデータセンターを借りていることも多い。</p>
-<p>上述のとおり、アクセス網をIPv6に切り替えるとIPv4サービスへのアクセスに難が出る場合がある。<br>
-IPv6切り替え時にトラブルが起きるとIPv6に技術面の問題があると受けとる人が多そうだが、じっさいにはIPv6ピア間の通信には問題はなく、IPv4サービスとの互換機能にネックがある。</p>
-<p>データセンターでシステムを運用している企業の場合、アクセス網がIPv6なのであれば、データセンターのサービスもIPv6に切り替えるべきだ。</p>
-<p>IPv4互換性確保には何らかのプロキシ・ソフトウェアを利用するのが手軽だろう。<br>
-プロキシは接続先がIPv4/IPv6いずれでも問題なく動作するように作られているため、内部通信をIPv6のみに置き換えることがターゲットになる。</p>
-<p>ただし一手で変更することはできず、多くの場合、個別のサービスを１つずつIPv6に移行することになるだろう。サービスの数が増えるほど手間もかさむ。</p>
-<p>IPv6への移行着手の前提として、IPv4/IPv6デュアルスタックをサポートする高機能なネットワークを調達できると作業しやすい。ネットワークがシングルスタックの場合には、必然的に別のインフラに移行する方式となり、切り替え範囲が広くなる。</p>
-<p>IPv6の挙動は個別のアプリケーションにより異なるため一概には言えない。じっさいにIPv6ネットワークへのルートが存在するだけでIPv4アクセスを排除する挙動のCLIがあり、作業ペースを想定どおりに進められない可能性を感じている。</p>
-<p>中にはIPv6では動作しないソフトウェアもあり得る。<br>
-IPv4は今後時間をかけてコストが増えていく可能性があり、また
-<a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT</a>設定が事実上ロストテクノロジーになることも考えられるため、IPv6互換性のないソフトウェアを特定しておくことは継続性に関わる。</p>
-<h3 id="仮想ネットワーク構築には知見が必要">仮想ネットワーク構築には知見が必要</h3>
-<p>開発ツールにも仮想ネットワークがある場合、既存の構成はIPv4シングルスタックというケースが多い。<br>
-仮想ネットワークを用いたクラスタのデファクトはkubernetesであり、kubernetesにはすでにIPv4/IPv6デュアルスタックの実績がある。</p>
-<p>おそらく機能面では実用上問題のないレベルと言えるが、導入するにはクラスタの再作成が必要になる。<br>
-2024年現在では、どうやらIPv6ネットワークを選択するエンジニアの割合が少ないため、最初から動作するパッケージに仕上がっておらず、適切な構成を試行錯誤する展開になりやすい。</p>
-<p>仮想ネットワークはOS単体のネットワーク構成よりもはるかに複雑であり、またLinuxのネットワーク実装が従来のiptablesを捨てつつある過渡期ということもあって、初回のセットアップには手間をかける必要があるだろう。</p>
-<p>ここ10年のうちに書籍出版がすっかり衰退してしまったため体系的な情報源へのアクセスにも難がある。総合的な知見の乏しさが仇となり、IPv6ネットワーク構築のトラブルシューティングは難易度が高い。</p>
-<h2 id="ipv4は過去のものになった">IPv4は過去のものになった</h2>
-<p>ソフトウェアエンジニアであってもIPネットワークに関心を持つ割合は相当少ないだろう。多くのソフトウェアがより上位のプロトコルをターゲットにしているからだ。</p>
-<p>しかし、意識することなく低レイヤでIPv4を採用しているシステムは多いはずで、10年以上使い続けるつもりならいずれIPv6に移行せざるを得ない。<br>
-日常的に操作していないプロトコルの移行は手軽とは言えないので、今から着手するプロジェクトをIPv6上に構築することは将来の手間の節約につながるだろう。</p>
-<p>すでに構築してしまったサービスについては、IPv6移行は暗に予期されていたイベントであり、一度は対応することになるはずだ。</p>
+        <p>Eventually, all internet devices will communicate via IPv6. Once everything is unified under IPv6, there will likely be fewer technical issues or concerns at the IP layer.<br>
+The challenge lies in the fact that we will have to support dual-stack configurations, where both IPv4 and IPv6 coexist, for an extended period.</p>
+<p>The official declaration of 
+<a href="https://en.wikipedia.org/wiki/IPv4_address_exhaustion">IPv4 exhaustion</a> began in 2011. As mobile internet continues to grow, the proportion of devices connecting via IPv6 will increase.</p>
+<p>While the technical barriers to adopting IPv6 are actually quite low, most devices still default to IPv4 unless intentionally configured otherwise.<br>
+Since transitioning from IPv4 to IPv6 can cause more issues than the initial implementation, it&rsquo;s preferable to choose IPv6 from the start whenever possible.</p>
+<h2 id="switching-to-ipv6-in-access-network">Switching to IPv6 in Access Network</h2>
+<p>The network for a site connecting to the internet is determined by the choice of access network services.</p>
+<p>In Japan, NTT, which provides the connection between homes or offices and the network, started switching the network layer of its fiber optic access services to IPv6 around 2011. As a result, locations subscribing to these services are now using IPv6 access.<br>
+Japan&rsquo;s broadband lines rapidly adopted 
+<a href="https://en.wikipedia.org/wiki/ADSL">ADSL</a> around 2002, and then began transitioning to fiber optics around 2005. For those who subscribed to these services from the beginning, the shift from IPv4 to IPv6 likely occurred during the 3rd generation of network upgrades.</p>
+<p>A typical issue with access networks stems from the implementation of IPv4 over IPv6 tunnels.</p>
+<p>Even when IPv4 and IPv6 coexist, they are completely independent networks, so when an access network becomes IPv6-native, it can no longer connect to IPv4 services.<br>
+Adding an IPv4 over IPv6 service allows access to IPv4 networks, but there are multiple methods, each adopted by different service providers. Ultimately, a router that supports the specific type of IPv4 over IPv6 tunnel associated with the contracted service is essential.</p>
+<p>Many Wi-Fi access points now come with built-in internet router functionality, and it seems that consumer-grade Wi-Fi routers have increasingly begun supporting IPv4 over IPv6 tunnels.<br>
+Since Wi-Fi standards tend to update more frequently than fixed-line infrastructure, consumers who keep up with wireless technology and regularly replace their equipment are less likely to encounter issues during the IPv6 transition.</p>
+<p>On the other hand, setting up networks in corporate offices can be more challenging.<br>
+Many routers do not support all types of IPv4 over IPv6 tunneling methods, and if the router does not match the contracted service type, it could hinder internet usage. Although service explanations often do not mention technical issues related to the IPv6 transition, if the router&rsquo;s features can&rsquo;t handle it, there are no alternative implementation methods available.</p>
+<p>IPv4 over IPv6 is a relatively minor function among various network features, so it’s something that ideally wouldn&rsquo;t be a critical selection criterion.<br>
+In the era of IPv4-only providers, only one router could be connected, but with IPv6, it is often possible to connect multiple routers through a switching hub. For our transition, a configuration was chosen where a network without IPv4 access was set up alongside a corporate router.</p>
+<h3 id="multiple-address-assignment-methods-will-coexist">Multiple address assignment methods will coexist</h3>
+<p>In the IPv4 era, IP addresses were typically assigned using DHCP. In IPv6, it&rsquo;s likely that 
+<a href="https://en.wikipedia.org/wiki/DHCPv6">DHCPv6</a> and <a href="https://en.wikipedia.org/wiki/IPv6_address#Stateless_address_autoconfiguration_(SLAAC)">SLAAC</a> will coexist.</p>
+<p>With SLAAC, which is part of the standard for IPv6, each device determines its own address, taking advantage of the abundant address space. DHCPv6, on the other hand, allows management devices like routers to assign and distribute addresses.</p>
+<p>Platforms that favor DHCPv6 include Windows and VoIP devices. Essentially, in scenarios where a LAN administrator needs centralized management, it makes sense to generate and track addresses centrally. Conversely, for mobile devices that frequently move and cannot always be centrally managed by a single router, SLAAC is more appropriate.</p>
+<p>As a result, the management methods for IPv6 networks are not likely to result in one standard dominating the other; both will likely survive. Network devices will need to support both methods simultaneously.</p>
+<h3 id="building-your-own-router-might-be-a-viable-option">Building your own router might be a viable option</h3>
+<p>While it&rsquo;s not the most common approach, you might consider building your own router to cover the necessary functions for access networks.</p>
+<p>As mentioned later, setting up an IP network with Kubernetes is almost like building a router.<br>
+Additionally, the noticeable lack of functionality in commercial routers and the commoditization of hardware driven by ARM&rsquo;s progress contribute to the relative obsolescence of off-the-shelf products.</p>
+<p>In the past, buying dedicated network devices helped ensure security, but now there are significant concerns about the security quality of commercial products.<br>
+Many popular consumer-brand devices in Japan have software vulnerabilities, and there remains a possibility that these devices include chips with backdoor functions.</p>
+<p>To ensure network security, it&rsquo;s crucial to have clear hardware and a complete understanding of the routing configuration.</p>
+<h2 id="switching-data-centers-to-ipv6">Switching data centers to IPv6</h2>
+<p>Many companies not only have office locations but also lease data centers.</p>
+<p>As mentioned earlier, switching access networks to IPv6 can cause issues when trying to access IPv4 services.<br>
+If problems arise during the IPv6 transition, many people might mistakenly believe that there are technical issues with IPv6 itself. However, the real issue lies in the compatibility with IPv4 services, not in the communication between IPv6 peers.</p>
+<p>For companies running systems in data centers, if the access network has switched to IPv6, the data center services should also be transitioned to IPv6.</p>
+<p>Using some proxy software is likely the easiest way to ensure compatibility with IPv4.<br>
+Proxies are designed to work seamlessly whether the destination is IPv4 or IPv6, so the goal should be to replace internal communication with IPv6 only.</p>
+<p>However, this change cannot be made all at once. In many cases, each individual service will need to be migrated to IPv6 one at a time. The more services there are, the more time-consuming the process will be.</p>
+<p>For a smoother transition to IPv6, it&rsquo;s helpful to have a high-functioning network that supports IPv4/IPv6 dual-stack as a prerequisite. If the network is single-stack, you&rsquo;ll inevitably need to migrate to a different infrastructure, which broadens the scope of the switch.</p>
+<p>The behavior of IPv6 can vary depending on the specific application, so it’s hard to generalize. There are CLI commands that might prevent IPv4 access simply because a route to the IPv6 network exists, potentially disrupting the planned pace of work.</p>
+<p>It&rsquo;s also possible that some software won&rsquo;t function properly with IPv6.<br>
+As IPv4 becomes more costly over time and 
+<a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT</a> configurations might effectively become lost technologies, identifying software that is incompatible with IPv6 is crucial for long-term sustainability.</p>
+<h3 id="more-expertise-needed-for-building-virtual-networks">More expertise needed for building virtual networks</h3>
+<p>When it comes to development tools that include virtual networks, many existing setups are often IPv4 single-stack.<br>
+The de facto standard for clusters using virtual networks is Kubernetes, which already supports IPv4/IPv6 dual-stack functionality.</p>
+<p>While the dual-stack functionality is likely at a level where it is practically problem-free, deploying it requires recreating the cluster.<br>
+As of 2024, it seems that only a small percentage of engineers are choosing IPv6 networks from the start. Consequently, pre-packaged solutions may not work out of the box, leading to a lot of trial and error in achieving the correct configuration.</p>
+<p>Virtual networks are significantly more complex than the network configurations of standalone operating systems. Additionally, given that Linux is currently transitioning away from the traditional iptables for network implementation, the initial setup will likely require considerable effort.</p>
+<p>Over the past decade, the decline of published books has made it difficult to access comprehensive sources of information. This lack of collective knowledge has proven to be a significant obstacle, making troubleshooting in IPv6 network construction particularly challenging.</p>
+<h2 id="ipv4-has-become-a-thing-of-the-past">IPv4 has become a thing of the past</h2>
+<p>Even among software engineers, the percentage of those interested in IP networks is likely quite small, as most software targets higher-level protocols.</p>
+<p>However, many systems likely use IPv4 at a lower layer without much thought, and if they plan to keep using these systems for more than a decade, they will eventually have to transition to IPv6.<br>
+Since migrating protocols that aren&rsquo;t routinely managed isn&rsquo;t straightforward, building new projects on IPv6 from the start can save considerable effort in the future.</p>
+<p>For services that have already been established, the transition to IPv6 was always an anticipated event, and it will inevitably need to be addressed at some point.</p>
 
 
 	<div class="my-4" style="text-align: right; font-style: italic">
@@ -171,8 +174,9 @@ IPv4は今後時間をかけてコストが増えていく可能性があり、�
             <img src="/images/m84jrlxVUc1r9blbt.jpg">
         </picture>
         <div>
-            <div class="h3 idx mb-2" href="/ja/ipv6-transition/">IPv6移行</div>
-            <div class="f5">インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、IP層には……</div>
+            <div class="h3 idx mb-2" href="/ja/ipv6-transition/">Migrate to IPv6</div>
+            <div class="f5">Eventually, all internet devices will communicate via IPv6. Once everything is unified under IPv6, there will likely be fewer technical issues or concerns at the IP layer.
+The challenge lies in the fact that we will have to support dual-stack configurations, where both IPv4 and IPv6 coexist, for an extended period.……</div>
 	</div>
 </a>
 <a href="/ja/voip-integration/" class="compbox bordered py-2">

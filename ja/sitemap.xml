@@ -3,7 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://chumaltd.github.io/ja/ipv6-transition/</loc>
-    <lastmod>2024-09-04T17:31:08+09:00</lastmod>
+    <lastmod>2024-09-04T18:07:45+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chumaltd.github.io/en/ipv6-transition/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://chumaltd.github.io/ja/ipv6-transition/"
+                />
   </url><url>
     <loc>https://chumaltd.github.io/ja/voip-integration/</loc>
     <lastmod>2024-08-15T14:07:53+09:00</lastmod>
