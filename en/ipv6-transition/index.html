@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-color-mode="dark" data-dark-theme="dark">
+<html data-color-mode="dark" data-light-theme="light" data-dark-theme="dark">
     <head><meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -155,6 +155,7 @@ As IPv4 becomes more costly over time and
 The de facto standard for clusters using virtual networks is Kubernetes, which already supports IPv4/IPv6 dual-stack functionality.</p>
 <p>While the dual-stack functionality is likely at a level where it is practically problem-free, deploying it requires recreating the cluster.<br>
 As of 2024, it seems that only a small percentage of engineers are choosing IPv6 networks from the start. Consequently, pre-packaged solutions may not work out of the box, leading to a lot of trial and error in achieving the correct configuration.</p>
+<p>I am running the same k3s configuration on three different hardware units, but only one of them is experiencing IPv6 communication errors. Since both inter-container communication and external requests result in errors, it&rsquo;s likely a bug caused by a specific combination of the CPU and host kernel on that particular machine.</p>
 <p>Virtual networks are significantly more complex than the network configurations of standalone operating systems. Additionally, given that Linux is currently transitioning away from the traditional iptables for network implementation, the initial setup will likely require considerable effort.</p>
 <p>Over the past decade, the decline of published books has made it difficult to access comprehensive sources of information. This lack of collective knowledge has proven to be a significant obstacle, making troubleshooting in IPv6 network construction particularly challenging.</p>
 <h2 id="ipv4-has-become-a-thing-of-the-past">IPv4 has become a thing of the past</h2>
@@ -165,7 +166,7 @@ Since migrating protocols that aren&rsquo;t routinely managed isn&rsquo;t straig
 
 
 	<div class="my-4" style="text-align: right; font-style: italic">
-	<span>⁋ Aug 27, 2024</span><span class="mx-2">↻ Sep 4, 2024</span></div><div class="related_articles">
+	<span>⁋ Aug 27, 2024</span><span class="mx-2">↻ Sep 9, 2024</span></div><div class="related_articles">
               <h4 id="related" class="idx"></h4>
               
               
