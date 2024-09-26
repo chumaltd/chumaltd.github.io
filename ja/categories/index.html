@@ -22,11 +22,12 @@
 
     </head>
     <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
-  <section class="container-xl" style="width: 100%">
+  <section class="container-xl d-flex" style="width: 100%">
+  <div class="navbar-brand" style="width: 64px; justify-content: center">
+	  <span class="navbar-item"><cm-drawer></cm-drawer></span>
+  </div>
   <div class="navbar-brand">
-    <span class="navbar-item">
-    <cm-drawer style="margin-right: .7rem"></cm-drawer>
-    <a href='/' style="display: inline-flex">
+    <a href='/' class="navbar-item" style="display: inline-flex">
 	    
 	    <img id="footer_logo" src="/common/civilis.svg">
 	    
@@ -55,8 +56,8 @@
       <section class="flex-1">
         <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
 <ul>
-  <li class="breadcrumb-item"><a href="/ja/">HOME</a></li>
-  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;Categories</li></ul>
+  <li><a href="/ja/">HOME</a></li>
+  <li class="current">&nbsp;Categories</li></ul>
 <script type="application/ld+json">
 {"@context":"http://schema.org", "@graph":[
 	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
@@ -69,7 +70,7 @@
 </nav>
 
         <header id="genre" class="pl-1 px-3 py-2 mb-4" style="z-index: 50;">
-          <h1 class="h1">Categories</h1>
+          <h1>Categories</h1>
         </header>
         <article>
         </article>
@@ -86,6 +87,6 @@
           
       </div>
   </div>
-</footer><script type="module" src=/lib/cm.js ></script>
+</footer><script type="module" src='/lib/cm.js' ></script>
 </body>
 </html>

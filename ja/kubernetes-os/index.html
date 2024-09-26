@@ -23,11 +23,12 @@
 
     </head>
     <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
-  <section class="container-xl" style="width: 100%">
+  <section class="container-xl d-flex" style="width: 100%">
+  <div class="navbar-brand" style="width: 64px; justify-content: center">
+	  <span class="navbar-item"><cm-drawer></cm-drawer></span>
+  </div>
   <div class="navbar-brand">
-    <span class="navbar-item">
-    <cm-drawer style="margin-right: .7rem"></cm-drawer>
-    <a href='/' style="display: inline-flex">
+    <a href='/' class="navbar-item" style="display: inline-flex">
 	    
 	    <img id="footer_logo" src="/common/civilis.svg">
 	    
@@ -48,8 +49,8 @@
     <div class="p-3 three-quarter">
         <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
 <ul>
-  <li class="breadcrumb-item"><a href="/ja/">HOME</a></li>
-  <li class="current breadcrumb-item breadcrumb-item-selected">&nbsp;KubernetesというOS</li></ul>
+  <li><a href="/ja/">HOME</a></li>
+  <li class="current">&nbsp;KubernetesというOS</li></ul>
 <script type="application/ld+json">
 {"@context":"http://schema.org", "@graph":[
 	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
@@ -73,7 +74,7 @@
     <div class="quarter hide-sm"></div>
     <div id="pagetitle" class="three-quarter px-3">
 	<div class="mb-4">
-        <h1 class="h2 idx py-5">
+        <h1 class="idx py-5">
           KubernetesというOS
         </h1><div style="text-align: right; font-weight: 600; font-style: italic">2024/09/25</div></div>
     </div>
@@ -109,14 +110,14 @@
         <p>
 <a href="https://en.wikipedia.org/wiki/Kubernetes">kubernetes</a>が
 <a href="https://en.wikipedia.org/wiki/Operating_system">OS</a>の機能を取り揃えつつある。<br>
-OSは多義的な用語で、立場によって欠かせない機能が変わる。ソフトウェアやエンジニアから見るとき、多様なkubernetes環境で動作させる目的で開発しているのであればkubernetesがOSと言える。</p>
+OSは多義的な用語で、立場によって欠かせない機能が変わる。ソフトウェアやエンジニアから見るときにはCPUやRAM、ディスクといったハードを制御する機能が重要で、kubernetesの設定を通じてリクエストしているのであればkubernetesがOSと言える。</p>
 <h2 id="サーバーosとして確立">サーバーOSとして確立</h2>
 <p>2024年現在、広く使われているOSにはWindows・MacOS・Linuxがある。LinuxにはAndroidなどの派生OSが無数にある。<br>
 これらの従来型OSは、1台のハードを動作させるための幅広い機能を提供している。</p>
 <p>kubernetesは1台構成にとどまらず、複数機器を動作させる機能を提供する。</p>
-<p>クラウドサービスなどのデータセンター設備では複数のサーバーを組み合わせる構成を前提としている。LANが非常に高速に進化したため、1台のハードを高性能化するよりも複数のサーバーに処理を分散させた方が手軽に処理能力を拡張できるシーンが増えた。</p>
+<p>クラウドサービスなどのデータセンター設備では複数のサーバーを組み合わせる構成を前提としている。LANが非常に高速化したため、1台のハードを高性能化するよりも複数のサーバーに処理を分散させた方が手軽に処理能力を拡張できるシーンが増えた。</p>
 <p>LANの加速と同時に、半導体の進歩はPCのような単体の機器も高性能化した。これにより、1台のPC上で従来のデータセンターと同様のサービスを動作させることも現実的になった。<br>
-kubernetesは1台構成でも動作するため、開発用PC上に完結したクラウドサービスを構築できる。これがそのままデータセンターで動作する、というシナリオがここまでのミニマムなサクセスストーリーと言える。</p>
+kubernetesは1台構成でも動作するため、開発用PC上に完結したクラウドサービスを構築できる。これがそのままデータセンターで動作する、というシナリオがここまでの簡潔なサクセスストーリーだ。</p>
 <h3 id="dockerの衰微">Dockerの衰微</h3>
 <p>Dockerは同じレイヤの代替選択肢ではある。未来から振り返るなら「黎明期にはDockerという実装もあった」という存在になろう。<br>
 Googleがkubernetesを猛烈な勢いで開発した結果、kubernetesがクリティカルマスを獲得しデファクトスタンダードになった。すでに過去の話題だし、これ以上の話ではない。</p>
@@ -196,8 +197,8 @@ Tektonには
             <img src="/images/m84jrlxVUc1r9blbt.jpg">
         </picture>
         <div>
-            <div class="h3 idx mb-2" href="/ja/kubernetes-os/">KubernetesというOS</div>
-            <div class="f5">kubernetesが OSの機能を取り揃えつつある。 OSは多義的な用語で、立場によって欠かせない機能……</div>
+            <div class="h4 idx mb-2" href="/ja/kubernetes-os/">KubernetesというOS</div>
+            <div class="f6">kubernetesが OSの機能を取り揃えつつある。 OSは多義的な用語で、立場によって欠かせない機能……</div>
 	</div>
 </a>
 <a href="/ja/ipv6-transition/" class="compbox bordered py-2">
@@ -205,8 +206,8 @@ Tektonには
             <img src="/images/m84jrlxVUc1r9blbt.jpg">
         </picture>
         <div>
-            <div class="h3 idx mb-2" href="/ja/ipv6-transition/">IPv6移行</div>
-            <div class="f5">インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、IP層には……</div>
+            <div class="h4 idx mb-2" href="/ja/ipv6-transition/">IPv6移行</div>
+            <div class="f6">インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、IP層には……</div>
 	</div>
 </a>
 <a href="/ja/voip-integration/" class="compbox bordered py-2">
@@ -214,8 +215,8 @@ Tektonには
             <img src="/images/m84jrlxVUc1r9blbt.jpg">
         </picture>
         <div>
-            <div class="h3 idx mb-2" href="/ja/voip-integration/">灼熱のVoIP</div>
-            <div class="f5">電話は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいった……</div>
+            <div class="h4 idx mb-2" href="/ja/voip-integration/">灼熱のVoIP</div>
+            <div class="f6">電話は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいった……</div>
 	</div>
 </a>
 <a href="/ja/client-cert-generation/" class="compbox bordered py-2">
@@ -223,8 +224,8 @@ Tektonには
             <img src="/images/m84jrlxVUc1r9blbt.jpg">
         </picture>
         <div>
-            <div class="h3 idx mb-2" href="/ja/client-cert-generation/">クライアント証明書を生成する</div>
-            <div class="f5">年に数回、 X.509のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけ……</div>
+            <div class="h4 idx mb-2" href="/ja/client-cert-generation/">クライアント証明書を生成する</div>
+            <div class="f6">年に数回、 X.509のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけ……</div>
 	</div>
 </a>
 <a href="/ja/cloud-stagnation/" class="compbox bordered py-2">
@@ -232,8 +233,8 @@ Tektonには
             <img src="/images/m84jrlxVUc1r9blbt.jpg">
         </picture>
         <div>
-            <div class="h3 idx mb-2" href="/ja/cloud-stagnation/">ドッグイヤーの終焉</div>
-            <div class="f5">Deno上のインテグレーションテストの実用性を評価するうちに、実はクラウドインフラの性能も悪いことに……</div>
+            <div class="h4 idx mb-2" href="/ja/cloud-stagnation/">ドッグイヤーの終焉</div>
+            <div class="f6">Deno上のインテグレーションテストの実用性を評価するうちに、実はクラウドインフラの性能も悪いことに……</div>
 	</div>
 </a>
 
@@ -251,6 +252,6 @@ Tektonには
           
       </div>
   </div>
-</footer><script type="module" src=/lib/cm.js ></script>
+</footer><script type="module" src='/lib/cm.js' ></script>
 </body>
 </html>
