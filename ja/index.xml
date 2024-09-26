@@ -8,6 +8,13 @@
     <language>ja</language>
     <atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>KubernetesというOS</title>
+      <link>https://chumaltd.github.io/ja/kubernetes-os/</link>
+      <pubDate>Wed, 25 Sep 2024 11:08:31 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/kubernetes-os/</guid>
+      <description>kubernetesが OSの機能を取り揃えつつある。 OSは多義的な用語で、立場によって欠かせない機能</description>
+    </item>
+    <item>
       <title>IPv6移行</title>
       <link>https://chumaltd.github.io/ja/ipv6-transition/</link>
       <pubDate>Tue, 27 Aug 2024 12:10:22 +0900</pubDate>
