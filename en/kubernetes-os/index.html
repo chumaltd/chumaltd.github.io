@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html data-color-mode="dark" data-light-theme="light" data-dark-theme="dark">
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Kubernetes as OS | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/en/kubernetes-os/" />
+<meta property="og:title" content="Kubernetes as OS" />
+<meta property="og:description" content="Kubernetes is increasingly incorporating the functionalities of an Operating System.
+The term &ldquo;OS&rdquo; is multifaceted, and the essential functions vary depending on one&rsquo;s perspective. For software and engineers, the critical functions are those that manage hardware components like the CPU, RAM, and disk. If these are being controlled through Kubernetes configurations, then Kubernetes can be considered an OS." />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/en/kubernetes-os/ />
+
+<link rel="alternate" hreflang="ja" href="https://chumaltd.github.io/ja/kubernetes-os/" />
+    </head>
+    <body class="en "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl d-flex" style="width: 100%">
+  <div class="navbar-brand" style="width: 64px; justify-content: center">
+	  <span class="navbar-item"><cm-drawer></cm-drawer></span>
+  </div>
+  <div class="navbar-brand">
+    <a href='/' class="navbar-item" style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+
+<div id ="o" class="o">
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li><a href="/en/">HOME</a></li>
+  <li class="current">&nbsp;Kubernetes as OS</li></ul>
+<script type="application/ld+json">
+{"@context":"http://schema.org", "@graph":[
+	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/en\/","name":"civilis"},
+	{"@type":"BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/en/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/en/kubernetes-os/","name": "Kubernetes as OS" }
+}]}
+]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+	<div class="mb-4">
+        <h1 class="idx py-5">
+          Kubernetes as OS
+        </h1><div style="text-align: right; font-weight: 600; font-style: italic">Sep 25, 2024</div></div>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered">
+        <nav class="mb-3 px-5 py-4">
+            <a href="/ja/kubernetes-os/" class="mx-4">Japanese</a></nav><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;Kubernetes as OS</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#established-as-a-server-os">Established as a Server OS</a>
+      <ul>
+        <li><a href="#decline-of-docker">Decline of Docker</a></li>
+      </ul>
+    </li>
+    <li><a href="#evolving-as-a-parasite-on-linux">Evolving as a parasite on Linux</a>
+      <ul>
+        <li><a href="#incompatibe-with-windows-and-mac">Incompatibe with Windows and Mac</a></li>
+      </ul>
+    </li>
+    <li><a href="#replacing-linuxs-functions">Replacing Linux&rsquo;s Functions</a>
+      <ul>
+        <li><a href="#self-destructing-tower-of-babel">Self-destructing Tower of Babel</a></li>
+        <li><a href="#kubernetes-apps-are-possible-but-not-yet-simple">Kubernetes apps are possible, but not yet simple</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-era-of-crafting-silos">The era of crafting silos</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>
+<a href="https://en.wikipedia.org/wiki/Kubernetes">Kubernetes</a> is increasingly incorporating the functionalities of an 
+<a href="https://en.wikipedia.org/wiki/Operating_system">Operating System</a>.<br>
+The term &ldquo;OS&rdquo; is multifaceted, and the essential functions vary depending on one&rsquo;s perspective. For software and engineers, the critical functions are those that manage hardware components like the CPU, RAM, and disk. If these are being controlled through Kubernetes configurations, then Kubernetes can be considered an OS.</p>
+<h2 id="established-as-a-server-os">Established as a Server OS</h2>
+<p>As of 2024, widely used OSes include Windows, MacOS, and Linux, with Linux having numerous derivatives like Android.<br>
+These traditional OSes provide a wide range of functions to operate a single computer.</p>
+<p>Kubernetes, however, offers the ability to manage not just a single machine but multiple ones.</p>
+<p>In cloud services and data center setups, it&rsquo;s common to have configurations that combine multiple servers. With local area networks (LAN) becoming extremely fast, distributing processing tasks across multiple servers has become a more practical way to expand processing power than merely upgrading a single machine.</p>
+<p>At the same time, advancements in semiconductors have made even standalone machines, like personal computers, significantly more powerful. This means it is now feasible to run services, previously reserved for data centers, on a single PC.<br>
+Since Kubernetes can operate even on a single machine, it allows for the construction of a complete cloud service on a development PC — this simple success story extends directly to data center operations.</p>
+<h3 id="decline-of-docker">Decline of Docker</h3>
+<p>Docker is remainining an alternative at the same layer, but looking back from the future, it will likely be seen as &ldquo;an implementation that existed in the early days.&rdquo;<br>
+With Google&rsquo;s rapid development of Kubernetes, Kubernetes reached critical mass and became the de facto standard. This is already a topic of the past, and there&rsquo;s little more to say about it.</p>
+<p>A few years ago, before Kubernetes distributions for development PCs were available, Docker was widely used in development environments.<br>
+However, as noted earlier, having the same OS for both the data center and the development machine is important. In this context, Docker is now simply an anomaly.</p>
+<h2 id="evolving-as-a-parasite-on-linux">Evolving as a parasite on Linux</h2>
+<p>Kubernetes is implemented on Linux, and many of its features are essentially Linux itself.<br>
+Considering Linux&rsquo;s history as a variant of 
+<a href="https://en.wikipedia.org/wiki/Unix">Unix</a>, which has gradually replaced and unified its foundations, Kubernetes can be seen as the evolved form of Unix in the long run.</p>
+<p>While Linux replaced Unix&rsquo;s 
+<a href="https://en.wikipedia.org/wiki/Init">init</a> with 
+<a href="https://en.wikipedia.org/wiki/Systemd">systemd</a>, Kubernetes provides its own method for launching programs, diverging into a separate OS.</p>
+<p>There was once a naming controversy over 
+<a href="https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy">GNU/Linux</a>, which made sense from an engineer&rsquo;s perspective. In light of this, it may be more accurate to recognize the system as GNU/Linux/Kubernetes.</p>
+<p>For instance, even now, the lingua franca of Kubernetes remains <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a>, continuing its lineage from Unix.<br>
+Open-source software, compared to proprietary commercial software, offers far more opportunities for replication, supplying symbiotic components to the evolving OS—much like mitochondria in cells.</p>
+<h3 id="incompatibe-with-windows-and-mac">Incompatibe with Windows and Mac</h3>
+<p>Kubernetes has already become the de facto OS in the realm of multi-machine computer networks.<br>
+Since Kubernetes deliberately incorporates Linux, its compatibility with Windows and Mac is limited.</p>
+<p>That said, there are tools available for Windows and Mac, and they aim to ensure basic functionality.<br>
+However, because Linux must be implemented as a 
+<a href="https://en.wikipedia.org/wiki/Virtual_machine">VM</a>, this results in a nested structure, much like a matryoshka doll. This architecture often leads to issues, particularly when attempting to use internal networks or the PC’s file system.</p>
+<p>Problems encountered with Linux VMs on Windows or MacOS may lack productive solutions.</p>
+<p>In the 2010s, Macs became popular among engineers, and I too used a MacBook Air at the time.<br>
+Initially, it sufficed because Unix toolchains were reasonably well integrated, but as container technologies grew in importance and incomprehensible issues increased, I eventually abandoned the Mac completely.</p>
+<h2 id="replacing-linuxs-functions">Replacing Linux&rsquo;s Functions</h2>
+<p>The previous discussion outlined Kubernetes&rsquo; progression as a server OS for clustered configurations, and it has already passed its initial milestones.</p>
+<p>Applications running on Kubernetes are essentially Linux applications, thus they aren&rsquo;t limited to server-specific software.<br>
+It is possible to port and run a broader range of tools on Kubernetes. Since it is primarily just a security-oriented implementation, it doesn&rsquo;t suffer from overheads like intermediate language runtimes, such as Java.</p>
+<p>Although there is some effort required to port applications, the rise of container technologies in the open-source community has led to the widespread availability of Dockerfile build scripts. Many of these scripts are even provided by the development projects for various tools.</p>
+<h3 id="self-destructing-tower-of-babel">Self-destructing Tower of Babel</h3>
+<p>The main benefit of building applications specifically for Kubernetes on a single machine is reproducibility.
+This approach offers a solution to the problem of Linux applications that no longer run smoothly on vanilla Linux distributions.</p>
+<p>Software often introduces incompatible updates. It&rsquo;s common to encounter situations where App A and App B both require the same underlying library, but A depends on an older version while B relies on a newer one.<br>
+When there are version conflicts, one of the applications will likely fail to run.</p>
+<p>Package managers of distributions like Ubuntu, along with their development communities, handle these incompatibilities in a unified manner. However, there are limits due to the combinatorial explosion of dependencies.</p>
+<p>For example, I encountered an issue when trying to set up Python tools.<br>
+While Python&rsquo;s package manager, pip, has long allowed users to install countless libraries, the latest Ubuntu 24.04 now prevents pip installations, instead directing users to use the system&rsquo;s package manager, apt.</p>
+<p>When depending on apt, you lose the flexibility to select specific library versions.<br>
+If an application&rsquo;s dependencies are complex, you may need to seek alternative methods to manage them.</p>
+<p>While it&rsquo;s clear that using a unified package management tool reduces effort compared to juggling multiple tools, even now, some of these tools are starting to falter under the pressure.</p>
+<h3 id="kubernetes-apps-are-possible-but-not-yet-simple">Kubernetes apps are possible, but not yet simple</h3>
+<p>After encountering the limitations of Python package management, I decided to create packages on Kubernetes. Due to the lengthy setup process, I implemented a 
+<a href="https://tekton.dev/">Tekton</a> pipeline.</p>
+<p>In this case, the pipeline had already been customized for development based on a version that was known to work on the server, so it operated without any issues from the start.<br>
+The container images are isolated from the host OS, and in this setup, I utilized a straightforward global installation method using pip. Using package management tools provided by programming languages like pip tends to minimize issues.</p>
+<p>Moreover, as shown by the ability to reuse server-oriented images, container images continue to work seamlessly even when the hardware changes. Once you build an image, the traditional installation steps become completely unnecessary.<br>
+There’s a significant advantage in that you’re largely unaffected by changes to the host OS, such as during distribution upgrades.</p>
+<p>The ability to reference directories on the host Linux is easily implemented using a simple hostPath, allowing you to handle the containers similarly to native Linux applications.<br>
+From the perspective of the completed package, it would not be incorrect to say that <u>Kubernetes applications can already be run directly on Linux hosts</u>.</p>
+<p>However, as there are few tools to support the setup for using applications like desktop apps or CLIs, you will need to craft these setups yourself.</p>
+<p>Additionally, attention is needed for scripts running inside the container.</p>
+<p>Although they are simply bash scripts, they need to be packed within the YAML manifest.<br>
+This reflects a limitation of YAML, and it’s likely an issue that will be resolved through future extensions to the Kubernetes manifest format. However, at present, this area has not been a focus, and there has been no progress since its debut.</p>
+<p>When using applications similarly to Linux applications, there is often a need to specify command-line options. In this case, you will need to define variables within the scripts inside the container and find a way to inject them from the environment.<br>
+Tekton provides 
+<a href="https://tekton.dev/docs/pipelines/pipelines/#using-variable-substitution">variable substitution</a>, which can be specified from the CLI tool tkn. While this works, specifying lengthy parameters in tkn can be cumbersome, so I created a wrapper script 
+<a href="https://github.com/chumaltd/tkn-runner">tkn-runner</a>.</p>
+<p>Moving forward, I hope to see the emergence of tools designed for directly interacting with containers from the host OS.<br>
+Since the container interface is unlikely to change significantly, the setups created now should remain usable in the future without much hassle.</p>
+<h2 id="the-era-of-crafting-silos">The era of crafting silos</h2>
+<p>While containerization of applications has become the norm in data centers, the realm of desktop applications is still in development.</p>
+<p>As evidenced by the introduction of the snap package manager in Ubuntu, there is a rational basis for containerizing client environments like PCs.<br>
+Each distribution has been working toward commonizing libraries, but the reality is that they have been unable to fully resolve inconsistencies between applications, leading to the necessity of using containers alongside them.</p>
+<p>If customization is not required, it is still convenient to use the OS&rsquo;s standard package manager.<br>
+However, if you need to craft your own environment, you can leverage the standardized processes of Kubernetes on a Linux desktop.</p>
+
+
+	<div class="my-4" style="text-align: right; font-style: italic">
+	<span>⁋ Sep 25, 2024</span><span class="mx-2">↻ Sep 30, 2024</span></div><div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/en/kubernetes-os/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/en/kubernetes-os/">Kubernetes as OS</div>
+            <div class="f6">Kubernetes is increasingly incorporating the functionalities of an Operating System.
+The term &ldquo;OS&rdquo; is multifaceted, and the essential functions vary depending on one&rsquo;s perspective. For software and engineers, the critical functions are those that manage hardware components like the CPU, RAM, and disk. If these are being controlled through Kubernetes configurations, then Kubernetes can be considered an OS.……</div>
+	</div>
+</a>
+<a href="/en/ipv6-transition/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/en/ipv6-transition/">Migrate to IPv6</div>
+            <div class="f6">Eventually, all internet devices will communicate via IPv6. Once everything is unified under IPv6, there will likely be fewer technical issues or concerns at the IP layer.
+The challenge lies in the fact that we will have to support dual-stack configurations, where both IPv4 and IPv6 coexist, for an extended period.……</div>
+	</div>
+</a>
+<a href="/en/voip-integration/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/en/voip-integration/">VoIP integration under the scorching sun</div>
+            <div class="f6">The telephone, invented by Bell in 1876, has been in use for 150 years. How much longer will the method of dialing a number to reach someone continue?
+In Japan, due to the widespread adoption of mobile phones, traditional PSTN phones have been declining in households. However, businesses are still required to install phones, effectively making it mandatory due to administrative demands from governments.……</div>
+	</div>
+</a>
+<a href="/en/covid19-2023/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/en/covid19-2023/">Halfway with COVID-19</div>
+            <div class="f6">In Japan, starting from May 8th, 2023, the classification of COVID-19 as a Category 5 infectious disease means that the administrative response will shift to &ldquo;no guard&rdquo; status. However, this does not necessarily mean that the underlying situation has improved.
+The Evolution of the Virus Ultimately, the coronavirus has fully entrenched itself worldwide, remaining an infectious disease that results in death in a certain percentage of cases.……</div>
+	</div>
+</a>
+<a href="/en/civilis/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/en/civilis/">CIVILIS</div>
+            <div class="f6">We have silly situations at last.
+Everyone intends to make efforts every day from their respective social positions. Thus, the resulting social system was also one that efficiently spreads epidemics throughout the world.
+COVID-19 is the returning of SARS in 2002 in terms of the virus type, the route of transmission, and the prevention of epidemics.……</div>
+	</div>
+</a>
+
+          </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+</div>
+</div>
+<footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src='/lib/cm.js' ></script>
+</body>
+</html>

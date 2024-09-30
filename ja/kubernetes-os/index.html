@@ -20,7 +20,7 @@
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
 <link rel="canonical" href=https://chumaltd.github.io/ja/kubernetes-os/ />
 
-
+<link rel="alternate" hreflang="en" href="https://chumaltd.github.io/en/kubernetes-os/" />
     </head>
     <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
   <section class="container-xl d-flex" style="width: 100%">
@@ -80,7 +80,9 @@
     </div>
   </div>
   <div class="d-sm-flex">
-    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+    <nav class="quarter layered">
+        <nav class="mb-3 px-5 py-4">
+            <a href="/en/kubernetes-os/" class="mx-4">English</a></nav><aside class="toc sticky" style="position: sticky; top: 3em">
         <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;KubernetesというOS</div>
         <nav id="TableOfContents">
   <ul>
@@ -158,7 +160,7 @@ Linuxディストリビューション上で素朴に動作しないLinuxアプ�
 従来から無数のライブラリをPythonのパッケージマネージャpipを用いてインストールできるのだが、いま最新のUbuntu24.04ではpipがインストールを拒否する挙動となり、ディストリビューションが提供するaptパッケージマネージャを使うよう誘導されるようになった。</p>
 <p>aptが提供するパッケージを使う場合、状況に応じてライブラリのバージョンを選択する余地はなくなる。<br>
 アプリケーションが求める依存ライブラリが複雑な構成になることが分かっているなら、別の手段が必要になるということでもある。</p>
-<p>パッケージ管理は、複数ツールを使い分けるより統一した方が手間が減ることは間違いないが、ツールが白旗を挙げ始めている。</p>
+<p>パッケージ管理は、複数ツールを使い分けるより統一した方が手間が減ることは間違いないが、いまやツールが白旗を挙げ始めている。</p>
 <h3 id="kubernetesアプリは可能まだ簡潔とは言えない">kubernetesアプリは可能。まだ簡潔とは言えない</h3>
 <p>Pythonパッケージ管理の限界を見て、じっさいにkubernetes上のパッケージを作成してみた。セットアッププロセスが長いため、
 <a href="https://tekton.dev/">Tekton</a>のPipelineを実装した。</p>
@@ -188,7 +190,7 @@ Tektonには
 
 
 	<div class="my-4" style="text-align: right; font-style: italic">
-	<span>⁋ 2024/09/25</span><span class="mx-2">↻ 2024/09/26</span></div><div class="related_articles">
+	<span>⁋ 2024/09/25</span><span class="mx-2">↻ 2024/09/30</span></div><div class="related_articles">
               <h4 id="related" class="idx"></h4>
               
               

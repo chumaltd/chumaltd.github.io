@@ -8,6 +8,13 @@
     <language>en</language>
     <atom:link href="https://chumaltd.github.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Kubernetes as OS</title>
+      <link>https://chumaltd.github.io/en/kubernetes-os/</link>
+      <pubDate>Wed, 25 Sep 2024 11:08:31 +0900</pubDate>
+      <guid>https://chumaltd.github.io/en/kubernetes-os/</guid>
+      <description>Kubernetes is increasingly incorporating the functionalities of an Operating System.&#xA;The term &amp;ldquo;OS&amp;rdquo; is multifaceted, and the essential functions vary depending on one&amp;rsquo;s perspective. For software and engineers, the critical functions are those that manage hardware components like the CPU, RAM, and disk. If these are being controlled through Kubernetes configurations, then Kubernetes can be considered an OS.</description>
+    </item>
+    <item>
       <title>Migrate to IPv6</title>
       <link>https://chumaltd.github.io/en/ipv6-transition/</link>
       <pubDate>Tue, 27 Aug 2024 12:10:22 +0900</pubDate>

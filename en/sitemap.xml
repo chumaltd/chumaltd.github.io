@@ -2,6 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://chumaltd.github.io/en/kubernetes-os/</loc>
+    <lastmod>2024-09-30T18:51:40+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://chumaltd.github.io/ja/kubernetes-os/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chumaltd.github.io/en/kubernetes-os/"
+                />
+  </url><url>
     <loc>https://chumaltd.github.io/en/ipv6-transition/</loc>
     <lastmod>2024-09-09T12:39:04+09:00</lastmod>
     <xhtml:link
