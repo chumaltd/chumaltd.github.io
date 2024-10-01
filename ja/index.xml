@@ -8,6 +8,13 @@
     <language>ja</language>
     <atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>熱波潮流</title>
+      <link>https://chumaltd.github.io/ja/heat-tide/</link>
+      <pubDate>Tue, 01 Oct 2024 10:30:10 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/heat-tide/</guid>
+      <description>日本の10月はかつては秋だった。秋を迎える前に「秋めく」時候もあり、涼しい風が吹く日がぽつぽつ混じる</description>
+    </item>
+    <item>
       <title>KubernetesというOS</title>
       <link>https://chumaltd.github.io/ja/kubernetes-os/</link>
       <pubDate>Wed, 25 Sep 2024 11:08:31 +0900</pubDate>
