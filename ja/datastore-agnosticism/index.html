@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html data-color-mode="dark" data-light-theme="light" data-dark-theme="dark">
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>不可知なデータストア | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/datastore-agnosticism/" />
+<meta property="og:title" content="不可知なデータストア" />
+<meta property="og:description" content="PostgreSQLは人類でもっとも重要なソフトウェア資産のひとつだ。データセットのごく一部を素朴に" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/datastore-agnosticism/ />
+
+
+    </head>
+    <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl d-flex" style="width: 100%">
+  <div class="navbar-brand" style="width: 64px; justify-content: center">
+	  <span class="navbar-item"><cm-drawer></cm-drawer></span>
+  </div>
+  <div class="navbar-brand">
+    <a href='/' class="navbar-item" style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+
+<div id ="o" class="o">
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li><a href="/ja/">HOME</a></li>
+  <li class="current">&nbsp;不可知なデータストア</li></ul>
+<script type="application/ld+json">
+{"@context":"http://schema.org", "@graph":[
+	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
+	{"@type":"BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/datastore-agnosticism/","name": "不可知なデータストア" }
+}]}
+]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+	<div class="mb-4">
+        <h1 class="idx py-5">
+          不可知なデータストア
+        </h1><div style="text-align: right; font-weight: 600; font-style: italic">2024/11/13</div></div>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;不可知なデータストア</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#デッドコピーではない同一性">デッドコピーではない同一性</a>
+      <ul>
+        <li><a href="#ソフトウェアテストとは対照的">ソフトウェアテストとは対照的</a></li>
+      </ul>
+    </li>
+    <li><a href="#ポータビリティにも保証はない">ポータビリティにも保証はない</a>
+      <ul>
+        <li><a href="#olapもpostgresqlが有望か">OLAPもPostgreSQLが有望か</a></li>
+      </ul>
+    </li>
+    <li><a href="#データストア検証のロジックが欲しい">データストア検証のロジックが欲しい</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>
+<a href="https://www.postgresql.org/">PostgreSQL</a>は人類でもっとも重要なソフトウェア資産のひとつだ。データセットのごく一部を素朴に抽出するような検索用途には
+<a href="https://en.wikipedia.org/wiki/Relational_database">RDBMS</a>が適していて、おそらくRDBMS製品はPostgreSQLに収斂して差し支えない。</p>
+<p>PostgreSQLは毎年新版をリリースしており、それに合わせて稼働中のシステムも年に一度のバージョンアップ作業を行う。<br>
+これが難しい。</p>
+<p>これまでに多くのデータベースを更新してきて失敗したことは一度もない。失敗しないように確証を得るプロセスに手間をかけているからだ。失敗しないのは当然であり、検証が進歩せず一切手軽になってこないことに課題意識を持つようになった。</p>
+<p>工夫の余地を探索した結論として、RDBMSを含むデータストアのメンテナンスは手間がかかる性質のものであり、一定のあきらめが必要と今は捉えている。<br>
+話の見通しを良くするためにポイントを述べると、データストアの挙動はあらかじめ知り得ない要素が多く、自明な挙動を組み合わせるアプローチによって安全性を証明する方法がとれないのだと思う。</p>
+<h2 id="デッドコピーではない同一性">デッドコピーではない同一性</h2>
+<p>PostgreSQLのアップグレードの例では、<code>pg_upgrade</code>というスクリプトを手動で実行する。この際、サービスを停止する必要がある。<code>pg_upgrade</code>が必ず成功するなら何も問題はないのだが、あらかじめ保証を得る手段はない。</p>
+<p>データストアの場合、ディスク上のファイルが実体である。<code>pg_upgrade</code>は旧バージョンのファイルを読みとって、新バージョンのファイルを新たに生成する。<br>
+PostgreSQLがバージョンアップごとに進化しているのは、ファイル変換を経ていることも寄与している。</p>
+<p>つまりバージョンアップ前後で物理フォーマットは異なる。異なる部分は進歩への期待であり、より良いデータベースを望んでいるから完全に同一にはならないという因果関係によって移行に手間がかかる。</p>
+<h3 id="ソフトウェアテストとは対照的">ソフトウェアテストとは対照的</h3>
+<p>「移行の際の手間を減らし、安全性を高める」と主張するとき、念頭にあるのはソフトウェア・テストだ。<br>
+典型的なテストでは、同じ入力に対して同じ出力を得るという挙動をたくさん確認する。</p>
+<p>バージョンアップ前後でどこかに想定外の不具合があったとき、テストケースが豊富であれば何らかの検出を期待できる。<br>
+それは多くの処理が連鎖的な構造をしているため、ある不具合は関連する部分にも間接的に想定外の挙動を引き起こす可能性が高いからだ。<br>
+テストケースがコードの全てをカバーしていなくても実用上信頼できる検出力を確保する方法はある。</p>
+<p>データストア運用の場合には、同じ入力という仮定がなり立たない。<br>
+継続的に更新し続けている想定であるため、次の瞬間には同じデータセットではない。既述の物理フォーマット変更も前提に置くと、同一であることに根拠がない。</p>
+<p>新バージョンのデータベースをテストシステムに導入してソフトウェア・テストを実施する手はあり、実際に採り入れている。<br>
+しかしこの手法で検証できるのはPostgreSQLの機能であり、稼働中のデータセットについて分かることは何もない。</p>
+<p>サンプルデータで確認する手法はアプリケーションの妥当性検証には使えるが、データセットの一貫性は確認できない。</p>
+<p>ここで問題にしている同一性は、
+<a href="https://ja.wikipedia.org/wiki/%E9%87%8F%E5%AD%90%E3%83%86%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">量子テレポーテーション</a>と似た性質を持つ。<br>
+同一であることが中心テーマだが、それを構成するアトミックな要素に還元すると同一でないことも自明なのだ。</p>
+<h2 id="ポータビリティにも保証はない">ポータビリティにも保証はない</h2>
+<p>RDBMSは普及したデータストアだが、あらゆる用途をカバーできるわけではない。<br>
+データウェアハウスのような分析、とくにデータをフルスキャンすべき用途には適していない。</p>
+<p>バルクデータの分析用途には
+<a href="https://ja.wikipedia.org/wiki/%E5%88%97%E6%8C%87%E5%90%91%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0">カラムナデータベース</a>が必要になる。<br>
+2024年現在、PostgreSQLに匹敵するような確立したカラムナDBが存在しておらず、まだ実装が乱立している段階と見ている。</p>
+<p>各プロダクトが将来にわたって存続しない可能性が高いことから、移行手段を確保しておくことが課題になる。<br>
+これまで利用してきたプロダクトのデータをエクスポートして、別のプロダクトにインポートすることで同じ用途に使いたい。</p>
+<p>このようなデータポータビリティには現実的な解決策がなく、分析システムを導入することじたいのハードルになっていた。</p>
+<p>見通しのために結論を述べると、この問題もPostgreSQLのバージョンアップと本質的に同じ性質を持っており、移行前後の同一性を保証する方法がない。<br>
+そう捉えなおすと、データポータビリティへの期待は幻想であり、移行するという選択は既存データ破棄とほぼ同義だと気づく。</p>
+<p>データの継続性にはまずデータストアの確立が必要であり、将来の話と言える。</p>
+<h3 id="olapもpostgresqlが有望か">OLAPもPostgreSQLが有望か</h3>
+<p>分析用途のデータストアについては先行きは不透明だ。</p>
+<p>
+<a href="https://en.wikipedia.org/wiki/Apache_Parquet">Parquet</a>形式のツールがおおむね高速に動作していることから、コンパクトで堅牢なカラムナデータベースでありさえすれば目的を満たすのだろう。<br>
+インターフェースはSQLが有望だとすると、PostgreSQLのカラムナストレージ・プラグインが有力であるように思う。</p>
+<p>この分野のキラーアプリケーションはWebアクセス解析だろう。GoogleAnalyticsがEU法制の規制を受けて縮退したことから、セルフホストのニーズが潜在している。</p>
+<p>Webアクセス解析のオープンソースはClickhouseのフロントエンドが多く、じっさいに導入してみた結果としてClickhouseの品質が良くなかった。<br>
+RAMの推奨構成が32GBでありフットプリントが大きい。Clickhouseのビジネスモデルはクラウドプロバイダであるため、おそらく意図的な設計だと思う。</p>
+<p>設定変更で挙動を変えられるものの、構成を削減していくと簡単にハングアップする。ワークメモリが大きいことじたいは理解できるが、アクティブなデータセットと比べて圧倒的に巨大なメモリがなければ起動しないというのは何かがおかしい。<br>
+RDBMSはワークメモリの設定によりフットプリントを変更でき、動作が不安定になることもない。</p>
+<p>OLAP向けのプロダクトは乱立しているが、複数ハードで並列にフルスキャンするような巨大な構成のソフトウェアが先行した。<br>
+従来は不可能だった分野を想定すると合理的とも言えるが、一方でメインストリームのアプリケーションが空白地帯になっているように見える。</p>
+<h2 id="データストア検証のロジックが欲しい">データストア検証のロジックが欲しい</h2>
+<p>これまでの話を総合すると、要するにデータストアの検証を投げ出している。</p>
+<p>ディスクのクローン機能を用いてあらかじめ移行リハーサルを実施しているが、一部の分かりやすいエラーがないことを確認しているに過ぎず、移行作業の全般的な適切さを保証するものではない。<br>
+また、移行作業はサービス停止を伴うため、<code>pg_upgrade</code>が完了しだい早急にデータベース起動することを迫られる。網羅的に確認する時間の猶予もあまりないままに、新たに書き込みが発生するような環境なのだ。</p>
+<p>物理的変換を伴うデータの一部同一性を数学的に裏づけるロジックは存在するのではないかと思う。<br>
+サンプリングで部分的な適切さを証明できるアプローチでも漸進できるはずだ。</p>
+
+
+	<div class="my-4" style="text-align: right; font-style: italic">
+	<span>⁋ 2024/11/13</span><span class="mx-2">↻ 2024/11/14</span></div><div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/datastore-agnosticism/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/datastore-agnosticism/">不可知なデータストア</div>
+            <div class="f6">PostgreSQLは人類でもっとも重要なソフトウェア資産のひとつだ。データセットのごく一部を素朴に……</div>
+	</div>
+</a>
+<a href="/ja/heat-tide/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/heat-tide/">熱波潮流</div>
+            <div class="f6">日本の10月はかつては秋だった。秋を迎える前に「秋めく」時候もあり、涼しい風が吹く日がぽつぽつ混じる……</div>
+	</div>
+</a>
+<a href="/ja/kubernetes-os/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/kubernetes-os/">KubernetesというOS</div>
+            <div class="f6">kubernetesが OSの機能を取り揃えつつある。 OSは多義的な用語で、立場によって欠かせない機能……</div>
+	</div>
+</a>
+<a href="/ja/ipv6-transition/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/ipv6-transition/">IPv6移行</div>
+            <div class="f6">インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、IP層には……</div>
+	</div>
+</a>
+<a href="/ja/voip-integration/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/voip-integration/">灼熱のVoIP</div>
+            <div class="f6">電話は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいった……</div>
+	</div>
+</a>
+
+          </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+</div>
+</div>
+<footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src='/lib/cm.js' ></script>
+</body>
+</html>

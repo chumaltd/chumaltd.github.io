@@ -8,6 +8,13 @@
     <language>ja</language>
     <atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>不可知なデータストア</title>
+      <link>https://chumaltd.github.io/ja/datastore-agnosticism/</link>
+      <pubDate>Wed, 13 Nov 2024 16:36:45 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/datastore-agnosticism/</guid>
+      <description>PostgreSQLは人類でもっとも重要なソフトウェア資産のひとつだ。データセットのごく一部を素朴に</description>
+    </item>
+    <item>
       <title>熱波潮流</title>
       <link>https://chumaltd.github.io/ja/heat-tide/</link>
       <pubDate>Tue, 01 Oct 2024 10:30:10 +0900</pubDate>
