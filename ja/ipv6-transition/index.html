@@ -94,6 +94,7 @@
     </li>
     <li><a href="#データセンターのipv6切り替え">データセンターのIPv6切り替え</a>
       <ul>
+        <li><a href="#localhostの挙動が安定しない">localhostの挙動が安定しない</a></li>
         <li><a href="#仮想ネットワーク構築には知見が必要">仮想ネットワーク構築には知見が必要</a></li>
       </ul>
     </li>
@@ -150,6 +151,14 @@ IPv6切り替え時にトラブルが起きるとIPv6に技術面の問題があ
 <p>中にはIPv6では動作しないソフトウェアもあり得る。<br>
 IPv4は今後時間をかけてコストが増えていく可能性があり、また
 <a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT</a>設定が事実上ロストテクノロジーになることも考えられるため、IPv6互換性のないソフトウェアを特定しておくことは継続性に関わる。</p>
+<h3 id="localhostの挙動が安定しない">localhostの挙動が安定しない</h3>
+<p>IPv6移行の際、開発用マシン1台の上にネットワーク構成をとるサービスはトラブルが頻発しやすい。</p>
+<p>1台構成の多くの場合、各ソフトウェアは<code>localhost</code>というホストで動作する。<code>localhost</code>は典型的にはIPv4では<code>127.0.0.1</code>、IPv6では<code>::1</code>というIPを指している。</p>
+<p>ソフトウェアをデフォルト設定で起動した場合、<code>127.0.0.1</code>のみアクセスを受けつける挙動か、<code>::1</code>のみ受けつける挙動かあるいはそれ以外なのか、ユーザーからは判然としない。</p>
+<p>そして、クライアントが<code>localhost</code>に接続する設定ではどちらのIPを利用するか紛れがある。</p>
+<p>IPv4ホストのみlistenしているサービスに対してIPv6ホストにリクエストする挙動になると同じ機器であっても接続できない。<br>
+この場合TCP接続が失敗するため、見なれないエラーを表示して異常終了することも多い。</p>
+<p><code>::1</code>を明示的に選択することでルーティングの曖昧さを排除できるが、<code>::1</code>をlistenする設定方法を説明していないソフトウェアが多い点がネックになっている。</p>
 <h3 id="仮想ネットワーク構築には知見が必要">仮想ネットワーク構築には知見が必要</h3>
 <p>開発ツールにも仮想ネットワークがある場合、既存の構成はIPv4シングルスタックというケースが多い。<br>
 仮想ネットワークを用いたクラスタのデファクトはkubernetesであり、kubernetesにはすでにIPv4/IPv6デュアルスタックの実績がある。</p>
@@ -166,10 +175,19 @@ IPv4は今後時間をかけてコストが増えていく可能性があり、�
 
 
 	<div class="my-4" style="text-align: right; font-style: italic">
-	<span>⁋ 2024/08/27</span><span class="mx-2">↻ 2024/09/09</span></div><div class="related_articles">
+	<span>⁋ 2024/08/27</span><span class="mx-2">↻ 2024/12/03</span></div><div class="related_articles">
               <h4 id="related" class="idx"></h4>
               
               
+<a href="/ja/dram-slowdown/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/dram-slowdown/">DRAMの停滞</div>
+            <div class="f6">過去何度かトライしてきたシステム監視サービスにようやく見通しが立った。インハウスで構築できる状況には……</div>
+	</div>
+</a>
 <a href="/ja/datastore-agnosticism/" class="compbox bordered py-2">
         <picture>
             <img src="/images/m84jrlxVUc1r9blbt.jpg">
@@ -204,15 +222,6 @@ IPv4は今後時間をかけてコストが増えていく可能性があり、�
         <div>
             <div class="h4 idx mb-2" href="/ja/ipv6-transition/">IPv6移行</div>
             <div class="f6">インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、IP層には……</div>
-	</div>
-</a>
-<a href="/ja/voip-integration/" class="compbox bordered py-2">
-        <picture>
-            <img src="/images/m84jrlxVUc1r9blbt.jpg">
-        </picture>
-        <div>
-            <div class="h4 idx mb-2" href="/ja/voip-integration/">灼熱のVoIP</div>
-            <div class="f6">電話は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいった……</div>
 	</div>
 </a>
 

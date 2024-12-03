@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>壺中日月長 | civilis</title>
+<title>DRAMの停滞 | civilis</title>
 
 <meta name="theme-color" content="rgb(38, 29, 32)">
 <link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
@@ -14,11 +14,11 @@
 <link rel="stylesheet" href='/lib/base.css' />
 
 <meta name="twitter:card" content="summary" />
-<meta property="og:url" content="https://chumaltd.github.io/ja/long-time-in-pod/" />
-<meta property="og:title" content="壺中日月長" />
-<meta property="og:description" content="最近の中心テーマは&quot;時間&quot;。 時間はコンセプトに過ぎないから、人によってさまざまな" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/dram-slowdown/" />
+<meta property="og:title" content="DRAMの停滞" />
+<meta property="og:description" content="過去何度かトライしてきたシステム監視サービスにようやく見通しが立った。インハウスで構築できる状況には" />
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
-<link rel="canonical" href=https://chumaltd.github.io/ja/long-time-in-pod/ />
+<link rel="canonical" href=https://chumaltd.github.io/ja/dram-slowdown/ />
 
 
     </head>
@@ -50,13 +50,13 @@
         <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
 <ul>
   <li><a href="/ja/">HOME</a></li>
-  <li class="current">&nbsp;壺中日月長</li></ul>
+  <li class="current">&nbsp;DRAMの停滞</li></ul>
 <script type="application/ld+json">
 {"@context":"http://schema.org", "@graph":[
 	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
 	{"@type":"BreadcrumbList","itemListElement":[
 {"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
-{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/long-time-in-pod/","name": "壺中日月長" }
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/dram-slowdown/","name": "DRAMの停滞" }
 }]}
 ]}
 </script>
@@ -75,53 +75,42 @@
     <div id="pagetitle" class="three-quarter px-3">
 	<div class="mb-4">
         <h1 class="idx py-5">
-          壺中日月長
-        </h1><div style="text-align: right; font-weight: 600; font-style: italic">2013/01/10</div></div>
+          DRAMの停滞
+        </h1><div style="text-align: right; font-weight: 600; font-style: italic">2024/11/29</div></div>
     </div>
   </div>
   <div class="d-sm-flex">
     <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
-        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;壺中日月長</div>
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;DRAMの停滞</div>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#壺中日月長">壺中日月長</a></li>
-    <li><a href="#時の流れは制御できる">時の流れは制御できる</a></li>
-    <li><a href="#時を制御しよう">時を制御しよう</a></li>
+    <li><a href="#dramが高止まりしている">DRAMが高止まりしている</a></li>
+    <li><a href="#コンテナosが仮想メモリを制約している">コンテナOSが仮想メモリを制約している</a></li>
   </ul>
 </nav>
       </aside>
     </nav>
     <div id="content" class="three-quarter">
       <article>
-        <p>最近の中心テーマは&quot;時間&quot;。<br>
-時間はコンセプトに過ぎないから、人によってさまざまなとらえ方がある。</p>
-<p>いま注目しているのは主観的な時間、つまり意識の使い方と時間の関係だ。</p>
-<h2 id="壺中日月長">壺中日月長</h2>
-<p>主観的な時間は科学のテーマではなく、寓話のテーマだ。</p>
-<p>「壺中日月長」というのは、壺の中の桃源郷に行って帰ってきたら、えらく時間が過ぎていた、という故事で、日本でいう浦島太郎と同じ話。</p>
-<p>壺中日月長でも浦島太郎でも、主張しているポイントは「あっという間に時が過ぎることがある」という点だろう。</p>
-<p>それが良いとも悪いとも言っているわけではない。</p>
-<p>たとえばアリとキリギリスのように、時間の使い方の価値判断を含んでいるわけではない。</p>
-<h2 id="時の流れは制御できる">時の流れは制御できる</h2>
-<p>逆説的だが「あっという間に時が過ぎることがある」という主張には「あっという間には過ぎないこともある」ということも含んでいる。</p>
-<p>壺に入るか入らないかは自由なわけだ。</p>
-<p>つまり、主観的な時間は意識の使い方や行動で制御できるのだと思う。</p>
-<p>どちらを選ぶかは好みの問題だろう。</p>
-<p>ただ、あっという間に時間が過ぎるということは、主観的にはその人生は一瞬に感じられるのだから、死んだも同然なのではないか。</p>
-<p>日月を長く使うことが生きているということだ。</p>
-<h2 id="時を制御しよう">時を制御しよう</h2>
-<p>寓話は体験とマッチしたときに納得できるものだ。<br>
-じっさいには、いま日々の活動から日月長を心がけることの重要性を痛感している。</p>
-<p>意識的に活動を制御しないかぎり、時はあっという間に過ぎる。</p>
-<p>&ldquo;時間&quot;という言葉を使うと、30分なり1日をどう使うかという時間量の管理に目が行きがちだ。</p>
-<p>主観的な時間を制御するには、おそらく&quot;有意義な30分&quot;といった概念を忘れた方が良い。</p>
-<p>そんなことよりも、自分の一挙手一投足の活動に目を向けるべきだ。</p>
-<p>「あっという間に時間が過ぎる」という感覚は、意識的に活動を制御できていないという危険信号だ。</p>
-<p>無意識の活動を排除して、すべての活動を一つひとつ選択することで、日月を長く生きられる。</p>
+        <p>過去何度かトライしてきたシステム監視サービスにようやく見通しが立った。インハウスで構築できる状況には、おそらくあと5年ほど要するだろう。</p>
+<p>要するにDRAM管理の弱いツールをコンテナで安定動作させる方法がない、ということが分かった。この結論に至るまで、多様なツールをセットアップした。<br>
+とくにデータストアについては、PostgreSQLなどのRDBMSやValkeyなどの素朴なKVSだけが例外的にメモリ管理が行き届いている状況で、ほかのミドルウェアは全滅と言える。監視システムはそれぞれ独自のデータストアに依存しており、ベアメタルのハード環境が必須だ。</p>
+<h2 id="dramが高止まりしている">DRAMが高止まりしている</h2>
+<p>この先もっとも簡潔なブレークスルーのシナリオは、DRAMの価格が10分の1に下落することだ。サーバーのメモリ容量が10倍になれば、相当多くのツールが概ね安定動作するだろう。</p>
+<p>DRAMのコモディティ化はすでに起きていてもおかしくない展開ではあったが、明らかに10年ほど前に止まった。たしかに半導体微細化が限界にぶち当たった影響は大きいのだろう。チップ当たりの容量密度が10倍になるような技術進化を達成できていない。<br>
+ただ、技術進歩が完全に止まったとしてもエクスペリエンス・カーブのような量産効果まで市場に届いて来ないのは異常に見える。</p>
+<p>近年進展している世界経済のブロック化や戦時雰囲気のような産業政策の影響が大きいのではないか。そう考えるとDRAM価格はこの先10年も高止まりしたままの展開が十分考えられる。</p>
+<h2 id="コンテナosが仮想メモリを制約している">コンテナOSが仮想メモリを制約している</h2>
+<p>ハード自体が高価であることに加えて、コンテナ化により仮想メモリの機能が退化していることも逆風に拍車をかけている。</p>
+<p>LinuxなどのUnix OSはスワップというDRAM容量を補完する機能を備えているのだが、kubernetesなどのコンテナOSは長らくスワップを実装できずに来ている。<br>
+スワップは、SSDなどのディスクをメモリ領域として転用することで擬似的にDRAM容量を拡張する。</p>
+<p>当然ながらディスクは遅いので、スワップをDRAMと同じものとして扱ってしまうと顕著に性能劣化する。これはスラッシングと呼ばれている。<br>
+kubernetesは現状スワップを本来のDRAMと区別して扱う機能がないため、機能ごとdisableにしている。よって実メモリ以上のDRAMを使う状況になるとOOMKillerによってアプリが丸ごと異常終了するより他ない。</p>
+<p>この状況は良いと考えられているわけではないが、v1.30現在では設計が議論中であり、実現までまだ時間がかかる。</p>
 
 
 	<div class="my-4" style="text-align: right; font-style: italic">
-	<span>⁋ 2013/01/10</span><span class="mx-2">↻ 2023/05/04</span></div><div class="related_articles">
+	<span>⁋ 2024/11/29</span><span class="mx-2">↻ 2024/12/03</span></div><div class="related_articles">
               <h4 id="related" class="idx"></h4>
               
               
