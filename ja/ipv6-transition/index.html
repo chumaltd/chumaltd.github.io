@@ -165,6 +165,9 @@ IPv4は今後時間をかけてコストが増えていく可能性があり、�
 <p>おそらく機能面では実用上問題のないレベルと言えるが、導入するにはクラスタの再作成が必要になる。<br>
 2024年現在では、どうやらIPv6ネットワークを選択するエンジニアの割合が少ないため、最初から動作するパッケージに仕上がっておらず、適切な構成を試行錯誤する展開になりやすい。</p>
 <p>異なる3台のハード上で同一構成のk3sを実行しているが、そのうちの1台だけIPv6の通信エラーが起きている。コンテナ間通信と外部へのリクエストのいずれもエラーになることから、おそらくCPUとホストkernelの特定の組み合わせで生じるバグなのだろう。</p>
+<p>また、
+<a href="https://github.com/kubernetes/kubernetes/issues/101324">Pod readiness probe cannot be directed at specific IP family</a>の議論がクローズするまでは、probeの<code>httpGet</code>などが暗黙のうちにIPv4ポートをチェックするという制約がある。<br>
+対象サービスがIPv6しかlistenしない場合には素朴に実装できず、コンテナ内で<code>curl --fail http://[::1]:80</code>などを実行するしかない。</p>
 <p>仮想ネットワークはOS単体のネットワーク構成よりもはるかに複雑であり、またLinuxのネットワーク実装が従来のiptablesを捨てつつある過渡期ということもあって、初回のセットアップには手間をかける必要があるだろう。</p>
 <p>ここ10年のうちに書籍出版がすっかり衰退してしまったため体系的な情報源へのアクセスにも難がある。総合的な知見の乏しさが仇となり、IPv6ネットワーク構築のトラブルシューティングは難易度が高い。</p>
 <h2 id="ipv4は過去のものになった">IPv4は過去のものになった</h2>
@@ -175,7 +178,7 @@ IPv4は今後時間をかけてコストが増えていく可能性があり、�
 
 
 	<div class="my-4" style="text-align: right; font-style: italic">
-	<span>⁋ 2024/08/27</span><span class="mx-2">↻ 2024/12/03</span></div><div class="related_articles">
+	<span>⁋ 2024/08/27</span><span class="mx-2">↻ 2024/12/04</span></div><div class="related_articles">
               <h4 id="related" class="idx"></h4>
               
               
