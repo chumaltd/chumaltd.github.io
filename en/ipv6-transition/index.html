@@ -154,7 +154,7 @@ As IPv4 becomes more costly over time and
 <a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT</a> configurations might effectively become lost technologies, identifying software that is incompatible with IPv6 is crucial for long-term sustainability.</p>
 <h3 id="unstable-behavior-of-localhost">Unstable behavior of localhost</h3>
 <p>During the transition to IPv6, network-based services running on a single development machine are prone to frequent issues.</p>
-<p>In most single-machine setups, various software components operate on the host <code>localhost</code>. Typically, <code>localhost</code> resolves to the IP <code>127.0.0.1</code> in IPv4 and <code>::1</code> in IPv6.</p>
+<p>In most single-machine setups, various software components operate on the host <code>localhost</code>. Typically, <code>localhost</code> resolves to the IP <code>127.0.0.1</code> in IPv4 and <code>::1</code> in IPv6. You will likely need to rely on commands like <code>lsof</code> to investigate the state of the ports.</p>
 <p>When software is started with default settings, it may only accept connections to <code>127.0.0.1</code>, only to <code>::1</code>, or behave differently in ways that aren&rsquo;t always clear to users.</p>
 <p>Moreover, when a client is configured to connect to <code>localhost</code>, there can be ambiguity about which IP address — <code>127.0.0.1</code> or <code>::1</code> — is being used.</p>
 <p>If a service is listening on an IPv4 host but the client attempts to connect to an IPv6 host, the connection will fail even on the same machine.<br>
@@ -166,6 +166,9 @@ The de facto standard for clusters using virtual networks is Kubernetes, which a
 <p>While the dual-stack functionality is likely at a level where it is practically problem-free, deploying it requires recreating the cluster.<br>
 As of 2024, it seems that only a small percentage of engineers are choosing IPv6 networks from the start. Consequently, pre-packaged solutions may not work out of the box, leading to a lot of trial and error in achieving the correct configuration.</p>
 <p>I am running the same k3s configuration on three different hardware units, but only one of them is experiencing IPv6 communication errors. Since both inter-container communication and external requests result in errors, it&rsquo;s likely a bug caused by a specific combination of the CPU and host kernel on that particular machine.</p>
+<p>Additionally, until the issue 
+<a href="https://github.com/kubernetes/kubernetes/issues/101324">Pod readiness probe cannot be directed at specific IP family</a> is resolved, there is a limitation where probes like <code>httpGet</code> implicitly check only IPv4 ports.<br>
+If the target service is configured to listen exclusively on IPv6, straightforward implementations are not possible. The only option is to execute commands such as <code>curl --fail http://[::1]:80</code> within the container.</p>
 <p>Virtual networks are significantly more complex than the network configurations of standalone operating systems. Additionally, given that Linux is currently transitioning away from the traditional iptables for network implementation, the initial setup will likely require considerable effort.</p>
 <p>Over the past decade, the decline of published books has made it difficult to access comprehensive sources of information. This lack of collective knowledge has proven to be a significant obstacle, making troubleshooting in IPv6 network construction particularly challenging.</p>
 <h2 id="ipv4-has-become-a-thing-of-the-past">IPv4 has become a thing of the past</h2>
@@ -176,7 +179,7 @@ Since migrating protocols that aren&rsquo;t routinely managed isn&rsquo;t straig
 
 
 	<div class="my-4" style="text-align: right; font-style: italic">
-	<span>⁋ Aug 27, 2024</span><span class="mx-2">↻ Dec 3, 2024</span></div><div class="related_articles">
+	<span>⁋ Aug 27, 2024</span><span class="mx-2">↻ Dec 5, 2024</span></div><div class="related_articles">
               <h4 id="related" class="idx"></h4>
               
               

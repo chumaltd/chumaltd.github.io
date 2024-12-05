@@ -154,7 +154,7 @@ IPv4は今後時間をかけてコストが増えていく可能性があり、�
 <h3 id="localhostの挙動が安定しない">localhostの挙動が安定しない</h3>
 <p>IPv6移行の際、開発用マシン1台の上にネットワーク構成をとるサービスはトラブルが頻発しやすい。</p>
 <p>1台構成の多くの場合、各ソフトウェアは<code>localhost</code>というホストで動作する。<code>localhost</code>は典型的にはIPv4では<code>127.0.0.1</code>、IPv6では<code>::1</code>というIPを指している。</p>
-<p>ソフトウェアをデフォルト設定で起動した場合、<code>127.0.0.1</code>のみアクセスを受けつける挙動か、<code>::1</code>のみ受けつける挙動かあるいはそれ以外なのか、ユーザーからは判然としない。</p>
+<p>ソフトウェアをデフォルト設定で起動した場合、<code>127.0.0.1</code>のみアクセスを受けつける挙動か、<code>::1</code>のみ受けつける挙動かあるいはそれ以外なのか、ユーザーからは判然としない。<code>lsof</code>コマンドなどでポートの状態を調べるよりほかないだろう。</p>
 <p>そして、クライアントが<code>localhost</code>に接続する設定ではどちらのIPを利用するか紛れがある。</p>
 <p>IPv4ホストのみlistenしているサービスに対してIPv6ホストにリクエストする挙動になると同じ機器であっても接続できない。<br>
 この場合TCP接続が失敗するため、見なれないエラーを表示して異常終了することも多い。</p>
@@ -178,7 +178,7 @@ IPv4は今後時間をかけてコストが増えていく可能性があり、�
 
 
 	<div class="my-4" style="text-align: right; font-style: italic">
-	<span>⁋ 2024/08/27</span><span class="mx-2">↻ 2024/12/04</span></div><div class="related_articles">
+	<span>⁋ 2024/08/27</span><span class="mx-2">↻ 2024/12/05</span></div><div class="related_articles">
               <h4 id="related" class="idx"></h4>
               
               
