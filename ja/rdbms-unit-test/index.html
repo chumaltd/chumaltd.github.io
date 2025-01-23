@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html data-color-mode="dark" data-light-theme="light" data-dark-theme="dark">
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>RDBMSのユニットテスト | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/rdbms-unit-test/" />
+<meta property="og:title" content="RDBMSのユニットテスト" />
+<meta property="og:description" content="Webサービスを既存の挙動を破壊しないようにシームレスに変更することは、往々にして難しい。 これまでテ" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/rdbms-unit-test/ />
+
+
+    </head>
+    <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl d-flex" style="width: 100%">
+  <div class="navbar-brand" style="width: 64px; justify-content: center">
+	  <span class="navbar-item"><cm-drawer></cm-drawer></span>
+  </div>
+  <div class="navbar-brand">
+    <a href='/' class="navbar-item" style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+
+<div id ="o" class="o">
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li><a href="/ja/">HOME</a></li>
+  <li class="current">&nbsp;RDBMSのユニットテスト</li></ul>
+<script type="application/ld+json">
+{"@context":"http://schema.org", "@graph":[
+	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
+	{"@type":"BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/rdbms-unit-test/","name": "RDBMSのユニットテスト" }
+}]}
+]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+	<div class="mb-4">
+        <h1 class="idx py-5">
+          RDBMSのユニットテスト
+        </h1><div style="text-align: right; font-weight: 600; font-style: italic">2025/01/22</div></div>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;RDBMSのユニットテスト</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#sqlは集約した方が良い">SQLは集約した方が良い</a></li>
+    <li><a href="#ストアド関数に集約すべき">ストアド関数に集約すべき</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>Webサービスを既存の挙動を破壊しないようにシームレスに変更することは、往々にして難しい。</p>
+<p>これまでテストケースを拡充することで従来の挙動を保護してきた。このアプローチは有効なのだが、最終的にDBアクセスを伴う処理が特異的に変更しづらいことが分かった。</p>
+<p>いま、PostgreSQLにユニットテストの関数を追加するエクステンション
+<a href="https://pgtap.org/">pgTAP</a>を導入し、これが決定的な解になると期待している。<br>
+SQLだけを用いて、PostgreSQL単体のテストを書ける。</p>
+<h2 id="sqlは集約した方が良い">SQLは集約した方が良い</h2>
+<p>Webサービス開発の主流は、従来からDBアクセス処理にORマッパーを採用している。<br>
+ORマッパーとは、データベースのネイティブ言語であるSQLではなく、PythonやRubyで書けるように変換するライブラリを指す。</p>
+<p>pgTAPを用いたユニットテストは当然ながらSQLを直接書く前提で役立ち、ORマッパーとは対極的なアプローチと言える。</p>
+<p>ORマッパーを使わない開発アプローチでは、PythonやRubyのコードにSQLを埋め込む構成になる。</p>
+<p>いま振り返ると、サーバーアプリケーションにSQLを散発的に埋めるというアプローチが中途半端だった。</p>
+<p>機能を追加していくと、ある処理の中に複数のクエリを書きたくなるが、n+1問題で知られるとおりアプリケーションから複数のクエリを発行することは避けるべき基本ルールだ。</p>
+<p>アプリケーション内でクエリを集約すると、すぐに<code>WITH</code>を使うような長大なSQLに成長する。
+クエリ設計の面では妥当でも、正しさの確認が難しくなる。</p>
+<p>また、本来SQLには文法があるものの、Pythonなどのホスト言語に埋め込んだSQLは単なる文字列として扱われる。<br>
+よって、埋め込みSQLの誤りはコンパイル段階で検出できず、実行時エラーを追跡する展開に陥りやすい。</p>
+<p>コード記述時に適切さを検証できない以上、実行時エラーをチェックするのはテストコードの役割だ。<br>
+埋め込みSQLの難点は、ホスト言語の関数にラップされる構造上、チェック対象の入力・出力がSQLと乖離してしまうことだろう。適切なSQLであることは直接確認できず、あくまでも関数の挙動が妥当であることから推定するよりほかない。</p>
+<p>設計・実装・テストの各段階に課題がある。</p>
+<h2 id="ストアド関数に集約すべき">ストアド関数に集約すべき</h2>
+<p>pgTAPで一般的なプログラミング言語と同様のユニットテストを書けることが分かったいま、サーバーアプリケーションからSQLのDBアプリケーションを分離するアーキテクチャにより埋め込みSQLの問題が解決するはずだ。</p>
+<p>PostgreSQL上にストアド関数を実装することで複雑なSQL処理を実装できる。<br>
+ストアド関数にはSQLに加えてPL/pgSQLを利用でき、BASIC言語のような変数と制御構造で書ける。</p>
+<p>そしてストアド関数は埋め込みSQLとは異なり、<code>WITH</code>などで1クエリに複雑に処理を詰め込む必要がない。<br>
+コネクション制御や暗黙のトランザクションといったペナルティがないため、埋め込みSQLではn+1問題になるような書き方も避けなくてよい。</p>
+<p>ストアド関数が複雑化するケースでは、他の実装方法でもSQL以上に簡素になる可能性はなく、サーバーとDB間のクエリが増える分だけ性能ペナルティを払うよりほかない。<br>
+ORマッパーが生成するSQLセットとストアド関数の処理は、理想的には似たような処理になるのだろう。それをデータベース内にパックするのとサーバー側に制御を移すのとでは挙動が異なる。</p>
+<p>ある側面ではストアド関数は最適であり、他の手段は妥協と言い切れる。<br>
+タプル型のストレージフォーマットとB木ファミリーのデータストアの利用範囲が広いため、本来はそのネイティブ言語であるSQLを積極的に扱う必要がある。</p>
+<p>pgTAPを利用すると、PostgreSQLのみの簡素なシステム構成で、コアのデータモデル機能の品質を確保できる。<br>
+従来のアプリケーション側のコードとテストケースを簡素化できることもあり、開発スピードアップに効果的だろうと見る。</p>
+
+
+	<div class="my-4" style="text-align: right; font-style: italic">
+	<span>⁋ 2025/01/22</span><span class="mx-2">↻ 2025/01/23</span></div><div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/rdbms-unit-test/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/rdbms-unit-test/">RDBMSのユニットテスト</div>
+            <div class="f6">Webサービスを既存の挙動を破壊しないようにシームレスに変更することは、往々にして難しい。 これまでテ……</div>
+	</div>
+</a>
+<a href="/ja/dram-slowdown/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/dram-slowdown/">DRAMの停滞</div>
+            <div class="f6">過去何度かトライしてきたシステム監視サービスにようやく見通しが立った。インハウスで構築できる状況には……</div>
+	</div>
+</a>
+<a href="/ja/datastore-agnosticism/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/datastore-agnosticism/">不可知なデータストア</div>
+            <div class="f6">PostgreSQLは人類でもっとも重要なソフトウェア資産のひとつだ。データセットのごく一部を素朴に……</div>
+	</div>
+</a>
+<a href="/ja/heat-tide/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/heat-tide/">熱波潮流</div>
+            <div class="f6">日本の10月はかつては秋だった。秋を迎える前に「秋めく」時候もあり、涼しい風が吹く日がぽつぽつ混じる……</div>
+	</div>
+</a>
+<a href="/ja/kubernetes-os/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/kubernetes-os/">KubernetesというOS</div>
+            <div class="f6">kubernetesが OSの機能を取り揃えつつある。 OSは多義的な用語で、立場によって欠かせない機能……</div>
+	</div>
+</a>
+
+          </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+</div>
+</div>
+<footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src='/lib/cm.js' ></script>
+</body>
+</html>

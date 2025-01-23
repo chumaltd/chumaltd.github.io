@@ -8,6 +8,13 @@
     <language>ja</language>
     <atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>RDBMSのユニットテスト</title>
+      <link>https://chumaltd.github.io/ja/rdbms-unit-test/</link>
+      <pubDate>Wed, 22 Jan 2025 18:25:29 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/rdbms-unit-test/</guid>
+      <description>Webサービスを既存の挙動を破壊しないようにシームレスに変更することは、往々にして難しい。 これまでテ</description>
+    </item>
+    <item>
       <title>DRAMの停滞</title>
       <link>https://chumaltd.github.io/ja/dram-slowdown/</link>
       <pubDate>Fri, 29 Nov 2024 17:51:55 +0900</pubDate>
