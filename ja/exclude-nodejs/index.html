@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>経験曲線効果と新規ビジネス | civilis</title>
+<title>Node.jsを完全に除去している | civilis</title>
 
 <meta name="theme-color" content="rgb(38, 29, 32)">
 <link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
@@ -14,11 +14,11 @@
 <link rel="stylesheet" href='/lib/base.css' />
 
 <meta name="twitter:card" content="summary" />
-<meta property="og:url" content="https://chumaltd.github.io/ja/adopt-experience-curve/" />
-<meta property="og:title" content="経験曲線効果と新規ビジネス" />
-<meta property="og:description" content="経験曲線効果（ Experience curve effects）というビジネス法則がある。戦略ファームのBCGを設立したブルース＝" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/exclude-nodejs/" />
+<meta property="og:title" content="Node.jsを完全に除去している" />
+<meta property="og:description" content="脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとs" />
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
-<link rel="canonical" href=https://chumaltd.github.io/ja/adopt-experience-curve/ />
+<link rel="canonical" href=https://chumaltd.github.io/ja/exclude-nodejs/ />
 
 
     </head>
@@ -50,13 +50,13 @@
         <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
 <ul>
   <li><a href="/ja/">HOME</a></li>
-  <li class="current">&nbsp;経験曲線効果と新規ビジネス</li></ul>
+  <li class="current">&nbsp;Node.jsを完全に除去している</li></ul>
 <script type="application/ld+json">
 {"@context":"http://schema.org", "@graph":[
 	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
 	{"@type":"BreadcrumbList","itemListElement":[
 {"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
-{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/adopt-experience-curve/","name": "経験曲線効果と新規ビジネス" }
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/exclude-nodejs/","name": "Node.jsを完全に除去している" }
 }]}
 ]}
 </script>
@@ -75,48 +75,44 @@
     <div id="pagetitle" class="three-quarter px-3">
 	<div class="mb-4">
         <h1 class="idx py-5">
-          経験曲線効果と新規ビジネス
-        </h1><div style="text-align: right; font-weight: 600; font-style: italic">2015/11/22</div></div>
+          Node.jsを完全に除去している
+        </h1><div style="text-align: right; font-weight: 600; font-style: italic">2025/02/04</div></div>
     </div>
   </div>
   <div class="d-sm-flex">
     <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
-        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;経験曲線効果と新規ビジネス</div>
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;Node.jsを完全に除去している</div>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#経験曲線をスタートアップに生かす">経験曲線をスタートアップに生かす</a></li>
-    <li><a href="#マネジメントへのインプリケーション">マネジメントへのインプリケーション</a></li>
+    <li><a href="#コンテナが再起不能になる">コンテナが再起不能になる</a></li>
+    <li><a href="#denoのnpm互換の進展">denoのnpm互換の進展</a></li>
   </ul>
 </nav>
       </aside>
     </nav>
     <div id="content" class="three-quarter">
       <article>
-        <p>経験曲線効果（
-<a href="https://en.wikipedia.org/wiki/Experience_curve_effects">Experience curve effects</a>）というビジネス法則がある。戦略ファームのBCGを設立したブルース＝ヘンダーソンが提唱したもので、「生産量の累計が増えるにつれてコストが下がる」傾向を指している。</p>
-<p>経験曲線に関する有名なストーリーとしては、&ldquo;Made in Japan&quot;が強かったころの日本の製造業が知られている。
-簡単に言うと、日本のメーカーは価格設定を低めに設定することで市場シェアをとり、米国などのメーカーに勝っていった、というもの。シェアの大きいメーカーほどコスト低減効果が働き利益が多く得られる。</p>
-<p>類似の法則に&quot;学習曲線&quot;もあるが、経験曲線の方がより事業レベルに立った包括的な性質を取り扱っている。</p>
-<h2 id="経験曲線をスタートアップに生かす">経験曲線をスタートアップに生かす</h2>
-<p>経験曲線の考え方はスタートアップにも生かせる。
-定型的な生産プロセス・サービス提供プロセスを決めたら正攻法でたくさん売る、というものだ。</p>
-<p>何の変哲もないシンプルな手法ながら、実行するのは意外と難しい。</p>
-<p>往々にしてベンチャーは資源不足・人手不足のため、まず「受注しちゃって大丈夫なのか？終わるのか？」ということになりがちだ。
-また、価格を下げて受注するということは目先の利益は圧迫されるわけで、体力のないベンチャーには相当の気合いが要る。</p>
-<p>多少なりとも逃げ腰なところがあったり、苦しいポイントを避けてうまくやってやろうというスタンスだと物量をこなせずに終わる。</p>
-<p>「どベンチャーをやりたいなら相当の覚悟がいる」と言われるのは、こういう局面でどう頑張れるかが成否を分けるからだと思う。</p>
-<p>負け戦は避ける必要があるが、引き分けに持ち込めるような山や、勝つか負けるか分からない案件、負のリスクが知れている商売であれば積極的にやった方が良い。</p>
-<p>エクスペリエンス・カーブの存在はビジネスにとって「将来勝てる」という夢でもあり、これを知っているかどうかで意思決定も変わってくる。</p>
-<h2 id="マネジメントへのインプリケーション">マネジメントへのインプリケーション</h2>
-<p>経験曲線効果を前提においた場合のビジネス立ち上げの着目ポイントは、「初期サービスの満足度が成立しているか？」と「活動の物量は足りているか？増やせないのか？」の2点だと思う。</p>
-<p>初期サービスには欠陥が多いため、マネージャーは文句も言いたくなるかもしれない。ただ、そのような細かいプロセスの良し悪しよりもサービス提供の物量の方が主要なドライバーであることを経験曲線は主張している。</p>
-<p>おそらく、失敗もまた組織学習としてコスト低減効果に組み込まれるため、いずれ自然に解消されるということなのだろう。</p>
-<p>新規ビジネスでは相対的に人件費などの固定コストの割合が高くなりがちなため、時が経つだけで体力が削られていく。だから、動きが遅くなることの方が持続可能性に大きなダメージを与える。</p>
-<p>ジリ貧になるとよりリスクを取りづらくなるため、細かい欠陥はあまり気にせずあわただしく走っていた方が安全だ。</p>
+        <p>
+<a href="/ja/e2e-web-testing/">脱Node.js</a>に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。<br>
+開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することとした。</p>
+<h2 id="コンテナが再起不能になる">コンテナが再起不能になる</h2>
+<p>不可解なことに、<code>npm install</code>や<code>rollup</code>を実行するとハングアップし、それ以後kubernetesのコンテナを再作成できない事象に遭遇した。<br>
+nodeのプロセスは<code>kill -9</code>コマンドを使用しても操作できない。そして、このプロセスを実行しているコンテナは<code>kubectl delete</code>が完了しない。<code>--force</code>オプションで強制終了すると、最終的に次のコンテナが作成できない状態に陥る。仮想ネットワークを割当てるフェーズのエラーで停止する。</p>
+<p>コンテナの再作成は一晩たっても復旧することはなく、最終的に該当ノードを削除したうえで新規ノードを追加しなければ戻らない。要するに直す方法がない。</p>
+<p>kubernetesでは多種多様なワークロードを実行しているが、コンテナ内のプロセスがコンテナ制御を破壊するようなケースにはこれまで遭遇したことがない。<br>
+いかなる場合にも、クラスタはコンテナの制御を失うべきでない。おそらくnodeの挙動が、何らかの脆弱性をついているのだと思う。</p>
+<h2 id="denoのnpm互換の進展">denoのnpm互換の進展</h2>
+<p>根本的にはクラスタの問題ではあるが、クラスタが修正された場合にはnodeが動作しなくなる。よって実務上は、nodeを使わないことで最終解決を図れる。</p>
+<p>kubernetesホストの問題は、クラウドプロバイダがOSビルドにカジュアルに失敗しているケースに遭遇したことがあり、品質を過信できない。年々改善してきているとすら言えないと考えており、使い方を制約することが動作のポイントとなる。</p>
+<p>幸いdenoのnpm互換性が向上したことで、nodeのCLIとして実装されているrollupと、nodeのJavascriptコードとして呼び出すsassライブラリのいずれもdeno上で動作する状況になった。</p>
+<p>npmのCLIについては、代替ツールである
+<a href="https://pnpm.io/">pnpm</a>が安定動作している。ただしpnpmはnodeを内包しているように見えるため、最終解ではないような気がしている。<br>
+denoの実行時キャッシュに頼っていくのが適切な可能性がある。</p>
+<p>ひと通りnode依存を除去できたため、次の段階では実行環境からnodeを除去して経過を観察する。</p>
 
 
 	<div class="my-4" style="text-align: right; font-style: italic">
-	<span>⁋ 2015/11/22</span><span class="mx-2">↻ 2023/05/05</span></div><div class="related_articles">
+	<span>⁋ 2025/02/04</span><span class="mx-2">↻ 2025/02/04</span></div><div class="related_articles">
               <h4 id="related" class="idx"></h4>
               
               

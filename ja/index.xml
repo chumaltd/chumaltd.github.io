@@ -8,6 +8,13 @@
     <language>ja</language>
     <atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Node.jsを完全に除去している</title>
+      <link>https://chumaltd.github.io/ja/exclude-nodejs/</link>
+      <pubDate>Tue, 04 Feb 2025 13:57:37 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/exclude-nodejs/</guid>
+      <description>脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとs</description>
+    </item>
+    <item>
       <title>RDBMSのユニットテスト</title>
       <link>https://chumaltd.github.io/ja/rdbms-unit-test/</link>
       <pubDate>Wed, 22 Jan 2025 18:25:29 +0900</pubDate>
