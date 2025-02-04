@@ -85,7 +85,11 @@
         <nav id="TableOfContents">
   <ul>
     <li><a href="#sqlは集約した方が良い">SQLは集約した方が良い</a></li>
-    <li><a href="#ストアド関数に集約すべき">ストアド関数に集約すべき</a></li>
+    <li><a href="#ストアド関数に集約すべき">ストアド関数に集約すべき</a>
+      <ul>
+        <li><a href="#sql特有の難点">SQL特有の難点</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </aside>
@@ -123,10 +127,18 @@ ORマッパーが生成するSQLセットとストアド関数の処理は、理
 タプル型のストレージフォーマットとB木ファミリーのデータストアの利用範囲が広いため、本来はそのネイティブ言語であるSQLを積極的に扱う必要がある。</p>
 <p>pgTAPを利用すると、PostgreSQLのみの簡素なシステム構成で、コアのデータモデル機能の品質を確保できる。<br>
 従来のアプリケーション側のコードとテストケースを簡素化できることもあり、開発スピードアップに効果的だろうと見る。</p>
+<h3 id="sql特有の難点">SQL特有の難点</h3>
+<p>実際にテストコードを記述してみると、一般的なプログラミング言語と異なるポイントでミスが起きやすいことが分かった。</p>
+<p>たとえば、
+<a href="https://ja.wikipedia.org/wiki/3%E5%80%A4%E8%AB%96%E7%90%86">3値論理</a>の影響で<code>boolean</code>だと思い込んでいる処理のケースを見落とす場合がある。</p>
+<p><code>true = null</code>や<code>false OR null</code>といった論理演算は多くの言語では<code>false</code>を返すが、SQLの場合には<code>null</code>を返す。<br>
+この例の比較対照では<code>null</code>と書いているため注意する余地があるが、実際のコードではこの部分には変数が入っている。</p>
+<p>当然ながらテストコードは記述したケースを保護するが、存在に気づけなかったケースは保護しない。<br>
+SQL特有のケースについては、おそらくテスト資産を拡充していく中で明らかになる分野がある。</p>
 
 
 	<div class="my-4" style="text-align: right; font-style: italic">
-	<span>⁋ 2025/01/22</span><span class="mx-2">↻ 2025/01/23</span></div><div class="related_articles">
+	<span>⁋ 2025/01/22</span><span class="mx-2">↻ 2025/02/04</span></div><div class="related_articles">
               <h4 id="related" class="idx"></h4>
               
               
