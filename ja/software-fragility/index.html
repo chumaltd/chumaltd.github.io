@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html data-color-mode="dark" data-light-theme="light" data-dark-theme="dark">
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ソフトウェアの脆さ | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/software-fragility/" />
+<meta property="og:title" content="ソフトウェアの脆さ" />
+<meta property="og:description" content="コンピュータ・ソフトウェアを採用しているビジネスは、ソフトウェアを調達する力に強い制約を受ける。そし" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/software-fragility/ />
+
+
+    </head>
+    <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl d-flex" style="width: 100%">
+  <div class="navbar-brand" style="width: 64px; justify-content: center">
+	  <span class="navbar-item"><cm-drawer></cm-drawer></span>
+  </div>
+  <div class="navbar-brand">
+    <a href='/' class="navbar-item" style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+
+<div id ="o" class="o">
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li><a href="/ja/">HOME</a></li>
+  <li class="current">&nbsp;ソフトウェアの脆さ</li></ul>
+<script type="application/ld+json">
+{"@context":"http://schema.org", "@graph":[
+	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
+	{"@type":"BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/software-fragility/","name": "ソフトウェアの脆さ" }
+}]}
+]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+	<div class="mb-4">
+        <h1 class="idx py-5">
+          ソフトウェアの脆さ
+        </h1><div style="text-align: right; font-weight: 600; font-style: italic">2025/02/20</div></div>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;ソフトウェアの脆さ</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#開放系としてのデザイン">開放系としてのデザイン</a>
+      <ul>
+        <li><a href="#ソフトウェアの治水">ソフトウェアの治水</a></li>
+        <li><a href="#システムテストの重要さ">システムテストの重要さ</a></li>
+      </ul>
+    </li>
+    <li><a href="#生体の冗長性を実装できないネック">生体の冗長性を実装できないネック</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>コンピュータ・ソフトウェアを採用しているビジネスは、ソフトウェアを調達する力に強い制約を受ける。そしてソフトウェアを調達する力は、ソフトウェアの生存ルールに強く制約されている。</p>
+<p>ソフトウェアの生存ルールというのは、役に立つプログラムであるための必須条件を指す。</p>
+<p>この必須条件は複雑すぎるうえに、時の流れと状況によって変化するため精密には表現できない。<br>
+ひとつのオーソドックスな見方として
+<a href="https://ja.wikipedia.org/wiki/%E8%A6%81%E6%B1%82%E5%B7%A5%E5%AD%A6">要求工学</a>があり、50カテゴリを超える
+<a href="https://en.wikipedia.org/wiki/Non-functional_requirement">非機能要件のリスト</a>を見れば、正気の沙汰でないことがすぐ分かるだろう。</p>
+<p>機能要件に至ってはもはや「語り得ぬもの」のように見える。<br>
+これは「目的に沿っているかどうか」を指しているのだが、目的論哲学がまったく解けていないのと同じ理由で不可知のままでいる。おそらく目的という概念が、人間の因果関係の錯覚、とくに前後関係の取り違えを指しているからなのだと思う。</p>
+<p>要求工学は成功を再現できる方法論を提供できていないものの、クリアしなければならないハードルは正しい。<br>
+システム受託開発の訴訟が目立ってきているのは、これらのうちの何かを満たしていないため「役に立たない」という不満が爆発したことによる。</p>
+<p>部分的に満たせば良いのではなく、すべて満たす必要がある、という点は重要だ。<br>
+簡略化できる道筋があるならシステム開発訴訟は減りゆくだろうが、現実は逆行している。</p>
+<p>受託開発の紛争を例に挙げているのは、許容できない損失の目安として定量化しうるからだ。<br>
+実際には自社開発のケースにも同じ制約が働いている。すべて満たして始めてスタートラインに乗るのであって、何かが欠ければ大きなダウンサイドがある。これはタレブの言う脆さのカテゴリに属している。</p>
+<p>工学がさじを投げるとしても、僕は実務家としてアプローチを検証し続けなくてはならない。</p>
+<h2 id="開放系としてのデザイン">開放系としてのデザイン</h2>
+<p>構成要素や環境が変わりゆく状況で、人が知覚できる構造を持つものといえば
+<a href="https://ja.wikipedia.org/wiki/%E6%95%A3%E9%80%B8%E6%A7%8B%E9%80%A0">散逸構造</a>だ。</p>
+<p>アナロジーとして川を考えると良い。方丈記は「行く川のながれは絶えずして、しかも本の水にあらず」から始まる。<br>
+川の必須条件として、水源や上流に雨が振り続けることと、下流に同量の水が流れ去ることが欠かせない。つまり、川は接続している外界のかたちに付随して維持できる存在である。</p>
+<p>中国の故事には「刻舟求剣」もある。<br>
+舟から落とした剣を探すために、舟に目印を刻んでおいた、という話で、人の主観が変化をうまく記述できない様子を表している。</p>
+<p>剣はまだ捜索の余地があるが、川じたいのデザインの難しさは治水の歴史に豊富な実例がある。<br>
+氾濫の被害が起きない程度に水量を維持したいという目的は、歴史の中で何度も不首尾に終わっている。近未来についてさえ、地球温暖化を考慮に入れると保証があるわけではない。</p>
+<p>そもそも散逸構造はサステナブルではないという本質は重要だ。<br>
+入出力が絶えれば構造は失われ死滅する。</p>
+<h3 id="ソフトウェアの治水">ソフトウェアの治水</h3>
+<p>温暖化により上流からの流入が増えたり途絶えたりするように、ソフトウェアも外界の変化を受ける。<br>
+たとえば、セキュリティの脆弱性は日々新たな攻撃手法が発見されているし、EUは創造力を発揮してGDPRのような法律を生み出し続けている。</p>
+<p>接続している外界の変化に適応して修正を採り入れなければ、いずれ脆さが露呈し損失が生じる。<br>
+これは長い目で見た際のソフトウェアの主要な死因になる。対策は、できる限り頻繁に変更できる設計だろう。</p>
+<p>もう一つの変化は、依存コンポーネントから来る。前提ライブラリ・ランタイム・外部サービス・OS・ハードウェアといった要素がある。<br>
+これらは自分で開発していないため外界と捉えたくなるのだが、一体化して動作するため内部の構成要素と捉えた方が適切に扱える。</p>
+<p>それぞれの依存コンポーネントも外界の変化の影響を受けているため、時が経つにつれバージョンアップが発生する。<br>
+バージョンアップは一律に好ましいとは限らない。ライブラリには広い用途に適合するものが多くあり、時が経つにつれ重視する環境条件が乖離していくこともある。その場合、別の手段を探る必要が生まれる。</p>
+<p>散逸構造は細部の無秩序な変更によって失われ得るため、けっきょくのところ依存しているライブラリなどが考えている計画や実装を理解しておくことは避けられない。<br>
+言い換えれば、ブラックボックスアプローチには制御できない脆さの発生源や増幅のリスクがつきまとう。この脆さに対処するには、自ら開発するという対策も有効である。近年広まっているヒューリスティックとは逆行する考えだろう。</p>
+<h3 id="システムテストの重要さ">システムテストの重要さ</h3>
+<p>長年にわたって開発を継続するにつれて、システムテストをより重視するようになり、ユニットテストを無価値に感じるようになってきたのだが、その理由はもう一つはっきりしなかった。一般的にもチェック範囲が広ければベターといった程度の認識だろう。</p>
+<p>これまで述べてきたようにソフトウェアを開放系として再定義することで、システムテストの重要性がクリアになる。<br>
+ユニットテストは刻舟求剣なのだ。</p>
+<p>ソフトウェアを利用する際の期待は一定の構造を維持し続けるが、それを構成する要素や利用環境はどんどん変わっていく。<br>
+よく知られているように開放系の挙動は、単に部分の挙動を足し合わせたものと異なる。</p>
+<p>システムテストのコード資産こそが川の設計図であり、プロジェクトの本体とも言える。<br>
+ソフトウェアの脆さに対処する方法は、コードを変更するプロセスが主役であり、散逸構造を壊しうる変更を検出できなければ時の流れにつれて自壊する。</p>
+<h2 id="生体の冗長性を実装できないネック">生体の冗長性を実装できないネック</h2>
+<p>頑健なソフトウェアの方法論をチェックしてみたが、相当ヘビーだ。その性質じたいがソフトウェアが脆い主要因なのかもしれない。<br>
+確率的に考えるなら、大多数のソフトウェアは時の流れによって死滅するよう定められているように見える。</p>
+<p>ホメオスタシスのような維持機能は、複製の際のゆらぎと並列動作する要素の数の多さで頑健さを確保している。<br>
+ソフトウェアに限らず、工業製品は１つの製品内に重複する部品、それも各部品が似て非なる挙動をするような構造をとることができていない。</p>
+<p>頻繁に変更するアプローチは、生体が持っている複製と除去のプロセスを単一のバージョンではなく、シリアルにバージョンアップする工程に採りいれる方法と言える。</p>
+<p>ひとまず全体の制約条件を俯瞰的に考慮するとこのようなアプローチになる。</p>
+<p>ソフトウェアの摩滅しない性質を考えれば、本来は悠久に生き永らえる余地もある。歴史の1ページに爪あとを残すといった瑣末な関わり方はほとんど無意味だろう。<br>
+しかし、遺跡から発掘される過去のプロダクトのうち現代に利用できる状態になっているものがない、という事実が大局的な限界を示しているようにも思う。</p>
+
+
+	<div class="my-4" style="text-align: right; font-style: italic">
+	<span>⁋ 2025/02/20</span><span class="mx-2">↻ 2025/02/20</span></div><div class="related_articles">
+              <h4 id="related" class="idx"></h4>
+              
+              
+<a href="/ja/software-fragility/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/software-fragility/">ソフトウェアの脆さ</div>
+            <div class="f6">コンピュータ・ソフトウェアを採用しているビジネスは、ソフトウェアを調達する力に強い制約を受ける。そし……</div>
+	</div>
+</a>
+<a href="/ja/exclude-nodejs/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/exclude-nodejs/">Node.jsを完全に除去している</div>
+            <div class="f6">脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとs……</div>
+	</div>
+</a>
+<a href="/ja/rdbms-unit-test/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/rdbms-unit-test/">RDBMSのユニットテスト</div>
+            <div class="f6">Webサービスを既存の挙動を破壊しないようにシームレスに変更することは、往々にして難しい。 これまでテ……</div>
+	</div>
+</a>
+<a href="/ja/dram-slowdown/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/dram-slowdown/">DRAMの停滞</div>
+            <div class="f6">過去何度かトライしてきたシステム監視サービスにようやく見通しが立った。インハウスで構築できる状況には……</div>
+	</div>
+</a>
+<a href="/ja/datastore-agnosticism/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/datastore-agnosticism/">不可知なデータストア</div>
+            <div class="f6">PostgreSQLは人類でもっとも重要なソフトウェア資産のひとつだ。データセットのごく一部を素朴に……</div>
+	</div>
+</a>
+
+          </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+</div>
+</div>
+<footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src='/lib/cm.js' ></script>
+</body>
+</html>

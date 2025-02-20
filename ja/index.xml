@@ -8,6 +8,13 @@
     <language>ja</language>
     <atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>ソフトウェアの脆さ</title>
+      <link>https://chumaltd.github.io/ja/software-fragility/</link>
+      <pubDate>Thu, 20 Feb 2025 09:52:57 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/software-fragility/</guid>
+      <description>コンピュータ・ソフトウェアを採用しているビジネスは、ソフトウェアを調達する力に強い制約を受ける。そし</description>
+    </item>
+    <item>
       <title>Node.jsを完全に除去している</title>
       <link>https://chumaltd.github.io/ja/exclude-nodejs/</link>
       <pubDate>Tue, 04 Feb 2025 13:57:37 +0900</pubDate>
