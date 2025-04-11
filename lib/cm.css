@@ -3607,6 +3607,12 @@ div.icon-text {
   height: auto;
   width: 100%;
 }
+.image .contain {
+  object-fit: contain;
+}
+.image .cover {
+  object-fit: cover;
+}
 .image.is-square {
   aspect-ratio: 1;
 }
@@ -5779,6 +5785,7 @@ md-dialog:not(:defined)[open] {
   --md-sys-color-surface-container-high: var(--overlay-bgColor);
   --md-sys-color-surface-container-highest: var(--bgColor-inset);
   --md-fab-label-text-color: var(--fgColor-saira-link, var(--fgColor-link, var(--fgColor-saira-link, var(--fgColor-link, hsl(229, 53%, 53%)))));
+  --md-menu-item-selected-container-color: var(--selectMenu-bgColor-active);
   --md-text-button-label-text-color: var(--fgColor-saira-link, var(--fgColor-link, var(--fgColor-saira-link, var(--fgColor-link, hsl(229, 53%, 53%)))));
 }
 
