@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>「往く」と「来る」の概念 | civilis</title>
+<title>IPv6ネットワークのWOLワークアラウンド | civilis</title>
 
 <meta name="theme-color" content="rgb(38, 29, 32)">
 <link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
@@ -14,14 +14,13 @@
 <link rel="stylesheet" href='/lib/base.css' />
 
 <meta name="twitter:card" content="summary" />
-<meta property="og:url" content="https://chumaltd.github.io/ja/about-go-and-come/" />
-<meta property="og:title" content="「往く」と「来る」の概念" />
-<meta property="og:description" content="易に「水山蹇」という卦があり、往くは足をとられ、待てば来る、という意を示している。
-易経には「往」と「来」が頻出し、大川を渉るという概念も出てくる。
-往くに関わる表現を横断的に眺めていると、ホームランドやコンフォートゾーンのようなものから出ることを「往」と表現している印象を受ける。
-待つということは …" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/wol-ipv6-workaround/" />
+<meta property="og:title" content="IPv6ネットワークのWOLワークアラウンド" />
+<meta property="og:description" content="PC向けのARMが想像に反してまったく進展しなかったため、2025年現在、AMDx64デスクトップPCの費用対効果が最右翼に見える。
+デスクトップPCを最大限使うには、Wake on LANが欲しい。
+Wake on LANが動作しない理由 現時点で、どうやらIPv6ネットワークではWake on …" />
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
-<link rel="canonical" href=https://chumaltd.github.io/ja/about-go-and-come/ />
+<link rel="canonical" href=https://chumaltd.github.io/ja/wol-ipv6-workaround/ />
 
 
     </head>
@@ -53,13 +52,13 @@
         <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
 <ul>
   <li><a href="/ja/">HOME</a></li>
-  <li class="current">&nbsp;「往く」と「来る」の概念</li></ul>
+  <li class="current">&nbsp;IPv6ネットワークのWOLワークアラウンド</li></ul>
 <script type="application/ld+json">
 {"@context":"http://schema.org", "@graph":[
 	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
 	{"@type":"BreadcrumbList","itemListElement":[
 {"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
-{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/about-go-and-come/","name": "「往く」と「来る」の概念" }
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/wol-ipv6-workaround/","name": "IPv6ネットワークのWOLワークアラウンド" }
 }]}
 ]}
 </script>
@@ -78,37 +77,57 @@
     <div id="pagetitle" class="three-quarter px-3">
 	<div class="mb-4">
         <h1 class="idx py-5">
-          「往く」と「来る」の概念
-        </h1><div style="text-align: right; font-weight: 600; font-style: italic">2018/01/05</div></div>
+          IPv6ネットワークのWOLワークアラウンド
+        </h1><div style="text-align: right; font-weight: 600; font-style: italic">2025/06/17</div></div>
     </div>
   </div>
   <div class="d-sm-flex">
     <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
-        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;「往く」と「来る」の概念</div>
-        <nav id="TableOfContents"></nav>
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;IPv6ネットワークのWOLワークアラウンド</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#wake-on-lanが動作しない理由">Wake on LANが動作しない理由</a></li>
+    <li><a href="#ipv4のwolリクエストを発行するlan機器が必要">IPv4のWOLリクエストを発行するLAN機器が必要</a></li>
+    <li><a href="#ipv6ではない問題">IPv6ではない問題</a></li>
+  </ul>
+</nav>
       </aside>
     </nav>
     <div id="content" class="three-quarter">
       <article>
-        <p>易に「水山蹇」という卦があり、往くは足をとられ、待てば来る、という意を示している。</p>
-<p>易経には「往」と「来」が頻出し、大川を渉るという概念も出てくる。</p>
-<p>往くに関わる表現を横断的に眺めていると、ホームランドやコンフォートゾーンのようなものから出ることを「往」と表現している印象を受ける。</p>
-<p>待つということはこれまでの活動の反復を指し、往くということは何かのプロセスを変えることを指すのだろう。</p>
-<p>また、水坎や渉大川が示しているのは、既存のプロセスを大きく捨てることやリスクをとる、ということだろう。不確実性のあるプロセスに踏み入れることを指す。</p>
-<p>易経は変転の書だから、総体として言わんとしていることは、時宜に応じてコンフォートゾーンを去りプロセスを変えることを推奨しているに違いない。</p>
-<p>ただ、プロセスを変えるには前提の条件や状況がある。時々で抵抗と達成の成否が分かれるという見方は一貫している。</p>
-<p>無為自然ではなく行動指針を提供するスタンスで描かれているのも、おそらく「いかに行動するか」という易経のテーマによる。
-占筮に対する期待がそういうものだったのだろう。</p>
-<p>国盗り合戦の時代環境を色濃く反映して「守り続けていれば今手にしている資産を維持できる」という仮定を廃し、生き残り策を求める姿勢がある。
-競争環境はつねに変転しているため、&ldquo;往&quot;と&quot;来&quot;のどちらが有効であるかも時機に応じて劇的に変わっていく。</p>
-<p>往は能動的な活動であるため、ある意味自明だが、&ldquo;来&quot;をどう捉えるかは難しい面がある。
-たとえば「朋来」という表現は仲間が来るという意味だが、本当に来るのか？
-&ldquo;来&quot;に対しても能動的に関わるとすれば、期待値を上げるための努力をする、ということになるだろう。</p>
-<p>既存のプロセスで有効な部分、あるいは打って出るよりはましな側面があり、ホームグラウンドのプロセスを強化することで存在感を高める、といった行動が易経における&quot;no go&quot;のスタンスなのではないか。</p>
+        <p>PC向けのARMが想像に反してまったく進展しなかったため、2025年現在、AMDx64デスクトップPCの費用対効果が最右翼に見える。</p>
+<p>デスクトップPCを最大限使うには、Wake on LANが欲しい。</p>
+<h2 id="wake-on-lanが動作しない理由">Wake on LANが動作しない理由</h2>
+<p>現時点で、どうやらIPv6ネットワークではWake on LANを機能させる一般的な方法がない。</p>
+<p>マジックパケットのフォーマットについては製品ごとの解釈の違いはおそらくないため、クライアント起因のトラブルは少ない。多くの場合、パケット配送のフィルタリングでリクエストが破棄されて失敗する。</p>
+<ul>
+<li>オリジナルのWOLはイーサネットへのブロードキャストを想定しており、IP指定で動作する機能でない</li>
+<li>素朴にブロードキャストする方式のイーサネットが主流だったのははるか昔のことだ。パケットの伝播はとうにルーターやスイッチの制御しだいになっている</li>
+<li>多くのネットワークカードがUDPポート9へのIPv4も受け付けるらしく、ルーターが主体的にIPv4ベースのマジックパケットを送る機能がある</li>
+<li>IPv6のマジックパケットをどう扱うかは、おそらく今のところコンセンサスがない</li>
+</ul>
+<p>互換性だけを考えるならIPv6のUDPパケットで動作する方式がストレートで、一部動作するネットワークカードもあるようだ。しかし、ルーターが長らくこの方式をサポートしていない。</p>
+<p>IPv6向けのWOL方式は白紙状態で、規格策定したいメーカーがいない状況が続いているということだろう。IPv6はあらゆるものをネットワーク経由で操作する目的の基礎技術だが、電源を入れることすら目処が立っていない。</p>
+<h2 id="ipv4のwolリクエストを発行するlan機器が必要">IPv4のWOLリクエストを発行するLAN機器が必要</h2>
+<p>IPv6ネットワーク向けの標準実装が普及するまでは、WOLリクエスト発行は既存のIPv4向け機能を利用するより他ない。</p>
+<p>よって、</p>
+<ul>
+<li>IPv6をリッスンするHTTPサーバーなどで、外部からWOLの要求を受け付ける</li>
+<li>IPv4ベースのマジックパケットをLANに送る</li>
+</ul>
+<p>という2つの機能を持つアプライアンスをクラフトする必要があるだろう。同様の商品も出てくるだろうが、WOL機能だけを提供している確証を得にくい点で採用しづらい。</p>
+<p>過渡期のIPv6ネットワークはIPv4とのデュアルスタックだから、動作環境による障害はあまりないはずだ。</p>
+<p>ハードは、Linuxの開発ツールを利用できるRaspberryPiが適役だろう。</p>
+<h2 id="ipv6ではない問題">IPv6ではない問題</h2>
+<p>前述のアプライアンスの想定では、WOLが安定動作するか否かは、おおむねIPv6とは関係がない。
+IPv4のWOLリクエスト機能が適切に動作するよう構築する。</p>
+<p>じっさいにはLAN内でパケットが破棄されないようなネットワーク設定が必要になる。また、起動対象の個々の機器のOSやBIOS設定の影響も受ける。</p>
+<p>これらは古くから存在する手間であり、何も変わっていないし、とくに手軽になることもないだろう。マジックパケット送信の実装は既存のライブラリを流用できるものの、トラブルはそれ以外の点に起因する。</p>
+<p>なお、IPv4 over IPv6については検討していない。リクエストを受け付けることを想定したプロトコルではないため、ポート制限によりネットワーク構成が意図どおりにならないだろう。</p>
 
 
 	<div class="my-4" style="text-align: right; font-style: italic">
-	<span>⁋ 2018/01/05</span><span class="mx-2">↻ 2023/05/05</span></div>
+	<span>⁋ 2025/06/17</span><span class="mx-2">↻ 2025/06/17</span></div>
       </article><div class="related_articles p-4">
             <h4 id="related" class="idx"></h4>
             

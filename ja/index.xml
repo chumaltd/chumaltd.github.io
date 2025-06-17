@@ -8,6 +8,13 @@
     <language>ja</language>
     <atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>IPv6ネットワークのWOLワークアラウンド</title>
+      <link>https://chumaltd.github.io/ja/wol-ipv6-workaround/</link>
+      <pubDate>Tue, 17 Jun 2025 15:18:28 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/wol-ipv6-workaround/</guid>
+      <description>&lt;p&gt;PC向けのARMが想像に反してまったく進展しなかったため、2025年現在、AMDx64デスクトップPCの費用対効果が最右翼に見える。&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>ソフトウェアの脆さ</title>
       <link>https://chumaltd.github.io/ja/software-fragility/</link>
       <pubDate>Thu, 20 Feb 2025 09:52:57 +0900</pubDate>
