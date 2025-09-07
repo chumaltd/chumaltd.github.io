@@ -2,29 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://chumaltd.github.io/ja/craft-router/</loc>
+    <lastmod>2025-09-07T14:12:03+09:00</lastmod>
+  </url><url>
     <loc>https://chumaltd.github.io/ja/wol-ipv6-workaround/</loc>
-    <lastmod>2025-07-04T06:11:21+00:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/software-fragility/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/exclude-nodejs/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/rdbms-unit-test/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/dram-slowdown/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/datastore-agnosticism/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/heat-tide/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/kubernetes-os/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -37,7 +40,7 @@
                 />
   </url><url>
     <loc>https://chumaltd.github.io/ja/ipv6-transition/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-09-07T14:12:03+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -50,7 +53,7 @@
                 />
   </url><url>
     <loc>https://chumaltd.github.io/ja/voip-integration/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -63,31 +66,31 @@
                 />
   </url><url>
     <loc>https://chumaltd.github.io/ja/client-cert-generation/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/cloud-stagnation/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/re-integration-testing/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/runtime-cleanup/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/software-testing/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/tax-digitalization-jp/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/beyond-evaluation/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/fake-technology2/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/covid19-2023/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -100,67 +103,67 @@
                 />
   </url><url>
     <loc>https://chumaltd.github.io/ja/sound-quality/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/tacit-dimension/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/aurelius-mediations/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/fake-technology/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/civilization-spore/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/sustained-by-description/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/e2e-web-testing/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/opensource-quality/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/popular-sickness-unto-death/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/network-engineering/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/lack-of-entropy/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/service-auto-if/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/webdev-2020s/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/javascript-transition/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/webdev-transition/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/android-tablet-review-2021/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/nested-object-mud/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/public-libraries/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/opensource-erp-lucasuite/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/fill-digital-government/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/civilis/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -173,100 +176,100 @@
                 />
   </url><url>
     <loc>https://chumaltd.github.io/ja/about-go-and-come/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/limit-of-capitalism/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/system-dev-difficulties/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/growup-in-knowlege-industry/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/transform-workstyle/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/adopt-experience-curve/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/remember-cognitive-assets/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/business-output/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/how-company-survives-founder/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/manage-volatility/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/virtualization-purpose/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/human-resources-as-lemon/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/recruiting-game-rule/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/cms-for-fast-update/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/cloud-limitation/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/business-development-skill/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/launch-unicorn-research/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/sales-force-layout/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/solve-start-up/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/book-9784897951188-cache-flow/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/sme-requires-it-integration/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/get-project-management-skill/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/long-time-in-pod/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/select-smart-phone-2012/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/nota-butq/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/can-change-world/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/scenario-planning/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/flexibility-of-law-think/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/disaster-probability/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/book-biz-strategies/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/mitigate-smartphone-web-frustration/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
   </url><url>
     <loc>https://chumaltd.github.io/ja/bio/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -303,7 +306,7 @@
                 />
   </url><url>
     <loc>https://chumaltd.github.io/ja/</loc>
-    <lastmod>2025-06-17T15:19:26+09:00</lastmod>
+    <lastmod>2025-07-04T06:18:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"

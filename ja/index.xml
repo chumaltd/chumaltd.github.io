@@ -8,6 +8,13 @@
     <language>ja</language>
     <atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>ルーターのクラフト</title>
+      <link>https://chumaltd.github.io/ja/craft-router/</link>
+      <pubDate>Sat, 06 Sep 2025 13:40:51 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/craft-router/</guid>
+      <description>&lt;p&gt;OpenWrtを用いてネットワークルーターをクラフトして、オフィスLANを再構築した。おそらく今後はOpenWrtを第一選択とすることになる。&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>IPv6ネットワークのWOLワークアラウンド</title>
       <link>https://chumaltd.github.io/ja/wol-ipv6-workaround/</link>
       <pubDate>Tue, 17 Jun 2025 15:18:28 +0900</pubDate>

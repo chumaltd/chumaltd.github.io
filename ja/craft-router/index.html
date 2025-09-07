@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html data-color-mode="dark" data-light-theme="light" data-dark-theme="dark">
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ルーターのクラフト | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
+
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/craft-router/" />
+<meta property="og:title" content="ルーターのクラフト" />
+<meta property="og:description" content="OpenWrtを用いてネットワークルーターをクラフトして、オフィスLANを再構築した。おそらく今後はOpenWrtを第一選択とすることになる。
+LAN技術の流れ ルーターをクラフトするという方式は、そもそもは最も可能性の低い路線だった。
+消去法を進めていった結果として、この先10年ほどのインターネッ …" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href=https://chumaltd.github.io/ja/craft-router/ />
+
+
+    </head>
+    <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl d-flex" style="width: 100%">
+  <div class="navbar-brand" style="width: 64px; justify-content: center">
+	  <span class="navbar-item"><cm-drawer></cm-drawer></span>
+  </div>
+  <div class="navbar-brand">
+    <a href='/' class="navbar-item" style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+
+<div id ="o" class="o">
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li><a href="/ja/">HOME</a></li>
+  <li class="current">&nbsp;ルーターのクラフト</li></ul>
+<script type="application/ld+json">
+{"@context":"http://schema.org", "@graph":[
+	{"@type":"WebSite","id":"https:\/\/chumaltd.github.io\/ja\/","name":"civilis"},
+	{"@type":"BreadcrumbList","itemListElement":[
+{"@type": "ListItem","position":1,"item":{"@id":"https://chumaltd.github.io/ja/","name": "civilis" }},
+{"@type": "ListItem","position":4,"item":{"@id": "https://chumaltd.github.io/ja/craft-router/","name": "ルーターのクラフト" }
+}]}
+]}
+</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="quarter hide-sm"></div>
+    <div id="pagetitle" class="three-quarter px-3">
+	<div class="mb-4">
+        <h1 class="idx py-5">
+          ルーターのクラフト
+        </h1><div style="text-align: right; font-weight: 600; font-style: italic">2025/09/06</div></div>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;ルーターのクラフト</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#lan技術の流れ">LAN技術の流れ</a>
+      <ul>
+        <li><a href="#kubernetesがネットワーク品質を要求する">Kubernetesがネットワーク品質を要求する</a></li>
+        <li><a href="#ipv4-over-ipv6のソフトウェア効率が鍵">IPv4 over IPv6のソフトウェア効率が鍵</a></li>
+      </ul>
+    </li>
+    <li><a href="#ハードとソフトのアンバンドル">ハードとソフトのアンバンドル</a>
+      <ul>
+        <li><a href="#openwrt向けハードの登場">OpenWrt向けハードの登場</a></li>
+      </ul>
+    </li>
+    <li><a href="#データセンターをクラフトする">データセンターをクラフトする</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>OpenWrtを用いてネットワークルーターをクラフトして、オフィスLANを再構築した。おそらく今後はOpenWrtを第一選択とすることになる。</p>
+<h2 id="lan技術の流れ">LAN技術の流れ</h2>
+<p>ルーターをクラフトするという方式は、そもそもは最も可能性の低い路線だった。<br>
+消去法を進めていった結果として、この先10年ほどのインターネット技術にはOpenWrtがフィットするだろうと考えるに至る。</p>
+<p>ユーザーがもっとも利用しやすい方式は、広く流通しているルーター製品を導入することだろう。</p>
+<p>
+<a href="/ja/ipv6-transition/">IPv6移行</a>の際には、既製品の組み合わせでネットワーク構築した。1台の機器で要件をカバーしないため、2台併用して拠点内に2つの独立LANという構成になった。クライアント機器側で経路を貼り合わせる。</p>
+<p>ブラウザなどの基礎的な利用ではおおむね支障がないため、市場のルーター製品が世代交代するまでこの構成で良いかと思っていたのだが、やはり品質はあまり良くなかった。</p>
+<h3 id="kubernetesがネットワーク品質を要求する">Kubernetesがネットワーク品質を要求する</h3>
+<p>クラウドサービスの費用対効果が年々落ちていることから、機能を分割し、一部の処理をクラフト
+<a href="/ja/kubernetes-os/">kubernetes</a>で動作させるアーキテクチャに移行しつつある。<br>
+その過程で、kubernetesはパケット交換レイヤの品質を相当ダイレクトに反映することが分かった。</p>
+<p>IPv4 over IPv6機能がWifiルーターで先行している関係でIPv4通信が無線経由となり、通信エラーが目に見えて増える。<br>
+見通しのために詳細を省くと、kubernetesはサーバー障害には強いがLAN障害には素朴にエラーを返し、WifiルーターのIPv4 over IPv6機能は品質が悪い。</p>
+<p>要するにサーバーファームを運用したいなら、ネットワークの品質をLAN機器で確保しなくてはならない。<br>
+有線ルーター1台でIPv6, IPv4の両方を完璧にサポートする必要がある。</p>
+<h3 id="ipv4-over-ipv6のソフトウェア効率が鍵">IPv4 over IPv6のソフトウェア効率が鍵</h3>
+<p>2050年頃になればIPv6シングルスタックで完結できるのではないかと思うのだが、21世紀前半は過去からの互換性のためIPv4がまだ必要であり、日本ではMAP-EまたはDS-Liteが主流となった。</p>
+<p>IPv4アドレスが逼迫したため、インターネット回線はかつてよりIPv4向けのポート数割り当てが減った。<br>
+IPv4 over IPv6トンネルの性能は、少ないポートをルーターがどれだけ効率的に扱えるかにかかっている。</p>
+<p>OpenWrtはルーター機器にインストールすることに特化したLinuxディストリビューションで、バージョンアップが継続している。<br>
+市場で売れているプロプライエタリなルーター機器は、ソフトウェアを変更する余地がほぼなく、販売開始から一定期間でまったく更新されなくなる。</p>
+<p>実際に、8年前に発売されたルーターを中古品で入手したのだが、この製品はIPv4 over IPv6をサポートしていない。OSをOpenWrtに入れ替えることで機能が増え、支障なく動作する。</p>
+<p>一般的なルーターはソフトウェアの陳腐化が進むが、OpenWrtはチューニングが進む。<br>
+ネットワーク通信はカーネルの進化と密接に関わる機能で、Linuxのメジャーアップグレードを取り入れることで性能と機能の向上を期待できる。</p>
+<h2 id="ハードとソフトのアンバンドル">ハードとソフトのアンバンドル</h2>
+<p>OpenWrtがルーター向けの著名Linuxディストリビューションとして好評を博していることは以前から知っていたが、その完成度については実際に導入してみるまで理解できなかった。</p>
+<p>冷静に考えれば当然のことではあるが、1GHzデュアルコア程度のCPUを搭載していればLinuxのサーバーディストリビューションを動作させることに不都合はない。<br>
+すでにLinuxサーバーを運用していることを前提とすると、追加で1台セットアップすることなど楽勝と言える。機能がIPルーティングに特化しているため、アプリケーションサーバーよりも簡素だ。</p>
+<p>インストールは機器により違いがあるが、おおむねストレージにデッドコピーするだけで動作するよう整備されており、サイズもコンパクトな分、とても手軽だ。</p>
+<h3 id="openwrt向けハードの登場">OpenWrt向けハードの登場</h3>
+<p>OpenWrtがソフトを完備したことで、対応ハードを調達するだけで済む状況になった。<br>
+言い換えれば、購入前に製品の機能比較をする必要が薄れ、主にCPUとRAMに着目してハードを選定できるようになったということだ。</p>
+<p>OpenWrtが既存ルーターのハックからスタートしたため、かつてハード調達は適合する中古ルーターを入手することと同じだった。<br>
+普及が進むにつれ、いまやOpenWrtをターゲットとした新規ハードが登場している。今後は、この新たなカテゴリのルーターが費用対効果のフロンティアを間違いなく牽引するはずだ。</p>
+<p>コンピュータ製品は半導体の微細化のレベルを示すプロセスルールで性能を推定できる。<br>
+20世紀末からPCがドッグイヤーと言われる急激な進歩を果たし、2010年頃に10nm近傍で限界に到達した。次にスマートフォンが後を追い、2020年頃にPCをキャッチアップしてきた。そしてルーター分野にも同じ伸び代が残されている。</p>
+<p>今後のハード進化をスムーズに取り入れるにはソフトウェアの標準化が不可欠であり、Linuxディストリビューションが有利な地勢を占めている。</p>
+<h2 id="データセンターをクラフトする">データセンターをクラフトする</h2>
+<p>ここまでのOpenWrtはIPv6ルーターの基礎機能を置き換えることで普及してきた。<br>
+すでに最新ハードはオーバースペックだという口コミが増えているとおり、ここから先のハード進化は機能追加のヘッドルームを生み出していく。</p>
+<p>プロセスルールが進めばオーバースペックであると同時に省電力性も得られるため、技術進化と歩調を合わせてリプレースを進めるのが合理的だ。<br>
+部屋の照明よりもローコストで常時ONの高度なネットワークインフラを調達できるところまでは視界に入った。</p>
+<p>この分野の最重要機能は、ゼロトラストネットワークの自動化ツールになる。<br>
+ゼロトラストネットワークの普及はデータセンターの必要性を引き下げ、いまデータセンターを必要としているワークロードの費用対効果は100倍程度には高まるのではないか。</p>
+<p>また、OpenWrt対応ハードとRaspberryPiなどのマイクロサーバーは市場で競合しており、現実にはルーターとサーバーはまったく同時に進化するだろう。ペースを維持できない製品は脱落する。<br>
+PCやスマートフォンの経緯から考えると、5年程度の期間に急速にジャンプアップする展開を見ることになる。</p>
+<p>OpenWrtを追跡することは、データセンターの再定義と捉えるのが妥当だろう。</p>
+
+
+	<div class="my-4" style="text-align: right; font-style: italic">
+	<span>⁋ 2025/09/06</span><span class="mx-2">↻ 2025/09/07</span></div>
+      </article><div class="related_articles p-4">
+            <h4 id="related" class="idx"></h4>
+            
+            
+<a href="/ja/craft-router/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/craft-router/">ルーターのクラフト</div>
+            <div class="f6">OpenWrtを用いてネットワークルーターをクラフトして、オフィスLANを再構築した。おそらく今後はOpenWrtを第一選択とすることになる。
+LAN技術の流れ ルーターをクラフトするという方式は、そ …</div>
+	</div>
+</a>
+<a href="/ja/wol-ipv6-workaround/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/wol-ipv6-workaround/">IPv6ネットワークのWOLワークアラウンド</div>
+            <div class="f6">PC向けのARMが想像に反してまったく進展しなかったため、2025年現在、AMDx64デスクトップPCの費用対効果が最右翼に見える。
+デスクトップPCを最大限使うには、Wake on LANが欲しい。 …</div>
+	</div>
+</a>
+<a href="/ja/software-fragility/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/software-fragility/">ソフトウェアの脆さ</div>
+            <div class="f6">コンピュータ・ソフトウェアを採用しているビジネスは、ソフトウェアを調達する力に強い制約を受ける。そしてソフトウェアを調達する力は、ソフトウェアの生存ルールに強く制約されている。
+ソフトウェアの生存ルー …</div>
+	</div>
+</a>
+<a href="/ja/exclude-nodejs/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/exclude-nodejs/">Node.jsを完全に除去している</div>
+            <div class="f6"> 脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
+開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することと …</div>
+	</div>
+</a>
+<a href="/ja/rdbms-unit-test/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/rdbms-unit-test/">RDBMSのユニットテスト</div>
+            <div class="f6">Webサービスを既存の挙動を破壊しないようにシームレスに変更することは、往々にして難しい。
+これまでテストケースを拡充することで従来の挙動を保護してきた。このアプローチは有効なのだが、最終的にDBアク …</div>
+	</div>
+</a>
+
+        </div>
+
+    </div>
+  </div>
+</main>
+</div>
+</div>
+<footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer><script type="module" src='/lib/cm.js' ></script>
+</body>
+</html>

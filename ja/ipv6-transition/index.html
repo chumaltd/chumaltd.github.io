@@ -134,7 +134,8 @@ IPv6の規格はSLAACで、潤沢なアドレス空間を生かして各端末�
 <p>DHCPv6を採用したいプラットフォームは、WindowsやVoIP機器などだ。要するにLAN管理者が集中管理したい用途ではアドレスも集中的に生成して追跡したい事情がある。一方、端末が移動するモバイル機器は、単一のルーターで集中管理し切れないシーンがあるためSLAACが適している。</p>
 <p>よって、IPv6ネットワークの管理方式は規格間の競争ではなく両方生き残るだろう。ネットワーク機器は両方式を同時にサポートできる必要がある。</p>
 <h3 id="ルーターを自作するのも一手">ルーターを自作するのも一手</h3>
-<p>一般的な方法とは言えないものの、アクセス網に必要な機能をカバーしようと思ったら、ルーターを自作すべきかもしれないと考えている。</p>
+<p>一般的な方法とは言えないものの、アクセス網に必要な機能をカバーしようと思ったら、
+<a href="/ja/craft-router/">ルーターを自作</a>すべきかもしれないと考えている。</p>
 <p>後述のとおり、kubernetesのIP網を整備するとルーターを作っているのとほとんど同じ工程をたどる。<br>
 また、法人ルーター機器の機能不足が目立っていることや、ARMの進歩によってハードだけはコモディティ化が進んでいることも既製品の相対的な陳腐化の要因と言える。</p>
 <p>従来はネットワーク機器を買うことがセキュリティ確保に役立ってきたが、今は既製品のセキュリティ品質が相当疑わしいという問題も大きい。
@@ -180,11 +181,21 @@ IPv4は今後時間をかけてコストが増えていく可能性があり、�
 
 
 	<div class="my-4" style="text-align: right; font-style: italic">
-	<span>⁋ 2024/08/27</span><span class="mx-2">↻ 2025/06/17</span></div>
+	<span>⁋ 2024/08/27</span><span class="mx-2">↻ 2025/09/07</span></div>
       </article><div class="related_articles p-4">
             <h4 id="related" class="idx"></h4>
             
             
+<a href="/ja/craft-router/" class="compbox bordered py-2">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+            <div class="h4 idx mb-2" href="/ja/craft-router/">ルーターのクラフト</div>
+            <div class="f6">OpenWrtを用いてネットワークルーターをクラフトして、オフィスLANを再構築した。おそらく今後はOpenWrtを第一選択とすることになる。
+LAN技術の流れ ルーターをクラフトするという方式は、そ …</div>
+	</div>
+</a>
 <a href="/ja/wol-ipv6-workaround/" class="compbox bordered py-2">
         <picture>
             <img src="/images/m84jrlxVUc1r9blbt.jpg">
@@ -223,16 +234,6 @@ IPv4は今後時間をかけてコストが増えていく可能性があり、�
             <div class="h4 idx mb-2" href="/ja/rdbms-unit-test/">RDBMSのユニットテスト</div>
             <div class="f6">Webサービスを既存の挙動を破壊しないようにシームレスに変更することは、往々にして難しい。
 これまでテストケースを拡充することで従来の挙動を保護してきた。このアプローチは有効なのだが、最終的にDBアク …</div>
-	</div>
-</a>
-<a href="/ja/dram-slowdown/" class="compbox bordered py-2">
-        <picture>
-            <img src="/images/m84jrlxVUc1r9blbt.jpg">
-        </picture>
-        <div>
-            <div class="h4 idx mb-2" href="/ja/dram-slowdown/">DRAMの停滞</div>
-            <div class="f6">過去何度かトライしてきたシステム監視サービスにようやく見通しが立った。インハウスで構築できる状況には、おそらくあと5年ほど要するだろう。
-要するにDRAM管理の弱いツールをコンテナで安定動作させる方法 …</div>
 	</div>
 </a>
 
