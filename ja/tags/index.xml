@@ -4,8 +4,7 @@
     <title>Tags on civilis</title>
     <link>https://chumaltd.github.io/ja/tags/</link>
     <description>Recent content in Tags on civilis</description>
-    <generator>Hugo</generator>
-    <language>ja</language>
-    <atom:link href="https://chumaltd.github.io/ja/tags/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language><atom:link href="https://chumaltd.github.io/ja/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

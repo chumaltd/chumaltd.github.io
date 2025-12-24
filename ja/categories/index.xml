@@ -4,8 +4,7 @@
     <title>Categories on civilis</title>
     <link>https://chumaltd.github.io/ja/categories/</link>
     <description>Recent content in Categories on civilis</description>
-    <generator>Hugo</generator>
-    <language>ja</language>
-    <atom:link href="https://chumaltd.github.io/ja/categories/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language><atom:link href="https://chumaltd.github.io/ja/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

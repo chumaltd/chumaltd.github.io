@@ -4,8 +4,7 @@
     <title>Bio | Chuma Takahiro on civilis</title>
     <link>https://chumaltd.github.io/en/bio/</link>
     <description>Recent content in Bio | Chuma Takahiro on civilis</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <atom:link href="https://chumaltd.github.io/en/bio/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://chumaltd.github.io/en/bio/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
