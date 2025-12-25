@@ -4,664 +4,519 @@
     <title>日本語 on civilis</title>
     <link>https://chumaltd.github.io/ja/</link>
     <description>Recent content in 日本語 on civilis</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language><atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <atom:link href="https://chumaltd.github.io/ja/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Webフロー設計</title>
       <link>https://chumaltd.github.io/ja/http-conditional-flow/</link>
       <pubDate>Tue, 23 Dec 2025 17:01:46 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/http-conditional-flow/</guid>
-      <description>クレジットカードの悪用がはびこった結果、日本では経済産業省が主導してセキュリティガイドラインを決済利</description>
+      <description>&lt;p&gt;クレジットカードの悪用がはびこった結果、日本では経済産業省が主導してセキュリティガイドラインを決済利用企業に強制する展開となった。&lt;br&gt;&#xA;幅広い課題のうち、多要素認証(MFA)の要求は「堅牢なWebフローの実装」という古くて新しい問題を掘り起こした。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ルーターのクラフト</title>
       <link>https://chumaltd.github.io/ja/craft-router/</link>
       <pubDate>Sat, 06 Sep 2025 13:40:51 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/craft-router/</guid>
-      <description>OpenWrtを用いてネットワークルーターをクラフトして、オフィスLANを再構築した。おそらく今後は</description>
+      <description>&lt;p&gt;OpenWrtを用いてネットワークルーターをクラフトして、オフィスLANを再構築した。おそらく今後はOpenWrtを第一選択とすることになる。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>IPv6ネットワークのWOLワークアラウンド</title>
       <link>https://chumaltd.github.io/ja/wol-ipv6-workaround/</link>
       <pubDate>Tue, 17 Jun 2025 15:18:28 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/wol-ipv6-workaround/</guid>
-      <description>PC向けのARMが想像に反してまったく進展しなかったため、2025年現在、AMDx64デスクトップP</description>
+      <description>&lt;p&gt;PC向けのARMが想像に反してまったく進展しなかったため、2025年現在、AMDx64デスクトップPCの費用対効果が最右翼に見える。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ソフトウェアの脆さ</title>
       <link>https://chumaltd.github.io/ja/software-fragility/</link>
       <pubDate>Thu, 20 Feb 2025 09:52:57 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/software-fragility/</guid>
-      <description>コンピュータ・ソフトウェアを採用しているビジネスは、ソフトウェアを調達する力に強い制約を受ける。そし</description>
+      <description>&lt;p&gt;コンピュータ・ソフトウェアを採用しているビジネスは、ソフトウェアを調達する力に強い制約を受ける。そしてソフトウェアを調達する力は、ソフトウェアの生存ルールに強く制約されている。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Node.jsを完全に除去している</title>
       <link>https://chumaltd.github.io/ja/exclude-nodejs/</link>
       <pubDate>Tue, 04 Feb 2025 13:57:37 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/exclude-nodejs/</guid>
-      <description>脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとs</description>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/e2e-web-testing/&#34;&gt;脱Node.js&lt;/a&gt;に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。&lt;br&gt;&#xA;開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することとした。&lt;/p&gt;&#xA;&lt;h2 id=&#34;コンテナが再起不能になる&#34;&gt;コンテナが再起不能になる&lt;/h2&gt;&#xA;&lt;p&gt;不可解なことに、&lt;code&gt;npm install&lt;/code&gt;や&lt;code&gt;rollup&lt;/code&gt;を実行するとハングアップし、それ以後kubernetesのコンテナを再作成できない事象に遭遇した。&lt;br&gt;&#xA;nodeのプロセスは&lt;code&gt;kill -9&lt;/code&gt;コマンドを使用しても操作できない。そして、このプロセスを実行しているコンテナは&lt;code&gt;kubectl delete&lt;/code&gt;が完了しない。&lt;code&gt;--force&lt;/code&gt;オプションで強制終了すると、最終的に次のコンテナが作成できない状態に陥る。仮想ネットワークを割当てるフェーズのエラーで停止する。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>RDBMSのユニットテスト</title>
       <link>https://chumaltd.github.io/ja/rdbms-unit-test/</link>
       <pubDate>Wed, 22 Jan 2025 18:25:29 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/rdbms-unit-test/</guid>
-      <description>Webサービスを既存の挙動を破壊しないようにシームレスに変更することは、往々にして難しい。 これまでテ</description>
+      <description>&lt;p&gt;Webサービスを既存の挙動を破壊しないようにシームレスに変更することは、往々にして難しい。&lt;/p&gt;&#xA;&lt;p&gt;これまでテストケースを拡充することで従来の挙動を保護してきた。このアプローチは有効なのだが、最終的にDBアクセスを伴う処理が特異的に変更しづらいことが分かった。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>DRAMの停滞</title>
       <link>https://chumaltd.github.io/ja/dram-slowdown/</link>
       <pubDate>Fri, 29 Nov 2024 17:51:55 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/dram-slowdown/</guid>
-      <description>過去何度かトライしてきたシステム監視サービスにようやく見通しが立った。インハウスで構築できる状況には</description>
+      <description>&lt;p&gt;過去何度かトライしてきたシステム監視サービスにようやく見通しが立った。インハウスで構築できる状況には、おそらくあと5年ほど要するだろう。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>不可知なデータストア</title>
       <link>https://chumaltd.github.io/ja/datastore-agnosticism/</link>
       <pubDate>Wed, 13 Nov 2024 16:36:45 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/datastore-agnosticism/</guid>
-      <description>PostgreSQLは人類でもっとも重要なソフトウェア資産のひとつだ。データセットのごく一部を素朴に</description>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://www.postgresql.org/&#34;&gt;PostgreSQL&lt;/a&gt;は人類でもっとも重要なソフトウェア資産のひとつだ。データセットのごく一部を素朴に抽出するような検索用途には&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Relational_database&#34;&gt;RDBMS&lt;/a&gt;が適していて、おそらくRDBMS製品はPostgreSQLに収斂して差し支えない。&lt;/p&gt;&#xA;&lt;p&gt;PostgreSQLは毎年新版をリリースしており、それに合わせて稼働中のシステムも年に一度のバージョンアップ作業を行う。&lt;br&gt;&#xA;これが難しい。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>熱波潮流</title>
       <link>https://chumaltd.github.io/ja/heat-tide/</link>
       <pubDate>Tue, 01 Oct 2024 10:30:10 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/heat-tide/</guid>
-      <description>日本の10月はかつては秋だった。秋を迎える前に「秋めく」時候もあり、涼しい風が吹く日がぽつぽつ混じる</description>
+      <description>&lt;p&gt;日本の10月はかつては秋だった。秋を迎える前に「秋めく」時候もあり、涼しい風が吹く日がぽつぽつ混じるものだった。&lt;br&gt;&#xA;今年はまだ30℃を超える日がある。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>KubernetesというOS</title>
       <link>https://chumaltd.github.io/ja/kubernetes-os/</link>
       <pubDate>Wed, 25 Sep 2024 11:08:31 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/kubernetes-os/</guid>
-      <description>kubernetesが OSの機能を取り揃えつつある。 OSは多義的な用語で、立場によって欠かせない機能</description>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Kubernetes&#34;&gt;kubernetes&lt;/a&gt;が&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Operating_system&#34;&gt;OS&lt;/a&gt;の機能を取り揃えつつある。&lt;br&gt;&#xA;OSは多義的な用語で、立場によって欠かせない機能が変わる。ソフトウェアやエンジニアから見るときにはCPUやRAM、ディスクといったハードを制御する機能が重要で、kubernetesの設定を通じてリクエストしているのであればkubernetesがOSと言える。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>IPv6移行</title>
       <link>https://chumaltd.github.io/ja/ipv6-transition/</link>
       <pubDate>Tue, 27 Aug 2024 12:10:22 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/ipv6-transition/</guid>
-      <description>インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、IP層には</description>
+      <description>&lt;p&gt;インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、IP層には技術的なトラブルや関心はあまり存在しないだろう。&lt;br&gt;&#xA;課題は、IPv4とIPv6が併存するデュアルスタックを長期間サポートせざるを得ない点にある。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>灼熱のVoIP</title>
       <link>https://chumaltd.github.io/ja/voip-integration/</link>
       <pubDate>Thu, 15 Aug 2024 09:59:52 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/voip-integration/</guid>
-      <description>電話は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいった</description>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Telephone&#34;&gt;電話&lt;/a&gt;は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいったいいつまで続くものだろうか？&lt;/p&gt;&#xA;&lt;p&gt;日本の事情は、携帯電話の普及によりすでに家庭では旧来のPSTN電話が減ってきた。一方で、企業は監督官庁の事務的な要請により電話の設置が事実上義務づけられている。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>クライアント証明書を生成する</title>
       <link>https://chumaltd.github.io/ja/client-cert-generation/</link>
       <pubDate>Wed, 03 Jul 2024 23:53:37 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/client-cert-generation/</guid>
-      <description>年に数回、 X.509のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけ</description>
+      <description>&lt;p&gt;年に数回、&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/X.509&#34;&gt;X.509&lt;/a&gt;のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけていたため、一度関連動向を含めてリサーチした。&lt;/p&gt;&#xA;&lt;p&gt;TLSのクライアント証明書認証は、究極はBasic認証と似たようなものではある。ただBasic認証はURLにセットできてしまう。セットアップ経路の手間の分だけ証明書の方がセキュアであろうと評価している。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ドッグイヤーの終焉</title>
       <link>https://chumaltd.github.io/ja/cloud-stagnation/</link>
       <pubDate>Mon, 01 Jul 2024 12:08:10 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/cloud-stagnation/</guid>
-      <description>Deno上のインテグレーションテストの実用性を評価するうちに、実はクラウドインフラの性能も悪いことに</description>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/re-integration-testing/&#34;&gt;Deno上のインテグレーションテスト&lt;/a&gt;の実用性を評価するうちに、実はクラウドインフラの性能も悪いことに気づいた。&lt;/p&gt;&#xA;&lt;p&gt;SeleniumのE2Eテストは挙動が安定せず、成功する場合と失敗する場合がある。そして、失敗の割合をクラウドインフラ上で実行するときとPC上で実行するときを比べると、クラウドの方が目に見えて多い。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>再インテグレーションテスト</title>
       <link>https://chumaltd.github.io/ja/re-integration-testing/</link>
       <pubDate>Sat, 15 Jun 2024 13:33:24 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/re-integration-testing/</guid>
-      <description>Webサービスの品質管理の主役として、 2年前にe2eテストを導入して引き続き機能している。 Ruby on Rai</description>
+      <description>&lt;p&gt;Webサービスの品質管理の主役として、&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/e2e-web-testing/&#34;&gt;2年前にe2eテストを導入&lt;/a&gt;して引き続き機能している。&lt;br&gt;&#xA;Ruby on Railsを作ったDHHが&#xA;&lt;a href=&#34;https://world.hey.com/dhh/system-tests-have-failed-d90af718&#34;&gt;システムテストの限界を書いていて&lt;/a&gt;、フレーキーであるという指摘はその通りだ。&lt;br&gt;&#xA;じっさいにテストしていて、テストツールのSeleniumやChromeブラウザの動作をテストしているような事象を見ることの方が多い。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ランタイム・クリーンアップ</title>
       <link>https://chumaltd.github.io/ja/runtime-cleanup/</link>
       <pubDate>Wed, 01 May 2024 12:25:57 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/runtime-cleanup/</guid>
-      <description>コンテナイメージのクリーンアップを終えつつある。 ソフトウェア開発は60年以上の歴史を持つが、いまだに</description>
+      <description>&lt;p&gt;コンテナイメージのクリーンアップを終えつつある。&lt;br&gt;&#xA;ソフトウェア開発は60年以上の歴史を持つが、いまだに不要なコードやモジュールを削除する一般的な手法がない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ソフトウェア・テスティング</title>
       <link>https://chumaltd.github.io/ja/software-testing/</link>
       <pubDate>Fri, 15 Mar 2024 10:02:10 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/software-testing/</guid>
-      <description>ソフトウェアの動作確認を担うテストコードは、品質を制御する主要パーツだ。assert_equal 1 +</description>
+      <description>&lt;p&gt;ソフトウェアの動作確認を担うテストコードは、品質を制御する主要パーツだ。&lt;code&gt;assert_equal 1 + 1, 2&lt;/code&gt;といったコードで適切な動作を確認する。&lt;br&gt;&#xA;実行時には取り外されていることから補助的なツールと見なされていて、無いよりは有った方がベターと捉えられているが、誤認である。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>電子納税の現状</title>
       <link>https://chumaltd.github.io/ja/tax-digitalization-jp/</link>
       <pubDate>Wed, 13 Mar 2024 23:02:51 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/tax-digitalization-jp/</guid>
-      <description>LucaSuiteの初期リリースと導入から3年が経過し、バックオフィスはほぼ無人運用が定着している。</description>
+      <description>&lt;p&gt;LucaSuiteの初期リリースと導入から3年が経過し、バックオフィスはほぼ無人運用が定着している。&lt;br&gt;&#xA;&#xA;&lt;a href=&#34;https://github.com/chumaltd/luca-jp&#34;&gt;luca-jp&lt;/a&gt;は日本向けのローカルモジュールで、法人確定申告のファイル生成機能も持つ。自社の決算期が来るたびに守備範囲を広げてきているのだが、3年目にしてようやくコアロジックにテストケースを実装できた。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>評価しえぬもの</title>
       <link>https://chumaltd.github.io/ja/beyond-evaluation/</link>
       <pubDate>Wed, 24 Jan 2024 22:33:59 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/beyond-evaluation/</guid>
-      <description>E2Eテスト導入から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく</description>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/e2e-web-testing/&#34;&gt;E2Eテスト導入&lt;/a&gt;から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく、大規模な実装変更のガイドラインとして機能した点がもっとも分かりやすい効果であった。&lt;/p&gt;&#xA;&lt;p&gt;一方、E2Eテストを継続的にメンテナンスし続けることを通じて、品質の概念そのものが書きかわってきた。&lt;br&gt;&#xA;品質を定量的にとらえる場合、シックスシグマが象徴的なアプローチと言える。要するに、パーツの変更や経時的な変化にさらされても動作のバラつきが少ない、減っていくことが理想という見方だ。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>縮小均衡からの脱却</title>
       <link>https://chumaltd.github.io/ja/fake-technology2/</link>
       <pubDate>Wed, 20 Dec 2023 00:22:47 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/fake-technology2/</guid>
-      <description>Shepherd.jsを除去して driver.jsを再実装する作業を終えた。 これらはインタラクティブ</description>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://shepherdjs.dev/&#34;&gt;Shepherd.js&lt;/a&gt;を除去して&#xA;&lt;a href=&#34;https://driverjs.com/&#34;&gt;driver.js&lt;/a&gt;を再実装する作業を終えた。&lt;br&gt;&#xA;これらはインタラクティブツアーを実装するソフトウェアライブラリであり、機能は著しく似かよっている。&lt;br&gt;&#xA;いずれかを選択して使えば良いものではあるのだが、じつはdriver.jsの方が圧倒的に優れている。これは両方実装した今になって分かることだ。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>COVID-19の行きがかり</title>
       <link>https://chumaltd.github.io/ja/covid19-2023/</link>
       <pubDate>Sat, 06 May 2023 05:07:36 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/covid19-2023/</guid>
-      <description>日本では週明け2023年5月8日から、新型コロナウイルス感染症の区分が５類感染症となり、行政上ノーガ</description>
+      <description>&lt;p&gt;日本では週明け2023年5月8日から、新型コロナウイルス感染症の区分が５類感染症となり、行政上ノーガードに移行する。&lt;br&gt;&#xA;ただ、何か底流の状況が改善したわけではない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>サウンドの品質</title>
       <link>https://chumaltd.github.io/ja/sound-quality/</link>
       <pubDate>Wed, 12 Apr 2023 00:15:43 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/sound-quality/</guid>
-      <description>デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。 音楽については、</description>
+      <description>&lt;p&gt;デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。&lt;br&gt;&#xA;音楽については、最初のデジタルメディアがCD（コンパクトディスク）だったため、CD比のハイレゾ（high resolution）移行が一部で始まっている現状だ。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>『暗黙知の次元』</title>
       <link>https://chumaltd.github.io/ja/tacit-dimension/</link>
       <pubDate>Mon, 02 Jan 2023 04:39:21 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/tacit-dimension/</guid>
-      <description>マイケル・ポランニー『暗黙知の次元』は、「知」の本来のパラダイムに光を当てた初期的な主張と言える。 2</description>
+      <description>&lt;p&gt;マイケル・ポランニー『暗黙知の次元』は、「知」の本来のパラダイムに光を当てた初期的な主張と言える。&lt;br&gt;&#xA;2023年現在から振り返って過去100年程度の知的生産の研究は、論理・記号操作による手法が主であり、暗黙知のパラダイムには今もって有効にアプローチできていない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>マルクス・アウレリウス『自省録』</title>
       <link>https://chumaltd.github.io/ja/aurelius-mediations/</link>
       <pubDate>Mon, 26 Sep 2022 00:44:47 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/aurelius-mediations/</guid>
-      <description>ローマ皇帝 マルクス・アウレリウスが長年にわたり書きつづった著作。 「皇帝としてどのように役割を果たすべ</description>
+      <description>&lt;p&gt;ローマ皇帝&#xA;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%AB%E3%82%AF%E3%82%B9%E3%83%BB%E3%82%A2%E3%82%A6%E3%83%AC%E3%83%AA%E3%82%A6%E3%82%B9%E3%83%BB%E3%82%A2%E3%83%B3%E3%83%88%E3%83%8B%E3%83%8C%E3%82%B9&#34;&gt;マルクス・アウレリウス&lt;/a&gt;が長年にわたり書きつづった著作。&lt;/p&gt;&#xA;&lt;p&gt;「皇帝としてどのように役割を果たすべきか」という行動原理をこの『自省録』を執筆するプロセスからひき出したのは間違いない。&lt;br&gt;&#xA;そして、明白であることが基本原則として通底しており、相当平易な記述になっている。もう1800年以上も昔の著作にも関わらず、読んで意味のとれない部分などほぼ無い。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>フェイク・テクノロジー</title>
       <link>https://chumaltd.github.io/ja/fake-technology/</link>
       <pubDate>Sun, 04 Sep 2022 06:51:22 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/fake-technology/</guid>
-      <description>ひと月近くかけて、著名ライブラリのReact.jsを除去する実装を継続し、ようやく完了した。 今年の夏</description>
+      <description>&lt;p&gt;ひと月近くかけて、著名ライブラリのReact.jsを除去する実装を継続し、ようやく完了した。&lt;br&gt;&#xA;今年の夏は、観測史上2番目の暑さであったこともあり、ジリジリとした灼熱地獄の耐久戦だった。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>文明の芽胞</title>
       <link>https://chumaltd.github.io/ja/civilization-spore/</link>
       <pubDate>Fri, 05 Aug 2022 00:58:56 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/civilization-spore/</guid>
-      <description>書かなければ消滅するメカニズムでは、サバイバルの必要水準が想像以上に高いこと、知的創造をクリアするに</description>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/sustained-by-description/&#34;&gt;書かなければ消滅するメカニズム&lt;/a&gt;では、サバイバルの必要水準が想像以上に高いこと、知的創造をクリアするには書くプロセスが不可欠であることを確認した。&lt;/p&gt;&#xA;&lt;p&gt;分業することじたいに風化作用があり、1990年代から進んできたデジタルデータによる紙の置き換えは、人々の直感に反して組織の死期を早めている。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>書かなければ消滅するメカニズム</title>
       <link>https://chumaltd.github.io/ja/sustained-by-description/</link>
       <pubDate>Thu, 04 Aug 2022 09:19:03 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/sustained-by-description/</guid>
-      <description>「書かない組織は必ず衰退する」という共通の特徴を見て来ている。書くという行動には拒絶感があり、それが</description>
+      <description>&lt;p&gt;「書かない組織は必ず衰退する」という共通の特徴を見て来ている。書くという行動には拒絶感があり、それが強いほど落ちていくスピードも速い。&lt;br&gt;&#xA;この現象は人類の文明文化にとって普遍のパターンに見えるため、多角的に整理する価値があるように思う。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>脱Node.js</title>
       <link>https://chumaltd.github.io/ja/e2e-web-testing/</link>
       <pubDate>Wed, 04 May 2022 18:36:36 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/e2e-web-testing/</guid>
-      <description>JavascriptコードのテストはさすがにJavascriptで書いていたのだが、いまそれを捨てて</description>
+      <description>&lt;p&gt;JavascriptコードのテストはさすがにJavascriptで書いていたのだが、いまそれを捨ててE2Eテストに移行している。&lt;br&gt;&#xA;E2Eテストは、実際のアプリケーションやサーバー構成を再現した環境で実行するテストを指し、今回の最大の違いはブラウザ上で動作させる点だ。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>品質とオープンソース</title>
       <link>https://chumaltd.github.io/ja/opensource-quality/</link>
       <pubDate>Wed, 27 Apr 2022 22:09:46 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/opensource-quality/</guid>
-      <description>ソフトウェア開発では、機能拡充と品質向上は両立しなくてはならない２大目標だ。 いずれにせよ時間的犠牲が</description>
+      <description>&lt;p&gt;ソフトウェア開発では、機能拡充と品質向上は両立しなくてはならない２大目標だ。&lt;/p&gt;&#xA;&lt;p&gt;いずれにせよ時間的犠牲が欠かせないため、ある瞬間に機能と品質のどちらを優先するか折に触れて選択を迫られる。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>死に至りやすい病</title>
       <link>https://chumaltd.github.io/ja/popular-sickness-unto-death/</link>
       <pubDate>Sun, 24 Apr 2022 21:32:17 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/popular-sickness-unto-death/</guid>
-      <description>一昨晩、猛烈な歯痛で目を覚ます。 不可解としか言いようがなかった。まったく医者に行かないから、虫歯の可</description>
+      <description>&lt;p&gt;一昨晩、猛烈な歯痛で目を覚ます。&lt;/p&gt;&#xA;&lt;p&gt;不可解としか言いようがなかった。まったく医者に行かないから、虫歯の可能性は捨て切れない。&lt;br&gt;&#xA;しかし、予兆なく激痛をひき起こす虫歯などあるのだろうか？&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>泥沼のインテリジェンス</title>
       <link>https://chumaltd.github.io/ja/network-engineering/</link>
       <pubDate>Wed, 05 Jan 2022 11:43:45 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/network-engineering/</guid>
-      <description>ようやくネットワーク構築が完備した。これ以上は目ぼしい改善の余地はないだろうというところまで来た。 ネ</description>
+      <description>&lt;p&gt;ようやくネットワーク構築が完備した。これ以上は目ぼしい改善の余地はないだろうというところまで来た。&lt;/p&gt;&#xA;&lt;p&gt;ネットワークの目的は明確だ。背後にサーバーがあり、リクエストに応じて適切にサーバーを呼び出し、そして結果を返す。&lt;br&gt;&#xA;多少技術的に言えば、多くのケースでHTTP200 OKが得られれば足りる。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>情報量の不足</title>
       <link>https://chumaltd.github.io/ja/lack-of-entropy/</link>
       <pubDate>Tue, 21 Dec 2021 16:53:27 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/lack-of-entropy/</guid>
-      <description>ソフトウェア・コードの重要性は日々増している。 高性能な半導体の普及が大きい。先進国では一様に人口が減</description>
+      <description>&lt;p&gt;ソフトウェア・コードの重要性は日々増している。&lt;br&gt;&#xA;高性能な半導体の普及が大きい。先進国では一様に人口が減少し始めいるため、知的労働の相当部分をコードが置き換えていく必要があるだろう。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>サービス自動化のインターフェース</title>
       <link>https://chumaltd.github.io/ja/service-auto-if/</link>
       <pubDate>Sun, 11 Jul 2021 14:14:33 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/service-auto-if/</guid>
-      <description>アウトプットの品質は、バラつきによって測れる。 バラつきを狭い範囲に制御するには、プロセスの多くを自動</description>
+      <description>&lt;p&gt;アウトプットの品質は、バラつきによって測れる。&lt;br&gt;&#xA;バラつきを狭い範囲に制御するには、プロセスの多くを自動化し、パラメータの組み合わせを少数に抑えることが有効と言える。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2020年代のWeb技術</title>
       <link>https://chumaltd.github.io/ja/webdev-2020s/</link>
       <pubDate>Fri, 09 Jul 2021 17:52:08 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/webdev-2020s/</guid>
-      <description>アーキテクチャ移行を俯瞰して、今後どう進展するのかを考えていた。 総合的に見ると、Webのアーキテクチ</description>
+      <description>&lt;p&gt;アーキテクチャ移行を俯瞰して、今後どう進展するのかを考えていた。&lt;br&gt;&#xA;総合的に見ると、Webのアーキテクチャはネイティブアプリとほぼ同様になり、一部は共用する形態になるだろう。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Javascript開発の変遷</title>
       <link>https://chumaltd.github.io/ja/javascript-transition/</link>
       <pubDate>Mon, 31 May 2021 00:07:58 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/javascript-transition/</guid>
-      <description>Web開発の変遷で、バックエンド中心のアーキテクチャの推移を整理していた。 バックエンドの再構築と並行</description>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/webdev-transition/&#34;&gt;Web開発の変遷&lt;/a&gt;で、バックエンド中心のアーキテクチャの推移を整理していた。&lt;br&gt;&#xA;バックエンドの再構築と並行して、Javascript開発がヘビーになる。&lt;/p&gt;&#xA;&lt;p&gt;おそらくJavascriptは一番難解な言語だろう。&lt;br&gt;&#xA;主な要因は、ブラウザのプロダクトとバージョンごとに実行環境が無数にあり、それとは別に方言が増え続けていることによる。&lt;br&gt;&#xA;完全に組み合わせ爆発が起きている。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Web開発の変遷</title>
       <link>https://chumaltd.github.io/ja/webdev-transition/</link>
       <pubDate>Mon, 24 May 2021 12:40:04 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/webdev-transition/</guid>
-      <description>Webサービスの大がかりなアーキテクチャ更新を進めており、山を越えつつある。 既存サービスの互換性を維</description>
+      <description>&lt;p&gt;Webサービスの大がかりなアーキテクチャ更新を進めており、山を越えつつある。&lt;br&gt;&#xA;既存サービスの互換性を維持しながら部分的に差し替える必要があり、着手から2年近くかかっている。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Androidタブレットの評価 2021年</title>
       <link>https://chumaltd.github.io/ja/android-tablet-review-2021/</link>
       <pubDate>Sat, 20 Mar 2021 00:54:25 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/android-tablet-review-2021/</guid>
-      <description>仕事用のクライアント機器として、Androidタブレットを使う比率が上がっている。現時点のタブレット</description>
+      <description>&lt;p&gt;仕事用のクライアント機器として、Androidタブレットを使う比率が上がっている。現時点のタブレットの主な特徴を挙げると以下のような点がある。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>オブジェクト階層の沼</title>
       <link>https://chumaltd.github.io/ja/nested-object-mud/</link>
       <pubDate>Mon, 18 Jan 2021 02:25:35 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/nested-object-mud/</guid>
-      <description>ソフトウェア開発のうち、妙手がなく、とにかく生産性が落ちる分野の1つが、階層の深いオブジェクトの操作</description>
+      <description>&lt;p&gt;ソフトウェア開発のうち、妙手がなく、とにかく生産性が落ちる分野の1つが、階層の深いオブジェクトの操作だ。&lt;br&gt;&#xA;データの集合は、主に配列と連想配列(Rubyではハッシュ、Javascriptではオブジェクト)がある。配列は同じデータが並んでいるもので、連想配列はIDなどのキーに対応するデータを持つ構造になっている。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>コードであるべき法律</title>
       <link>https://chumaltd.github.io/ja/public-libraries/</link>
       <pubDate>Wed, 13 Jan 2021 17:20:18 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/public-libraries/</guid>
-      <description>必要上、Rubyで税額計算するライブラリを書いている。また、オープンソースで配布している。 まずは 年末</description>
+      <description>&lt;p&gt;必要上、Rubyで税額計算するライブラリを書いている。また、オープンソースで配布している。&lt;br&gt;&#xA;まずは&#xA;&lt;a href=&#34;https://github.com/chumaltd/jp-national-tax/blob/master/lib/jp_national_tax/income_tax/income_nenmatsu_2020.rb&#34;&gt;年末調整のコード&lt;/a&gt;の例を見て欲しい。&lt;/p&gt;&#xA;&lt;p&gt;初見で気づいて欲しいポイントとして、かなり日本語で書いてある。&lt;br&gt;&#xA;これは実際に動作するし、すでに使っている。いま年次の給与支払報告書を提出したところだ。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>オープンソースERPの必要</title>
       <link>https://chumaltd.github.io/ja/opensource-erp-lucasuite/</link>
       <pubDate>Tue, 06 Oct 2020 13:39:44 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/opensource-erp-lucasuite/</guid>
-      <description>Luca SuiteというERPをオープンソースで開発していて、名称先約の意図で昨日RubyGemsにもプッ</description>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://github.com/chumaltd/luca&#34;&gt;Luca Suite&lt;/a&gt;というERPをオープンソースで開発していて、名称先約の意図で昨日RubyGemsにもプッシュした。名前はもちろん&#xA;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E3%83%AB%E3%82%AB%E3%83%BB%E3%83%91%E3%83%81%E3%83%A7%E3%83%BC%E3%83%AA&#34;&gt;ルカ・パチョーリ&lt;/a&gt;から来ている。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>電子政府が埋めるべき穴</title>
       <link>https://chumaltd.github.io/ja/fill-digital-government/</link>
       <pubDate>Mon, 27 Apr 2020 00:44:31 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/fill-digital-government/</guid>
-      <description>先ほど、 協会けんぽ 保険料額表変換ツールという極めてローカルなツールをGPLライセンスで公開した。 じつ</description>
+      <description>&lt;p&gt;先ほど、&#xA;&lt;a href=&#34;https://github.com/chumaltd/jhia-fee-table&#34;&gt;協会けんぽ 保険料額表変換ツール&lt;/a&gt;という極めてローカルなツールをGPLライセンスで公開した。&lt;br&gt;&#xA;じつは僕が必要としているのは、東京のごく一部のテーブルだけ。それが配布データがExcelにパックされてしまっている都合上、ツール変換せざるを得ず、けっきょく47都道府県分できてしまうので、オープンソースで行こう、と考えた。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>CIVILIS</title>
       <link>https://chumaltd.github.io/ja/civilis/</link>
       <pubDate>Fri, 24 Apr 2020 03:34:50 +0900</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/civilis/</guid>
-      <description>間抜けなことになってしまったなあ、と思っている。 皆それぞれの立場で日々努力をしてきたつもりになってい</description>
+      <description>&lt;p&gt;間抜けなことになってしまったなあ、と思っている。&lt;/p&gt;&#xA;&lt;p&gt;皆それぞれの立場で日々努力をしてきたつもりになっている。&lt;br&gt;&#xA;そうして今ある社会システムは、世界の津々浦々に効率的に流行病を伝播するものでもあった。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>「往く」と「来る」の概念</title>
       <link>https://chumaltd.github.io/ja/about-go-and-come/</link>
       <pubDate>Fri, 05 Jan 2018 10:25:06 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/about-go-and-come/</guid>
-      <description>易に「水山蹇」という卦があり、往くは足をとられ、待てば来る、という意を示している。 易経には「往」と「</description>
+      <description>&lt;p&gt;易に「水山蹇」という卦があり、往くは足をとられ、待てば来る、という意を示している。&lt;/p&gt;&#xA;&lt;p&gt;易経には「往」と「来」が頻出し、大川を渉るという概念も出てくる。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>資本主義の限界</title>
       <link>https://chumaltd.github.io/ja/limit-of-capitalism/</link>
       <pubDate>Fri, 29 Apr 2016 17:12:08 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/limit-of-capitalism/</guid>
-      <description>ぼくらの生活の主要な部分は買い物をすることで成り立っている。その売っているモノ・買えるモノは企業が作</description>
+      <description>&lt;p&gt;ぼくらの生活の主要な部分は買い物をすることで成り立っている。その売っているモノ・買えるモノは企業が作って供給している。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>システム開発の難点とは</title>
       <link>https://chumaltd.github.io/ja/system-dev-difficulties/</link>
       <pubDate>Sun, 13 Mar 2016 01:56:20 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/system-dev-difficulties/</guid>
-      <description>開発工程で手が止まりがちなのは、設計が必要な工程だ。 具体的には、オブジェクトの階層構造を実装するフェ</description>
+      <description>&lt;p&gt;開発工程で手が止まりがちなのは、設計が必要な工程だ。&#xA;具体的には、オブジェクトの階層構造を実装するフェーズになると比較的時間がかかる。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>知識産業で頑張りたい人のための成長法</title>
       <link>https://chumaltd.github.io/ja/growup-in-knowlege-industry/</link>
       <pubDate>Fri, 01 Jan 2016 01:17:19 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/growup-in-knowlege-industry/</guid>
-      <description>下り坂の日本が今後どのように頑張るか？というテーマについては、知識産業のまあまあ先端の方を開拓してい</description>
+      <description>&lt;p&gt;下り坂の日本が今後どのように頑張るか？というテーマについては、知識産業のまあまあ先端の方を開拓していくほかないと思う。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ワークスタイルを変革する はなし</title>
       <link>https://chumaltd.github.io/ja/transform-workstyle/</link>
       <pubDate>Thu, 31 Dec 2015 22:31:02 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/transform-workstyle/</guid>
-      <description>いまスタートアップに身を置いて4年、総合格闘技のように多種多様で山のような物量の仕事を手がけてきた。</description>
+      <description>&lt;p&gt;いまスタートアップに身を置いて4年、総合格闘技のように多種多様で山のような物量の仕事を手がけてきた。&lt;/p&gt;&#xA;&lt;p&gt;振り返ってみると、経営の観点で意味のある成果を出せているときのプロセスは、従来的なワークスタイルとかけ離れた活動をしている瞬間に生まれていることに気づく。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>経験曲線効果と新規ビジネス</title>
       <link>https://chumaltd.github.io/ja/adopt-experience-curve/</link>
       <pubDate>Sun, 22 Nov 2015 00:53:48 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/adopt-experience-curve/</guid>
-      <description>経験曲線効果（ Experience curve effects）というビジネス法則がある。戦略ファームのBCGを設立したブルース＝</description>
+      <description>&lt;p&gt;経験曲線効果（&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Experience_curve_effects&#34;&gt;Experience curve effects&lt;/a&gt;）というビジネス法則がある。戦略ファームのBCGを設立したブルース＝ヘンダーソンが提唱したもので、「生産量の累計が増えるにつれてコストが下がる」傾向を指している。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>認知資産の重要性にもう一度光を。</title>
       <link>https://chumaltd.github.io/ja/remember-cognitive-assets/</link>
       <pubDate>Tue, 08 Sep 2015 08:36:18 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/remember-cognitive-assets/</guid>
-      <description>もう一度、というよりもそもそも「認知資産」という言葉が知られていないかもしれない。 簡単に言えば、有名</description>
+      <description>&lt;p&gt;もう一度、というよりもそもそも「認知資産」という言葉が知られていないかもしれない。&lt;br&gt;&#xA;簡単に言えば、有名であること、人々の頭の中にあるマインドシェアのことだ。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>仕事のアウトプット・ビジネスのアウトプット</title>
       <link>https://chumaltd.github.io/ja/business-output/</link>
       <pubDate>Sun, 06 Sep 2015 01:37:55 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/business-output/</guid>
-      <description>サラリーマンと起業家・経営者の大きな違いのひとつに、「アウトプット」に対する考え方がある。 それは、仕</description>
+      <description>&lt;p&gt;サラリーマンと起業家・経営者の大きな違いのひとつに、「アウトプット」に対する考え方がある。&lt;/p&gt;&#xA;&lt;p&gt;それは、仕事のアウトプットと、ビジネスのアウトプットの違いと言ってもいい。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>創業者をこえて会社が生き延びる条件</title>
       <link>https://chumaltd.github.io/ja/how-company-survives-founder/</link>
       <pubDate>Tue, 26 May 2015 01:45:25 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/how-company-survives-founder/</guid>
-      <description>今月は、自分にとって&amp;quot;会社&amp;quot;というものの見方が大きく変わった月だった。 「会社は何</description>
+      <description>&lt;p&gt;今月は、自分にとって&amp;quot;会社&amp;quot;というものの見方が大きく変わった月だった。&lt;/p&gt;&#xA;&lt;p&gt;「会社は何らかのタイミングでパブリックカンパニーを目指さなくてはならず、そのタイミングは思っていたよりも早く求められる」ということを強く感じた。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ボラティリティを経営する</title>
       <link>https://chumaltd.github.io/ja/manage-volatility/</link>
       <pubDate>Mon, 25 May 2015 01:51:02 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/manage-volatility/</guid>
-      <description>経営とは変動（ボラティリティ）を取り扱う仕事だと思う。 いろいろ経験した結果、いま重視している基本原則</description>
+      <description>&lt;p&gt;経営とは変動（ボラティリティ）を取り扱う仕事だと思う。&lt;br&gt;&#xA;いろいろ経験した結果、いま重視している基本原則は、以下の2点に集約されるようになった。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>仮想化技術でなすべきこと</title>
       <link>https://chumaltd.github.io/ja/virtualization-purpose/</link>
       <pubDate>Thu, 15 May 2014 02:23:39 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/virtualization-purpose/</guid>
-      <description>ハードウェアのコモディティ化により、相対的にソフトウェアの寿命が延びている。ハードの寿命が縮んできた</description>
+      <description>&lt;p&gt;ハードウェアのコモディティ化により、相対的にソフトウェアの寿命が延びている。ハードの寿命が縮んできた要因としては以下のような理由があるだろう。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>人材市場のレモン問題攻略法</title>
       <link>https://chumaltd.github.io/ja/human-resources-as-lemon/</link>
       <pubDate>Fri, 25 Oct 2013 22:39:49 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/human-resources-as-lemon/</guid>
-      <description>見通しづらい業界なので市場特性を整理したい。 職業紹介ビジネスの特性 キャリアの観点で関心の高い正社員ポ</description>
+      <description>&lt;p&gt;見通しづらい業界なので市場特性を整理したい。&lt;/p&gt;&#xA;&lt;h2 id=&#34;職業紹介ビジネスの特性&#34;&gt;職業紹介ビジネスの特性&lt;/h2&gt;&#xA;&lt;p&gt;キャリアの観点で関心の高い正社員ポストを前提とすると、職業と人材を仲介するエージェント・ビジネスは、流通業の事業特性を持つ。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>就職活動のゲームルール</title>
       <link>https://chumaltd.github.io/ja/recruiting-game-rule/</link>
       <pubDate>Wed, 16 Oct 2013 22:28:11 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/recruiting-game-rule/</guid>
-      <description>就職活動や新卒採用は、当事者の関心はとても高い一方、ほとんどの人には無関係な出来事だ。 そのため、&amp;l</description>
+      <description>&lt;p&gt;就職活動や新卒採用は、当事者の関心はとても高い一方、ほとんどの人には無関係な出来事だ。&lt;/p&gt;&#xA;&lt;p&gt;そのため、&amp;ldquo;自分の就活&amp;quot;に興味はあるものの、就職活動という一般的な現象に関心を持つ人は少なく、全体像を把握する人はさらに少ない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>更新重視のホームページ作成を支えるCMS</title>
       <link>https://chumaltd.github.io/ja/cms-for-fast-update/</link>
       <pubDate>Fri, 11 Oct 2013 23:55:33 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/cms-for-fast-update/</guid>
-      <description>企業のホームページは、費用対効果の高い販促ツールとして今後とも筆頭候補の座を占め続けるだろう。 販促マ</description>
+      <description>&lt;p&gt;企業のホームページは、費用対効果の高い販促ツールとして今後とも筆頭候補の座を占め続けるだろう。&lt;/p&gt;&#xA;&lt;p&gt;販促マーケティングでは、認知努力をいかに途切れることなく継続できるかがカギとなる。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>クラウド（安いIT）の限界</title>
       <link>https://chumaltd.github.io/ja/cloud-limitation/</link>
       <pubDate>Fri, 30 Aug 2013 23:58:54 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/cloud-limitation/</guid>
-      <description>最近、経営の観点でITを評価するできごとが多く起きている。 チームワーク化を進めるためにはITが重要、</description>
+      <description>&lt;p&gt;最近、経営の観点でITを評価するできごとが多く起きている。&lt;/p&gt;&#xA;&lt;p&gt;チームワーク化を進めるためにはITが重要、という点については&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/sme-requires-it-integration/&#34;&gt;以前書いた&lt;/a&gt;。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ビジネス・ディベロップメントというスキル</title>
       <link>https://chumaltd.github.io/ja/business-development-skill/</link>
       <pubDate>Tue, 25 Jun 2013 02:01:19 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/business-development-skill/</guid>
-      <description>米国企業などで比較的よく見かける職種に&amp;quot;Business Development&amp;quot;</description>
+      <description>&lt;p&gt;米国企業などで比較的よく見かける職種に&amp;quot;Business Development&amp;quot;というものがある。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ユニコーンリサーチ株式会社 設立の辞</title>
       <link>https://chumaltd.github.io/ja/launch-unicorn-research/</link>
       <pubDate>Thu, 20 Jun 2013 00:53:30 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/launch-unicorn-research/</guid>
-      <description>このたび、 ユニコーンリサーチ株式会社という法人を創りました。 IT産業のとなりにTI産業という新しいビ</description>
+      <description>&lt;p&gt;このたび、&#xA;&lt;a href=&#34;https://unicorn.limited/jp/&#34;&gt;ユニコーンリサーチ株式会社&lt;/a&gt;という法人を創りました。&lt;/p&gt;&#xA;&lt;p&gt;IT産業のとなりにTI産業という新しいビジネスを創れるのではないか、と思ったしだいです。&lt;/p&gt;&#xA;&lt;p&gt;TIというのは、Technology-based Intelligence だと思っています。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>組織の営業力を強化するニーズ別布陣</title>
       <link>https://chumaltd.github.io/ja/sales-force-layout/</link>
       <pubDate>Fri, 31 May 2013 00:47:15 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/sales-force-layout/</guid>
-      <description>サービス仕様が固まってきて顧客成功事例も出てくると、いよいよビジネス開発の最終段階、「営業の組織化」</description>
+      <description>&lt;p&gt;サービス仕様が固まってきて顧客成功事例も出てくると、いよいよビジネス開発の最終段階、「営業の組織化」に取り組める。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ビジネス立ち上げの迷いどころと解き方</title>
       <link>https://chumaltd.github.io/ja/solve-start-up/</link>
       <pubDate>Thu, 23 May 2013 01:55:42 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/solve-start-up/</guid>
-      <description>新規ビジネス、ベンチャーの立ち上げを牽引するときにぶち当たる組織問題を究極まで簡単化すると、以下のA</description>
+      <description>&lt;p&gt;新規ビジネス、ベンチャーの立ち上げを牽引するときにぶち当たる組織問題を究極まで簡単化すると、以下のA, Bを両立させるジレンマになる。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>『会社を強くするキャッシュフローと損益分岐点の見方・活かし方』</title>
       <link>https://chumaltd.github.io/ja/book-9784897951188-cache-flow/</link>
       <pubDate>Tue, 30 Apr 2013 22:18:41 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/book-9784897951188-cache-flow/</guid>
-      <description>財務の初歩的な参考書として買ってきた本。 SOOLで経営できる人材を育成していこうという話になり、若手</description>
+      <description>&lt;p&gt;財務の初歩的な参考書として買ってきた本。&lt;/p&gt;&#xA;&lt;p&gt;SOOLで経営できる人材を育成していこうという話になり、若手には、まず単年度・単一商品の採算性を理解できるようになって欲しいので、P/Lに特化した本を探したらこれになった。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>中小企業こそIT経営</title>
       <link>https://chumaltd.github.io/ja/sme-requires-it-integration/</link>
       <pubDate>Sun, 28 Apr 2013 23:28:49 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/sme-requires-it-integration/</guid>
-      <description>ここ半年ほど自社のシステム構築を細々とやってきたのが、ようやく一段落した。 着手前には「中小企業はそこ</description>
+      <description>&lt;p&gt;ここ半年ほど自社のシステム構築を細々とやってきたのが、ようやく一段落した。&lt;/p&gt;&#xA;&lt;p&gt;着手前には「中小企業はそこまでシステム化しなくてもええやろ」と思っていたので「Excelでいきますか！」というノリだった。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>プロジェクトマネジメント能力を体得する方法</title>
       <link>https://chumaltd.github.io/ja/get-project-management-skill/</link>
       <pubDate>Tue, 12 Feb 2013 22:02:11 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/get-project-management-skill/</guid>
-      <description>新規事業立ち上げの実行フェーズに欠かせないスキルにプロジェクトマネジメント能力がある。 プロジェクト管</description>
+      <description>&lt;p&gt;新規事業立ち上げの実行フェーズに欠かせないスキルにプロジェクトマネジメント能力がある。&lt;/p&gt;&#xA;&lt;p&gt;プロジェクト管理の能力は、期限がタイトかつ複雑な仕事をこなすことで体得できる。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>壺中日月長</title>
       <link>https://chumaltd.github.io/ja/long-time-in-pod/</link>
       <pubDate>Thu, 10 Jan 2013 08:50:56 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/long-time-in-pod/</guid>
-      <description>最近の中心テーマは&amp;quot;時間&amp;quot;。 時間はコンセプトに過ぎないから、人によってさまざまな</description>
+      <description>&lt;p&gt;最近の中心テーマは&amp;quot;時間&amp;quot;。&lt;br&gt;&#xA;時間はコンセプトに過ぎないから、人によってさまざまなとらえ方がある。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>スマホ技術動向2012秋</title>
       <link>https://chumaltd.github.io/ja/select-smart-phone-2012/</link>
       <pubDate>Mon, 10 Sep 2012 12:58:13 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/select-smart-phone-2012/</guid>
-      <description>スマホを仕事に使う場面が増えてくると、機種選びの重要性が増す。 Androidは機種も多彩だが、性能面</description>
+      <description>&lt;p&gt;スマホを仕事に使う場面が増えてくると、機種選びの重要性が増す。&lt;br&gt;&#xA;Androidは機種も多彩だが、性能面に影響するパーツを着目するとCPUと画面解像度もバリエーションが多い。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>not A, but Q</title>
       <link>https://chumaltd.github.io/ja/nota-butq/</link>
       <pubDate>Fri, 10 Aug 2012 08:57:25 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/nota-butq/</guid>
-      <description>ベンチャーや新規事業は仮説思考がキモだ。 新しい仮説を持てなければ、ためす価値のないビジネスしか生まれ</description>
+      <description>&lt;p&gt;ベンチャーや新規事業は仮説思考がキモだ。&lt;/p&gt;&#xA;&lt;p&gt;新しい仮説を持てなければ、ためす価値のないビジネスしか生まれない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>世界は変えられるか？ - 多面的な見方を獲得する方法3</title>
       <link>https://chumaltd.github.io/ja/can-change-world/</link>
       <pubDate>Sat, 02 Jun 2012 09:34:47 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/can-change-world/</guid>
-      <description>物事を柔軟に見るポイントを振り返るなかで、「スキル以前にそもそも気の持ちようが違うのではないか？」と</description>
+      <description>&lt;p&gt;物事を柔軟に見るポイントを振り返るなかで、「スキル以前にそもそも気の持ちようが違うのではないか？」という疑問があった。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>シナリオプランニング - 多面的な見方を獲得する方法2</title>
       <link>https://chumaltd.github.io/ja/scenario-planning/</link>
       <pubDate>Fri, 25 May 2012 12:07:59 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/scenario-planning/</guid>
-      <description>いま振り返ってみると、思い込みを克服するための習慣として一番効果的だったと感じられるのはシナリオプラ</description>
+      <description>&lt;p&gt;いま振り返ってみると、思い込みを克服するための習慣として一番効果的だったと感じられるのはシナリオプランニングという手法だ。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>法的思考のやわらかさ - 多面的な見方を獲得する方法1</title>
       <link>https://chumaltd.github.io/ja/flexibility-of-law-think/</link>
       <pubDate>Mon, 21 May 2012 09:31:00 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/flexibility-of-law-think/</guid>
-      <description>優れたビジネスマンの条件として、多面的に物事を見る柔軟な頭の使い方が欠かせないと思う。 常識とは違った</description>
+      <description>&lt;p&gt;優れたビジネスマンの条件として、多面的に物事を見る柔軟な頭の使い方が欠かせないと思う。&lt;/p&gt;&#xA;&lt;p&gt;常識とは違った物の見方がビジネス機会を生むし、逆に思い込みや一面的な見方は予想外のトラブルを生み出す。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>無視できない災害確率</title>
       <link>https://chumaltd.github.io/ja/disaster-probability/</link>
       <pubDate>Sat, 21 Apr 2012 07:56:21 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/disaster-probability/</guid>
-      <description>「首都直下地震試算:日本の財政、５年後７割の確率で破綻」（毎日jp, http://mainichi.jp/select/news/20120420k0000e040140000c.html ）という記事が興味深い。 最近、</description>
+      <description>&lt;p&gt;「首都直下地震試算:日本の財政、５年後７割の確率で破綻」（毎日jp, &#xA;&lt;a href=&#34;http://mainichi.jp/select/news/20120420k0000e040140000c.html&#34;&gt;http://mainichi.jp/select/news/20120420k0000e040140000c.html&lt;/a&gt; ）という記事が興味深い。&lt;/p&gt;&#xA;&lt;p&gt;最近、地震が起こる可能性に関する情報が増えているが、具体的な経済シナリオを提示したものはあまり見かけない。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>戦略分析・立案の良書</title>
       <link>https://chumaltd.github.io/ja/book-biz-strategies/</link>
       <pubDate>Wed, 18 Apr 2012 01:24:49 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/book-biz-strategies/</guid>
-      <description>戦略立案の分野で最終的に参考になっていると思うものをリストアップ。 シナリオ・プランニング 分析のフレー</description>
+      <description>&lt;p&gt;戦略立案の分野で最終的に参考になっていると思うものをリストアップ。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;シナリオ・プランニング&#xA;&lt;ul&gt;&#xA;&lt;li&gt;分析のフレームワークは多数あるが、どのツールを使う場合にも分析の進め方はシナリオ分析で場合分けしてから考えることが多い。戦略を考える際には最後の一兵として戦うシーンが多く、多人数でレビューするのと同じ効果を得たいからだと思われる。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;デコンストラクション経営革命&#xA;&lt;ul&gt;&#xA;&lt;li&gt;関係者が競争環境を理解していないことが多々あるため、周辺市場のバリューチェーン分析をすることは多い。ただ、この本がベストではない気もするが、といって良い本が思い浮かばない。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;コア・コンピタンス経営&#xA;&lt;ul&gt;&#xA;&lt;li&gt;未来の競争力を獲得するための考え方を学ぶ本。「選択と集中」をはじめ、この本が定義したコンセプトが誤用されているケースは多く、適切に理解するためには現物を読む必要がある。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;イノベーションのジレンマ&#xA;&lt;ul&gt;&#xA;&lt;li&gt;代替品の脅威を理解するための必読書。破壊的テクノロジーに直面した大企業のもろさは近年の日本メーカーが実例となっている。続編も出ているが、実際に活用するのは難しい。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;バランスト・スコア・カード&#xA;&lt;ul&gt;&#xA;&lt;li&gt;大企業の組織管理に活用されているため、知っておいても良いかもしれない。ただ、どこも消化不良になっている印象なので本質的に重要ではない可能性も。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>スマホWebの現実的ストレス緩和策</title>
       <link>https://chumaltd.github.io/ja/mitigate-smartphone-web-frustration/</link>
       <pubDate>Sun, 15 Apr 2012 11:37:51 +0000</pubDate>
-      
       <guid>https://chumaltd.github.io/ja/mitigate-smartphone-web-frustration/</guid>
-      <description>スマートフォンのキラーアプリは何と言ってもWebだろう。 ただスマホWebは、シンプルだが重大な課題を</description>
+      <description>&lt;p&gt;スマートフォンのキラーアプリは何と言ってもWebだろう。&lt;br&gt;&#xA;ただスマホWebは、シンプルだが重大な課題を積み残している。&lt;br&gt;&#xA;それは「まともに表示できるサイトが少ない」ということだ。&lt;br&gt;&#xA;スマホでWebを見る際に、ダブルタップしたりピンチ操作で拡大・縮小することは、当たり前の操作になってしまっている。&lt;br&gt;&#xA;現在のスマホWebは、PCサイトを虫眼鏡でのぞいているような状況と言える。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

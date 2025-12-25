@@ -8,8 +8,9 @@
 <title>Webフロー設計 | civilis</title>
 
 <meta name="theme-color" content="rgb(38, 29, 32)">
-<link rel='stylesheet' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block'>
 
+<link rel='preload' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block' as='style' onload='this.onload=null;this.rel="stylesheet"'>
+<link rel='preload' href='/lib/styles/tomorrow-night-bright.min.css' as='style' onload='this.onload=null;this.rel="stylesheet"'>
 <link rel='stylesheet' href='/lib/cm.css'>
 <link rel="stylesheet" href='/lib/base.css' />
 
@@ -20,7 +21,7 @@
 幅広い課題のうち、多要素認証(MFA)の要求は「堅牢なWebフローの実装」という古くて新しい問題を掘り起こした。
 技術サマリー 試行錯誤のすえ、HTMLとHTTPだけで …" />
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
-<link rel="canonical" href=https://chumaltd.github.io/ja/http-conditional-flow/ />
+<link rel="canonical" href="https://chumaltd.github.io/ja/http-conditional-flow/" />
 
 
     </head>
@@ -69,14 +70,20 @@
 </nav>
 <div class="coverart" style="
         background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
-      
       ">
 <main class="container-xl">
-    <div class="d-sm-flex" style="padding: calc(min(10vw, 1340px)) 0">
+    <div class="d-sm-flex"
+	   style="padding: calc(min(10vw, 1340px)) 0"
+	 >
     <div class="quarter hide-sm"></div>
-    <div id="pagetitle" class="three-quarter px-3">
+    <div
+	  id="pagetitle"
+	  class="three-quarter px-3"
+	>
 	<div class="mb-4">
-        <h1 class="idx py-5">
+        <h1
+	   class="idx py-5"
+	>
           Webフロー設計
         </h1><div style="text-align: right; font-weight: 600; font-style: italic">2025/12/23</div></div>
     </div>
@@ -150,7 +157,7 @@
 <p>
 <a href="/ja/javascript-transition/">Javascript開発の変遷</a>でブラウザ向けUI技術の動向に触れた。<br>
 4年半が経過したところで状況は旧態依然としており、UI技術の置換は当面起きない見通しと言える。ライブラリは林立したものの、結局のところコア機能がブラウザに実装されなければ生き残らないのではないか。</p>
-<p>JavascriptのUIライブラリはSPAなどのUI描画には使えることは分かっているのだが、認証フローに用いるとなるとセキュリティ強度の低下を許容できないような印象がある。<br>
+<p>JavascriptのUIライブラリはSPAなどのUI描画には使えることは分かっているのだが、認証フローに用いるとなるとセキュリティ強度の低下を許容できないような印象がある。cookieにも<code>HttpOnly</code>というオプションがあるとおり、まず<code>fetch()</code>を使うのかHTML formのPOSTに限定するのかという選択に壁がある。<br>
 先日、Next.jsに重大なセキュリティ欠陥CVE-2025-66478が発見されたとおり、クライアントサイドのJavascriptの厚みを増していくほどアタックサーフェスも増える。</p>
 <p>代替選択肢が確立するには、現時点では予想されていないような標準規格の追加が必要であり、極論すると永遠に白紙とも言える。<br>
 HTTPリダイレクトでフロー構築するという原始的な方式はまだまだ避けられないのではないか。</p>
@@ -169,12 +176,12 @@ Passkeyを統合する際に、また選択を迫られることになろう。<
 
 
 	<div class="my-4" style="text-align: right; font-style: italic">
-	<span>⁋ 2025/12/23</span><span class="mx-2">↻ 2025/12/24</span></div>
+	<span>⁋ 2025/12/23</span><span class="mx-2">↻ 2025/12/25</span></div>
       </article><div class="related_articles p-4">
             <h4 id="related" class="idx"></h4>
             
             
-<a href="/ja/http-conditional-flow/" class="compbox bordered py-2">
+<a href="/ja/http-conditional-flow/" class="compbox bordered py-3">
         <picture>
             <img src="/images/m84jrlxVUc1r9blbt.jpg">
         </picture>
@@ -184,7 +191,7 @@ Passkeyを統合する際に、また選択を迫られることになろう。<
 幅広い課題のうち、多要素認証(MFA)の要求は「堅牢なWebフローの …</div>
 	</div>
 </a>
-<a href="/ja/craft-router/" class="compbox bordered py-2">
+<a href="/ja/craft-router/" class="compbox bordered py-3">
         <picture>
             <img src="/images/m84jrlxVUc1r9blbt.jpg">
         </picture>
@@ -194,7 +201,7 @@ Passkeyを統合する際に、また選択を迫られることになろう。<
 LAN技術の流れ ルーターをクラフトするという方式は、そ …</div>
 	</div>
 </a>
-<a href="/ja/wol-ipv6-workaround/" class="compbox bordered py-2">
+<a href="/ja/wol-ipv6-workaround/" class="compbox bordered py-3">
         <picture>
             <img src="/images/m84jrlxVUc1r9blbt.jpg">
         </picture>
@@ -204,7 +211,7 @@ LAN技術の流れ ルーターをクラフトするという方式は、そ …
 デスクトップPCを最大限使うには、Wake on LANが欲しい。 …</div>
 	</div>
 </a>
-<a href="/ja/software-fragility/" class="compbox bordered py-2">
+<a href="/ja/software-fragility/" class="compbox bordered py-3">
         <picture>
             <img src="/images/m84jrlxVUc1r9blbt.jpg">
         </picture>
@@ -214,7 +221,7 @@ LAN技術の流れ ルーターをクラフトするという方式は、そ …
 ソフトウェアの生存ルー …</div>
 	</div>
 </a>
-<a href="/ja/exclude-nodejs/" class="compbox bordered py-2">
+<a href="/ja/exclude-nodejs/" class="compbox bordered py-3">
         <picture>
             <img src="/images/m84jrlxVUc1r9blbt.jpg">
         </picture>
@@ -238,6 +245,8 @@ LAN技術の流れ ルーターをクラフトするという方式は、そ …
           
       </div>
   </div>
-</footer><script type="module" src='/lib/cm.js' ></script>
+</footer>
+<script src='/lib/highlight.min.js'></script><script>hljs.hilightAll();</script>
+<script type="module" src='/lib/cm.js' ></script>
 </body>
 </html>
