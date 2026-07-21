@@ -17,13 +17,13 @@
 <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/ja/kubernetes-os/" />
 <meta property="og:title" content="KubernetesというOS" />
-<meta property="og:description" content=" kubernetesが OSの機能を取り揃えつつある。
-OSは多義的な用語で、立場によって欠かせない機能が変わる。ソフトウェアやエンジニアから見るときにはCPUやRAM、ディスクといったハードを制御する機能が重要で、kubernetesの設定を通じてリクエストしているのであればkubernetes …" />
+<meta property="og:description" content=" kubernetes が OS の機能を取り揃えつつある。
+OSは多義的な用語で、立場によって欠かせない機能が変わる。ソフトウェアやエンジニアから見るときにはCPUやRAM、ディスクといったハードを制御する機能が重要で、kubernetesの設定を通じてリクエストしているのであれば …" />
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
 <link rel="canonical" href="https://chumaltd.github.io/ja/kubernetes-os/" />
 <style> :root { --body-font-size: 16px }</style>
 
-<link rel="alternate" hreflang="en" href="https://chumaltd.github.io/en/kubernetes-os/" />
+<link rel="alternate" hreflang="en" href="https://chumaltd.github.io/en/kubernetes-os/" /><link rel="alternate" hreflang="ja" href="https://chumaltd.github.io/ja/kubernetes-os/" />
     </head>
     <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
   <section class="container-xl d-flex" style="width: 100%">
@@ -91,7 +91,7 @@ OSは多義的な用語で、立場によって欠かせない機能が変わる
   <div class="d-sm-flex">
     <nav class="quarter layered">
         <nav class="mb-3 px-5 py-4">
-            <a href="/en/kubernetes-os/" class="mx-4">English</a></nav><aside class="toc sticky" style="position: sticky; top: 3em">
+            <a href="/en/kubernetes-os/" rel="alternate" hreflang="en" class="mx-4">English</a></nav><aside class="toc sticky" style="position: sticky; top: 3em">
         <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;KubernetesというOS</div>
         <nav id="TableOfContents">
   <ul>
@@ -119,8 +119,14 @@ OSは多義的な用語で、立場によって欠かせない機能が変わる
     <div id="content" class="three-quarter">
       <article>
         <p>
-<a href="https://en.wikipedia.org/wiki/Kubernetes">kubernetes</a>が
-<a href="https://en.wikipedia.org/wiki/Operating_system">OS</a>の機能を取り揃えつつある。<br>
+<a href="https://en.wikipedia.org/wiki/Kubernetes"
+   
+>kubernetes</a>
+が
+<a href="https://en.wikipedia.org/wiki/Operating_system"
+   
+>OS</a>
+の機能を取り揃えつつある。<br>
 OSは多義的な用語で、立場によって欠かせない機能が変わる。ソフトウェアやエンジニアから見るときにはCPUやRAM、ディスクといったハードを制御する機能が重要で、kubernetesの設定を通じてリクエストしているのであればkubernetesがOSと言える。</p>
 <h2 id="サーバーosとして確立">サーバーOSとして確立</h2>
 <p>2024年現在、広く使われているOSにはWindows・MacOS・Linuxがある。LinuxにはAndroidなどの派生OSが無数にある。<br>
@@ -137,12 +143,24 @@ Googleがkubernetesを猛烈な勢いで開発した結果、kubernetesがクリ
 <h2 id="linuxに寄生して進化">Linuxに寄生して進化</h2>
 <p>kubernetesはLinux上に実装されており、多くの機能がLinuxそのものである。<br>
 Linuxは
-<a href="https://en.wikipedia.org/wiki/Unix">Unix</a>のバリアントであり、その地盤を置きかえて統一してきた歴史を考慮に入れると、長い目で見ればkubernetesはUnixの進化した姿である。</p>
+<a href="https://en.wikipedia.org/wiki/Unix"
+   
+>Unix</a>
+のバリアントであり、その地盤を置きかえて統一してきた歴史を考慮に入れると、長い目で見ればkubernetesはUnixの進化した姿である。</p>
 <p>LinuxはUnixの
-<a href="https://en.wikipedia.org/wiki/Init">init</a>を
-<a href="https://en.wikipedia.org/wiki/Systemd">systemd</a>に置き換えてきたが、kubernetesは独自のプログラム起動方式を提供しており、たがいに別のOSに分岐している。</p>
+<a href="https://en.wikipedia.org/wiki/Init"
+   
+>init</a>
+を
+<a href="https://en.wikipedia.org/wiki/Systemd"
+   
+>systemd</a>
+に置き換えてきたが、kubernetesは独自のプログラム起動方式を提供しており、たがいに別のOSに分岐している。</p>
 <p>かつて
-<a href="https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy">GNU/Linux</a>という名称論争があり、エンジニア視点では妥当でもあった。そう考えると、GNU/Linux/kubernetesと認識した方が的確だろう。</p>
+<a href="https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy"
+   
+>GNU/Linux</a>
+という名称論争があり、エンジニア視点では妥当でもあった。そう考えると、GNU/Linux/kubernetesと認識した方が的確だろう。</p>
 <p>たとえばいまkubernetesのLingua francaは、Unixから相変わらず<a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a>である。<br>
 オープンソースはプロプライエタリな商用ソフトウェアにくらべて複製機会が格段に高く、進化するOSにミトコンドリアのような共生器官を供給している。</p>
 <h3 id="windowsやmacとは互換性がない">WindowsやMacとは互換性がない</h3>
@@ -150,7 +168,10 @@ Linuxは
 kubernetesは意図的にLinuxを内包しているため、WindowsやMacとの互換性は低い。</p>
 <p>低いと言ってもWindowsやMac向けのツールも存在しており、基本的な動作はツールが保証しようとするだろう。<br>
 ただしLinuxを
-<a href="https://en.wikipedia.org/wiki/Virtual_machine">VM</a>で提供する必要上、マトリョーシカのような構造になる。このアーキテクチャは、内部ネットワークやPC上のファイルシステムを利用したい場合に問題が起きやすい。</p>
+<a href="https://en.wikipedia.org/wiki/Virtual_machine"
+   
+>VM</a>
+で提供する必要上、マトリョーシカのような構造になる。このアーキテクチャは、内部ネットワークやPC上のファイルシステムを利用したい場合に問題が起きやすい。</p>
 <p>WindowsやMacOS上のLinuxVMで起きるトラブルには、おそらく生産的な解決方法はない。</p>
 <p>2010年代にはエンジニア向けのPCとしてMacが流行っていて、僕も当時はMacbook Airを使っていた。<br>
 当初はUnixのツールチェインがそこそこ統合されていたことで足りていたが、やがてコンテナ技術が重要になり不可解なトラブルが増えたことからMacは完全に捨てた。</p>
@@ -172,7 +193,10 @@ Linuxディストリビューション上で素朴に動作しないLinuxアプ�
 <p>パッケージ管理は、複数ツールを使い分けるより統一した方が手間が減ることは間違いないが、いまやツールが白旗を挙げ始めている。</p>
 <h3 id="kubernetesアプリは可能まだ簡潔とは言えない">kubernetesアプリは可能。まだ簡潔とは言えない</h3>
 <p>Pythonパッケージ管理の限界を見て、じっさいにkubernetes上のパッケージを作成してみた。セットアッププロセスが長いため、
-<a href="https://tekton.dev/">Tekton</a>のPipelineを実装した。</p>
+<a href="https://tekton.dev/"
+   
+>Tekton</a>
+のPipelineを実装した。</p>
 <p>このケースではすでにサーバー上で動作実績のあるPipelineを開発向けにカスタマイズした経緯もあり、初回からトラブルなく動作した。<br>
 コンテナイメージはホストOSから隔離されており、このイメージではpipを用いた素朴なグローバルインストール方式を利用した。pipなどプログラミング言語が提供するパッケージ管理ツールを直接利用するとトラブルが少ない。</p>
 <p>また、サーバー向けのイメージを流用できていることが示すとおり、コンテナイメージはハードを換えてもそのまま動作する。一度イメージをビルドしたなら、従来のようなインストール手順は丸ごと無くなる。<br>
@@ -186,8 +210,14 @@ Linuxディストリビューション上で素朴に動作しないLinuxアプ�
 これはYAMLの限界であり、いずれkubernetesのマニフェストフォーマットの拡張により解決する問題なのだろう。ただ現状はこの分野には焦点が当たっておらず、登場来まったく進展はない。</p>
 <p>また、Linuxアプリケーションと同様に利用する場合、コマンドラインオプションを指定する必要に迫られることが多い。この場合、コンテナ内のスクリプトに変数を定義し、何らかの方法で環境から注入する必要がある。<br>
 Tektonには
-<a href="https://tekton.dev/docs/pipelines/pipelines/#using-variable-substitution">variable substitution</a>があり、CLIのtknから指定できる。これはこれで機能するが、tknには長大なパラメータを指定することになるため
-<a href="https://github.com/chumaltd/tkn-runner">tkn-runner</a>というラッパースクリプトを作った。</p>
+<a href="https://tekton.dev/docs/pipelines/pipelines/#using-variable-substitution"
+   
+>variable substitution</a>
+があり、CLIのtknから指定できる。これはこれで機能するが、tknには長大なパラメータを指定することになるため
+<a href="https://github.com/chumaltd/tkn-runner"
+   
+>tkn-runner</a>
+というラッパースクリプトを作った。</p>
 <p>今後、コンテナをホストOSから直接する用途のツール登場してくることを期待している。<br>
 コンテナのインターフェースは大きく変わらないだろうから、いま作ったものも将来とくに支障なく使えるだろう。</p>
 <h2 id="サイロをクラフトする時代">サイロをクラフトする時代</h2>
@@ -250,8 +280,8 @@ LAN技術の流れ ルーターをクラフトするという方式は、そ …
         </picture>
         <div>
             <div class="h4 idx mb-2" href="/ja/exclude-nodejs/">Node.jsを完全に除去している</div>
-            <div class="f6"> 脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
-開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することと …</div>
+            <div class="f6"> 脱Node.js に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
+開発プロセスに支障が出たため、これらもnodeを使わない方式に変更すること …</div>
 	</div>
 </a>
 

@@ -19,12 +19,12 @@
 <meta property="og:title" content="IPv6移行" />
 <meta property="og:description" content="インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、IP層には技術的なトラブルや関心はあまり存在しないだろう。
 課題は、IPv4とIPv6が併存するデュアルスタックを長期間サポートせざるを得ない点にある。
-IPv4枯渇の公式宣言は2011年からスタートしている。 …" />
+IPv4枯渇 の公式宣言は2011年からスタートしている …" />
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
 <link rel="canonical" href="https://chumaltd.github.io/ja/ipv6-transition/" />
 <style> :root { --body-font-size: 16px }</style>
 
-<link rel="alternate" hreflang="en" href="https://chumaltd.github.io/en/ipv6-transition/" />
+<link rel="alternate" hreflang="ja" href="https://chumaltd.github.io/ja/ipv6-transition/" /><link rel="alternate" hreflang="en" href="https://chumaltd.github.io/en/ipv6-transition/" />
     </head>
     <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
   <section class="container-xl d-flex" style="width: 100%">
@@ -92,7 +92,7 @@ IPv4枯渇の公式宣言は2011年からスタートしている。 …" />
   <div class="d-sm-flex">
     <nav class="quarter layered">
         <nav class="mb-3 px-5 py-4">
-            <a href="/en/ipv6-transition/" class="mx-4">English</a></nav><aside class="toc sticky" style="position: sticky; top: 3em">
+            <a href="/en/ipv6-transition/" rel="alternate" hreflang="en" class="mx-4">English</a></nav><aside class="toc sticky" style="position: sticky; top: 3em">
         <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;IPv6移行</div>
         <nav id="TableOfContents">
   <ul>
@@ -118,14 +118,20 @@ IPv4枯渇の公式宣言は2011年からスタートしている。 …" />
         <p>インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、IP層には技術的なトラブルや関心はあまり存在しないだろう。<br>
 課題は、IPv4とIPv6が併存するデュアルスタックを長期間サポートせざるを得ない点にある。</p>
 <p>
-<a href="https://en.wikipedia.org/wiki/IPv4_address_exhaustion">IPv4枯渇</a>の公式宣言は2011年からスタートしている。モバイルインターネットは成長を続けており、新たに接続するデバイスはIPv6の比率が高まっていく。</p>
+<a href="https://en.wikipedia.org/wiki/IPv4_address_exhaustion"
+   
+>IPv4枯渇</a>
+の公式宣言は2011年からスタートしている。モバイルインターネットは成長を続けており、新たに接続するデバイスはIPv6の比率が高まっていく。</p>
 <p>IPv6を導入することの技術障壁は実はあまりない一方で、当面はIPv4をデフォルト設定としている機器が多く、意識して設定しないとIPv6に切り替わらない。<br>
 導入よりも移行の方がトラブルが多いため、可能なら最初からIPv6を選択したい。</p>
 <h2 id="アクセス網のipv6切り替え">アクセス網のIPv6切り替え</h2>
 <p>インターネットに接続する拠点のネットワークは、アクセス網のサービス商品選択で決まる。</p>
 <p>日本の場合、家やオフィスと回線接続するNTTが、2011年頃から光ファイバーアクセス商品のネットワーク層をIPv6に切り替えており、該当サービスに加入した拠点がIPv6アクセスになる。<br>
 日本のブロードバンド回線は、2002年頃に
-<a href="https://en.wikipedia.org/wiki/ADSL">ADSL</a>が急速に普及し、2005年頃から光ファイバーに切り替わってきた。初期から加入してきた回線では、おおむね3世代目の回線変更でIPv4からIPv6へ切り替わったのではないか。</p>
+<a href="https://en.wikipedia.org/wiki/ADSL"
+   
+>ADSL</a>
+が急速に普及し、2005年頃から光ファイバーに切り替わってきた。初期から加入してきた回線では、おおむね3世代目の回線変更でIPv4からIPv6へ切り替わったのではないか。</p>
 <p>アクセス網の典型的なトラブルは、IPv4 over IPv6トンネルの実装から来る。</p>
 <p>IPv4とIPv6は併存していたとしても完全に独立したネットワークであるため、アクセス網がIPv6ネイティブになるとIPv4のサービスには接続できない。<br>
 IPv4 over IPv6サービスを追加することでIPv4ネットワークにアクセス可能になるが、いくつかの方式が並立しておりプロバイダ事業者ごとに採用方式が異なる。結局のところIPv4 over IPv6トンネルのうち契約している方式をサポートするルーターが必須と言える。</p>
@@ -137,13 +143,19 @@ IPv4 over IPv6サービスを追加することでIPv4ネットワークにア�
 IPv4接続プロバイダの時代にはルーターは1台しか接続できなかったのだが、IPv6ではスイッチングハブ経由で複数のルーターを接続できることも多い。そこで今回の移行では、IPv4アクセスしないネットワークを企業向けのルータで併設する構成をとった。</p>
 <h3 id="アドレス設定は複数方式が併存する">アドレス設定は複数方式が併存する</h3>
 <p>IPv4時代にはIPアドレスの割当てはDHCPを用いてきた。おそらくIPv6では
-<a href="https://en.wikipedia.org/wiki/DHCPv6">DHCPv6</a>と<a href="https://en.wikipedia.org/wiki/IPv6_address#Stateless_address_autoconfiguration_(SLAAC)">SLAAC</a>が併存する。<br>
+<a href="https://en.wikipedia.org/wiki/DHCPv6"
+   
+>DHCPv6</a>
+と<a href="https://en.wikipedia.org/wiki/IPv6_address#Stateless_address_autoconfiguration_(SLAAC)">SLAAC</a>が併存する。<br>
 IPv6の規格はSLAACで、潤沢なアドレス空間を生かして各端末がアドレスを自ら決める。DHCPv6はルーターなどの管理機器が決めて配布する。</p>
 <p>DHCPv6を採用したいプラットフォームは、WindowsやVoIP機器などだ。要するにLAN管理者が集中管理したい用途ではアドレスも集中的に生成して追跡したい事情がある。一方、端末が移動するモバイル機器は、単一のルーターで集中管理し切れないシーンがあるためSLAACが適している。</p>
 <p>よって、IPv6ネットワークの管理方式は規格間の競争ではなく両方生き残るだろう。ネットワーク機器は両方式を同時にサポートできる必要がある。</p>
 <h3 id="ルーターを自作するのも一手">ルーターを自作するのも一手</h3>
 <p>一般的な方法とは言えないものの、アクセス網に必要な機能をカバーしようと思ったら、
-<a href="/ja/craft-router/">ルーターを自作</a>すべきかもしれないと考えている。</p>
+<a href="/ja/craft-router/"
+   
+>ルーターを自作</a>
+すべきかもしれないと考えている。</p>
 <p>後述のとおり、kubernetesのIP網を整備するとルーターを作っているのとほとんど同じ工程をたどる。<br>
 また、法人ルーター機器の機能不足が目立っていることや、ARMの進歩によってハードだけはコモディティ化が進んでいることも既製品の相対的な陳腐化の要因と言える。</p>
 <p>従来はネットワーク機器を買うことがセキュリティ確保に役立ってきたが、今は既製品のセキュリティ品質が相当疑わしいという問題も大きい。
@@ -161,7 +173,10 @@ IPv6切り替え時にトラブルが起きるとIPv6に技術面の問題があ
 <p>IPv6の挙動は個別のアプリケーションにより異なるため一概には言えない。じっさいにIPv6ネットワークへのルートが存在するだけでIPv4アクセスを排除する挙動のCLIがあり、作業ペースを想定どおりに進められない可能性を感じている。</p>
 <p>中にはIPv6では動作しないソフトウェアもあり得る。<br>
 IPv4は今後時間をかけてコストが増えていく可能性があり、また
-<a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT</a>設定が事実上ロストテクノロジーになることも考えられるため、IPv6互換性のないソフトウェアを特定しておくことは継続性に関わる。</p>
+<a href="https://en.wikipedia.org/wiki/Network_address_translation"
+   
+>NAT</a>
+設定が事実上ロストテクノロジーになることも考えられるため、IPv6互換性のないソフトウェアを特定しておくことは継続性に関わる。</p>
 <h3 id="localhostの挙動が安定しない">localhostの挙動が安定しない</h3>
 <p>IPv6移行の際、開発用マシン1台の上にネットワーク構成をとるサービスはトラブルが頻発しやすい。</p>
 <p>1台構成の多くの場合、各ソフトウェアは<code>localhost</code>というホストで動作する。<code>localhost</code>は典型的にはIPv4では<code>127.0.0.1</code>、IPv6では<code>::1</code>というIPを指している。</p>
@@ -177,7 +192,10 @@ IPv4は今後時間をかけてコストが増えていく可能性があり、�
 2024年現在では、どうやらIPv6ネットワークを選択するエンジニアの割合が少ないため、最初から動作するパッケージに仕上がっておらず、適切な構成を試行錯誤する展開になりやすい。</p>
 <p>異なる3台のハード上で同一構成のk3sを実行しているが、そのうちの1台だけIPv6の通信エラーが起きている。コンテナ間通信と外部へのリクエストのいずれもエラーになることから、おそらくCPUとホストkernelの特定の組み合わせで生じるバグなのだろう。</p>
 <p>また、
-<a href="https://github.com/kubernetes/kubernetes/issues/101324">Pod readiness probe cannot be directed at specific IP family</a>の議論がクローズするまでは、probeの<code>httpGet</code>などが暗黙のうちにIPv4ポートをチェックするという制約がある。<br>
+<a href="https://github.com/kubernetes/kubernetes/issues/101324"
+   
+>Pod readiness probe cannot be directed at specific IP family</a>
+の議論がクローズするまでは、probeの<code>httpGet</code>などが暗黙のうちにIPv4ポートをチェックするという制約がある。<br>
 対象サービスがIPv6しかlistenしない場合には素朴に実装できず、コンテナ内で<code>curl --fail http://[::1]:80</code>などを実行するしかない。</p>
 <p>仮想ネットワークはOS単体のネットワーク構成よりもはるかに複雑であり、またLinuxのネットワーク実装が従来のiptablesを捨てつつある過渡期ということもあって、初回のセットアップには手間をかける必要があるだろう。</p>
 <p>ここ10年のうちに書籍出版がすっかり衰退してしまったため体系的な情報源へのアクセスにも難がある。総合的な知見の乏しさが仇となり、IPv6ネットワーク構築のトラブルシューティングは難易度が高い。</p>
@@ -240,8 +258,8 @@ LAN技術の流れ ルーターをクラフトするという方式は、そ …
         </picture>
         <div>
             <div class="h4 idx mb-2" href="/ja/exclude-nodejs/">Node.jsを完全に除去している</div>
-            <div class="f6"> 脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
-開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することと …</div>
+            <div class="f6"> 脱Node.js に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
+開発プロセスに支障が出たため、これらもnodeを使わない方式に変更すること …</div>
 	</div>
 </a>
 

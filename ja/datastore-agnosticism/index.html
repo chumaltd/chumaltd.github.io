@@ -17,8 +17,8 @@
 <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/ja/datastore-agnosticism/" />
 <meta property="og:title" content="不可知なデータストア" />
-<meta property="og:description" content=" PostgreSQLは人類でもっとも重要なソフトウェア資産のひとつだ。データセットのごく一部を素朴に抽出するような検索用途には RDBMSが適していて、おそらくRDBMS製品はPostgreSQLに収斂して差し支えない。
-PostgreSQLは毎年新版をリリースしており、それに合わせて稼働中のシス …" />
+<meta property="og:description" content=" PostgreSQL は人類でもっとも重要なソフトウェア資産のひとつだ。データセットのごく一部を素朴に抽出するような検索用途には RDBMS が適していて、おそらくRDBMS製品はPostgreSQLに収斂して差し支えない。
+PostgreSQLは毎年新版をリリースしており、それに合わせて稼働中の …" />
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
 <link rel="canonical" href="https://chumaltd.github.io/ja/datastore-agnosticism/" />
 <style> :root { --body-font-size: 16px }</style>
@@ -111,8 +111,14 @@ PostgreSQLは毎年新版をリリースしており、それに合わせて稼�
     <div id="content" class="three-quarter">
       <article>
         <p>
-<a href="https://www.postgresql.org/">PostgreSQL</a>は人類でもっとも重要なソフトウェア資産のひとつだ。データセットのごく一部を素朴に抽出するような検索用途には
-<a href="https://en.wikipedia.org/wiki/Relational_database">RDBMS</a>が適していて、おそらくRDBMS製品はPostgreSQLに収斂して差し支えない。</p>
+<a href="https://www.postgresql.org/"
+   
+>PostgreSQL</a>
+は人類でもっとも重要なソフトウェア資産のひとつだ。データセットのごく一部を素朴に抽出するような検索用途には
+<a href="https://en.wikipedia.org/wiki/Relational_database"
+   
+>RDBMS</a>
+が適していて、おそらくRDBMS製品はPostgreSQLに収斂して差し支えない。</p>
 <p>PostgreSQLは毎年新版をリリースしており、それに合わせて稼働中のシステムも年に一度のバージョンアップ作業を行う。<br>
 これが難しい。</p>
 <p>これまでに多くのデータベースを更新してきて失敗したことは一度もない。失敗しないように確証を得るプロセスに手間をかけているからだ。失敗しないのは当然であり、検証が進歩せず一切手軽になってこないことに課題意識を持つようになった。</p>
@@ -120,13 +126,19 @@ PostgreSQLは毎年新版をリリースしており、それに合わせて稼�
 話の見通しを良くするためにポイントを述べると、データストアの挙動はあらかじめ知り得ない要素が多く、自明な挙動を組み合わせるアプローチによって安全性を証明する方法がとれないのだと思う。</p>
 <h2 id="デッドコピー以外の同一性を評価する手段がない">デッドコピー以外の同一性を評価する手段がない</h2>
 <p>PostgreSQLのアップグレードの例では、
-<a href="https://www.postgresql.jp/document/16/html/pgupgrade.html">pg_upgrade</a>というツールを手動で実行する。この際、サービスを停止する必要がある。</p>
+<a href="https://www.postgresql.jp/document/16/html/pgupgrade.html"
+   
+>pg_upgrade</a>
+というツールを手動で実行する。この際、サービスを停止する必要がある。</p>
 <p>データストアの場合、ディスク上のファイルが実体である。<code>pg_upgrade</code>は旧バージョンのファイルをチェックして、新バージョンのファイルを新たに生成する。<br>
 マニュアルを確認して改めて気づいたのだが、<code>pg_upgrade</code>はデータベースのファイル群をデッドコピーしている。あるいはコピーすらせず元のファイルをそのまま流用する<code>--link</code>オプションもある。</p>
 <p>デッドコピー以外の方法となると、一度別のファイル形式にダンプしたうえでリストアする方式が必要になる。しかし、この方式をPostgreSQLは強く避けている。<br>
 デッドコピーの同一性をチェックサムなどで検証する方法は普及しているが、ファイル変換を経た場合には一般的な確証が得られないからだろう。</p>
 <p>ファイル変換時に求められる同一性は、
-<a href="https://ja.wikipedia.org/wiki/%E9%87%8F%E5%AD%90%E3%83%86%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">量子テレポーテーション</a>と似た性質を持つ。<br>
+<a href="https://ja.wikipedia.org/wiki/%E9%87%8F%E5%AD%90%E3%83%86%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3"
+   
+>量子テレポーテーション</a>
+と似た性質を持つ。<br>
 同一であることが中心テーマだが、それを構成するアトミックな要素に還元すると同一でないことも自明なのだ。</p>
 <h3 id="ソフトウェアテストとは対照的">ソフトウェアテストとは対照的</h3>
 <p>「移行の際の手間を減らし、安全性を高める」と主張するとき、念頭にあるのはソフトウェア・テストだ。<br>
@@ -143,7 +155,10 @@ PostgreSQLは毎年新版をリリースしており、それに合わせて稼�
 <p>RDBMSは普及したデータストアだが、あらゆる用途をカバーできるわけではない。<br>
 データウェアハウスのような分析、とくにデータをフルスキャンすべき用途には適していない。</p>
 <p>バルクデータの分析用途には
-<a href="https://ja.wikipedia.org/wiki/%E5%88%97%E6%8C%87%E5%90%91%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0">カラムナデータベース</a>が必要になる。<br>
+<a href="https://ja.wikipedia.org/wiki/%E5%88%97%E6%8C%87%E5%90%91%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0"
+   
+>カラムナデータベース</a>
+が必要になる。<br>
 2024年現在、PostgreSQLに匹敵するような確立したカラムナDBが存在しておらず、まだ実装が乱立している段階と見ている。</p>
 <p>各プロダクトが将来にわたって存続しない可能性が高いことから、移行手段を確保しておくことが課題になる。<br>
 これまで利用してきたプロダクトのデータをエクスポートして、別のプロダクトにインポートすることで同じ用途に使いたい。</p>
@@ -154,7 +169,10 @@ PostgreSQLは毎年新版をリリースしており、それに合わせて稼�
 <h3 id="olapもpostgresqlが有望か">OLAPもPostgreSQLが有望か</h3>
 <p>分析用途のデータストアについては先行きは不透明だ。</p>
 <p>
-<a href="https://en.wikipedia.org/wiki/Apache_Parquet">Parquet</a>形式のツールがおおむね高速に動作していることから、コンパクトで堅牢なカラムナデータベースでありさえすれば目的を満たすのだろう。<br>
+<a href="https://en.wikipedia.org/wiki/Apache_Parquet"
+   
+>Parquet</a>
+形式のツールがおおむね高速に動作していることから、コンパクトで堅牢なカラムナデータベースでありさえすれば目的を満たすのだろう。<br>
 インターフェースはSQLが有望だとすると、PostgreSQLのカラムナストレージ・プラグインが有力であるように思う。</p>
 <p>この分野のキラーアプリケーションはWebアクセス解析だろう。GoogleAnalyticsがEU法制の規制を受けて縮退したことから、セルフホストのニーズが潜在している。</p>
 <p>Webアクセス解析のオープンソースはClickhouseのフロントエンドが多く、じっさいに導入してみた結果としてClickhouseの品質が良くなかった。<br>
@@ -168,7 +186,10 @@ RDBMSはワークメモリの設定によりフットプリントを変更でき
 <p>PostgreSQLについては<code>pg_upgrade</code>による保護の恩恵を受けているが、それ以上に作業全体の適切さを検証する方法を持っていない。<br>
 また、移行作業はサービス停止を伴うため、<code>pg_upgrade</code>が完了しだい早急にデータベース起動することを迫られる。網羅的に確認する時間の猶予もあまりないままに、新たに書き込みが発生するような環境なのだ。</p>
 <p>物理的変換を伴うデータの一部、
-<a href="https://en.wikipedia.org/wiki/Signified_and_signifier">言語学のシニフィエ</a>の同一性を数学的に裏づけるロジックは存在するのではないかと思う。<br>
+<a href="https://en.wikipedia.org/wiki/Signified_and_signifier"
+   
+>言語学のシニフィエ</a>
+の同一性を数学的に裏づけるロジックは存在するのではないかと思う。<br>
 サンプリングで部分的な適切さを証明できるアプローチであっても漸進できるはずだ。</p>
 
 
@@ -224,8 +245,8 @@ LAN技術の流れ ルーターをクラフトするという方式は、そ …
         </picture>
         <div>
             <div class="h4 idx mb-2" href="/ja/exclude-nodejs/">Node.jsを完全に除去している</div>
-            <div class="f6"> 脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
-開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することと …</div>
+            <div class="f6"> 脱Node.js に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
+開発プロセスに支障が出たため、これらもnodeを使わない方式に変更すること …</div>
 	</div>
 </a>
 

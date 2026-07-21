@@ -18,10 +18,10 @@
 <meta property="og:url" content="https://chumaltd.github.io/ja/public-libraries/" />
 <meta property="og:title" content="コードであるべき法律" />
 <meta property="og:description" content="必要上、Rubyで税額計算するライブラリを書いている。また、オープンソースで配布している。
-まずは 年末調整のコードの例を見て欲しい。
+まずは 年末調整のコード の例を見て欲しい。
 初見で気づいて欲しいポイントとして、かなり日本語で書いてある。
 これは実際に動作するし、すでに使っている。いま年次の給与支払報告書を提出したところだ。
-論旨を明確に …" />
+論旨を明確 …" />
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
 <link rel="canonical" href="https://chumaltd.github.io/ja/public-libraries/" />
 <style> :root { --body-font-size: 16px }</style>
@@ -107,12 +107,18 @@
       <article>
         <p>必要上、Rubyで税額計算するライブラリを書いている。また、オープンソースで配布している。<br>
 まずは
-<a href="https://github.com/chumaltd/jp-national-tax/blob/master/lib/jp_national_tax/income_tax/income_nenmatsu_2020.rb">年末調整のコード</a>の例を見て欲しい。</p>
+<a href="https://github.com/chumaltd/jp-national-tax/blob/master/lib/jp_national_tax/income_tax/income_nenmatsu_2020.rb"
+   
+>年末調整のコード</a>
+の例を見て欲しい。</p>
 <p>初見で気づいて欲しいポイントとして、かなり日本語で書いてある。<br>
 これは実際に動作するし、すでに使っている。いま年次の給与支払報告書を提出したところだ。</p>
 <p>論旨を明確にすると、このライブラリが国税庁とユーザーコミュニティ(普通の人々)から提供される社会にならなくてはならないと考えている。<br>
 現状は、
-<a href="https://www.nta.go.jp/publication/pamph/gensen/nencho2020/pdf/82-83.pdf">パンフレット</a>として提供され、毎年紙で送られてくる。<br>
+<a href="https://www.nta.go.jp/publication/pamph/gensen/nencho2020/pdf/82-83.pdf"
+   
+>パンフレット</a>
+として提供され、毎年紙で送られてくる。<br>
 なお、役所の公式情報はどんどん消えていくため、いずれリンク切れになるだろう。</p>
 <h2 id="実現のハードルなど存在しない">実現のハードルなど存在しない</h2>
 <p>コードはもちろんプログラミング言語であり、難しいスキルと捉えられていることが多い。<br>
@@ -129,7 +135,10 @@
 日本は歴史に残るほどに年々国債を積みあげていっているのだから、そんな徒労は本来許されない。</p>
 <p>また、多少事情の異なるムダとして、計算ロジックのデザインが悪い。<br>
 実は、年末調整の計算のうち、ひとまず実装をあきらめた部分がある。分かりやすいのは、
-<a href="https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/gensen/pdf/1648_73_r02.pdf">基礎控除申告書</a>に掲載されている配偶者控除の計算だろう。<br>
+<a href="https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/gensen/pdf/1648_73_r02.pdf"
+   
+>基礎控除申告書</a>
+に掲載されている配偶者控除の計算だろう。<br>
 このリンクもいずれ消えてしまうだろうが、年々複雑になって同じフォーマットが登場し続けることだろう。</p>
 <p>配偶者控除は、本人の収入、配偶者の収入、配偶者の年齢という3つの入力値がないと計算できない。<br>
 もはや、このあたりはパンフレットも一切の説明を投げてしまっていて、表から読んでくれということになっている。<br>
@@ -200,8 +209,8 @@ LAN技術の流れ ルーターをクラフトするという方式は、そ …
         </picture>
         <div>
             <div class="h4 idx mb-2" href="/ja/exclude-nodejs/">Node.jsを完全に除去している</div>
-            <div class="f6"> 脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
-開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することと …</div>
+            <div class="f6"> 脱Node.js に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
+開発プロセスに支障が出たため、これらもnodeを使わない方式に変更すること …</div>
 	</div>
 </a>
 

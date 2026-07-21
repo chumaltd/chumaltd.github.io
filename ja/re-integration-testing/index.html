@@ -17,9 +17,9 @@
 <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/ja/re-integration-testing/" />
 <meta property="og:title" content="再インテグレーションテスト" />
-<meta property="og:description" content="Webサービスの品質管理の主役として、 2年前にe2eテストを導入して引き続き機能している。
-Ruby on Railsを作ったDHHが システムテストの限界を書いていて、フレーキーであるという指摘はその通りだ。
-じっさいにテストしていて、テストツールのSeleniumやChromeブラウザの動作を …" />
+<meta property="og:description" content="Webサービスの品質管理の主役として、 2年前にe2eテストを導入 して引き続き機能している。
+Ruby on Railsを作ったDHHが システムテストの限界を書いていて 、フレーキーであるという指摘はその通りだ。
+じっさいにテストしていて、テストツールのSeleniumやChromeブラウザの動 …" />
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
 <link rel="canonical" href="https://chumaltd.github.io/ja/re-integration-testing/" />
 <style> :root { --body-font-size: 16px }</style>
@@ -109,9 +109,15 @@ Ruby on Railsを作ったDHHが システムテストの限界を書いていて
     <div id="content" class="three-quarter">
       <article>
         <p>Webサービスの品質管理の主役として、
-<a href="/ja/e2e-web-testing/">2年前にe2eテストを導入</a>して引き続き機能している。<br>
+<a href="/ja/e2e-web-testing/"
+   
+>2年前にe2eテストを導入</a>
+して引き続き機能している。<br>
 Ruby on Railsを作ったDHHが
-<a href="https://world.hey.com/dhh/system-tests-have-failed-d90af718">システムテストの限界を書いていて</a>、フレーキーであるという指摘はその通りだ。<br>
+<a href="https://world.hey.com/dhh/system-tests-have-failed-d90af718"
+   
+>システムテストの限界を書いていて</a>
+、フレーキーであるという指摘はその通りだ。<br>
 じっさいにテストしていて、テストツールのSeleniumやChromeブラウザの動作をテストしているような事象を見ることの方が多い。</p>
 <p>DHHが指摘している問題とは別の限界があることに気づき、数日かけて別のテスト方式を追加実装していた。<br>
 Webサービスは複雑度が上がってきたため、e2eではカバーしきれない状況になった。</p>
@@ -136,9 +142,15 @@ Webサービスは複雑度が上がってきたため、e2eではカバーし�
 <h2 id="denoの進化が大きい">denoの進化が大きい</h2>
 <p>Javascript言語はブラウザ上で動作するコードとサーバーで動作するコードの両方の用途をカバーしてはいるものの、長らく両者の互換性は低いままだった。</p>
 <p>サーバー用途はここまで
-<a href="https://nodejs.org/">Node.js</a>がデファクトスタンダードであり続けた。そして、npmなどの開発ツールはサーバーだけでなくブラウザコードも含めてNode.js準拠のものばかりだったため、ブラウザ向けコードもコンパイルしなければ動作しない状況が続いてきた。</p>
+<a href="https://nodejs.org/"
+   
+>Node.js</a>
+がデファクトスタンダードであり続けた。そして、npmなどの開発ツールはサーバーだけでなくブラウザコードも含めてNode.js準拠のものばかりだったため、ブラウザ向けコードもコンパイルしなければ動作しない状況が続いてきた。</p>
 <p>ECMAscriptとして標準仕様が改訂されていくなかで、いずれでもない新たな文法への統合が進んだ結果、ブラウザ向けの新規格コードが
-<a href="https://deno.com/">deno</a>サーバーでほぼ支障なく動作するところまで来た。</p>
+<a href="https://deno.com/"
+   
+>deno</a>
+サーバーでほぼ支障なく動作するところまで来た。</p>
 <p>今回インテグレーションテストを実際に書いてみるまで、「ブラウザコードがdeno上でそのまま動くのではないか」という憶測に半信半疑だった。これは過去何度もトライしてきたことで、エラーに直面して断念して来たからだ。</p>
 <p>決定打は、npm参照の安定性が大きく向上したことだろう。<br>
 denoはもともとnpmを排除したかったのだが、ライブラリ群が移行すべき新たなレジストリが定まらなかった。deno向けの新興レジストリがベンチャー企業として活動していたのだが、いずれも使いものにならないまま消えていった。<br>
@@ -220,8 +232,8 @@ LAN技術の流れ ルーターをクラフトするという方式は、そ …
         </picture>
         <div>
             <div class="h4 idx mb-2" href="/ja/exclude-nodejs/">Node.jsを完全に除去している</div>
-            <div class="f6"> 脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
-開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することと …</div>
+            <div class="f6"> 脱Node.js に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
+開発プロセスに支障が出たため、これらもnodeを使わない方式に変更すること …</div>
 	</div>
 </a>
 

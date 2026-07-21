@@ -17,9 +17,9 @@
 <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/ja/fake-technology2/" />
 <meta property="og:title" content="縮小均衡からの脱却" />
-<meta property="og:description" content=" Shepherd.jsを除去して driver.jsを再実装する作業を終えた。
+<meta property="og:description" content=" Shepherd.js を除去して driver.js を再実装する作業を終えた。
 これらはインタラクティブツアーを実装するソフトウェアライブラリであり、機能は著しく似かよっている。
-いずれかを選択して使えば良いものではあるのだが、じつはdriver.jsの方が圧倒的に優れている。これは両方実装した今 …" />
+いずれかを選択して使えば良いものではあるのだが、じつはdriver.jsの方が圧倒的に優れている。これは両方実装し …" />
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
 <link rel="canonical" href="https://chumaltd.github.io/ja/fake-technology2/" />
 <style> :root { --body-font-size: 16px }</style>
@@ -109,14 +109,23 @@
     <div id="content" class="three-quarter">
       <article>
         <p>
-<a href="https://shepherdjs.dev/">Shepherd.js</a>を除去して
-<a href="https://driverjs.com/">driver.js</a>を再実装する作業を終えた。<br>
+<a href="https://shepherdjs.dev/"
+   
+>Shepherd.js</a>
+を除去して
+<a href="https://driverjs.com/"
+   
+>driver.js</a>
+を再実装する作業を終えた。<br>
 これらはインタラクティブツアーを実装するソフトウェアライブラリであり、機能は著しく似かよっている。<br>
 いずれかを選択して使えば良いものではあるのだが、じつはdriver.jsの方が圧倒的に優れている。これは両方実装した今になって分かることだ。</p>
 <p>「選定段階に何か見落としがあったからdriver.jsではなくShepherd.jsを導入してしまったのだろう」と反省して評価プロセスを再点検してみたところ、想像とはまったく異なる構造を発見した。<br>
 要するに、混沌に対峙するには直観に反するメンタルモデルが不可欠だった。とくに能率指向がカオスへの耐性を直接削いでいる。</p>
 <p>この話は、昨年書いた
-<a href="/ja/fake-technology/">フェイク・テクノロジー</a>のエピソードと言える。<br>
+<a href="/ja/fake-technology/"
+   
+>フェイク・テクノロジー</a>
+のエピソードと言える。<br>
 状況は何も改善していないので、ケースの積み上げで前進するしかない。</p>
 <p>今回の例では、両者の決定的な違いは、Shepherd.jsがスマートデバイスの狭い画面で適切な位置に表示できない点だ。<br>
 解説する対象がポップアップの裏に回って見えなかったり、画面から見切れたりする。<br>
@@ -131,7 +140,10 @@ Shepherd.jsとdriver.jsの両方を用いて実装し、見比べたから気づ
 それは逆にdriver.jsからShepherd.jsに乗り換える選択を想像すれば理解できる。</p>
 <p>すでに動作している機能の実装にかけた過去の労力はとり返すことはできない。<br>
 
-<a href="https://en.wikipedia.org/wiki/Sunk_cost">サンクコスト</a>という。</p>
+<a href="https://en.wikipedia.org/wiki/Sunk_cost"
+   
+>サンクコスト</a>
+という。</p>
 <p>この問題を的確に扱うには、サンクコストの理解は欠かせない。<br>
 見通しのために説明は省略するが、過去の労力やコストを無かったものと捉え直し、無視することが判断のポイントだ。</p>
 <h3 id="損失認識の矛盾">損失認識の矛盾</h3>
@@ -151,15 +163,27 @@ Shepherd.jsとdriver.jsの両方を用いて実装し、見比べたから気づ
 <p>不確実性の研究から、人間は複数の観点で総合評価することが苦手であることが分かっている。<br>
 いくつかの観点を確認したという行動だけで「評価できた」と錯覚する挙動を satisfice と呼ぶ。多くのソフトウェア選定プロセスが satisfice に終わっていることだろう。</p>
 <p>オープンソースであるため、
-<a href="https://github.com/chumaltd/shepherd">shepherdのコード</a>と
-<a href="https://github.com/chumaltd/driver.js">driver.jsのコード</a>を見比べてみたのだが、コードからも優劣を導くことはできないという結論に至った。なお、リポジトリは後のリファレンスのためフォークした。</p>
+<a href="https://github.com/chumaltd/shepherd"
+   
+>shepherdのコード</a>
+と
+<a href="https://github.com/chumaltd/driver.js"
+   
+>driver.jsのコード</a>
+を見比べてみたのだが、コードからも優劣を導くことはできないという結論に至った。なお、リポジトリは後のリファレンスのためフォークした。</p>
 <p>多くのエンジニアは、Shepherdのコードの方が品質が高い印象を受けるのではないかと思う。コード構成が現時点で人気のあるTypescriptのスタイルに近いからだ。<br>
 driver.jsのコードはTypescriptのインターフェースであっても、Javascriptをよく理解している人が書くスタイルになっている。おそらくTypescriptのコンバートに伴う不確定要素を制御する意図なのだと思う。</p>
 <p>そして、コーディングスタイルは両者の実用上の挙動の違いとは関係がない。コードレビューで事前評価する場合、コーディングスタイルやコメントに注目しやすくなり、そのことによりむしろ品質に目を向けられなくなる。<br>
 今回の例では、レイアウト計算の違いが重要であることを事後的に知っているが、それはコードのごく一部でしかないため注目することが事実上不可能だし、コード全体が機能したときどのような表示になるのかを読み取ることは無理だと分かった。</p>
 <p>また、テストコードは
-<a href="https://github.com/chumaltd/shepherd/tree/master/test">Shepherdのテスト</a>が優れていると誰もが言うだろう。
-<a href="https://github.com/chumaltd/driver.js/tree/master/tests">driver.jsのテスト</a>はダミーのままだ。<br>
+<a href="https://github.com/chumaltd/shepherd/tree/master/test"
+   
+>Shepherdのテスト</a>
+が優れていると誰もが言うだろう。
+<a href="https://github.com/chumaltd/driver.js/tree/master/tests"
+   
+>driver.jsのテスト</a>
+はダミーのままだ。<br>
 評価軸の網羅性を保証できないこととテストの網羅性を保証できないことは同一の原因から来ていると思う。とくにUIをチェックするテストについては、人が目で見た際の妥当性を検査するための語彙が欠けているため、品質に直結する分野のテストケースを記述できないことが多い。</p>
 <h2 id="再実装だけが正しさの確証へ導く">再実装だけが正しさの確証へ導く</h2>
 <p>このように、後知恵を活用して選定の際の見落としをチェックした結果、さまざまな可能性が否定され、消去法により「あらかじめ品質に関する確証を得る手段はないのだ」という構造を理解できた。</p>
@@ -174,7 +198,10 @@ driver.jsのコードはTypescriptのインターフェースであっても、J
 <p>議論を明確にするために具体的なソフトウェアを題材にしてきたが、広く一般的な難問にはこのような形をとるものが遍在しているように思う。</p>
 <p>たとえば進化生物学の研究には、多様性のボトルネックと環境への不適応の関係を説明する定量的な分析があるはずだ。おそらく適者生存は派生と死滅のセットであって、そこに目的と正解を見出すことが誤認識なのだろう。</p>
 <p>金融の
-<a href="https://en.wikipedia.org/wiki/Real_options_valuation">リアルオプション</a>も類似のアプローチをとっている。<br>
+<a href="https://en.wikipedia.org/wiki/Real_options_valuation"
+   
+>リアルオプション</a>
+も類似のアプローチをとっている。<br>
 経済学には解析的な手法で分析する理論が多いが、リアルオプションはとりうる選択肢をモンテカルロ法などで生成する。<br>
 モンテカルロ法では生成された予測値は確率的なパラメータに過ぎないが、結果に対数オーダーの差が生まれるのであれば仮説構造は安定する。リアルオプションが戦略策定に用いられるのは、対数オーダーの仮定と親和性が高いからだろう。</p>
 <p>このように大局的に見れば、むしろ演繹では理解できないうちに世界は生成し続けている。<br>
@@ -238,8 +265,8 @@ LAN技術の流れ ルーターをクラフトするという方式は、そ …
         </picture>
         <div>
             <div class="h4 idx mb-2" href="/ja/exclude-nodejs/">Node.jsを完全に除去している</div>
-            <div class="f6"> 脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
-開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することと …</div>
+            <div class="f6"> 脱Node.js に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
+開発プロセスに支障が出たため、これらもnodeを使わない方式に変更すること …</div>
 	</div>
 </a>
 

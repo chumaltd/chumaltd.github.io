@@ -17,9 +17,9 @@
 <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/ja/exclude-nodejs/" />
 <meta property="og:title" content="Node.jsを完全に除去している" />
-<meta property="og:description" content=" 脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
+<meta property="og:description" content=" 脱Node.js に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
 開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することとした。
-コンテナが再起不能になる 不可解なことに、npm installやrollupを実行するとハ …" />
+コンテナが再起不能になる 不可解なことに、npm installやrollupを実行すると …" />
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
 <link rel="canonical" href="https://chumaltd.github.io/ja/exclude-nodejs/" />
 <style> :root { --body-font-size: 16px }</style>
@@ -103,7 +103,10 @@
     <div id="content" class="three-quarter">
       <article>
         <p>
-<a href="/ja/e2e-web-testing/">脱Node.js</a>に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。<br>
+<a href="/ja/e2e-web-testing/"
+   
+>脱Node.js</a>
+に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。<br>
 開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することとした。</p>
 <h2 id="コンテナが再起不能になる">コンテナが再起不能になる</h2>
 <p>不可解なことに、<code>npm install</code>や<code>rollup</code>を実行するとハングアップし、それ以後kubernetesのコンテナを再作成できない事象に遭遇した。<br>
@@ -117,7 +120,10 @@ nodeのプロセスは<code>kill -9</code>コマンドを使用しても操作�
 <p>kubernetesホストの問題は、クラウドプロバイダがOSビルドにカジュアルに失敗しているケースに遭遇したことがあり、品質を過信できない。年々改善してきているとすら言えないと考えており、使い方を制約することが動作のポイントとなる。</p>
 <p>幸いdenoのnpm互換性が向上したことで、nodeのCLIとして実装されているrollupと、nodeのJavascriptコードとして呼び出すsassライブラリのいずれもdeno上で動作する状況になった。</p>
 <p>npmのCLIについては、代替ツールである
-<a href="https://pnpm.io/">pnpm</a>が安定動作している。ただしpnpmはnodeを内包しているように見えるため、最終解ではないような気がしている。<br>
+<a href="https://pnpm.io/"
+   
+>pnpm</a>
+が安定動作している。ただしpnpmはnodeを内包しているように見えるため、最終解ではないような気がしている。<br>
 denoの実行時キャッシュに頼っていくのが適切な可能性がある。</p>
 <p>ひと通りnode依存を除去できたため、次の段階では実行環境からnodeを除去して経過を観察する。<br>
 基本的に各種CLIは<code>deno run npm:&lt;npm-package&gt;</code>を用いて動作する。いまのところCloudFlare公式のwranglerがnodeの拡張オプションを使用している影響で動作していない。このように特殊なオプションに依存しているものは、可能な限りツールの使用を廃止すべきなのだろう。</p>
@@ -175,8 +181,8 @@ LAN技術の流れ ルーターをクラフトするという方式は、そ …
         </picture>
         <div>
             <div class="h4 idx mb-2" href="/ja/exclude-nodejs/">Node.jsを完全に除去している</div>
-            <div class="f6"> 脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
-開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することと …</div>
+            <div class="f6"> 脱Node.js に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
+開発プロセスに支障が出たため、これらもnodeを使わない方式に変更すること …</div>
 	</div>
 </a>
 

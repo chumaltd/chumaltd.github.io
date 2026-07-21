@@ -22,7 +22,7 @@
 <link rel="canonical" href="https://chumaltd.github.io/en/ipv6-transition/" />
 <style> :root { --body-font-size: 16px }</style>
 
-<link rel="alternate" hreflang="ja" href="https://chumaltd.github.io/ja/ipv6-transition/" />
+<link rel="alternate" hreflang="ja" href="https://chumaltd.github.io/ja/ipv6-transition/" /><link rel="alternate" hreflang="en" href="https://chumaltd.github.io/en/ipv6-transition/" />
     </head>
     <body class="en "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
   <section class="container-xl d-flex" style="width: 100%">
@@ -90,7 +90,7 @@
   <div class="d-sm-flex">
     <nav class="quarter layered">
         <nav class="mb-3 px-5 py-4">
-            <a href="/ja/ipv6-transition/" class="mx-4">Japanese</a></nav><aside class="toc sticky" style="position: sticky; top: 3em">
+            <a href="/ja/ipv6-transition/" rel="alternate" hreflang="ja" class="mx-4">Japanese</a></nav><aside class="toc sticky" style="position: sticky; top: 3em">
         <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;Migrate to IPv6</div>
         <nav id="TableOfContents">
   <ul>
@@ -116,14 +116,20 @@
         <p>Eventually, all internet devices will communicate via IPv6. Once everything is unified under IPv6, there will likely be fewer technical issues or concerns at the IP layer.<br>
 The challenge lies in the fact that we will have to support dual-stack configurations, where both IPv4 and IPv6 coexist, for an extended period.</p>
 <p>The official declaration of 
-<a href="https://en.wikipedia.org/wiki/IPv4_address_exhaustion">IPv4 exhaustion</a> began in 2011. As mobile internet continues to grow, the proportion of devices connecting via IPv6 will increase.</p>
+<a href="https://en.wikipedia.org/wiki/IPv4_address_exhaustion"
+   
+>IPv4 exhaustion</a>
+ began in 2011. As mobile internet continues to grow, the proportion of devices connecting via IPv6 will increase.</p>
 <p>While the technical barriers to adopting IPv6 are actually quite low, most devices still default to IPv4 unless intentionally configured otherwise.<br>
 Since transitioning from IPv4 to IPv6 can cause more issues than the initial implementation, it&rsquo;s preferable to choose IPv6 from the start whenever possible.</p>
 <h2 id="switching-to-ipv6-in-access-network">Switching to IPv6 in Access Network</h2>
 <p>The network for a site connecting to the internet is determined by the choice of access network services.</p>
 <p>In Japan, NTT, which provides the connection between homes or offices and the network, started switching the network layer of its fiber optic access services to IPv6 around 2011. As a result, locations subscribing to these services are now using IPv6 access.<br>
 Japan&rsquo;s broadband lines rapidly adopted 
-<a href="https://en.wikipedia.org/wiki/ADSL">ADSL</a> around 2002, and then began transitioning to fiber optics around 2005. For those who subscribed to these services from the beginning, the shift from IPv4 to IPv6 likely occurred during the 3rd generation of network upgrades.</p>
+<a href="https://en.wikipedia.org/wiki/ADSL"
+   
+>ADSL</a>
+ around 2002, and then began transitioning to fiber optics around 2005. For those who subscribed to these services from the beginning, the shift from IPv4 to IPv6 likely occurred during the 3rd generation of network upgrades.</p>
 <p>A typical issue with access networks stems from the implementation of IPv4 over IPv6 tunnels.</p>
 <p>Even when IPv4 and IPv6 coexist, they are completely independent networks, so when an access network becomes IPv6-native, it can no longer connect to IPv4 services.<br>
 Adding an IPv4 over IPv6 service allows access to IPv4 networks, but there are multiple methods, each adopted by different service providers. Ultimately, a router that supports the specific type of IPv4 over IPv6 tunnel associated with the contracted service is essential.</p>
@@ -135,7 +141,10 @@ Many routers do not support all types of IPv4 over IPv6 tunneling methods, and i
 In the era of IPv4-only providers, only one router could be connected, but with IPv6, it is often possible to connect multiple routers through a switching hub. For our transition, a configuration was chosen where a network without IPv4 access was set up alongside a corporate router.</p>
 <h3 id="multiple-address-assignment-methods-will-coexist">Multiple address assignment methods will coexist</h3>
 <p>In the IPv4 era, IP addresses were typically assigned using DHCP. In IPv6, it&rsquo;s likely that 
-<a href="https://en.wikipedia.org/wiki/DHCPv6">DHCPv6</a> and <a href="https://en.wikipedia.org/wiki/IPv6_address#Stateless_address_autoconfiguration_(SLAAC)">SLAAC</a> will coexist.</p>
+<a href="https://en.wikipedia.org/wiki/DHCPv6"
+   
+>DHCPv6</a>
+ and <a href="https://en.wikipedia.org/wiki/IPv6_address#Stateless_address_autoconfiguration_(SLAAC)">SLAAC</a> will coexist.</p>
 <p>With SLAAC, which is part of the standard for IPv6, each device determines its own address, taking advantage of the abundant address space. DHCPv6, on the other hand, allows management devices like routers to assign and distribute addresses.</p>
 <p>Platforms that favor DHCPv6 include Windows and VoIP devices. Essentially, in scenarios where a LAN administrator needs centralized management, it makes sense to generate and track addresses centrally. Conversely, for mobile devices that frequently move and cannot always be centrally managed by a single router, SLAAC is more appropriate.</p>
 <p>As a result, the management methods for IPv6 networks are not likely to result in one standard dominating the other; both will likely survive. Network devices will need to support both methods simultaneously.</p>
@@ -158,7 +167,10 @@ Proxies are designed to work seamlessly whether the destination is IPv4 or IPv6,
 <p>The behavior of IPv6 can vary depending on the specific application, so it’s hard to generalize. There are CLI commands that might prevent IPv4 access simply because a route to the IPv6 network exists, potentially disrupting the planned pace of work.</p>
 <p>It&rsquo;s also possible that some software won&rsquo;t function properly with IPv6.<br>
 As IPv4 becomes more costly over time and 
-<a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT</a> configurations might effectively become lost technologies, identifying software that is incompatible with IPv6 is crucial for long-term sustainability.</p>
+<a href="https://en.wikipedia.org/wiki/Network_address_translation"
+   
+>NAT</a>
+ configurations might effectively become lost technologies, identifying software that is incompatible with IPv6 is crucial for long-term sustainability.</p>
 <h3 id="unstable-behavior-of-localhost">Unstable behavior of localhost</h3>
 <p>During the transition to IPv6, network-based services running on a single development machine are prone to frequent issues.</p>
 <p>In most single-machine setups, various software components operate on the host <code>localhost</code>. Typically, <code>localhost</code> resolves to the IP <code>127.0.0.1</code> in IPv4 and <code>::1</code> in IPv6. You will likely need to rely on commands like <code>lsof</code> to investigate the state of the ports.</p>
@@ -174,7 +186,10 @@ The de facto standard for clusters using virtual networks is Kubernetes, which a
 As of 2024, it seems that only a small percentage of engineers are choosing IPv6 networks from the start. Consequently, pre-packaged solutions may not work out of the box, leading to a lot of trial and error in achieving the correct configuration.</p>
 <p>I am running the same k3s configuration on three different hardware units, but only one of them is experiencing IPv6 communication errors. Since both inter-container communication and external requests result in errors, it&rsquo;s likely a bug caused by a specific combination of the CPU and host kernel on that particular machine.</p>
 <p>Additionally, until the issue 
-<a href="https://github.com/kubernetes/kubernetes/issues/101324">Pod readiness probe cannot be directed at specific IP family</a> is resolved, there is a limitation where probes like <code>httpGet</code> implicitly check only IPv4 ports.<br>
+<a href="https://github.com/kubernetes/kubernetes/issues/101324"
+   
+>Pod readiness probe cannot be directed at specific IP family</a>
+ is resolved, there is a limitation where probes like <code>httpGet</code> implicitly check only IPv4 ports.<br>
 If the target service is configured to listen exclusively on IPv6, straightforward implementations are not possible. The only option is to execute commands such as <code>curl --fail http://[::1]:80</code> within the container.</p>
 <p>Virtual networks are significantly more complex than the network configurations of standalone operating systems. Additionally, given that Linux is currently transitioning away from the traditional iptables for network implementation, the initial setup will likely require considerable effort.</p>
 <p>Over the past decade, the decline of published books has made it difficult to access comprehensive sources of information. This lack of collective knowledge has proven to be a significant obstacle, making troubleshooting in IPv6 network construction particularly challenging.</p>
@@ -197,7 +212,7 @@ Since migrating protocols that aren&rsquo;t routinely managed isn&rsquo;t straig
         </picture>
         <div>
             <div class="h4 idx mb-2" href="/en/kubernetes-os/">Kubernetes as OS</div>
-            <div class="f6"> Kubernetes is increasingly incorporating the functionalities of an Operating System.
+            <div class="f6"> Kubernetes is increasingly incorporating the functionalities of an Operating System .
 The term “OS” …</div>
 	</div>
 </a>
@@ -216,7 +231,7 @@ The term “OS” …</div>
         </picture>
         <div>
             <div class="h4 idx mb-2" href="/en/voip-integration/">VoIP integration under the scorching sun</div>
-            <div class="f6">The telephone, invented by Bell in 1876, has been in use for 150 years. How much longer will the …</div>
+            <div class="f6">The telephone , invented by Bell in 1876, has been in use for 150 years. How much longer will the …</div>
 	</div>
 </a>
 <a href="/en/covid19-2023/" class="compbox bordered py-3">

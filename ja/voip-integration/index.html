@@ -17,14 +17,14 @@
 <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/ja/voip-integration/" />
 <meta property="og:title" content="灼熱のVoIP" />
-<meta property="og:description" content=" 電話は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいったいいつまで続くものだろうか？
+<meta property="og:description" content=" 電話 は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいったいいつまで続くものだろうか？
 日本の事情は、携帯電話の普及によりすでに家庭では旧来のPSTN電話が減ってきた。一方で、企業は監督官庁の事務的な要請により電話の設置が事実上義務づけられている。
-携帯電 …" />
+携帯 …" />
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
 <link rel="canonical" href="https://chumaltd.github.io/ja/voip-integration/" />
 <style> :root { --body-font-size: 16px }</style>
 
-<link rel="alternate" hreflang="en" href="https://chumaltd.github.io/en/voip-integration/" />
+<link rel="alternate" hreflang="en" href="https://chumaltd.github.io/en/voip-integration/" /><link rel="alternate" hreflang="ja" href="https://chumaltd.github.io/ja/voip-integration/" />
     </head>
     <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
   <section class="container-xl d-flex" style="width: 100%">
@@ -92,7 +92,7 @@
   <div class="d-sm-flex">
     <nav class="quarter layered">
         <nav class="mb-3 px-5 py-4">
-            <a href="/en/voip-integration/" class="mx-4">English</a></nav><aside class="toc sticky" style="position: sticky; top: 3em">
+            <a href="/en/voip-integration/" rel="alternate" hreflang="en" class="mx-4">English</a></nav><aside class="toc sticky" style="position: sticky; top: 3em">
         <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;灼熱のVoIP</div>
         <nav id="TableOfContents">
   <ul>
@@ -106,24 +106,39 @@
     <div id="content" class="three-quarter">
       <article>
         <p>
-<a href="https://en.wikipedia.org/wiki/Telephone">電話</a>は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいったいいつまで続くものだろうか？</p>
+<a href="https://en.wikipedia.org/wiki/Telephone"
+   
+>電話</a>
+は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいったいいつまで続くものだろうか？</p>
 <p>日本の事情は、携帯電話の普及によりすでに家庭では旧来のPSTN電話が減ってきた。一方で、企業は監督官庁の事務的な要請により電話の設置が事実上義務づけられている。</p>
 <p>携帯電話は個々人が番号を持つネットワークだが、企業はメンバーのうちの誰かが応対すべきであるため、冷静に要件を整理していくと
-<a href="https://en.wikipedia.org/wiki/Voice_over_IP">VoIP</a>が適している。<br>
+<a href="https://en.wikipedia.org/wiki/Voice_over_IP"
+   
+>VoIP</a>
+が適している。<br>
 VoIPにもすでに30年ほどの歴史があるが、一向にコモディティ化する様子がない。</p>
 <p>東京の地獄の釜のような酷暑のなか、先週来VoIPへの切り替えを敢行していた。<br>
 ネットワークミドルウェアの一般的な性質どおり、完成の一歩手前まではまったく機能せず、終局状態を迎えるや唐突に安定動作し始める。作業中の手がかりの乏しさは、VoIP普及のハードルになっているはずだ。</p>
 <h2 id="sipとasterisk">SIPとAsterisk</h2>
 <p>現在、電話の運用を考えるとき、先々までサステナブルな技術は
-<a href="https://en.wikipedia.org/wiki/Session_Initiation_Protocol">SIP</a>ファミリーだろう。携帯電話のVoLTEにも採用されているとのことで、PSTNがIP網に置きかわる際の第一ターゲットになる。<br>
+<a href="https://en.wikipedia.org/wiki/Session_Initiation_Protocol"
+   
+>SIP</a>
+ファミリーだろう。携帯電話のVoLTEにも採用されているとのことで、PSTNがIP網に置きかわる際の第一ターゲットになる。<br>
 セットアップ時にはSIPメッセージの解析がつきまとうので、あらかじめSIPプロトコルを理解しておくことが必要になる。</p>
 <p>単なる空想ではあるが、SIPが将来廃止されるとすれば、それは量子ネットワークの実現・普及によるものだと思う。地理的に離れた2点でデータが直接リンクするのであれば、パケット交換網が不要化する可能性がある。<br>
 おそらくそのレベルの変化がなければ、SIPを根本的に書きかえるメリットはないように見える。暫定ベストであることは簡単に陳腐化しないために重要だ。</p>
 <p>SIPを用いたオープンソースのPBX実装に
-<a href="https://www.asterisk.org/">Asterisk</a>がある。さすがに長くアップデートを継続してきただけあってよくできている。<br>
+<a href="https://www.asterisk.org/"
+   
+>Asterisk</a>
+がある。さすがに長くアップデートを継続してきただけあってよくできている。<br>
 VoIP構築じたいが難しいためAsterisk導入は大変難しいが、おそらく世界でもっともサステナブルなVoIP実装がAsteriskだからAsteriskを前提とするのが妥当と見る。</p>
 <p>Asteriskの技術面については
-<a href="https://www.unicorn.limited/jp/rd/cloud/20231206-asterisk">別稿</a>にまとめた。<br>
+<a href="https://www.unicorn.limited/jp/rd/cloud/20231206-asterisk"
+   
+>別稿</a>
+にまとめた。<br>
 Asteriskに限った話ではないが、ユーザーコミュニティが死に体になってしまっていて有用な情報に乏しい。いつもの展開ながら、しばらく運用したあとにネットワーク構成を変更する際、技術情報がないとロストテクノロジーになりかねない。<br>
 この記事が呼び水になって情報が充実しているなら幸いだが、十中八九は自分が書いた記事を参照することになる。僕はいつも自分にダイイングメッセージを送り続けている。</p>
 <h2 id="sipトランキングサービスが下火になっている">SIPトランキングサービスが下火になっている</h2>
@@ -196,8 +211,8 @@ LAN技術の流れ ルーターをクラフトするという方式は、そ …
         </picture>
         <div>
             <div class="h4 idx mb-2" href="/ja/exclude-nodejs/">Node.jsを完全に除去している</div>
-            <div class="f6"> 脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
-開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することと …</div>
+            <div class="f6"> 脱Node.js に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
+開発プロセスに支障が出たため、これらもnodeを使わない方式に変更すること …</div>
 	</div>
 </a>
 

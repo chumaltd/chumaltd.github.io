@@ -12,7 +12,7 @@
       <link>https://chumaltd.github.io/en/kubernetes-os/</link>
       <pubDate>Wed, 25 Sep 2024 11:08:31 +0900</pubDate>
       <guid>https://chumaltd.github.io/en/kubernetes-os/</guid>
-      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Kubernetes&#34;&gt;Kubernetes&lt;/a&gt; is increasingly incorporating the functionalities of an &#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Operating_system&#34;&gt;Operating System&lt;/a&gt;.&lt;br&gt;&#xA;The term &amp;ldquo;OS&amp;rdquo; is multifaceted, and the essential functions vary depending on one&amp;rsquo;s perspective. For software and engineers, the critical functions are those that manage hardware components like the CPU, RAM, and disk. If these are being controlled through Kubernetes configurations, then Kubernetes can be considered an OS.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Kubernetes&#34;&#xA;   &#xA;&gt;Kubernetes&lt;/a&gt;&#xA; is increasingly incorporating the functionalities of an &#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Operating_system&#34;&#xA;   &#xA;&gt;Operating System&lt;/a&gt;&#xA;.&lt;br&gt;&#xA;The term &amp;ldquo;OS&amp;rdquo; is multifaceted, and the essential functions vary depending on one&amp;rsquo;s perspective. For software and engineers, the critical functions are those that manage hardware components like the CPU, RAM, and disk. If these are being controlled through Kubernetes configurations, then Kubernetes can be considered an OS.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Migrate to IPv6</title>
@@ -26,7 +26,7 @@
       <link>https://chumaltd.github.io/en/voip-integration/</link>
       <pubDate>Thu, 15 Aug 2024 09:59:52 +0900</pubDate>
       <guid>https://chumaltd.github.io/en/voip-integration/</guid>
-      <description>&lt;p&gt;The &#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Telephone&#34;&gt;telephone&lt;/a&gt;, invented by Bell in 1876, has been in use for 150 years. How much longer will the method of dialing a number to reach someone continue?&lt;/p&gt;&#xA;&lt;p&gt;In Japan, due to the widespread adoption of mobile phones, traditional PSTN phones have been declining in households. However, businesses are still required to install phones, effectively making it mandatory due to administrative demands from governments.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The &#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Telephone&#34;&#xA;   &#xA;&gt;telephone&lt;/a&gt;&#xA;, invented by Bell in 1876, has been in use for 150 years. How much longer will the method of dialing a number to reach someone continue?&lt;/p&gt;&#xA;&lt;p&gt;In Japan, due to the widespread adoption of mobile phones, traditional PSTN phones have been declining in households. However, businesses are still required to install phones, effectively making it mandatory due to administrative demands from governments.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Halfway with COVID-19</title>

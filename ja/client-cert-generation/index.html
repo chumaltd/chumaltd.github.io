@@ -17,8 +17,8 @@
 <meta name="twitter:card" content="summary" />
 <meta property="og:url" content="https://chumaltd.github.io/ja/client-cert-generation/" />
 <meta property="og:title" content="クライアント証明書を生成する" />
-<meta property="og:description" content="年に数回、 X.509のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけていたため、一度関連動向を含めてリサーチした。
-TLSのクライアント証明書認証は、究極はBasic認証と似たようなものではある。ただBasic認証はURLにセットできてしまう。セットアップ経路の手間 …" />
+<meta property="og:description" content="年に数回、 X.509 のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけていたため、一度関連動向を含めてリサーチした。
+TLSのクライアント証明書認証は、究極はBasic認証と似たようなものではある。ただBasic認証はURLにセットできてしまう。セットアップ経路の手 …" />
 <meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
 <link rel="canonical" href="https://chumaltd.github.io/ja/client-cert-generation/" />
 <style> :root { --body-font-size: 16px }</style>
@@ -107,37 +107,64 @@ TLSのクライアント証明書認証は、究極はBasic認証と似たよう
     <div id="content" class="three-quarter">
       <article>
         <p>年に数回、
-<a href="https://en.wikipedia.org/wiki/X.509">X.509</a>のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけていたため、一度関連動向を含めてリサーチした。</p>
+<a href="https://en.wikipedia.org/wiki/X.509"
+   
+>X.509</a>
+のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけていたため、一度関連動向を含めてリサーチした。</p>
 <p>TLSのクライアント証明書認証は、究極はBasic認証と似たようなものではある。ただBasic認証はURLにセットできてしまう。セットアップ経路の手間の分だけ証明書の方がセキュアであろうと評価している。</p>
 <p>他の技術と独立してTLSレイヤに防壁を１枚追加できるメリットのため、しぶとく使い続けている。ただし、いざ使おうと思ったときに体系的な情報がなく、非常に難解である。過去何度か撤廃しようかと考えたこともある。</p>
 <p>暗号技術には改廃があるのだが、クライアント証明書はいつまでもRSAのままで良いのか、といった点が判然としない。</p>
 <h2 id="使い捨てca">使い捨てCA</h2>
 <p>これまで、古いOpenSSL由来の
-<a href="https://github.com/openssl/openssl/blob/OpenSSL_1_0_2-stable/apps/CA.sh">CA.sh</a>を手動で実行していた。履歴には1996年と書かれており、最近のバージョンにはもはや含まれていないのだがopensslのサブコマンドに大きな変更がないため、引き続き動作している。</p>
+<a href="https://github.com/openssl/openssl/blob/OpenSSL_1_0_2-stable/apps/CA.sh"
+   
+>CA.sh</a>
+を手動で実行していた。履歴には1996年と書かれており、最近のバージョンにはもはや含まれていないのだがopensslのサブコマンドに大きな変更がないため、引き続き動作している。</p>
 <p>CA.shを読んでいくと結局ラッパーにすぎないことが分かるため、クライアント証明書生成の手順に沿って再構成した。<br>
 素朴に実行すると、随所で秘密鍵のパスフレーズを求められる点がとても分かりにくい。</p>
 <p>見通しを良くするために概要を述べると、<code>-batch</code>オプションを付けることでパスフレーズの無い秘密鍵を生成し、<code>-config</code>オプションで資格情報をファイルから供給すると対話プロンプトが出なくなる。<br>
 ただし、これが常に良い方法というわけではなく、利用上の制約はある。</p>
 <p>パスフレーズ無しについては方式を確認した結果として、
-<a href="https://en.wikipedia.org/wiki/Certificate_authority">CA</a>を継続運用せず、一期一会の証明書セットのみ利用する使い方に限定することでセキュリティレベルを上げられると考えた。</p>
+<a href="https://en.wikipedia.org/wiki/Certificate_authority"
+   
+>CA</a>
+を継続運用せず、一期一会の証明書セットのみ利用する使い方に限定することでセキュリティレベルを上げられると考えた。</p>
 <p>CAは本来、多くの証明書を発行する前提で設計されており、秘密鍵アクセスを秘匿し、失効リストを追跡更新する必要がある。<br>
 公開鍵暗号方式は、秘密鍵にアクセスできなければ有効な署名を生成できないことを前提としており、パスフレーズは鍵アクセスをガードしている。<br>
 パスフレーズはコンピュータ草創期から主要な認証方式ではあるが、もはや絶対視できるほどの耐性も期待できない。秘密鍵そのものが存在しない方がよりセキュアだろう。</p>
 <p><code>-config</code>オプションは、カスタムの
-<a href="https://github.com/openssl/openssl/blob/openssl-3.3/apps/openssl.cnf">openssl.cnf</a>を指定するよくあるオプションだ。<br>
+<a href="https://github.com/openssl/openssl/blob/openssl-3.3/apps/openssl.cnf"
+   
+>openssl.cnf</a>
+を指定するよくあるオプションだ。<br>
 適切な設定には、
-<a href="https://www.openssl.org/docs/man3.2/man5/x509v3_config.html">x509v3_config</a>の書式を理解する必要があるが、コア機能設定はデフォルトで動作する。<code>req_distinguished_name</code>セクションが証明書の掲載設定であり、個別に設定が必要だ。</p>
+<a href="https://www.openssl.org/docs/man3.2/man5/x509v3_config.html"
+   
+>x509v3_config</a>
+の書式を理解する必要があるが、コア機能設定はデフォルトで動作する。<code>req_distinguished_name</code>セクションが証明書の掲載設定であり、個別に設定が必要だ。</p>
 <p>openssl.cnfの理解しづらい点は、opensslのサブコマンドごとに参照セクションを使い分けており、その対応が不明な点だろう。</p>
 <h2 id="生成ステップ">生成ステップ</h2>
 <p>opensslコマンドを使用したCA運用は単なるリファレンス実装でありフル機能を満たすものではないことが、openssl caのmanの末尾を確認すると分かる。長期的には別の手順が必要になることは間違いないが証明書じたいには問題がなく、使い捨てCAとしては機能する。</p>
 <p>CAは、秘密鍵作成(
-<a href="https://www.openssl.org/docs/man3.2/man1/openssl-genpkey.html">openssl genpkey</a>)、CA証明書リクエスト作成(
-<a href="https://www.openssl.org/docs/man3.2/man1/openssl-req.html">openssl req</a>)、CA作成(
-<a href="https://www.openssl.org/docs/man3.2/man1/openssl-ca.html">openssl ca -extensions v3_ca -selfsign</a>)の順に実行する。</p>
+<a href="https://www.openssl.org/docs/man3.2/man1/openssl-genpkey.html"
+   
+>openssl genpkey</a>
+)、CA証明書リクエスト作成(
+<a href="https://www.openssl.org/docs/man3.2/man1/openssl-req.html"
+   
+>openssl req</a>
+)、CA作成(
+<a href="https://www.openssl.org/docs/man3.2/man1/openssl-ca.html"
+   
+>openssl ca -extensions v3_ca -selfsign</a>
+)の順に実行する。</p>
 <p>この時点で生成されるCA証明書はサーバーにセットアップし、アクセス時の信頼チェーン検証に用いる。</p>
 <p>クライアント証明書は、秘密鍵作成(openssl genpkey)、署名リクエスト(openssl req)、署名(openssl ca -policy)の順に実行する。</p>
 <p>最終的に、署名済みクライアント証明書をPKCS#12フォーマットに変換(
-<a href="https://www.openssl.org/docs/man3.2/man1/openssl-pkcs12.html">openssl pkcs12</a>)する。pkcs12もパスワードを求められるがオプションでスクリプトから指定できる。<br>
+<a href="https://www.openssl.org/docs/man3.2/man1/openssl-pkcs12.html"
+   
+>openssl pkcs12</a>
+)する。pkcs12もパスワードを求められるがオプションでスクリプトから指定できる。<br>
 どうやらChromeが秘密鍵を同梱したPKCS#12フォーマットを要求している。x509形式では秘密鍵を付けたり署名したりしてもインポートに失敗した。</p>
 <p>このプロセスでは中間ファイルが大量に生成されるが、最終的な証明書2種を入手したら残りのファイルは削除する。</p>
 <p>各サブコマンドの挙動を理解することや妥当性の評価は難しい。これはopensslの既存実装に難があるものの、代替実装も永らく定まっていないことから来ている。</p>
@@ -211,8 +238,8 @@ LAN技術の流れ ルーターをクラフトするという方式は、そ …
         </picture>
         <div>
             <div class="h4 idx mb-2" href="/ja/exclude-nodejs/">Node.jsを完全に除去している</div>
-            <div class="f6"> 脱Node.jsに着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
-開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することと …</div>
+            <div class="f6"> 脱Node.js に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
+開発プロセスに支障が出たため、これらもnodeを使わない方式に変更すること …</div>
 	</div>
 </a>
 
