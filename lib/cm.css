@@ -2832,6 +2832,16 @@ pre {
     --fgColor-accent: Highlight;
   }
 }
+.frame {
+  border-width: var(--frame-width, 16px);
+  border-image-width: var(--frame-width, 16px);
+  border-image-source: var(--frame-source, none);
+  border-image-slice: var(--frame-slice, 50);
+  border-image-repeat: var(--frame-repeat, stretch);
+  border-style: solid;
+  border-color: transparent;
+}
+
 /* 
  * This comes from Primer Components
  * https://github.com/primer/view_components/blob/v0.2.0/app/components/primer/beta/border_box.pcss
@@ -2948,17 +2958,17 @@ pre {
   box-shadow: none;
   color: var(--bgColor-primary, hsl(171, 100%, 41%));
 }
-.button.is-primary.is-outlined, a.button.is-primary.is-outlined {
+.button.is-primary.is-outlined, .button.is-primary.switch:not([aria-selected]), a.button.is-primary.is-outlined, a.button.is-primary.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: var(--bgColor-primary, hsl(171, 100%, 41%));
   color: var(--bgColor-primary, hsl(171, 100%, 41%));
 }
-.button.is-primary.is-outlined:hover, .button.is-primary.is-outlined:focus, .button.is-primary.is-outlined.is-focused, a.button.is-primary.is-outlined:hover, a.button.is-primary.is-outlined:focus, a.button.is-primary.is-outlined.is-focused {
+.button.is-primary.is-outlined:hover, .button.is-primary.is-outlined:focus, .button.is-primary.is-outlined.is-focused, .button.is-primary.switch:not([aria-selected]):hover, .button.is-primary.switch:not([aria-selected]):focus, .button.is-primary.switch:not([aria-selected]).is-focused, a.button.is-primary.is-outlined:hover, a.button.is-primary.is-outlined:focus, a.button.is-primary.is-outlined.is-focused, a.button.is-primary.switch:not([aria-selected]):hover, a.button.is-primary.switch:not([aria-selected]):focus, a.button.is-primary.switch:not([aria-selected]).is-focused {
   background-color: var(--bgColor-primary, hsl(171, 100%, 41%));
   border-color: var(--bgColor-primary, hsl(171, 100%, 41%));
   color: var(--fgColor-onInverse);
 }
-.button.is-primary.is-outlined[disabled], fieldset[disabled] .button.is-primary.is-outlined, a.button.is-primary.is-outlined[disabled], fieldset[disabled] a.button.is-primary.is-outlined {
+.button.is-primary.is-outlined[disabled], fieldset[disabled] .button.is-primary.is-outlined, .button.is-primary.switch:not([aria-selected])[disabled], fieldset[disabled] .button.is-primary.switch:not([aria-selected]), a.button.is-primary.is-outlined[disabled], fieldset[disabled] a.button.is-primary.is-outlined, a.button.is-primary.switch:not([aria-selected])[disabled], fieldset[disabled] a.button.is-primary.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: var(--bgColor-primary, hsl(171, 100%, 41%));
   box-shadow: none;
@@ -3015,17 +3025,17 @@ pre {
   box-shadow: none;
   color: var(--fgColor-link, var(--fgColor-saira-link, var(--fgColor-link, hsl(229, 53%, 53%))));
 }
-.button.is-link.is-outlined, a.button.is-link.is-outlined {
+.button.is-link.is-outlined, .button.is-link.switch:not([aria-selected]), a.button.is-link.is-outlined, a.button.is-link.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: var(--fgColor-link, var(--fgColor-saira-link, var(--fgColor-link, hsl(229, 53%, 53%))));
   color: var(--fgColor-link, var(--fgColor-saira-link, var(--fgColor-link, hsl(229, 53%, 53%))));
 }
-.button.is-link.is-outlined:hover, .button.is-link.is-outlined:focus, .button.is-link.is-outlined.is-focused, a.button.is-link.is-outlined:hover, a.button.is-link.is-outlined:focus, a.button.is-link.is-outlined.is-focused {
+.button.is-link.is-outlined:hover, .button.is-link.is-outlined:focus, .button.is-link.is-outlined.is-focused, .button.is-link.switch:not([aria-selected]):hover, .button.is-link.switch:not([aria-selected]):focus, .button.is-link.switch:not([aria-selected]).is-focused, a.button.is-link.is-outlined:hover, a.button.is-link.is-outlined:focus, a.button.is-link.is-outlined.is-focused, a.button.is-link.switch:not([aria-selected]):hover, a.button.is-link.switch:not([aria-selected]):focus, a.button.is-link.switch:not([aria-selected]).is-focused {
   background-color: var(--fgColor-link, var(--fgColor-saira-link, var(--fgColor-link, hsl(229, 53%, 53%))));
   border-color: var(--fgColor-link, var(--fgColor-saira-link, var(--fgColor-link, hsl(229, 53%, 53%))));
   color: var(--fgColor-onInverse);
 }
-.button.is-link.is-outlined[disabled], fieldset[disabled] .button.is-link.is-outlined, a.button.is-link.is-outlined[disabled], fieldset[disabled] a.button.is-link.is-outlined {
+.button.is-link.is-outlined[disabled], fieldset[disabled] .button.is-link.is-outlined, .button.is-link.switch:not([aria-selected])[disabled], fieldset[disabled] .button.is-link.switch:not([aria-selected]), a.button.is-link.is-outlined[disabled], fieldset[disabled] a.button.is-link.is-outlined, a.button.is-link.switch:not([aria-selected])[disabled], fieldset[disabled] a.button.is-link.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: var(--fgColor-link, var(--fgColor-saira-link, var(--fgColor-link, hsl(229, 53%, 53%))));
   box-shadow: none;
@@ -3082,17 +3092,17 @@ pre {
   box-shadow: none;
   color: var(--bgColor-accent-emphasis);
 }
-.button.is-info.is-outlined, a.button.is-info.is-outlined {
+.button.is-info.is-outlined, .button.is-info.switch:not([aria-selected]), a.button.is-info.is-outlined, a.button.is-info.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: var(--bgColor-accent-emphasis);
   color: var(--bgColor-accent-emphasis);
 }
-.button.is-info.is-outlined:hover, .button.is-info.is-outlined:focus, .button.is-info.is-outlined.is-focused, a.button.is-info.is-outlined:hover, a.button.is-info.is-outlined:focus, a.button.is-info.is-outlined.is-focused {
+.button.is-info.is-outlined:hover, .button.is-info.is-outlined:focus, .button.is-info.is-outlined.is-focused, .button.is-info.switch:not([aria-selected]):hover, .button.is-info.switch:not([aria-selected]):focus, .button.is-info.switch:not([aria-selected]).is-focused, a.button.is-info.is-outlined:hover, a.button.is-info.is-outlined:focus, a.button.is-info.is-outlined.is-focused, a.button.is-info.switch:not([aria-selected]):hover, a.button.is-info.switch:not([aria-selected]):focus, a.button.is-info.switch:not([aria-selected]).is-focused {
   background-color: var(--bgColor-accent-emphasis);
   border-color: var(--bgColor-accent-emphasis);
   color: var(--fgColor-onInverse);
 }
-.button.is-info.is-outlined[disabled], fieldset[disabled] .button.is-info.is-outlined, a.button.is-info.is-outlined[disabled], fieldset[disabled] a.button.is-info.is-outlined {
+.button.is-info.is-outlined[disabled], fieldset[disabled] .button.is-info.is-outlined, .button.is-info.switch:not([aria-selected])[disabled], fieldset[disabled] .button.is-info.switch:not([aria-selected]), a.button.is-info.is-outlined[disabled], fieldset[disabled] a.button.is-info.is-outlined, a.button.is-info.switch:not([aria-selected])[disabled], fieldset[disabled] a.button.is-info.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: var(--bgColor-accent-emphasis);
   box-shadow: none;
@@ -3149,17 +3159,17 @@ pre {
   box-shadow: none;
   color: var(--bgColor-success-emphasis);
 }
-.button.is-success.is-outlined, a.button.is-success.is-outlined {
+.button.is-success.is-outlined, .button.is-success.switch:not([aria-selected]), a.button.is-success.is-outlined, a.button.is-success.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: var(--bgColor-success-emphasis);
   color: var(--bgColor-success-emphasis);
 }
-.button.is-success.is-outlined:hover, .button.is-success.is-outlined:focus, .button.is-success.is-outlined.is-focused, a.button.is-success.is-outlined:hover, a.button.is-success.is-outlined:focus, a.button.is-success.is-outlined.is-focused {
+.button.is-success.is-outlined:hover, .button.is-success.is-outlined:focus, .button.is-success.is-outlined.is-focused, .button.is-success.switch:not([aria-selected]):hover, .button.is-success.switch:not([aria-selected]):focus, .button.is-success.switch:not([aria-selected]).is-focused, a.button.is-success.is-outlined:hover, a.button.is-success.is-outlined:focus, a.button.is-success.is-outlined.is-focused, a.button.is-success.switch:not([aria-selected]):hover, a.button.is-success.switch:not([aria-selected]):focus, a.button.is-success.switch:not([aria-selected]).is-focused {
   background-color: var(--bgColor-success-emphasis);
   border-color: var(--bgColor-success-emphasis);
   color: var(--fgColor-onInverse);
 }
-.button.is-success.is-outlined[disabled], fieldset[disabled] .button.is-success.is-outlined, a.button.is-success.is-outlined[disabled], fieldset[disabled] a.button.is-success.is-outlined {
+.button.is-success.is-outlined[disabled], fieldset[disabled] .button.is-success.is-outlined, .button.is-success.switch:not([aria-selected])[disabled], fieldset[disabled] .button.is-success.switch:not([aria-selected]), a.button.is-success.is-outlined[disabled], fieldset[disabled] a.button.is-success.is-outlined, a.button.is-success.switch:not([aria-selected])[disabled], fieldset[disabled] a.button.is-success.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: var(--bgColor-success-emphasis);
   box-shadow: none;
@@ -3216,17 +3226,17 @@ pre {
   box-shadow: none;
   color: var(--bgColor-attention-emphasis);
 }
-.button.is-warning.is-outlined, a.button.is-warning.is-outlined {
+.button.is-warning.is-outlined, .button.is-warning.switch:not([aria-selected]), a.button.is-warning.is-outlined, a.button.is-warning.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: var(--bgColor-attention-emphasis);
   color: var(--bgColor-attention-emphasis);
 }
-.button.is-warning.is-outlined:hover, .button.is-warning.is-outlined:focus, .button.is-warning.is-outlined.is-focused, a.button.is-warning.is-outlined:hover, a.button.is-warning.is-outlined:focus, a.button.is-warning.is-outlined.is-focused {
+.button.is-warning.is-outlined:hover, .button.is-warning.is-outlined:focus, .button.is-warning.is-outlined.is-focused, .button.is-warning.switch:not([aria-selected]):hover, .button.is-warning.switch:not([aria-selected]):focus, .button.is-warning.switch:not([aria-selected]).is-focused, a.button.is-warning.is-outlined:hover, a.button.is-warning.is-outlined:focus, a.button.is-warning.is-outlined.is-focused, a.button.is-warning.switch:not([aria-selected]):hover, a.button.is-warning.switch:not([aria-selected]):focus, a.button.is-warning.switch:not([aria-selected]).is-focused {
   background-color: var(--bgColor-attention-emphasis);
   border-color: var(--bgColor-attention-emphasis);
   color: var(--fgColor-onInverse);
 }
-.button.is-warning.is-outlined[disabled], fieldset[disabled] .button.is-warning.is-outlined, a.button.is-warning.is-outlined[disabled], fieldset[disabled] a.button.is-warning.is-outlined {
+.button.is-warning.is-outlined[disabled], fieldset[disabled] .button.is-warning.is-outlined, .button.is-warning.switch:not([aria-selected])[disabled], fieldset[disabled] .button.is-warning.switch:not([aria-selected]), a.button.is-warning.is-outlined[disabled], fieldset[disabled] a.button.is-warning.is-outlined, a.button.is-warning.switch:not([aria-selected])[disabled], fieldset[disabled] a.button.is-warning.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: var(--bgColor-attention-emphasis);
   box-shadow: none;
@@ -3283,17 +3293,17 @@ pre {
   box-shadow: none;
   color: var(--bgColor-danger-emphasis);
 }
-.button.is-danger.is-outlined, a.button.is-danger.is-outlined {
+.button.is-danger.is-outlined, .button.is-danger.switch:not([aria-selected]), a.button.is-danger.is-outlined, a.button.is-danger.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: var(--bgColor-danger-emphasis);
   color: var(--bgColor-danger-emphasis);
 }
-.button.is-danger.is-outlined:hover, .button.is-danger.is-outlined:focus, .button.is-danger.is-outlined.is-focused, a.button.is-danger.is-outlined:hover, a.button.is-danger.is-outlined:focus, a.button.is-danger.is-outlined.is-focused {
+.button.is-danger.is-outlined:hover, .button.is-danger.is-outlined:focus, .button.is-danger.is-outlined.is-focused, .button.is-danger.switch:not([aria-selected]):hover, .button.is-danger.switch:not([aria-selected]):focus, .button.is-danger.switch:not([aria-selected]).is-focused, a.button.is-danger.is-outlined:hover, a.button.is-danger.is-outlined:focus, a.button.is-danger.is-outlined.is-focused, a.button.is-danger.switch:not([aria-selected]):hover, a.button.is-danger.switch:not([aria-selected]):focus, a.button.is-danger.switch:not([aria-selected]).is-focused {
   background-color: var(--bgColor-danger-emphasis);
   border-color: var(--bgColor-danger-emphasis);
   color: var(--fgColor-onInverse);
 }
-.button.is-danger.is-outlined[disabled], fieldset[disabled] .button.is-danger.is-outlined, a.button.is-danger.is-outlined[disabled], fieldset[disabled] a.button.is-danger.is-outlined {
+.button.is-danger.is-outlined[disabled], fieldset[disabled] .button.is-danger.is-outlined, .button.is-danger.switch:not([aria-selected])[disabled], fieldset[disabled] .button.is-danger.switch:not([aria-selected]), a.button.is-danger.is-outlined[disabled], fieldset[disabled] a.button.is-danger.is-outlined, a.button.is-danger.switch:not([aria-selected])[disabled], fieldset[disabled] a.button.is-danger.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: var(--bgColor-danger-emphasis);
   box-shadow: none;
@@ -3350,17 +3360,17 @@ pre {
   box-shadow: none;
   color: #111;
 }
-.button.is-black.is-outlined, a.button.is-black.is-outlined {
+.button.is-black.is-outlined, .button.is-black.switch:not([aria-selected]), a.button.is-black.is-outlined, a.button.is-black.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: #111;
   color: #111;
 }
-.button.is-black.is-outlined:hover, .button.is-black.is-outlined:focus, .button.is-black.is-outlined.is-focused, a.button.is-black.is-outlined:hover, a.button.is-black.is-outlined:focus, a.button.is-black.is-outlined.is-focused {
+.button.is-black.is-outlined:hover, .button.is-black.is-outlined:focus, .button.is-black.is-outlined.is-focused, .button.is-black.switch:not([aria-selected]):hover, .button.is-black.switch:not([aria-selected]):focus, .button.is-black.switch:not([aria-selected]).is-focused, a.button.is-black.is-outlined:hover, a.button.is-black.is-outlined:focus, a.button.is-black.is-outlined.is-focused, a.button.is-black.switch:not([aria-selected]):hover, a.button.is-black.switch:not([aria-selected]):focus, a.button.is-black.switch:not([aria-selected]).is-focused {
   background-color: #111;
   border-color: #111;
   color: #fff;
 }
-.button.is-black.is-outlined[disabled], fieldset[disabled] .button.is-black.is-outlined, a.button.is-black.is-outlined[disabled], fieldset[disabled] a.button.is-black.is-outlined {
+.button.is-black.is-outlined[disabled], fieldset[disabled] .button.is-black.is-outlined, .button.is-black.switch:not([aria-selected])[disabled], fieldset[disabled] .button.is-black.switch:not([aria-selected]), a.button.is-black.is-outlined[disabled], fieldset[disabled] a.button.is-black.is-outlined, a.button.is-black.switch:not([aria-selected])[disabled], fieldset[disabled] a.button.is-black.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: #111;
   box-shadow: none;
@@ -3417,17 +3427,17 @@ pre {
   box-shadow: none;
   color: #fff;
 }
-.button.is-white.is-outlined, a.button.is-white.is-outlined {
+.button.is-white.is-outlined, .button.is-white.switch:not([aria-selected]), a.button.is-white.is-outlined, a.button.is-white.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: #fff;
   color: #fff;
 }
-.button.is-white.is-outlined:hover, .button.is-white.is-outlined:focus, .button.is-white.is-outlined.is-focused, a.button.is-white.is-outlined:hover, a.button.is-white.is-outlined:focus, a.button.is-white.is-outlined.is-focused {
+.button.is-white.is-outlined:hover, .button.is-white.is-outlined:focus, .button.is-white.is-outlined.is-focused, .button.is-white.switch:not([aria-selected]):hover, .button.is-white.switch:not([aria-selected]):focus, .button.is-white.switch:not([aria-selected]).is-focused, a.button.is-white.is-outlined:hover, a.button.is-white.is-outlined:focus, a.button.is-white.is-outlined.is-focused, a.button.is-white.switch:not([aria-selected]):hover, a.button.is-white.switch:not([aria-selected]):focus, a.button.is-white.switch:not([aria-selected]).is-focused {
   background-color: #fff;
   border-color: #fff;
   color: #111;
 }
-.button.is-white.is-outlined[disabled], fieldset[disabled] .button.is-white.is-outlined, a.button.is-white.is-outlined[disabled], fieldset[disabled] a.button.is-white.is-outlined {
+.button.is-white.is-outlined[disabled], fieldset[disabled] .button.is-white.is-outlined, .button.is-white.switch:not([aria-selected])[disabled], fieldset[disabled] .button.is-white.switch:not([aria-selected]), a.button.is-white.is-outlined[disabled], fieldset[disabled] a.button.is-white.is-outlined, a.button.is-white.switch:not([aria-selected])[disabled], fieldset[disabled] a.button.is-white.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: #fff;
   box-shadow: none;
@@ -3484,17 +3494,17 @@ pre {
   box-shadow: none;
   color: var(--bgColor-inverse);
 }
-.button.is-inverse.is-outlined, a.button.is-inverse.is-outlined {
+.button.is-inverse.is-outlined, .button.is-inverse.switch:not([aria-selected]), a.button.is-inverse.is-outlined, a.button.is-inverse.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: var(--bgColor-inverse);
   color: var(--bgColor-inverse);
 }
-.button.is-inverse.is-outlined:hover, .button.is-inverse.is-outlined:focus, .button.is-inverse.is-outlined.is-focused, a.button.is-inverse.is-outlined:hover, a.button.is-inverse.is-outlined:focus, a.button.is-inverse.is-outlined.is-focused {
+.button.is-inverse.is-outlined:hover, .button.is-inverse.is-outlined:focus, .button.is-inverse.is-outlined.is-focused, .button.is-inverse.switch:not([aria-selected]):hover, .button.is-inverse.switch:not([aria-selected]):focus, .button.is-inverse.switch:not([aria-selected]).is-focused, a.button.is-inverse.is-outlined:hover, a.button.is-inverse.is-outlined:focus, a.button.is-inverse.is-outlined.is-focused, a.button.is-inverse.switch:not([aria-selected]):hover, a.button.is-inverse.switch:not([aria-selected]):focus, a.button.is-inverse.switch:not([aria-selected]).is-focused {
   background-color: var(--bgColor-inverse);
   border-color: var(--bgColor-inverse);
   color: var(--fgColor-onInverse);
 }
-.button.is-inverse.is-outlined[disabled], fieldset[disabled] .button.is-inverse.is-outlined, a.button.is-inverse.is-outlined[disabled], fieldset[disabled] a.button.is-inverse.is-outlined {
+.button.is-inverse.is-outlined[disabled], fieldset[disabled] .button.is-inverse.is-outlined, .button.is-inverse.switch:not([aria-selected])[disabled], fieldset[disabled] .button.is-inverse.switch:not([aria-selected]), a.button.is-inverse.is-outlined[disabled], fieldset[disabled] a.button.is-inverse.is-outlined, a.button.is-inverse.switch:not([aria-selected])[disabled], fieldset[disabled] a.button.is-inverse.switch:not([aria-selected]) {
   background-color: transparent;
   border-color: var(--bgColor-inverse);
   box-shadow: none;
@@ -3533,6 +3543,9 @@ pre {
 }
 .button.is-large, a.button.is-large {
   font-size: 1.5rem;
+}
+.button.switch, a.button.switch {
+  filter: saturate(var(--rate-switchSat, 30%));
 }
 .button[disabled], fieldset[disabled] .button, a.button[disabled], fieldset[disabled] a.button {
   background-color: hsl(0, 0%, 100%);
@@ -5814,6 +5827,7 @@ md-dialog:not(:defined)[open] {
   --md-fab-label-text-color: var(--fgColor-saira-link, var(--fgColor-link, var(--fgColor-saira-link, var(--fgColor-link, hsl(229, 53%, 53%)))));
   --md-menu-item-selected-container-color: var(--selectMenu-bgColor-active);
   --md-text-button-label-text-color: var(--fgColor-saira-link, var(--fgColor-link, var(--fgColor-saira-link, var(--fgColor-link, hsl(229, 53%, 53%)))));
+  --shadow-blue: 2px 3px 5px rgb(45 55 70 / 22%), 4px 5px 10px rgb(50 65 90 / 12%), 10px 8px 20px rgb(60 75 105 / 5%);
 }
 
 .is-inverse {
