@@ -2842,6 +2842,18 @@ pre {
   border-color: transparent;
 }
 
+.block-link {
+  position: relative;
+}
+.block-link.x:hover {
+  box-shadow: var(--shadow-blue, 0 4px 12px rgba(0, 0, 0, 0.12));
+}
+.block-link a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
 /* 
  * This comes from Primer Components
  * https://github.com/primer/view_components/blob/v0.2.0/app/components/primer/beta/border_box.pcss
@@ -3545,7 +3557,7 @@ pre {
   font-size: 1.5rem;
 }
 .button.switch, a.button.switch {
-  filter: saturate(var(--rate-switchSat, 30%));
+  filter: saturate(var(--satRate-switch, 30%));
 }
 .button[disabled], fieldset[disabled] .button, a.button[disabled], fieldset[disabled] a.button {
   background-color: hsl(0, 0%, 100%);
@@ -5870,7 +5882,7 @@ md-tabs.is-inverse {
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
-  max-width: 544px;
+  max-width: 640px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -6443,7 +6455,7 @@ md-tabs.is-inverse {
   margin-left: auto !important;
 }
 
-@media (min-width: 544px) {
+@media (min-width: 640px) {
   /* Set a $size margin to all sides at $breakpoint */
   .m-sm-0 {
     margin: 0 !important;
@@ -8634,7 +8646,7 @@ md-tabs.is-inverse {
   padding-bottom: var(--base-size-128, 128px) !important;
 }
 
-@media (min-width: 544px) {
+@media (min-width: 640px) {
   /* Set a $size padding to all sides at $breakpoint */
   .p-sm-0 {
     padding: 0 !important;
@@ -9990,7 +10002,7 @@ md-tabs.is-inverse {
   padding-right: var(--base-size-16) !important;
   padding-left: var(--base-size-16) !important;
 }
-@media (min-width: 544px) {
+@media (min-width: 640px) {
   .p-responsive {
     padding-right: var(--base-size-40) !important;
     padding-left: var(--base-size-40) !important;
@@ -10035,7 +10047,7 @@ md-tabs.is-inverse {
   display: table-cell !important;
 }
 
-@media (min-width: 544px) {
+@media (min-width: 640px) {
   .d-sm-block {
     display: block !important;
   }
@@ -10147,12 +10159,12 @@ md-tabs.is-inverse {
   visibility: visible !important;
 }
 
-@media (max-width: 543.98px) {
+@media (max-width: 639.98px) {
   .hide-sm {
     display: none !important;
   }
 }
-@media (min-width: 544px) and (max-width: 768.98px) {
+@media (min-width: 640px) and (max-width: 768.98px) {
   .hide-md {
     display: none !important;
   }
@@ -10359,7 +10371,7 @@ md-tabs.is-inverse {
   text-align: center !important;
 }
 
-@media (min-width: 544px) {
+@media (min-width: 640px) {
   /* Text align to the right */
   .text-sm-right {
     text-align: right !important;
@@ -10652,7 +10664,7 @@ md-tabs.is-inverse {
   order: inherit !important;
 }
 
-@media (min-width: 544px) {
+@media (min-width: 640px) {
   .flex-sm-row {
     flex-direction: row !important;
   }
@@ -11158,25 +11170,25 @@ ul {
 }
 
 /* Original classes */
-a.compbox {
+.compbox {
   display: flex;
   gap: 15px;
   align-items: center;
   color: var(--main-font-color);
 }
-a.compbox > picture {
+.compbox > picture {
   display: block;
   flex: none;
   width: 100px;
   height: 100px;
 }
-a.compbox > picture > img {
+.compbox > picture > img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-a.compbox.bordered:not(:last-child) {
+.compbox.bordered:not(:last-child) {
   border-bottom: solid 1px #999;
 }
 
@@ -11192,7 +11204,7 @@ a.compbox.bordered:not(:last-child) {
     width: 100%;
   }
 }
-@media screen and (min-width: 544px) {
+@media screen and (min-width: 640px) {
   .quarter, .half, .three-quarter {
     flex: none;
   }
