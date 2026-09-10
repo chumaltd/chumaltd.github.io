@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technology on civilis</title>
+    <link>https://chumaltd.github.io/tech/</link>
+    <description>Recent content in Technology on civilis</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://chumaltd.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes as OS</title>
+      <link>https://chumaltd.github.io/en/kubernetes-os/</link>
+      <pubDate>Wed, 25 Sep 2024 11:08:31 +0900</pubDate>
+      <guid>https://chumaltd.github.io/en/kubernetes-os/</guid>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Kubernetes&#34;&#xA;   &#xA;&gt;Kubernetes&lt;/a&gt;&#xA; is increasingly incorporating the functionalities of an &#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Operating_system&#34;&#xA;   &#xA;&gt;Operating System&lt;/a&gt;&#xA;.&lt;br&gt;&#xA;The term &amp;ldquo;OS&amp;rdquo; is multifaceted, and the essential functions vary depending on one&amp;rsquo;s perspective. For software and engineers, the critical functions are those that manage hardware components like the CPU, RAM, and disk. If these are being controlled through Kubernetes configurations, then Kubernetes can be considered an OS.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

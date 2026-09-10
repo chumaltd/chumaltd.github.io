@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja" data-color-mode="dark" data-light-theme="light" data-dark-theme="dark">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="ようやくネットワーク構築が完備した。これ以上は目ぼしい改善の余地はないだろうというところまで来た。
+ネットワークの目的は明確だ。背後にサーバーがあり、リクエストに応じて適切にサーバーを呼び出し、そして結果を返す。
+多少技術的に言えば、多くのケースでHTTP200 OKが得られれば足りる。
+一見単純に …">
+<title>泥沼のインテリジェンス | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+
+<link rel='preload' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block' as='style' onload='this.onload=null;this.rel="stylesheet"'>
+<link rel='preload' href='/lib/styles/tomorrow-night-bright.min.css' as='style' onload='this.onload=null;this.rel="stylesheet"'>
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="http://localhost:1313/ja/philosophy/network-engineering/" />
+<meta property="og:title" content="泥沼のインテリジェンス" />
+<meta property="og:image" content='http://localhost:1313/common/social-logo.png' />
+<link rel="canonical" href="http://localhost:1313/ja/philosophy/network-engineering/" />
+<style> :root { --body-font-size: 16px }</style>
+
+
+    </head>
+    <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl d-flex" style="width: 100%">
+  <div class="navbar-brand" style="width: 64px; justify-content: center">
+	  <span class="navbar-item"><cm-drawer></cm-drawer></span>
+  </div>
+  <div class="navbar-brand">
+    <a href='/' class="navbar-item" style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+
+<div id ="o" class="o">
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li><a href="/ja/">CIVILIS</a></li>
+  <li><a href="/ja/philosophy/">Philosophies</a></li>
+  <li class="current">&nbsp;泥沼のインテリジェンス</li></ul>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"http://localhost:1313/ja/","name":"CIVILIS","position":1},{"@type":"ListItem","item":"http://localhost:1313/ja/philosophy/","name":"Philosophies","position":2},{"@type":"ListItem","item":"http://localhost:1313/ja/philosophy/network-engineering/","name":"泥沼のインテリジェンス","position":3}]}</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex"
+	   style="padding: calc(min(10vw, 1340px)) 0"
+	 >
+    <div class="quarter hide-sm"></div>
+    <div
+	  id="pagetitle"
+	  class="three-quarter px-3"
+	>
+	<div class="mb-4">
+        <h1
+	   class="idx py-5"
+	>
+          泥沼のインテリジェンス
+        </h1>
+	<div style="text-align: right; font-weight: 600; font-style: italic">2022/01/05</div></div>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;泥沼のインテリジェンス</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#泥沼のインテリジェンス">泥沼のインテリジェンス</a></li>
+    <li><a href="#奇跡は多いほど良い">奇跡は多いほど良い</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>ようやくネットワーク構築が完備した。これ以上は目ぼしい改善の余地はないだろうというところまで来た。</p>
+<p>ネットワークの目的は明確だ。背後にサーバーがあり、リクエストに応じて適切にサーバーを呼び出し、そして結果を返す。<br>
+多少技術的に言えば、多くのケースでHTTP200 OKが得られれば足りる。</p>
+<p>一見単純に見える目的が完成しないのは、準備プロセスに組み合わせ爆発があるからだ。<br>
+正解の組み合わせ以外はエラーとなり、設定が完備するその瞬間までネットワークはエラーを返し続ける。</p>
+<p>また、エラーを裏返せば正しい設定になるという関係ではない。<br>
+仮に選択肢が2つなのであれば、失敗は次の一手の成功を約束する。しかし、そのような構造をしていない。</p>
+<p>構造の理解こそ重要だ。</p>
+<h2 id="泥沼のインテリジェンス">泥沼のインテリジェンス</h2>
+<p>ネットワークサービスや機器は、高機能であるほど設定の選択肢も増える。これは表裏一体と言える。</p>
+<p>特定用途のセットアップに適した設定の組み合わせはごく限られるから、高機能なサービスを利用しようとすることが相対的にノイズ（エラーが生じる設定）の比率を高める。</p>
+<p>この構造は、目的のバリエーションが少ないのにうまく行かない理由なら無数にある、泥沼型のオペレーション環境と言える。</p>
+<p>完遂したこと自体が上出来と言えなくもないが、膨大な手間を消費している。<br>
+競争分析の点では参入障壁を１つ越えたのだと評価するのだろう。同じことを他社がやろうとすれば同じ沼に足をとられることは間違いない。</p>
+<p>ただ、どうなのだろう。</p>
+<p>「もっと短時間に達成できないものか」という願望はある。そして同時に、そのような道はないことも経験してきている。</p>
+<p>おそらく経営学の競争論は、人的・物的資源のゼロサム・ゲーム下で起きるモノポリーに還元される。<br>
+「できる人がやるしかない」という結論なら、戦術の進歩には役立たない。</p>
+<p>泥沼をショートカットできるインテリジェンスは確かにある。ただし、苦労の大半を相殺するような特効薬ではないし、効き方も一様ではない。</p>
+<p>複合要素を分解し、フィードバック情報を増やす操作により状況理解を深める戦術が基本線となるため、局所的に見れば作業は必ず増える。</p>
+<p>確率の低い状態に導くためにはより多くの情報量が求められ、そのために体系的な不適合サンプルが欠かせない。</p>
+<h2 id="奇跡は多いほど良い">奇跡は多いほど良い</h2>
+<p>ネットワークエンジニアリングにはとくに試行錯誤が求められる。<br>
+サンクコストを評価し、これまで実装を2つ捨ててきた。</p>
+<p>奇跡とは膨大な犠牲の末に得られる特殊な選択肢である。宝くじのように誰かが受動的に選ばれる幸運とは分けて考えるべきだ。</p>
+<p>そしてより重要なことは、奇跡のメタ構造である。<br>
+高度なネットワーク実装は有用ではあるが、成功を約束するわけではない。</p>
+<p>奇跡は多いほど良い。</p>
+<p>ネットワーク構築で奇跡を達成したのであれば、まったく別の分野でも奇跡を起こさなければならない。<br>
+ネットワーク・エンジニアリングで得られた暗黙知など、他の分野にはまったく役立たない。</p>
+<p>政策や経営といったマネジメントのレイヤでは、個別の奇跡に達成感はない。</p>
+<p>これはダイバーシティの必要性の本質でもある。<br>
+ダイバーシティとは多芸の才であって、属性の多様性ではない。</p>
+<p>これから成すべきことは、新たな泥沼に分け入り、適切な犠牲の払い方を設計することだ。</p>
+
+
+	<div class="my-4" style="text-align: right; font-style: italic">
+	<span>⁋ 2022/01/05</span></div>
+      </article><div class="related_articles py-4">
+            <h4 id="related" class="idx"></h4>
+	    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+    
+
+  
+
+  
+
+
+
+
+
+
+  
+
+  
+  
+
+  
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+        
+      
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+        
+      
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+        
+      
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+        
+      
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+        
+      
+
+    
+
+  
+
+    
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+
+    
+
+  
+
+  
+
+
+
+
+  
+<div class="compbox bordered p-3 block-link x">
+        <picture>
+        </picture>
+        <div>
+	<div class="h4 mb-2"><a href="/ja/heat-tide/">熱波潮流</a></div>
+	<div class="f6">日本の10月はかつては秋だった。秋を迎える前に「秋めく」時候もあり、涼しい風が吹く日がぽつぽつ混じるものだった。
+今年はまだ30℃を超える日がある。
+夏のあいだエアコンをかけずに仕事をしてきたが、どう …</div>
+	</div>
+</div>
+<div class="compbox bordered p-3 block-link x">
+        <picture>
+        </picture>
+        <div>
+	<div class="h4 mb-2"><a href="/ja/tacit-dimension/">『暗黙知の次元』</a></div>
+	<div class="f6">マイケル・ポランニー『暗黙知の次元』は、「知」の本来のパラダイムに光を当てた初期的な主張と言える。
+2023年現在から振り返って過去100年程度の知的生産の研究は、論理・記号操作による手法が主であり、 …</div>
+	</div>
+</div>
+<div class="compbox bordered p-3 block-link x">
+        <picture>
+        </picture>
+        <div>
+	<div class="h4 mb-2"><a href="/ja/aurelius-mediations/">マルクス・アウレリウス『自省録』</a></div>
+	<div class="f6">ローマ皇帝 マルクス・アウレリウス が長年にわたり書きつづった著作。
+「皇帝としてどのように役割を果たすべきか」という行動原理をこの『自省録』を執筆するプロセスからひき出したのは間違いない。
+そして、 …</div>
+	</div>
+</div>
+<div class="compbox bordered p-3 block-link x">
+        <picture>
+        </picture>
+        <div>
+	<div class="h4 mb-2"><a href="/ja/civilization-spore/">文明の芽胞</a></div>
+	<div class="f6"> 書かなければ消滅するメカニズム では、サバイバルの必要水準が想像以上に高いこと、知的創造をクリアするには書くプロセスが不可欠であることを確認した。
+分業することじたいに風化作用があり、1990年代か …</div>
+	</div>
+</div>
+<div class="compbox bordered p-3 block-link x">
+        <picture>
+        </picture>
+        <div>
+	<div class="h4 mb-2"><a href="/ja/sustained-by-description/">書かなければ消滅するメカニズム</a></div>
+	<div class="f6">「書かない組織は必ず衰退する」という共通の特徴を見て来ている。書くという行動には拒絶感があり、それが強いほど落ちていくスピードも速い。
+この現象は人類の文明文化にとって普遍のパターンに見えるため、多角 …</div>
+	</div>
+</div>
+
+
+
+
+
+  
+
+  
+
+
+
+        </div>
+
+    </div>
+  </div>
+</main>
+</div>
+</div>
+<footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer>
+<script src='/lib/highlight.min.js'></script><script>hljs.highlightAll();</script>
+<script type="module" src='/lib/cm.js' ></script>
+</body>
+</html>
