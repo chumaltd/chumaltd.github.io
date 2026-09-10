@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ja" data-color-mode="dark" data-light-theme="light" data-dark-theme="dark">
+    <head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content=" E2Eテスト導入 から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく、大規模な実装変更のガイドラインとして機能した点がもっとも分かりやすい効果であった。
+一方、E2Eテストを継続的にメンテナンスし続けることを通じて、品質の概念そのものが書きかわってきた。
+品質を定 …">
+<title>評価しえぬもの | civilis</title>
+
+<meta name="theme-color" content="rgb(38, 29, 32)">
+
+<link rel='preload' href='//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block' as='style' onload='this.onload=null;this.rel="stylesheet"'>
+<link rel='preload' href='/lib/styles/tomorrow-night-bright.min.css' as='style' onload='this.onload=null;this.rel="stylesheet"'>
+<link rel='stylesheet' href='/lib/cm.css'>
+<link rel="stylesheet" href='/lib/base.css' />
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://chumaltd.github.io/ja/tech/web/beyond-evaluation/" />
+<meta property="og:title" content="評価しえぬもの" />
+<meta property="og:image" content='/images/m84jrlxVUc1r9blbt.jpg' />
+<link rel="canonical" href="https://chumaltd.github.io/ja/tech/web/beyond-evaluation/" />
+<style> :root { --body-font-size: 16px }</style>
+
+
+    </head>
+    <body class="ja "><header id="global-nav" class="navbar" role="navigation" aria-label="main navigation">
+  <section class="container-xl d-flex" style="width: 100%">
+  <div class="navbar-brand" style="width: 64px; justify-content: center">
+	  <span class="navbar-item"><cm-drawer></cm-drawer></span>
+  </div>
+  <div class="navbar-brand">
+    <a href='/' class="navbar-item" style="display: inline-flex">
+	    
+	    <img id="footer_logo" src="/common/civilis.svg">
+	    
+    </a>
+    </span>
+ </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+  </div>
+  </section>
+</header>
+
+<div id ="o" class="o">
+<nav class="container-xl" style="overflow: hidden">
+  <div class="d-sm-flex">
+    <div class="quarter hide-sm"></div>
+    <div class="p-3 three-quarter">
+        <nav id="breadcrumb" class="breadcrumb is-small px-4 py-3">
+<ul>
+  <li><a href="/ja/">CIVILIS</a></li>
+  <li><a href="/ja/tech/">Technology</a></li>
+  <li><a href="/ja/tech/web/">Web</a></li>
+  <li class="current">&nbsp;評価しえぬもの</li></ul>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://chumaltd.github.io/ja/","name":"CIVILIS","position":1},{"@type":"ListItem","item":"https://chumaltd.github.io/ja/tech/","name":"Technology","position":2},{"@type":"ListItem","item":"https://chumaltd.github.io/ja/tech/web/","name":"Web","position":3},{"@type":"ListItem","item":"https://chumaltd.github.io/ja/tech/web/beyond-evaluation/","name":"評価しえぬもの","position":4}]}</script>
+</nav>
+
+    </div>
+  </div>
+</nav>
+<div class="coverart" style="
+        background-image: url(/images/m84jrlxVUc1r9blbt.jpg);
+      ">
+<main class="container-xl">
+    <div class="d-sm-flex"
+	   style="padding: calc(min(10vw, 1340px)) 0"
+	 >
+    <div class="quarter hide-sm"></div>
+    <div
+	  id="pagetitle"
+	  class="three-quarter px-3"
+	>
+	<div class="mb-4">
+        <h1
+	   class="idx py-5"
+	>
+          評価しえぬもの
+        </h1>
+	<div style="text-align: right; font-weight: 600; font-style: italic">2024/01/24</div></div>
+    </div>
+  </div>
+  <div class="d-sm-flex">
+    <nav class="quarter layered"><aside class="toc sticky" style="position: sticky; top: 3em">
+        <div class="header"><i class="material-symbols-outlined">toc</i>&nbsp;評価しえぬもの</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#webサービスのe2eの難点">WebサービスのE2Eの難点</a>
+      <ul>
+        <li><a href="#ブラウザじたいに難がある">ブラウザじたいに難がある</a></li>
+      </ul>
+    </li>
+    <li><a href="#評価しえぬものとのミックス">評価しえぬものとのミックス</a>
+      <ul>
+        <li><a href="#動作前提を絞る">動作前提を絞る</a></li>
+      </ul>
+    </li>
+    <li><a href="#居つくな">居つくな</a></li>
+  </ul>
+</nav>
+      </aside>
+    </nav>
+    <div id="content" class="three-quarter">
+      <article>
+        <p>
+<a href="/ja/e2e-web-testing/"
+   
+>E2Eテスト導入</a>
+から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく、大規模な実装変更のガイドラインとして機能した点がもっとも分かりやすい効果であった。</p>
+<p>一方、E2Eテストを継続的にメンテナンスし続けることを通じて、品質の概念そのものが書きかわってきた。<br>
+品質を定量的にとらえる場合、シックスシグマが象徴的なアプローチと言える。要するに、パーツの変更や経時的な変化にさらされても動作のバラつきが少ない、減っていくことが理想という見方だ。</p>
+<p>他に良い指標がないためシックスシグマはベンチマークであり続けるのだろうが、計測のスケールによっては機能しないと考えるようになった。<br>
+少なくとも、素朴なE2Eテストの実装ではうまく評価できないケースに直面してきた。</p>
+<h2 id="webサービスのe2eの難点">WebサービスのE2Eの難点</h2>
+<p>品質評価の観点でE2E方式の難しいポイントは、適切なコードであっても不規則にエラーを検出することだ。<br>
+E2Eでは実際のブラウザでWebサービスにアクセスして利用するのだが、プログラムによる自動実行が高速動作することに伴うテストエラーが頻発する。</p>
+<p>コード上の処理が適切でないケースもあるためケースごとに確認するのだが、分析のためにスクリーンショット取得を追加すると正常に動作することも多い。<br>
+言いかえれば、コードに異常はないケースであっても、テスト自体をゆっくり動作させるようなチューニングを追加するよう迫られる。</p>
+<p>これが高速操作されると動作がクラッシュするということなら修正する意義はまだあるのだが、じっさいには短時間のアニメーション効果によりボタン位置がずれたのでツール操作対象がずれて押せない、というシナリオが多い。<br>
+Seleniumが描画の完了を待つ機能を持っていないということは大きな要因ではある。ただ、それだけではない。</p>
+<h3 id="ブラウザじたいに難がある">ブラウザじたいに難がある</h3>
+<p>E2Eのトラブルはバリエーションがあるのだが、昨日、コードを一切変更することなくエラーが収束したケースに直面し、根本的に見方を改めるに至った。</p>
+<p>つまり、ツールセットのブラウザをバージョンアップしたらエラーなく動作することがある。<br>
+もう少し視野を広げると、今回のケースはある時点でブラウザをバージョンアップしたことにより生じたエラーだったのだ。</p>
+<p>重要なのは「新しいツールを使えば環境から受ける悪影響が減る」という見方は完全に幻想だという点。<br>
+バージョンアップにより描画性能がデグレードし、適切なコードであっても高速操作時の挙動不安定が増幅する、ということの方が重要なのだ。</p>
+<h2 id="評価しえぬものとのミックス">評価しえぬものとのミックス</h2>
+<p>ブラウザのバージョンによって挙動が変わるということは、Seleniumが評価しているのはWebサービスではなくブラウザの品質である。<br>
+しかも、エラーになる箇所は自分が書いたコードではなく利用しているライブラリが提供しているアニメーション効果なのだ。<br>
+そもそも、Seleniumの動作じたいもリアルからかけ離れている。</p>
+<p>ここで人間性を取りもどして言えば、徹頭徹尾ばかげた話とも言える。<br>
+ただシックスシグマを念頭に置くなら、常用の条件よりも厳しい環境でこそバラつきを低減したいというチャレンジとして捉えるべきなのだ。</p>
+<p>Seleniumが示唆しているのは、より厳しい条件でバラつき低減を目指すなら、ライブラリやブラウザに手を入れていくべき、ということだろう。<br>
+それは計測対象の操作に占める処理量のウェイトが大きいのはブラウザだからという事実から来る。</p>
+<p>一方で実務の現実味から考えれば、ブラウザ開発に割って入る余力はどう考えても出ない。<br>
+けっきょくのところ、Seleniumが測っているのは評価しえぬものとの混合物であり、ヴィトゲンシュタインなら沈黙せざるを得ないというアドバイスを提示しそうなものだ。</p>
+<h3 id="動作前提を絞る">動作前提を絞る</h3>
+<p>ひとつ分かったことは、動作しやすいブラウザと動作しないブラウザがあり、動作するバージョンを確保しておくとヒントが増えるということだ。<br>
+実務上は動作しやすいバージョンを活用することにするが、その方針の意味は現時点では結論づけていない。</p>
+<p>おそらく多くのエンジニアは、動作環境を制御してオールグリーンになることが「正しい」選択であると考えるだろう。<br>
+僕はそれはもっとも浅はかな捉え方だと思う。結論づけたいという願望そのものが誤っている。</p>
+<p>シックスシグマの理想からすれば、動作しないはずのブラウザで操作させることは目標であり続けるのだが、それは良いマイルストーンとは言えない。<br>
+逆に、一部の動作しやすい環境で正常動作したとしても、それは別の環境でどこまで動作するかという点に何も保証を与えていない。</p>
+<p>おそらく現在のE2E実装は、リアルな人間による使われ方を想定した極限域といった適切な計測レンジをターゲットにできていない。<br>
+テストケースを個別にチューニングするのではなく、風洞実験のように全体のリアリティを向上することの方が大事になるはずだ。</p>
+<h2 id="居つくな">居つくな</h2>
+<p>分かる、という現象にはいくつかのモードがあり、このE2Eの事例は行動原理の優劣にヒントを提供すると捉えている。<br>
+
+<a href="./fake-technology2.md"
+   
+>縮小均衡からの脱却</a>
+で、複数のプロダクトを予断なく交換するアプローチを強調した。E2Eにも同じパターンを読みとれるだろう。</p>
+<p>サンクコストが説明するとおり、やり方を変えることにはコストが伴うため、見かけ上は合理的な選択ではない。<br>
+それでも僕が代替実装をとるのは、エンジリアリングとはまったく無関係な武道の基本挙動から来ている。</p>
+<p>武道は「居つく」状態に着目し、居つかない行動原理を維持するように組み立てられている。<br>
+居つくとは、相対的な静止状態の一部を指している。典型的な棒立ちだけでなく、直前動作の延長のような単調な動きも、居つく状態に含むのではないかと思う。</p>
+<p>消極的な挙動をとると的を定めやすくなるためサバイバルの点で不利である、という実践の知見の上になり立っている。<br>
+あらゆる動作には攻防一体の効果があるため、闇雲であっても何らかの型を実行すれば局面を動かせる。操作には認識を改善する効果がある。</p>
+<p>状況を一般化すると、局所的カオスは広く存在していて、カオスそのものは評価できる対象ではないのだと思う。<br>
+E2Eの例も、視野がミクロになり過ぎていることによりカオス構造を直接観測する図式になってしまっている。</p>
+<p>カオスの挙動を予断をもって評価することは間抜けだが、人間は分かったような気になることを欲するため、居つく挙動になる。<br>
+武道の不文律はカオスに呑まれることを説いている。場の影響を受けて流されながら観測することにより、相対的な観測対象からカオスの一部を除去できる、という構造があるように思う。</p>
+<p>リサーチ不足でこの点に言及した研究を確認していないが、観測装置じたいが場の影響を受けるようなモデルを考えると、静止座標から観測するモデルと比較して交差エントロピーが減る例が存在するのだろう。</p>
+<p>行動原理を意識する際、折にふれて宮本武蔵の『五輪書』が思い出される。<br>
+宮本武蔵のアドバイスは随所で「よくよく工夫あるべし」といった結論になっている。それ以外のアプローチはない、ことの強調に読める。</p>
+<p>語りえぬカオスにとり囲まれた際に、演繹的には沈黙せざるを得ないのだとしても、居つきを排した挙動の主観から帰納的に知覚できるパターンは確かに存在する。</p>
+
+
+	<div class="my-4" style="text-align: right; font-style: italic">
+	<span>⁋ 2024/01/24</span><span class="mx-2">↻ 2026/09/10</span></div>
+      </article><div class="related_articles py-4">
+            <h4 id="related" class="idx"></h4>
+	    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+    
+
+  
+
+  
+
+
+
+
+
+
+  
+
+  
+  
+
+  
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+        
+      
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+        
+      
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+        
+      
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+        
+      
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+        
+      
+
+    
+
+  
+
+    
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+
+    
+
+  
+
+    
+
+    
+
+      
+
+      
+
+      
+
+    
+
+  
+
+  
+
+
+
+
+  
+<div class="compbox bordered p-3 block-link x">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+	<div class="h4 mb-2"><a href="/ja/http-conditional-flow/">Webフロー設計</a></div>
+	<div class="f6">クレジットカードの悪用がはびこった結果、日本では経済産業省が主導してセキュリティガイドラインを決済利用企業に強制する展開となった。
+幅広い課題のうち、多要素認証(MFA)の要求は「堅牢なWebフローの …</div>
+	</div>
+</div>
+<div class="compbox bordered p-3 block-link x">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+	<div class="h4 mb-2"><a href="/ja/exclude-nodejs/">Node.jsを完全に除去している</a></div>
+	<div class="f6"> 脱Node.js に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。
+開発プロセスに支障が出たため、これらもnodeを使わない方式に変更すること …</div>
+	</div>
+</div>
+<div class="compbox bordered p-3 block-link x">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+	<div class="h4 mb-2"><a href="/ja/client-cert-generation/">クライアント証明書を生成する</a></div>
+	<div class="f6">年に数回、 X.509 のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけていたため、一度関連動向を含めてリサーチした。
+TLSのクライアント証明書認証は、究極は …</div>
+	</div>
+</div>
+<div class="compbox bordered p-3 block-link x">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+	<div class="h4 mb-2"><a href="/ja/tech/web/re-integration-testing/">再インテグレーションテスト</a></div>
+	<div class="f6">Webサービスの品質管理の主役として、 2年前にe2eテストを導入 して引き続き機能している。
+Ruby on Railsを作ったDHHが システムテストの限界を書いていて 、フレーキーであるという指 …</div>
+	</div>
+</div>
+<div class="compbox bordered p-3 block-link x">
+        <picture>
+            <img src="/images/m84jrlxVUc1r9blbt.jpg">
+        </picture>
+        <div>
+	<div class="h4 mb-2"><a href="/ja/tech/web/runtime-cleanup/">ランタイム・クリーンアップ</a></div>
+	<div class="f6">コンテナイメージのクリーンアップを終えつつある。
+ソフトウェア開発は60年以上の歴史を持つが、いまだに不要なコードやモジュールを削除する一般的な手法がない。
+「ぜったいに使われない」ことを保証するロジ …</div>
+	</div>
+</div>
+
+
+
+
+
+  
+
+  
+
+
+
+        </div>
+
+    </div>
+  </div>
+</main>
+</div>
+</div>
+<footer class="footer lazy-block"><div class="container-xl">
+      <div>
+          <img id="footer_logo" src="/common/civilis.svg" loading="lazy">
+          
+      </div>
+  </div>
+</footer>
+<script src='/lib/highlight.min.js'></script><script>hljs.highlightAll();</script>
+<script type="module" src='/lib/cm.js' ></script>
+</body>
+</html>

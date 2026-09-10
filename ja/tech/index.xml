@@ -1,144 +1,113 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Technology on civilis</title>
-    <link>https://chumaltd.github.io/ja/tech/</link>
-    <description>Recent content in Technology on civilis</description>
-    <generator>Hugo</generator>
-    <language>ja</language>
-    <atom:link href="https://chumaltd.github.io/ja/tech/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>ソフトウェアの脆さ</title>
-      <link>https://chumaltd.github.io/ja/software-fragility/</link>
-      <pubDate>Thu, 20 Feb 2025 09:52:57 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/software-fragility/</guid>
-      <description>&lt;p&gt;コンピュータ・ソフトウェアを採用しているビジネスは、ソフトウェアを調達する力に強い制約を受ける。そしてソフトウェアを調達する力は、ソフトウェアの生存ルールに強く制約されている。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>RDBMSのユニットテスト</title>
-      <link>https://chumaltd.github.io/ja/rdbms-unit-test/</link>
-      <pubDate>Wed, 22 Jan 2025 18:25:29 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/rdbms-unit-test/</guid>
-      <description>&lt;p&gt;Webサービスを既存の挙動を破壊しないようにシームレスに変更することは、往々にして難しい。&lt;/p&gt;&#xA;&lt;p&gt;これまでテストケースを拡充することで従来の挙動を保護してきた。このアプローチは有効なのだが、最終的にDBアクセスを伴う処理が特異的に変更しづらいことが分かった。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DRAMの停滞</title>
-      <link>https://chumaltd.github.io/ja/dram-slowdown/</link>
-      <pubDate>Fri, 29 Nov 2024 17:51:55 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/dram-slowdown/</guid>
-      <description>&lt;p&gt;過去何度かトライしてきたシステム監視サービスにようやく見通しが立った。インハウスで構築できる状況には、おそらくあと5年ほど要するだろう。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>不可知なデータストア</title>
-      <link>https://chumaltd.github.io/ja/datastore-agnosticism/</link>
-      <pubDate>Wed, 13 Nov 2024 16:36:45 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/datastore-agnosticism/</guid>
-      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://www.postgresql.org/&#34;&#xA;   &#xA;&gt;PostgreSQL&lt;/a&gt;&#xA;は人類でもっとも重要なソフトウェア資産のひとつだ。データセットのごく一部を素朴に抽出するような検索用途には&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Relational_database&#34;&#xA;   &#xA;&gt;RDBMS&lt;/a&gt;&#xA;が適していて、おそらくRDBMS製品はPostgreSQLに収斂して差し支えない。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>KubernetesというOS</title>
-      <link>https://chumaltd.github.io/ja/kubernetes-os/</link>
-      <pubDate>Wed, 25 Sep 2024 11:08:31 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/kubernetes-os/</guid>
-      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Kubernetes&#34;&#xA;   &#xA;&gt;kubernetes&lt;/a&gt;&#xA;が&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Operating_system&#34;&#xA;   &#xA;&gt;OS&lt;/a&gt;&#xA;の機能を取り揃えつつある。&lt;br&gt;&#xA;OSは多義的な用語で、立場によって欠かせない機能が変わる。ソフトウェアやエンジニアから見るときにはCPUやRAM、ディスクといったハードを制御する機能が重要で、kubernetesの設定を通じてリクエストしているのであればkubernetesがOSと言える。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ドッグイヤーの終焉</title>
-      <link>https://chumaltd.github.io/ja/cloud-stagnation/</link>
-      <pubDate>Mon, 01 Jul 2024 12:08:10 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/cloud-stagnation/</guid>
-      <description>&lt;p&gt;&#xA;&lt;a href=&#34;./re-integration-testing.md&#34;&#xA;   &#xA;&gt;Deno上のインテグレーションテスト&lt;/a&gt;&#xA;の実用性を評価するうちに、実はクラウドインフラの性能も悪いことに気づいた。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ソフトウェア・テスティング</title>
-      <link>https://chumaltd.github.io/ja/software-testing/</link>
-      <pubDate>Fri, 15 Mar 2024 10:02:10 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/software-testing/</guid>
-      <description>&lt;p&gt;ソフトウェアの動作確認を担うテストコードは、品質を制御する主要パーツだ。&lt;code&gt;assert_equal 1 + 1, 2&lt;/code&gt;といったコードで適切な動作を確認する。&lt;br&gt;&#xA;実行時には取り外されていることから補助的なツールと見なされていて、無いよりは有った方がベターと捉えられているが、誤認である。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>評価しえぬもの</title>
-      <link>https://chumaltd.github.io/ja/beyond-evaluation/</link>
-      <pubDate>Wed, 24 Jan 2024 22:33:59 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/beyond-evaluation/</guid>
-      <description>&lt;p&gt;&#xA;&lt;a href=&#34;./e2e-web-testing.md&#34;&#xA;   &#xA;&gt;E2Eテスト導入&lt;/a&gt;&#xA;から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく、大規模な実装変更のガイドラインとして機能した点がもっとも分かりやすい効果であった。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>縮小均衡からの脱却</title>
-      <link>https://chumaltd.github.io/ja/fake-technology2/</link>
-      <pubDate>Wed, 20 Dec 2023 00:22:47 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/fake-technology2/</guid>
-      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://shepherdjs.dev/&#34;&#xA;   &#xA;&gt;Shepherd.js&lt;/a&gt;&#xA;を除去して&#xA;&lt;a href=&#34;https://driverjs.com/&#34;&#xA;   &#xA;&gt;driver.js&lt;/a&gt;&#xA;を再実装する作業を終えた。&lt;br&gt;&#xA;これらはインタラクティブツアーを実装するソフトウェアライブラリであり、機能は著しく似かよっている。&lt;br&gt;&#xA;いずれかを選択して使えば良いものではあるのだが、じつはdriver.jsの方が圧倒的に優れている。これは両方実装した今になって分かることだ。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>サウンドの品質</title>
-      <link>https://chumaltd.github.io/ja/sound-quality/</link>
-      <pubDate>Wed, 12 Apr 2023 00:15:43 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/sound-quality/</guid>
-      <description>&lt;p&gt;デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。&lt;br&gt;&#xA;音楽については、最初のデジタルメディアがCD（コンパクトディスク）だったため、CD比のハイレゾ（high resolution）移行が一部で始まっている現状だ。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>フェイク・テクノロジー</title>
-      <link>https://chumaltd.github.io/ja/fake-technology/</link>
-      <pubDate>Sun, 04 Sep 2022 06:51:22 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/fake-technology/</guid>
-      <description>&lt;p&gt;ひと月近くかけて、著名ライブラリのReact.jsを除去する実装を継続し、ようやく完了した。&lt;br&gt;&#xA;今年の夏は、観測史上2番目の暑さであったこともあり、ジリジリとした灼熱地獄の耐久戦だった。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>品質とオープンソース</title>
-      <link>https://chumaltd.github.io/ja/opensource-quality/</link>
-      <pubDate>Wed, 27 Apr 2022 22:09:46 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/opensource-quality/</guid>
-      <description>&lt;p&gt;ソフトウェア開発では、機能拡充と品質向上は両立しなくてはならない２大目標だ。&lt;/p&gt;&#xA;&lt;p&gt;いずれにせよ時間的犠牲が欠かせないため、ある瞬間に機能と品質のどちらを優先するか折に触れて選択を迫られる。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>サービス自動化のインターフェース</title>
-      <link>https://chumaltd.github.io/ja/service-auto-if/</link>
-      <pubDate>Sun, 11 Jul 2021 14:14:33 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/service-auto-if/</guid>
-      <description>&lt;p&gt;アウトプットの品質は、バラつきによって測れる。&lt;br&gt;&#xA;バラつきを狭い範囲に制御するには、プロセスの多くを自動化し、パラメータの組み合わせを少数に抑えることが有効と言える。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Androidタブレットの評価 2021年</title>
-      <link>https://chumaltd.github.io/ja/android-tablet-review-2021/</link>
-      <pubDate>Sat, 20 Mar 2021 00:54:25 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/android-tablet-review-2021/</guid>
-      <description>&lt;p&gt;仕事用のクライアント機器として、Androidタブレットを使う比率が上がっている。現時点のタブレットの主な特徴を挙げると以下のような点がある。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>オブジェクト階層の沼</title>
-      <link>https://chumaltd.github.io/ja/nested-object-mud/</link>
-      <pubDate>Mon, 18 Jan 2021 02:25:35 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/nested-object-mud/</guid>
-      <description>&lt;p&gt;ソフトウェア開発のうち、妙手がなく、とにかく生産性が落ちる分野の1つが、階層の深いオブジェクトの操作だ。&lt;br&gt;&#xA;データの集合は、主に配列と連想配列(Rubyではハッシュ、Javascriptではオブジェクト)がある。配列は同じデータが並んでいるもので、連想配列はIDなどのキーに対応するデータを持つ構造になっている。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>システム開発の難点とは</title>
-      <link>https://chumaltd.github.io/ja/system-dev-difficulties/</link>
-      <pubDate>Sun, 13 Mar 2016 01:56:20 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/system-dev-difficulties/</guid>
-      <description>&lt;p&gt;開発工程で手が止まりがちなのは、設計が必要な工程だ。&#xA;具体的には、オブジェクトの階層構造を実装するフェーズになると比較的時間がかかる。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>仮想化技術でなすべきこと</title>
-      <link>https://chumaltd.github.io/ja/virtualization-purpose/</link>
-      <pubDate>Thu, 15 May 2014 02:23:39 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/virtualization-purpose/</guid>
-      <description>&lt;p&gt;ハードウェアのコモディティ化により、相対的にソフトウェアの寿命が延びている。ハードの寿命が縮んできた要因としては以下のような理由があるだろう。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>スマホ技術動向2012秋</title>
-      <link>https://chumaltd.github.io/ja/select-smart-phone-2012/</link>
-      <pubDate>Mon, 10 Sep 2012 12:58:13 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/select-smart-phone-2012/</guid>
-      <description>&lt;p&gt;スマホを仕事に使う場面が増えてくると、機種選びの重要性が増す。&lt;br&gt;&#xA;Androidは機種も多彩だが、性能面に影響するパーツを着目するとCPUと画面解像度もバリエーションが多い。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>スマホWebの現実的ストレス緩和策</title>
-      <link>https://chumaltd.github.io/ja/mitigate-smartphone-web-frustration/</link>
-      <pubDate>Sun, 15 Apr 2012 11:37:51 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/mitigate-smartphone-web-frustration/</guid>
-      <description>&lt;p&gt;スマートフォンのキラーアプリは何と言ってもWebだろう。&lt;br&gt;&#xA;ただスマホWebは、シンプルだが重大な課題を積み残している。&lt;br&gt;&#xA;それは「まともに表示できるサイトが少ない」ということだ。&lt;br&gt;&#xA;スマホでWebを見る際に、ダブルタップしたりピンチ操作で拡大・縮小することは、当たり前の操作になってしまっている。&lt;br&gt;&#xA;現在のスマホWebは、PCサイトを虫眼鏡でのぞいているような状況と言える。&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Technology on civilis</title>
+		<link>https://chumaltd.github.io/ja/tech/</link>
+		<description>Recent content in Technology on civilis</description>
+		<generator>Hugo</generator>
+		<language>ja</language>
+		
+		
+		
+		
+			<atom:link href="https://chumaltd.github.io/ja/tech/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>ソフトウェアの脆さ</title>
+				<link>https://chumaltd.github.io/ja/software-fragility/</link>
+				<pubDate>Thu, 20 Feb 2025 09:52:57 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/software-fragility/</guid>
+				<description>&lt;p&gt;コンピュータ・ソフトウェアを採用しているビジネスは、ソフトウェアを調達する力に強い制約を受ける。そしてソフトウェアを調達する力は、ソフトウェアの生存ルールに強く制約されている。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>RDBMSのユニットテスト</title>
+				<link>https://chumaltd.github.io/ja/rdbms-unit-test/</link>
+				<pubDate>Wed, 22 Jan 2025 18:25:29 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/rdbms-unit-test/</guid>
+				<description>&lt;p&gt;Webサービスを既存の挙動を破壊しないようにシームレスに変更することは、往々にして難しい。&lt;/p&gt;&#xA;&lt;p&gt;これまでテストケースを拡充することで従来の挙動を保護してきた。このアプローチは有効なのだが、最終的にDBアクセスを伴う処理が特異的に変更しづらいことが分かった。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>DRAMの停滞</title>
+				<link>https://chumaltd.github.io/ja/dram-slowdown/</link>
+				<pubDate>Fri, 29 Nov 2024 17:51:55 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/dram-slowdown/</guid>
+				<description>&lt;p&gt;過去何度かトライしてきたシステム監視サービスにようやく見通しが立った。インハウスで構築できる状況には、おそらくあと5年ほど要するだろう。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>不可知なデータストア</title>
+				<link>https://chumaltd.github.io/ja/datastore-agnosticism/</link>
+				<pubDate>Wed, 13 Nov 2024 16:36:45 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/datastore-agnosticism/</guid>
+				<description>&lt;p&gt;&#xA;&lt;a href=&#34;https://www.postgresql.org/&#34;&#xA;   &#xA;&gt;PostgreSQL&lt;/a&gt;&#xA;は人類でもっとも重要なソフトウェア資産のひとつだ。データセットのごく一部を素朴に抽出するような検索用途には&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Relational_database&#34;&#xA;   &#xA;&gt;RDBMS&lt;/a&gt;&#xA;が適していて、おそらくRDBMS製品はPostgreSQLに収斂して差し支えない。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>KubernetesというOS</title>
+				<link>https://chumaltd.github.io/ja/kubernetes-os/</link>
+				<pubDate>Wed, 25 Sep 2024 11:08:31 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/kubernetes-os/</guid>
+				<description>&lt;p&gt;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Kubernetes&#34;&#xA;   &#xA;&gt;kubernetes&lt;/a&gt;&#xA;が&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Operating_system&#34;&#xA;   &#xA;&gt;OS&lt;/a&gt;&#xA;の機能を取り揃えつつある。&lt;br&gt;&#xA;OSは多義的な用語で、立場によって欠かせない機能が変わる。ソフトウェアやエンジニアから見るときにはCPUやRAM、ディスクといったハードを制御する機能が重要で、kubernetesの設定を通じてリクエストしているのであればkubernetesがOSと言える。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ドッグイヤーの終焉</title>
+				<link>https://chumaltd.github.io/ja/tech/cloud-stagnation/</link>
+				<pubDate>Mon, 01 Jul 2024 12:08:10 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/tech/cloud-stagnation/</guid>
+				<description>&lt;p&gt;&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/tech/web/re-integration-testing/&#34;&#xA;   &#xA;&gt;Deno上のインテグレーションテスト&lt;/a&gt;&#xA;の実用性を評価するうちに、実はクラウドインフラの性能も悪いことに気づいた。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ソフトウェア・テスティング</title>
+				<link>https://chumaltd.github.io/ja/tech/software-testing/</link>
+				<pubDate>Fri, 15 Mar 2024 10:02:10 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/tech/software-testing/</guid>
+				<description>&lt;p&gt;ソフトウェアの動作確認を担うテストコードは、品質を制御する主要パーツだ。&lt;code&gt;assert_equal 1 + 1, 2&lt;/code&gt;といったコードで適切な動作を確認する。&lt;br&gt;&#xA;実行時には取り外されていることから補助的なツールと見なされていて、無いよりは有った方がベターと捉えられているが、誤認である。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>縮小均衡からの脱却</title>
+				<link>https://chumaltd.github.io/ja/fake-technology2/</link>
+				<pubDate>Wed, 20 Dec 2023 00:22:47 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/fake-technology2/</guid>
+				<description>&lt;p&gt;&#xA;&lt;a href=&#34;https://shepherdjs.dev/&#34;&#xA;   &#xA;&gt;Shepherd.js&lt;/a&gt;&#xA;を除去して&#xA;&lt;a href=&#34;https://driverjs.com/&#34;&#xA;   &#xA;&gt;driver.js&lt;/a&gt;&#xA;を再実装する作業を終えた。&lt;br&gt;&#xA;これらはインタラクティブツアーを実装するソフトウェアライブラリであり、機能は著しく似かよっている。&lt;br&gt;&#xA;いずれかを選択して使えば良いものではあるのだが、じつはdriver.jsの方が圧倒的に優れている。これは両方実装した今になって分かることだ。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>フェイク・テクノロジー</title>
+				<link>https://chumaltd.github.io/ja/tech/fake-technology/</link>
+				<pubDate>Sun, 04 Sep 2022 06:51:22 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/tech/fake-technology/</guid>
+				<description>&lt;p&gt;ひと月近くかけて、著名ライブラリのReact.jsを除去する実装を継続し、ようやく完了した。&lt;br&gt;&#xA;今年の夏は、観測史上2番目の暑さであったこともあり、ジリジリとした灼熱地獄の耐久戦だった。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>品質とオープンソース</title>
+				<link>https://chumaltd.github.io/ja/tech/opensource-quality/</link>
+				<pubDate>Wed, 27 Apr 2022 22:09:46 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/tech/opensource-quality/</guid>
+				<description>&lt;p&gt;ソフトウェア開発では、機能拡充と品質向上は両立しなくてはならない２大目標だ。&lt;/p&gt;&#xA;&lt;p&gt;いずれにせよ時間的犠牲が欠かせないため、ある瞬間に機能と品質のどちらを優先するか折に触れて選択を迫られる。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>サービス自動化のインターフェース</title>
+				<link>https://chumaltd.github.io/ja/service-auto-if/</link>
+				<pubDate>Sun, 11 Jul 2021 14:14:33 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/service-auto-if/</guid>
+				<description>&lt;p&gt;アウトプットの品質は、バラつきによって測れる。&lt;br&gt;&#xA;バラつきを狭い範囲に制御するには、プロセスの多くを自動化し、パラメータの組み合わせを少数に抑えることが有効と言える。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>オブジェクト階層の沼</title>
+				<link>https://chumaltd.github.io/ja/nested-object-mud/</link>
+				<pubDate>Mon, 18 Jan 2021 02:25:35 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/nested-object-mud/</guid>
+				<description>&lt;p&gt;ソフトウェア開発のうち、妙手がなく、とにかく生産性が落ちる分野の1つが、階層の深いオブジェクトの操作だ。&lt;br&gt;&#xA;データの集合は、主に配列と連想配列(Rubyではハッシュ、Javascriptではオブジェクト)がある。配列は同じデータが並んでいるもので、連想配列はIDなどのキーに対応するデータを持つ構造になっている。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>システム開発の難点とは</title>
+				<link>https://chumaltd.github.io/ja/system-dev-difficulties/</link>
+				<pubDate>Sun, 13 Mar 2016 01:56:20 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/system-dev-difficulties/</guid>
+				<description>&lt;p&gt;開発工程で手が止まりがちなのは、設計が必要な工程だ。&#xA;具体的には、オブジェクトの階層構造を実装するフェーズになると比較的時間がかかる。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>仮想化技術でなすべきこと</title>
+				<link>https://chumaltd.github.io/ja/virtualization-purpose/</link>
+				<pubDate>Thu, 15 May 2014 02:23:39 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/virtualization-purpose/</guid>
+				<description>&lt;p&gt;ハードウェアのコモディティ化により、相対的にソフトウェアの寿命が延びている。ハードの寿命が縮んできた要因としては以下のような理由があるだろう。&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Review on civilis</title>
+		<link>https://chumaltd.github.io/ja/tech/review/</link>
+		<description>Recent content in Review on civilis</description>
+		<generator>Hugo</generator>
+		<language>ja</language>
+		
+		
+		
+		
+			<atom:link href="https://chumaltd.github.io/ja/tech/review/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>サウンドの品質</title>
+				<link>https://chumaltd.github.io/ja/sound-quality/</link>
+				<pubDate>Wed, 12 Apr 2023 00:15:43 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/sound-quality/</guid>
+				<description>&lt;p&gt;デジタルインフラの容量が強化されたことで、コンテンツのビットレートが増えてきている。&lt;br&gt;&#xA;音楽については、最初のデジタルメディアがCD（コンパクトディスク）だったため、CD比のハイレゾ（high resolution）移行が一部で始まっている現状だ。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Androidタブレットの評価 2021年</title>
+				<link>https://chumaltd.github.io/ja/android-tablet-review-2021/</link>
+				<pubDate>Sat, 20 Mar 2021 00:54:25 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/android-tablet-review-2021/</guid>
+				<description>&lt;p&gt;仕事用のクライアント機器として、Androidタブレットを使う比率が上がっている。現時点のタブレットの主な特徴を挙げると以下のような点がある。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>スマホ技術動向2012秋</title>
+				<link>https://chumaltd.github.io/ja/select-smart-phone-2012/</link>
+				<pubDate>Mon, 10 Sep 2012 12:58:13 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/select-smart-phone-2012/</guid>
+				<description>&lt;p&gt;スマホを仕事に使う場面が増えてくると、機種選びの重要性が増す。&lt;br&gt;&#xA;Androidは機種も多彩だが、性能面に影響するパーツを着目するとCPUと画面解像度もバリエーションが多い。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>スマホWebの現実的ストレス緩和策</title>
+				<link>https://chumaltd.github.io/ja/mitigate-smartphone-web-frustration/</link>
+				<pubDate>Sun, 15 Apr 2012 11:37:51 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/mitigate-smartphone-web-frustration/</guid>
+				<description>&lt;p&gt;スマートフォンのキラーアプリは何と言ってもWebだろう。&lt;br&gt;&#xA;ただスマホWebは、シンプルだが重大な課題を積み残している。&lt;br&gt;&#xA;それは「まともに表示できるサイトが少ない」ということだ。&lt;br&gt;&#xA;スマホでWebを見る際に、ダブルタップしたりピンチ操作で拡大・縮小することは、当たり前の操作になってしまっている。&lt;br&gt;&#xA;現在のスマホWebは、PCサイトを虫眼鏡でのぞいているような状況と言える。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
