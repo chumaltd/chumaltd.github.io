@@ -1,57 +1,53 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Philosophy on civilis</title>
-		<link>https://chumaltd.github.io/ja/philosophy/</link>
-		<description>Recent content in Philosophy on civilis</description>
-		<generator>Hugo</generator>
-		<language>ja</language>
-		
-		
-		
-		
-			<atom:link href="https://chumaltd.github.io/ja/philosophy/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>熱波潮流</title>
-				<link>https://chumaltd.github.io/ja/heat-tide/</link>
-				<pubDate>Tue, 01 Oct 2024 10:30:10 +0900</pubDate>
-				<guid>https://chumaltd.github.io/ja/heat-tide/</guid>
-				<description>&lt;p&gt;日本の10月はかつては秋だった。秋を迎える前に「秋めく」時候もあり、涼しい風が吹く日がぽつぽつ混じるものだった。&lt;br&gt;&#xA;今年はまだ30℃を超える日がある。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>文明の芽胞</title>
-				<link>https://chumaltd.github.io/ja/civilization-spore/</link>
-				<pubDate>Fri, 05 Aug 2022 00:58:56 +0000</pubDate>
-				<guid>https://chumaltd.github.io/ja/civilization-spore/</guid>
-				<description>&lt;p&gt;&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/sustained-by-description/&#34;&#xA;   &#xA;&gt;書かなければ消滅するメカニズム&lt;/a&gt;&#xA;では、サバイバルの必要水準が想像以上に高いこと、知的創造をクリアするには書くプロセスが不可欠であることを確認した。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>書かなければ消滅するメカニズム</title>
-				<link>https://chumaltd.github.io/ja/sustained-by-description/</link>
-				<pubDate>Thu, 04 Aug 2022 09:19:03 +0000</pubDate>
-				<guid>https://chumaltd.github.io/ja/sustained-by-description/</guid>
-				<description>&lt;p&gt;「書かない組織は必ず衰退する」という共通の特徴を見て来ている。書くという行動には拒絶感があり、それが強いほど落ちていくスピードも速い。&lt;br&gt;&#xA;この現象は人類の文明文化にとって普遍のパターンに見えるため、多角的に整理する価値があるように思う。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>泥沼のインテリジェンス</title>
-				<link>https://chumaltd.github.io/ja/network-engineering/</link>
-				<pubDate>Wed, 05 Jan 2022 11:43:45 +0900</pubDate>
-				<guid>https://chumaltd.github.io/ja/network-engineering/</guid>
-				<description>&lt;p&gt;ようやくネットワーク構築が完備した。これ以上は目ぼしい改善の余地はないだろうというところまで来た。&lt;/p&gt;&#xA;&lt;p&gt;ネットワークの目的は明確だ。背後にサーバーがあり、リクエストに応じて適切にサーバーを呼び出し、そして結果を返す。&lt;br&gt;&#xA;多少技術的に言えば、多くのケースでHTTP200 OKが得られれば足りる。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>情報量の不足</title>
-				<link>https://chumaltd.github.io/ja/philosophy/lack-of-entropy/</link>
-				<pubDate>Tue, 21 Dec 2021 16:53:27 +0900</pubDate>
-				<guid>https://chumaltd.github.io/ja/philosophy/lack-of-entropy/</guid>
-				<description>&lt;p&gt;ソフトウェア・コードの重要性は日々増している。&lt;br&gt;&#xA;高性能な半導体の普及が大きい。先進国では一様に人口が減少し始めいるため、知的労働の相当部分をコードが置き換えていく必要があるだろう。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>CIVILIS</title>
-				<link>https://chumaltd.github.io/ja/philosophy/civilis/</link>
-				<pubDate>Fri, 24 Apr 2020 03:34:50 +0900</pubDate>
-				<guid>https://chumaltd.github.io/ja/philosophy/civilis/</guid>
-				<description>&lt;p&gt;間抜けなことになってしまったなあ、と思っている。&lt;/p&gt;&#xA;&lt;p&gt;皆それぞれの立場で日々努力をしてきたつもりになっている。&lt;br&gt;&#xA;そうして今ある社会システムは、世界の津々浦々に効率的に流行病を伝播するものでもあった。&lt;/p&gt;</description>
-			</item>
-	</channel>
+  <channel>
+    <title>Philosophy on civilis</title>
+    <link>https://chumaltd.github.io/ja/philosophy/</link>
+    <description>Recent content in Philosophy on civilis</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <atom:link href="https://chumaltd.github.io/ja/philosophy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>熱波潮流</title>
+      <link>https://chumaltd.github.io/ja/heat-tide/</link>
+      <pubDate>Tue, 01 Oct 2024 10:30:10 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/heat-tide/</guid>
+      <description>&lt;p&gt;日本の10月はかつては秋だった。秋を迎える前に「秋めく」時候もあり、涼しい風が吹く日がぽつぽつ混じるものだった。&lt;br&gt;&#xA;今年はまだ30℃を超える日がある。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>文明の芽胞</title>
+      <link>https://chumaltd.github.io/ja/civilization-spore/</link>
+      <pubDate>Fri, 05 Aug 2022 00:58:56 +0000</pubDate>
+      <guid>https://chumaltd.github.io/ja/civilization-spore/</guid>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/sustained-by-description/&#34;&#xA;   &#xA;&gt;書かなければ消滅するメカニズム&lt;/a&gt;&#xA;では、サバイバルの必要水準が想像以上に高いこと、知的創造をクリアするには書くプロセスが不可欠であることを確認した。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>書かなければ消滅するメカニズム</title>
+      <link>https://chumaltd.github.io/ja/sustained-by-description/</link>
+      <pubDate>Thu, 04 Aug 2022 09:19:03 +0000</pubDate>
+      <guid>https://chumaltd.github.io/ja/sustained-by-description/</guid>
+      <description>&lt;p&gt;「書かない組織は必ず衰退する」という共通の特徴を見て来ている。書くという行動には拒絶感があり、それが強いほど落ちていくスピードも速い。&lt;br&gt;&#xA;この現象は人類の文明文化にとって普遍のパターンに見えるため、多角的に整理する価値があるように思う。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>泥沼のインテリジェンス</title>
+      <link>https://chumaltd.github.io/ja/network-engineering/</link>
+      <pubDate>Wed, 05 Jan 2022 11:43:45 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/network-engineering/</guid>
+      <description>&lt;p&gt;ようやくネットワーク構築が完備した。これ以上は目ぼしい改善の余地はないだろうというところまで来た。&lt;/p&gt;&#xA;&lt;p&gt;ネットワークの目的は明確だ。背後にサーバーがあり、リクエストに応じて適切にサーバーを呼び出し、そして結果を返す。&lt;br&gt;&#xA;多少技術的に言えば、多くのケースでHTTP200 OKが得られれば足りる。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>情報量の不足</title>
+      <link>https://chumaltd.github.io/ja/philosophy/lack-of-entropy/</link>
+      <pubDate>Tue, 21 Dec 2021 16:53:27 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/philosophy/lack-of-entropy/</guid>
+      <description>&lt;p&gt;ソフトウェア・コードの重要性は日々増している。&lt;br&gt;&#xA;高性能な半導体の普及が大きい。先進国では一様に人口が減少し始めいるため、知的労働の相当部分をコードが置き換えていく必要があるだろう。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CIVILIS</title>
+      <link>https://chumaltd.github.io/ja/philosophy/civilis/</link>
+      <pubDate>Fri, 24 Apr 2020 03:34:50 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/philosophy/civilis/</guid>
+      <description>&lt;p&gt;間抜けなことになってしまったなあ、と思っている。&lt;/p&gt;&#xA;&lt;p&gt;皆それぞれの立場で日々努力をしてきたつもりになっている。&lt;br&gt;&#xA;そうして今ある社会システムは、世界の津々浦々に効率的に流行病を伝播するものでもあった。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

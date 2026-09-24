@@ -99,6 +99,7 @@ LAN技術の流れ ルーターをクラフトするという方式は、そも�
       <ul>
         <li><a href="#アップグレードの注意点">アップグレードの注意点</a></li>
         <li><a href="#openwrt向けハードの登場">OpenWrt向けハードの登場</a></li>
+        <li><a href="#サブネットでフィルタするfirewall">サブネットでフィルタするfirewall</a></li>
       </ul>
     </li>
     <li><a href="#データセンターをクラフトする">データセンターをクラフトする</a></li>
@@ -160,6 +161,27 @@ IPv4 over IPv6トンネルの性能は、少ないポートをルーターがど
 <p>コンピュータ製品は半導体の微細化のレベルを示すプロセスルールで性能を推定できる。<br>
 20世紀末からPCがドッグイヤーと言われる急激な進歩を果たし、2010年頃に10nm近傍で限界に到達した。次にスマートフォンが後を追い、2020年頃にPCをキャッチアップしてきた。そしてルーター分野にも同じ伸び代が残されている。</p>
 <p>今後のハード進化をスムーズに取り入れるにはソフトウェアの標準化が不可欠であり、Linuxディストリビューションが有利な地勢を占めている。</p>
+<h3 id="サブネットでフィルタするfirewall">サブネットでフィルタするfirewall</h3>
+<p>OpenWrtのUIから定義するファイアーウォールは、スタティックなネットワークアドレスを登録する方式です。
+IPv6のプレフィクスが変わる場合、毎回新しいネットワークアドレスを登録する必要があります。</p>
+<p>UIではなくconfigを直接編集すると、プレフィクスを指定しないフィルタも登録できます。<br>
+たとえば<code>/etc/firewall-public-services.nft</code>として、次のようなnftablesのスクリプトを定義します。</p>
+<pre><code>ip6 daddr &amp; ::ffff:0 == ::1:0 tcp dport 443 accept
+</code></pre>
+<p><code>ip6 saddr &lt;address&gt;</code>を行に追加するとアクセス元ネットワークを制限できます。</p>
+<p>このスクリプトを<code>/etc/config/firewall</code>からインクルードします。</p>
+<pre><code>config include
+        option type 'nftables'
+        option path '/etc/firewall-public-services.nft'
+        option position 'chain-pre'
+        option chain 'forward_wan'
+</code></pre>
+<p>configをリロードすることで新設定を有効にできます。</p>
+<pre><code class="language-bash"># fw4 check
+# fw4 reload
+
+# nft list chain inet fw4 forward_wan
+</code></pre>
 <h2 id="データセンターをクラフトする">データセンターをクラフトする</h2>
 <p>ここまでのOpenWrtはIPv6ルーターの基礎機能を置き換えることで普及してきた。<br>
 すでに最新ハードはオーバースペックだという口コミが増えているとおり、ここから先のハード進化は機能追加のヘッドルームを生み出していく。</p>
@@ -173,7 +195,7 @@ PCやスマートフォンの経緯から考えると、5年程度の期間に�
 
 
 	<div class="my-4" style="text-align: right; font-style: italic">
-	<span>⁋ 2025/09/06</span><span class="mx-2">↻ 2026/09/10</span></div>
+	<span>⁋ 2025/09/06</span><span class="mx-2">↻ 2026/09/24</span></div>
       </article><div class="related_articles py-4">
             <h4 id="related" class="idx"></h4>
 	    

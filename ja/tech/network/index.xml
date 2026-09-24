@@ -1,43 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Network on civilis</title>
-		<link>https://chumaltd.github.io/ja/tech/network/</link>
-		<description>Recent content in Network on civilis</description>
-		<generator>Hugo</generator>
-		<language>ja</language>
-		
-		
-		
-		
-			<atom:link href="https://chumaltd.github.io/ja/tech/network/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>ルーターのクラフト</title>
-				<link>https://chumaltd.github.io/ja/craft-router/</link>
-				<pubDate>Sat, 06 Sep 2025 13:40:51 +0900</pubDate>
-				<guid>https://chumaltd.github.io/ja/craft-router/</guid>
-				<description>&lt;p&gt;OpenWrtを用いてネットワークルーターをクラフトして、オフィスLANを再構築した。おそらく今後はOpenWrtを第一選択とすることになる。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>IPv6ネットワークのWOLワークアラウンド</title>
-				<link>https://chumaltd.github.io/ja/wol-ipv6-workaround/</link>
-				<pubDate>Tue, 17 Jun 2025 15:18:28 +0900</pubDate>
-				<guid>https://chumaltd.github.io/ja/wol-ipv6-workaround/</guid>
-				<description>&lt;p&gt;PC向けのARMが想像に反してまったく進展しなかったため、2025年現在、AMDx64デスクトップPCの費用対効果が最右翼に見える。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>IPv6移行</title>
-				<link>https://chumaltd.github.io/ja/ipv6-transition/</link>
-				<pubDate>Tue, 27 Aug 2024 12:10:22 +0900</pubDate>
-				<guid>https://chumaltd.github.io/ja/ipv6-transition/</guid>
-				<description>&lt;p&gt;インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、IP層には技術的なトラブルや関心はあまり存在しないだろう。&lt;br&gt;&#xA;課題は、IPv4とIPv6が併存するデュアルスタックを長期間サポートせざるを得ない点にある。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>灼熱のVoIP</title>
-				<link>https://chumaltd.github.io/ja/voip-integration/</link>
-				<pubDate>Thu, 15 Aug 2024 09:59:52 +0900</pubDate>
-				<guid>https://chumaltd.github.io/ja/voip-integration/</guid>
-				<description>&lt;p&gt;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Telephone&#34;&#xA;   &#xA;&gt;電話&lt;/a&gt;&#xA;は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいったいいつまで続くものだろうか？&lt;/p&gt;</description>
-			</item>
-	</channel>
+  <channel>
+    <title>Network on civilis</title>
+    <link>https://chumaltd.github.io/ja/tech/network/</link>
+    <description>Recent content in Network on civilis</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <atom:link href="https://chumaltd.github.io/ja/tech/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ルーターのクラフト</title>
+      <link>https://chumaltd.github.io/ja/craft-router/</link>
+      <pubDate>Sat, 06 Sep 2025 13:40:51 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/craft-router/</guid>
+      <description>&lt;p&gt;OpenWrtを用いてネットワークルーターをクラフトして、オフィスLANを再構築した。おそらく今後はOpenWrtを第一選択とすることになる。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IPv6ネットワークのWOLワークアラウンド</title>
+      <link>https://chumaltd.github.io/ja/wol-ipv6-workaround/</link>
+      <pubDate>Tue, 17 Jun 2025 15:18:28 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/wol-ipv6-workaround/</guid>
+      <description>&lt;p&gt;PC向けのARMが想像に反してまったく進展しなかったため、2025年現在、AMDx64デスクトップPCの費用対効果が最右翼に見える。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IPv6移行</title>
+      <link>https://chumaltd.github.io/ja/ipv6-transition/</link>
+      <pubDate>Tue, 27 Aug 2024 12:10:22 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/ipv6-transition/</guid>
+      <description>&lt;p&gt;インターネット機器はいずれすべてIPv6経由で通信することになる。IPv6に統一できた後、IP層には技術的なトラブルや関心はあまり存在しないだろう。&lt;br&gt;&#xA;課題は、IPv4とIPv6が併存するデュアルスタックを長期間サポートせざるを得ない点にある。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>灼熱のVoIP</title>
+      <link>https://chumaltd.github.io/ja/voip-integration/</link>
+      <pubDate>Thu, 15 Aug 2024 09:59:52 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/voip-integration/</guid>
+      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Telephone&#34;&#xA;   &#xA;&gt;電話&lt;/a&gt;&#xA;は、Bellが1876年に発明して150年も使われている。電話番号で通話先を呼び出す形式はいったいいつまで続くものだろうか？&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>
