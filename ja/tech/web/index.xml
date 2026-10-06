@@ -1,81 +1,85 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Web on civilis</title>
-    <link>https://chumaltd.github.io/ja/tech/web/</link>
-    <description>Recent content in Web on civilis</description>
-    <generator>Hugo</generator>
-    <language>ja</language>
-    <atom:link href="https://chumaltd.github.io/ja/tech/web/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Webフロー設計</title>
-      <link>https://chumaltd.github.io/ja/http-conditional-flow/</link>
-      <pubDate>Tue, 23 Dec 2025 17:01:46 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/http-conditional-flow/</guid>
-      <description>&lt;p&gt;クレジットカードの悪用がはびこった結果、日本では経済産業省が主導してセキュリティガイドラインを決済利用企業に強制する展開となった。&lt;br&gt;&#xA;幅広い課題のうち、多要素認証(MFA)の要求は「堅牢なWebフローの実装」という古くて新しい問題を掘り起こした。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Node.jsを完全に除去している</title>
-      <link>https://chumaltd.github.io/ja/exclude-nodejs/</link>
-      <pubDate>Tue, 04 Feb 2025 13:57:37 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/exclude-nodejs/</guid>
-      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/e2e-web-testing/&#34;&#xA;   &#xA;&gt;脱Node.js&lt;/a&gt;&#xA;に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。&lt;br&gt;&#xA;開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することとした。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>クライアント証明書を生成する</title>
-      <link>https://chumaltd.github.io/ja/client-cert-generation/</link>
-      <pubDate>Wed, 03 Jul 2024 23:53:37 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/client-cert-generation/</guid>
-      <description>&lt;p&gt;年に数回、&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/X.509&#34;&#xA;   &#xA;&gt;X.509&lt;/a&gt;&#xA;のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけていたため、一度関連動向を含めてリサーチした。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>再インテグレーションテスト</title>
-      <link>https://chumaltd.github.io/ja/tech/web/re-integration-testing/</link>
-      <pubDate>Sat, 15 Jun 2024 13:33:24 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/tech/web/re-integration-testing/</guid>
-      <description>&lt;p&gt;Webサービスの品質管理の主役として、&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/e2e-web-testing/&#34;&#xA;   &#xA;&gt;2年前にe2eテストを導入&lt;/a&gt;&#xA;して引き続き機能している。&lt;br&gt;&#xA;Ruby on Railsを作ったDHHが&#xA;&lt;a href=&#34;https://world.hey.com/dhh/system-tests-have-failed-d90af718&#34;&#xA;   &#xA;&gt;システムテストの限界を書いていて&lt;/a&gt;&#xA;、フレーキーであるという指摘はその通りだ。&lt;br&gt;&#xA;じっさいにテストしていて、テストツールのSeleniumやChromeブラウザの動作をテストしているような事象を見ることの方が多い。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ランタイム・クリーンアップ</title>
-      <link>https://chumaltd.github.io/ja/tech/web/runtime-cleanup/</link>
-      <pubDate>Wed, 01 May 2024 12:25:57 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/tech/web/runtime-cleanup/</guid>
-      <description>&lt;p&gt;コンテナイメージのクリーンアップを終えつつある。&lt;br&gt;&#xA;ソフトウェア開発は60年以上の歴史を持つが、いまだに不要なコードやモジュールを削除する一般的な手法がない。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>評価しえぬもの</title>
-      <link>https://chumaltd.github.io/ja/tech/web/beyond-evaluation/</link>
-      <pubDate>Wed, 24 Jan 2024 22:33:59 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/tech/web/beyond-evaluation/</guid>
-      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/e2e-web-testing/&#34;&#xA;   &#xA;&gt;E2Eテスト導入&lt;/a&gt;&#xA;から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく、大規模な実装変更のガイドラインとして機能した点がもっとも分かりやすい効果であった。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>脱Node.js</title>
-      <link>https://chumaltd.github.io/ja/e2e-web-testing/</link>
-      <pubDate>Wed, 04 May 2022 18:36:36 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/e2e-web-testing/</guid>
-      <description>&lt;p&gt;JavascriptコードのテストはさすがにJavascriptで書いていたのだが、いまそれを捨ててE2Eテストに移行している。&lt;br&gt;&#xA;E2Eテストは、実際のアプリケーションやサーバー構成を再現した環境で実行するテストを指し、今回の最大の違いはブラウザ上で動作させる点だ。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>2020年代のWeb技術</title>
-      <link>https://chumaltd.github.io/ja/webdev-2020s/</link>
-      <pubDate>Fri, 09 Jul 2021 17:52:08 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/webdev-2020s/</guid>
-      <description>&lt;p&gt;アーキテクチャ移行を俯瞰して、今後どう進展するのかを考えていた。&lt;br&gt;&#xA;総合的に見ると、Webのアーキテクチャはネイティブアプリとほぼ同様になり、一部は共用する形態になるだろう。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Javascript開発の変遷</title>
-      <link>https://chumaltd.github.io/ja/javascript-transition/</link>
-      <pubDate>Mon, 31 May 2021 00:07:58 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/javascript-transition/</guid>
-      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/webdev-transition/&#34;&#xA;   &#xA;&gt;Web開発の変遷&lt;/a&gt;&#xA;で、バックエンド中心のアーキテクチャの推移を整理していた。&lt;br&gt;&#xA;バックエンドの再構築と並行して、Javascript開発がヘビーになる。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Web開発の変遷</title>
-      <link>https://chumaltd.github.io/ja/webdev-transition/</link>
-      <pubDate>Mon, 24 May 2021 12:40:04 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/webdev-transition/</guid>
-      <description>&lt;p&gt;Webサービスの大がかりなアーキテクチャ更新を進めており、山を越えつつある。&lt;br&gt;&#xA;既存サービスの互換性を維持しながら部分的に差し替える必要があり、着手から2年近くかかっている。&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Web on civilis</title>
+		<link>https://chumaltd.github.io/ja/tech/web/</link>
+		<description>Recent content in Web on civilis</description>
+		<generator>Hugo</generator>
+		<language>ja</language>
+		
+		
+		
+		
+			<atom:link href="https://chumaltd.github.io/ja/tech/web/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Webフロー設計</title>
+				<link>https://chumaltd.github.io/ja/http-conditional-flow/</link>
+				<pubDate>Tue, 23 Dec 2025 17:01:46 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/http-conditional-flow/</guid>
+				<description>&lt;p&gt;クレジットカードの悪用がはびこった結果、日本では経済産業省が主導してセキュリティガイドラインを決済利用企業に強制する展開となった。&lt;br&gt;&#xA;幅広い課題のうち、多要素認証(MFA)の要求は「堅牢なWebフローの実装」という古くて新しい問題を掘り起こした。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Node.jsを完全に除去している</title>
+				<link>https://chumaltd.github.io/ja/exclude-nodejs/</link>
+				<pubDate>Tue, 04 Feb 2025 13:57:37 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/exclude-nodejs/</guid>
+				<description>&lt;p&gt;&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/e2e-web-testing/&#34;&#xA;   &#xA;&gt;脱Node.js&lt;/a&gt;&#xA;に着手したのは3年前。多くのプロセスをdenoに移行したが、最終的にrollupとsassが残っていた。&lt;br&gt;&#xA;開発プロセスに支障が出たため、これらもnodeを使わない方式に変更することとした。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>クライアント証明書を生成する</title>
+				<link>https://chumaltd.github.io/ja/client-cert-generation/</link>
+				<pubDate>Wed, 03 Jul 2024 23:53:37 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/client-cert-generation/</guid>
+				<description>&lt;p&gt;年に数回、&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/X.509&#34;&#xA;   &#xA;&gt;X.509&lt;/a&gt;&#xA;のクライアント証明書を生成する作業が発生するのだが、ロストテクノロジーになりかけていたため、一度関連動向を含めてリサーチした。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>再インテグレーションテスト</title>
+				<link>https://chumaltd.github.io/ja/tech/web/re-integration-testing/</link>
+				<pubDate>Sat, 15 Jun 2024 13:33:24 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/tech/web/re-integration-testing/</guid>
+				<description>&lt;p&gt;Webサービスの品質管理の主役として、&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/e2e-web-testing/&#34;&#xA;   &#xA;&gt;2年前にe2eテストを導入&lt;/a&gt;&#xA;して引き続き機能している。&lt;br&gt;&#xA;Ruby on Railsを作ったDHHが&#xA;&lt;a href=&#34;https://world.hey.com/dhh/system-tests-have-failed-d90af718&#34;&#xA;   &#xA;&gt;システムテストの限界を書いていて&lt;/a&gt;&#xA;、フレーキーであるという指摘はその通りだ。&lt;br&gt;&#xA;じっさいにテストしていて、テストツールのSeleniumやChromeブラウザの動作をテストしているような事象を見ることの方が多い。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ランタイム・クリーンアップ</title>
+				<link>https://chumaltd.github.io/ja/tech/web/runtime-cleanup/</link>
+				<pubDate>Wed, 01 May 2024 12:25:57 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/tech/web/runtime-cleanup/</guid>
+				<description>&lt;p&gt;コンテナイメージのクリーンアップを終えつつある。&lt;br&gt;&#xA;ソフトウェア開発は60年以上の歴史を持つが、いまだに不要なコードやモジュールを削除する一般的な手法がない。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>評価しえぬもの</title>
+				<link>https://chumaltd.github.io/ja/tech/web/beyond-evaluation/</link>
+				<pubDate>Wed, 24 Jan 2024 22:33:59 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/tech/web/beyond-evaluation/</guid>
+				<description>&lt;p&gt;&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/e2e-web-testing/&#34;&#xA;   &#xA;&gt;E2Eテスト導入&lt;/a&gt;&#xA;から１年半が経過した。サービス品質の目的に対してE2Eテストが守ってきたものは大きく、大規模な実装変更のガイドラインとして機能した点がもっとも分かりやすい効果であった。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>脱Node.js</title>
+				<link>https://chumaltd.github.io/ja/e2e-web-testing/</link>
+				<pubDate>Wed, 04 May 2022 18:36:36 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/e2e-web-testing/</guid>
+				<description>&lt;p&gt;JavascriptコードのテストはさすがにJavascriptで書いていたのだが、いまそれを捨ててE2Eテストに移行している。&lt;br&gt;&#xA;E2Eテストは、実際のアプリケーションやサーバー構成を再現した環境で実行するテストを指し、今回の最大の違いはブラウザ上で動作させる点だ。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>2020年代のWeb技術</title>
+				<link>https://chumaltd.github.io/ja/webdev-2020s/</link>
+				<pubDate>Fri, 09 Jul 2021 17:52:08 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/webdev-2020s/</guid>
+				<description>&lt;p&gt;アーキテクチャ移行を俯瞰して、今後どう進展するのかを考えていた。&lt;br&gt;&#xA;総合的に見ると、Webのアーキテクチャはネイティブアプリとほぼ同様になり、一部は共用する形態になるだろう。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Javascript開発の変遷</title>
+				<link>https://chumaltd.github.io/ja/javascript-transition/</link>
+				<pubDate>Mon, 31 May 2021 00:07:58 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/javascript-transition/</guid>
+				<description>&lt;p&gt;&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/webdev-transition/&#34;&#xA;   &#xA;&gt;Web開発の変遷&lt;/a&gt;&#xA;で、バックエンド中心のアーキテクチャの推移を整理していた。&lt;br&gt;&#xA;バックエンドの再構築と並行して、Javascript開発がヘビーになる。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Web開発の変遷</title>
+				<link>https://chumaltd.github.io/ja/webdev-transition/</link>
+				<pubDate>Mon, 24 May 2021 12:40:04 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/webdev-transition/</guid>
+				<description>&lt;p&gt;Webサービスの大がかりなアーキテクチャ更新を進めており、山を越えつつある。&lt;br&gt;&#xA;既存サービスの互換性を維持しながら部分的に差し替える必要があり、着手から2年近くかかっている。&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>
