@@ -1,71 +1,67 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Society on civilis</title>
-		<link>https://chumaltd.github.io/ja/society/</link>
-		<description>Recent content in Society on civilis</description>
-		<generator>Hugo</generator>
-		<language>ja</language>
-		
-		
-		
-		
-			<atom:link href="https://chumaltd.github.io/ja/society/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>電子納税の現状</title>
-				<link>https://chumaltd.github.io/ja/tax-digitalization-jp/</link>
-				<pubDate>Wed, 13 Mar 2024 23:02:51 +0900</pubDate>
-				<guid>https://chumaltd.github.io/ja/tax-digitalization-jp/</guid>
-				<description>&lt;p&gt;LucaSuiteの初期リリースと導入から3年が経過し、バックオフィスはほぼ無人運用が定着している。&lt;br&gt;&#xA;&#xA;&lt;a href=&#34;https://github.com/chumaltd/luca-jp&#34;&#xA;   &#xA;&gt;luca-jp&lt;/a&gt;&#xA;は日本向けのローカルモジュールで、法人確定申告のファイル生成機能も持つ。自社の決算期が来るたびに守備範囲を広げてきているのだが、3年目にしてようやくコアロジックにテストケースを実装できた。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>COVID-19の行きがかり</title>
-				<link>https://chumaltd.github.io/ja/society/covid19-2023/</link>
-				<pubDate>Sat, 06 May 2023 05:07:36 +0000</pubDate>
-				<guid>https://chumaltd.github.io/ja/society/covid19-2023/</guid>
-				<description>&lt;p&gt;日本では週明け2023年5月8日から、新型コロナウイルス感染症の区分が５類感染症となり、行政上ノーガードに移行する。&lt;br&gt;&#xA;ただ、何か底流の状況が改善したわけではない。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>死に至りやすい病</title>
-				<link>https://chumaltd.github.io/ja/popular-sickness-unto-death/</link>
-				<pubDate>Sun, 24 Apr 2022 21:32:17 +0900</pubDate>
-				<guid>https://chumaltd.github.io/ja/popular-sickness-unto-death/</guid>
-				<description>&lt;p&gt;一昨晩、猛烈な歯痛で目を覚ます。&lt;/p&gt;&#xA;&lt;p&gt;不可解としか言いようがなかった。まったく医者に行かないから、虫歯の可能性は捨て切れない。&lt;br&gt;&#xA;しかし、予兆なく激痛をひき起こす虫歯などあるのだろうか？&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>コードであるべき法律</title>
-				<link>https://chumaltd.github.io/ja/society/public-libraries/</link>
-				<pubDate>Wed, 13 Jan 2021 17:20:18 +0900</pubDate>
-				<guid>https://chumaltd.github.io/ja/society/public-libraries/</guid>
-				<description>&lt;p&gt;必要上、Rubyで税額計算するライブラリを書いている。また、オープンソースで配布している。&lt;br&gt;&#xA;まずは&#xA;&lt;a href=&#34;https://github.com/chumaltd/jp-national-tax/blob/master/lib/jp_national_tax/income_tax/income_nenmatsu_2020.rb&#34;&#xA;   &#xA;&gt;年末調整のコード&lt;/a&gt;&#xA;の例を見て欲しい。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>電子政府が埋めるべき穴</title>
-				<link>https://chumaltd.github.io/ja/fill-digital-government/</link>
-				<pubDate>Mon, 27 Apr 2020 00:44:31 +0900</pubDate>
-				<guid>https://chumaltd.github.io/ja/fill-digital-government/</guid>
-				<description>&lt;p&gt;先ほど、&#xA;&lt;a href=&#34;https://github.com/chumaltd/jhia-fee-table&#34;&#xA;   &#xA;&gt;協会けんぽ 保険料額表変換ツール&lt;/a&gt;&#xA;という極めてローカルなツールをGPLライセンスで公開した。&lt;br&gt;&#xA;じつは僕が必要としているのは、東京のごく一部のテーブルだけ。それが配布データがExcelにパックされてしまっている都合上、ツール変換せざるを得ず、けっきょく47都道府県分できてしまうので、オープンソースで行こう、と考えた。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>資本主義の限界</title>
-				<link>https://chumaltd.github.io/ja/society/limit-of-capitalism/</link>
-				<pubDate>Fri, 29 Apr 2016 17:12:08 +0000</pubDate>
-				<guid>https://chumaltd.github.io/ja/society/limit-of-capitalism/</guid>
-				<description>&lt;p&gt;ぼくらの生活の主要な部分は買い物をすることで成り立っている。その売っているモノ・買えるモノは企業が作って供給している。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>ユニコーンリサーチ株式会社 設立の辞</title>
-				<link>https://chumaltd.github.io/ja/society/launch-unicorn-research/</link>
-				<pubDate>Thu, 20 Jun 2013 00:53:30 +0000</pubDate>
-				<guid>https://chumaltd.github.io/ja/society/launch-unicorn-research/</guid>
-				<description>&lt;p&gt;このたび、&#xA;&lt;a href=&#34;https://www.unicorn.limited/jp/&#34;&#xA;   &#xA;&gt;ユニコーンリサーチ株式会社&lt;/a&gt;&#xA;という法人を創りました。&lt;/p&gt;&#xA;&lt;p&gt;IT産業のとなりにTI産業という新しいビジネスを創れるのではないか、と思ったしだいです。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>無視できない災害確率</title>
-				<link>https://chumaltd.github.io/ja/disaster-probability/</link>
-				<pubDate>Sat, 21 Apr 2012 07:56:21 +0000</pubDate>
-				<guid>https://chumaltd.github.io/ja/disaster-probability/</guid>
-				<description>&lt;p&gt;「首都直下地震試算:日本の財政、５年後７割の確率で破綻」（毎日jp, &#xA;&lt;a href=&#34;http://mainichi.jp/select/news/20120420k0000e040140000c.html&#34;&#xA;   &#xA;&gt;http://mainichi.jp/select/news/20120420k0000e040140000c.html&lt;/a&gt;&#xA; ）という記事が興味深い。&lt;/p&gt;&#xA;&lt;p&gt;最近、地震が起こる可能性に関する情報が増えているが、具体的な経済シナリオを提示したものはあまり見かけない。&lt;/p&gt;</description>
-			</item>
-	</channel>
+  <channel>
+    <title>Society on civilis</title>
+    <link>https://chumaltd.github.io/ja/society/</link>
+    <description>Recent content in Society on civilis</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <atom:link href="https://chumaltd.github.io/ja/society/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>電子納税の現状</title>
+      <link>https://chumaltd.github.io/ja/tax-digitalization-jp/</link>
+      <pubDate>Wed, 13 Mar 2024 23:02:51 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/tax-digitalization-jp/</guid>
+      <description>&lt;p&gt;LucaSuiteの初期リリースと導入から3年が経過し、バックオフィスはほぼ無人運用が定着している。&lt;br&gt;&#xA;&#xA;&lt;a href=&#34;https://github.com/chumaltd/luca-jp&#34;&#xA;   &#xA;&gt;luca-jp&lt;/a&gt;&#xA;は日本向けのローカルモジュールで、法人確定申告のファイル生成機能も持つ。自社の決算期が来るたびに守備範囲を広げてきているのだが、3年目にしてようやくコアロジックにテストケースを実装できた。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>COVID-19の行きがかり</title>
+      <link>https://chumaltd.github.io/ja/society/covid19-2023/</link>
+      <pubDate>Sat, 06 May 2023 05:07:36 +0000</pubDate>
+      <guid>https://chumaltd.github.io/ja/society/covid19-2023/</guid>
+      <description>&lt;p&gt;日本では週明け2023年5月8日から、新型コロナウイルス感染症の区分が５類感染症となり、行政上ノーガードに移行する。&lt;br&gt;&#xA;ただ、何か底流の状況が改善したわけではない。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>死に至りやすい病</title>
+      <link>https://chumaltd.github.io/ja/popular-sickness-unto-death/</link>
+      <pubDate>Sun, 24 Apr 2022 21:32:17 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/popular-sickness-unto-death/</guid>
+      <description>&lt;p&gt;一昨晩、猛烈な歯痛で目を覚ます。&lt;/p&gt;&#xA;&lt;p&gt;不可解としか言いようがなかった。まったく医者に行かないから、虫歯の可能性は捨て切れない。&lt;br&gt;&#xA;しかし、予兆なく激痛をひき起こす虫歯などあるのだろうか？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>コードであるべき法律</title>
+      <link>https://chumaltd.github.io/ja/society/public-libraries/</link>
+      <pubDate>Wed, 13 Jan 2021 17:20:18 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/society/public-libraries/</guid>
+      <description>&lt;p&gt;必要上、Rubyで税額計算するライブラリを書いている。また、オープンソースで配布している。&lt;br&gt;&#xA;まずは&#xA;&lt;a href=&#34;https://github.com/chumaltd/jp-national-tax/blob/master/lib/jp_national_tax/income_tax/income_nenmatsu_2020.rb&#34;&#xA;   &#xA;&gt;年末調整のコード&lt;/a&gt;&#xA;の例を見て欲しい。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>電子政府が埋めるべき穴</title>
+      <link>https://chumaltd.github.io/ja/fill-digital-government/</link>
+      <pubDate>Mon, 27 Apr 2020 00:44:31 +0900</pubDate>
+      <guid>https://chumaltd.github.io/ja/fill-digital-government/</guid>
+      <description>&lt;p&gt;先ほど、&#xA;&lt;a href=&#34;https://github.com/chumaltd/jhia-fee-table&#34;&#xA;   &#xA;&gt;協会けんぽ 保険料額表変換ツール&lt;/a&gt;&#xA;という極めてローカルなツールをGPLライセンスで公開した。&lt;br&gt;&#xA;じつは僕が必要としているのは、東京のごく一部のテーブルだけ。それが配布データがExcelにパックされてしまっている都合上、ツール変換せざるを得ず、けっきょく47都道府県分できてしまうので、オープンソースで行こう、と考えた。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>資本主義の限界</title>
+      <link>https://chumaltd.github.io/ja/society/limit-of-capitalism/</link>
+      <pubDate>Fri, 29 Apr 2016 17:12:08 +0000</pubDate>
+      <guid>https://chumaltd.github.io/ja/society/limit-of-capitalism/</guid>
+      <description>&lt;p&gt;ぼくらの生活の主要な部分は買い物をすることで成り立っている。その売っているモノ・買えるモノは企業が作って供給している。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ユニコーンリサーチ株式会社 設立の辞</title>
+      <link>https://chumaltd.github.io/ja/society/launch-unicorn-research/</link>
+      <pubDate>Thu, 20 Jun 2013 00:53:30 +0000</pubDate>
+      <guid>https://chumaltd.github.io/ja/society/launch-unicorn-research/</guid>
+      <description>&lt;p&gt;このたび、&#xA;&lt;a href=&#34;https://www.unicorn.limited/jp/&#34;&#xA;   &#xA;&gt;ユニコーンリサーチ株式会社&lt;/a&gt;&#xA;という法人を創りました。&lt;/p&gt;&#xA;&lt;p&gt;IT産業のとなりにTI産業という新しいビジネスを創れるのではないか、と思ったしだいです。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>無視できない災害確率</title>
+      <link>https://chumaltd.github.io/ja/disaster-probability/</link>
+      <pubDate>Sat, 21 Apr 2012 07:56:21 +0000</pubDate>
+      <guid>https://chumaltd.github.io/ja/disaster-probability/</guid>
+      <description>&lt;p&gt;「首都直下地震試算:日本の財政、５年後７割の確率で破綻」（毎日jp, &#xA;&lt;a href=&#34;http://mainichi.jp/select/news/20120420k0000e040140000c.html&#34;&#xA;   &#xA;&gt;http://mainichi.jp/select/news/20120420k0000e040140000c.html&lt;/a&gt;&#xA; ）という記事が興味深い。&lt;/p&gt;&#xA;&lt;p&gt;最近、地震が起こる可能性に関する情報が増えているが、具体的な経済シナリオを提示したものはあまり見かけない。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Philosophy on civilis</title>
-		<link>https://chumaltd.github.io/philosophy/</link>
-		<description>Recent content in Philosophy on civilis</description>
-		<generator>Hugo</generator>
-		<language>en</language>
-		
-		
-		
-		
-			<atom:link href="https://chumaltd.github.io/philosophy/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>CIVILIS</title>
-				<link>https://chumaltd.github.io/en/civilis/</link>
-				<pubDate>Fri, 24 Apr 2020 03:34:50 +0900</pubDate>
-				<guid>https://chumaltd.github.io/en/civilis/</guid>
-				<description>&lt;p&gt;We have silly situations at last.&lt;/p&gt;&#xA;&lt;p&gt;Everyone intends to make efforts every day from their respective social positions.&#xA;Thus, the resulting social system was also one that efficiently spreads epidemics throughout the world.&lt;/p&gt;&#xA;&lt;p&gt;COVID-19 is the returning of SARS in 2002 in terms of the virus type, the route of transmission, and the prevention of epidemics.&#xA;And likewise, we have all sorts of things, such as global warming, super-aging, and sovereign risk.&lt;/p&gt;</description>
-			</item>
-	</channel>
+  <channel>
+    <title>Philosophy on civilis</title>
+    <link>https://chumaltd.github.io/philosophy/</link>
+    <description>Recent content in Philosophy on civilis</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://chumaltd.github.io/philosophy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CIVILIS</title>
+      <link>https://chumaltd.github.io/en/civilis/</link>
+      <pubDate>Fri, 24 Apr 2020 03:34:50 +0900</pubDate>
+      <guid>https://chumaltd.github.io/en/civilis/</guid>
+      <description>&lt;p&gt;We have silly situations at last.&lt;/p&gt;&#xA;&lt;p&gt;Everyone intends to make efforts every day from their respective social positions.&#xA;Thus, the resulting social system was also one that efficiently spreads epidemics throughout the world.&lt;/p&gt;&#xA;&lt;p&gt;COVID-19 is the returning of SARS in 2002 in terms of the virus type, the route of transmission, and the prevention of epidemics.&#xA;And likewise, we have all sorts of things, such as global warming, super-aging, and sovereign risk.&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>
