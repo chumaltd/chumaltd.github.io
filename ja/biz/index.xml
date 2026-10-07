@@ -1,95 +1,99 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Business on civilis</title>
-    <link>https://chumaltd.github.io/ja/biz/</link>
-    <description>Recent content in Business on civilis</description>
-    <generator>Hugo</generator>
-    <language>ja</language>
-    <atom:link href="https://chumaltd.github.io/ja/biz/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>オープンソースERPの必要</title>
-      <link>https://chumaltd.github.io/ja/biz/opensource-erp-lucasuite/</link>
-      <pubDate>Tue, 06 Oct 2020 13:39:44 +0900</pubDate>
-      <guid>https://chumaltd.github.io/ja/biz/opensource-erp-lucasuite/</guid>
-      <description>&lt;p&gt;&#xA;&lt;a href=&#34;https://github.com/chumaltd/luca&#34;&#xA;   &#xA;&gt;Luca Suite&lt;/a&gt;&#xA;というERPをオープンソースで開発していて、名称先約の意図で昨日RubyGemsにもプッシュした。名前はもちろん&#xA;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E3%83%AB%E3%82%AB%E3%83%BB%E3%83%91%E3%83%81%E3%83%A7%E3%83%BC%E3%83%AA&#34;&#xA;   &#xA;&gt;ルカ・パチョーリ&lt;/a&gt;&#xA;から来ている。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ワークスタイルを変革する はなし</title>
-      <link>https://chumaltd.github.io/ja/transform-workstyle/</link>
-      <pubDate>Thu, 31 Dec 2015 22:31:02 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/transform-workstyle/</guid>
-      <description>&lt;p&gt;いまスタートアップに身を置いて4年、総合格闘技のように多種多様で山のような物量の仕事を手がけてきた。&lt;/p&gt;&#xA;&lt;p&gt;振り返ってみると、経営の観点で意味のある成果を出せているときのプロセスは、従来的なワークスタイルとかけ離れた活動をしている瞬間に生まれていることに気づく。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>経験曲線効果と新規ビジネス</title>
-      <link>https://chumaltd.github.io/ja/adopt-experience-curve/</link>
-      <pubDate>Sun, 22 Nov 2015 00:53:48 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/adopt-experience-curve/</guid>
-      <description>&lt;p&gt;経験曲線効果（&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Experience_curve_effects&#34;&#xA;   &#xA;&gt;Experience curve effects&lt;/a&gt;&#xA;）というビジネス法則がある。戦略ファームのBCGを設立したブルース＝ヘンダーソンが提唱したもので、「生産量の累計が増えるにつれてコストが下がる」傾向を指している。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>認知資産の重要性にもう一度光を。</title>
-      <link>https://chumaltd.github.io/ja/remember-cognitive-assets/</link>
-      <pubDate>Tue, 08 Sep 2015 08:36:18 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/remember-cognitive-assets/</guid>
-      <description>&lt;p&gt;もう一度、というよりもそもそも「認知資産」という言葉が知られていないかもしれない。&lt;br&gt;&#xA;簡単に言えば、有名であること、人々の頭の中にあるマインドシェアのことだ。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>創業者をこえて会社が生き延びる条件</title>
-      <link>https://chumaltd.github.io/ja/how-company-survives-founder/</link>
-      <pubDate>Tue, 26 May 2015 01:45:25 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/how-company-survives-founder/</guid>
-      <description>&lt;p&gt;今月は、自分にとって&amp;quot;会社&amp;quot;というものの見方が大きく変わった月だった。&lt;/p&gt;&#xA;&lt;p&gt;「会社は何らかのタイミングでパブリックカンパニーを目指さなくてはならず、そのタイミングは思っていたよりも早く求められる」ということを強く感じた。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ボラティリティを経営する</title>
-      <link>https://chumaltd.github.io/ja/manage-volatility/</link>
-      <pubDate>Mon, 25 May 2015 01:51:02 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/manage-volatility/</guid>
-      <description>&lt;p&gt;経営とは変動（ボラティリティ）を取り扱う仕事だと思う。&lt;br&gt;&#xA;いろいろ経験した結果、いま重視している基本原則は、以下の2点に集約されるようになった。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>人材市場のレモン問題攻略法</title>
-      <link>https://chumaltd.github.io/ja/human-resources-as-lemon/</link>
-      <pubDate>Fri, 25 Oct 2013 22:39:49 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/human-resources-as-lemon/</guid>
-      <description>&lt;p&gt;見通しづらい業界なので市場特性を整理したい。&lt;/p&gt;&#xA;&lt;h2 id=&#34;職業紹介ビジネスの特性&#34;&gt;職業紹介ビジネスの特性&lt;/h2&gt;&#xA;&lt;p&gt;キャリアの観点で関心の高い正社員ポストを前提とすると、職業と人材を仲介するエージェント・ビジネスは、流通業の事業特性を持つ。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>更新重視のホームページ作成を支えるCMS</title>
-      <link>https://chumaltd.github.io/ja/cms-for-fast-update/</link>
-      <pubDate>Fri, 11 Oct 2013 23:55:33 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/cms-for-fast-update/</guid>
-      <description>&lt;p&gt;企業のホームページは、費用対効果の高い販促ツールとして今後とも筆頭候補の座を占め続けるだろう。&lt;/p&gt;&#xA;&lt;p&gt;販促マーケティングでは、認知努力をいかに途切れることなく継続できるかがカギとなる。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>クラウド（安いIT）の限界</title>
-      <link>https://chumaltd.github.io/ja/cloud-limitation/</link>
-      <pubDate>Fri, 30 Aug 2013 23:58:54 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/cloud-limitation/</guid>
-      <description>&lt;p&gt;最近、経営の観点でITを評価するできごとが多く起きている。&lt;/p&gt;&#xA;&lt;p&gt;チームワーク化を進めるためにはITが重要、という点については&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/sme-requires-it-integration/&#34;&#xA;   &#xA;&gt;以前書いた&lt;/a&gt;&#xA;。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>組織の営業力を強化するニーズ別布陣</title>
-      <link>https://chumaltd.github.io/ja/sales-force-layout/</link>
-      <pubDate>Fri, 31 May 2013 00:47:15 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/sales-force-layout/</guid>
-      <description>&lt;p&gt;サービス仕様が固まってきて顧客成功事例も出てくると、いよいよビジネス開発の最終段階、「営業の組織化」に取り組める。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ビジネス立ち上げの迷いどころと解き方</title>
-      <link>https://chumaltd.github.io/ja/solve-start-up/</link>
-      <pubDate>Thu, 23 May 2013 01:55:42 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/solve-start-up/</guid>
-      <description>&lt;p&gt;新規ビジネス、ベンチャーの立ち上げを牽引するときにぶち当たる組織問題を究極まで簡単化すると、以下のA, Bを両立させるジレンマになる。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>中小企業こそIT経営</title>
-      <link>https://chumaltd.github.io/ja/sme-requires-it-integration/</link>
-      <pubDate>Sun, 28 Apr 2013 23:28:49 +0000</pubDate>
-      <guid>https://chumaltd.github.io/ja/sme-requires-it-integration/</guid>
-      <description>&lt;p&gt;ここ半年ほど自社のシステム構築を細々とやってきたのが、ようやく一段落した。&lt;/p&gt;&#xA;&lt;p&gt;着手前には「中小企業はそこまでシステム化しなくてもええやろ」と思っていたので「Excelでいきますか！」というノリだった。&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Business on civilis</title>
+		<link>https://chumaltd.github.io/ja/biz/</link>
+		<description>Recent content in Business on civilis</description>
+		<generator>Hugo</generator>
+		<language>ja</language>
+		
+		
+		
+		
+			<atom:link href="https://chumaltd.github.io/ja/biz/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>オープンソースERPの必要</title>
+				<link>https://chumaltd.github.io/ja/biz/opensource-erp-lucasuite/</link>
+				<pubDate>Tue, 06 Oct 2020 13:39:44 +0900</pubDate>
+				<guid>https://chumaltd.github.io/ja/biz/opensource-erp-lucasuite/</guid>
+				<description>&lt;p&gt;&#xA;&lt;a href=&#34;https://github.com/chumaltd/luca&#34;&#xA;   &#xA;&gt;Luca Suite&lt;/a&gt;&#xA;というERPをオープンソースで開発していて、名称先約の意図で昨日RubyGemsにもプッシュした。名前はもちろん&#xA;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E3%83%AB%E3%82%AB%E3%83%BB%E3%83%91%E3%83%81%E3%83%A7%E3%83%BC%E3%83%AA&#34;&#xA;   &#xA;&gt;ルカ・パチョーリ&lt;/a&gt;&#xA;から来ている。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ワークスタイルを変革する はなし</title>
+				<link>https://chumaltd.github.io/ja/transform-workstyle/</link>
+				<pubDate>Thu, 31 Dec 2015 22:31:02 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/transform-workstyle/</guid>
+				<description>&lt;p&gt;いまスタートアップに身を置いて4年、総合格闘技のように多種多様で山のような物量の仕事を手がけてきた。&lt;/p&gt;&#xA;&lt;p&gt;振り返ってみると、経営の観点で意味のある成果を出せているときのプロセスは、従来的なワークスタイルとかけ離れた活動をしている瞬間に生まれていることに気づく。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>経験曲線効果と新規ビジネス</title>
+				<link>https://chumaltd.github.io/ja/adopt-experience-curve/</link>
+				<pubDate>Sun, 22 Nov 2015 00:53:48 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/adopt-experience-curve/</guid>
+				<description>&lt;p&gt;経験曲線効果（&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Experience_curve_effects&#34;&#xA;   &#xA;&gt;Experience curve effects&lt;/a&gt;&#xA;）というビジネス法則がある。戦略ファームのBCGを設立したブルース＝ヘンダーソンが提唱したもので、「生産量の累計が増えるにつれてコストが下がる」傾向を指している。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>認知資産の重要性にもう一度光を。</title>
+				<link>https://chumaltd.github.io/ja/remember-cognitive-assets/</link>
+				<pubDate>Tue, 08 Sep 2015 08:36:18 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/remember-cognitive-assets/</guid>
+				<description>&lt;p&gt;もう一度、というよりもそもそも「認知資産」という言葉が知られていないかもしれない。&lt;br&gt;&#xA;簡単に言えば、有名であること、人々の頭の中にあるマインドシェアのことだ。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>創業者をこえて会社が生き延びる条件</title>
+				<link>https://chumaltd.github.io/ja/how-company-survives-founder/</link>
+				<pubDate>Tue, 26 May 2015 01:45:25 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/how-company-survives-founder/</guid>
+				<description>&lt;p&gt;今月は、自分にとって&amp;quot;会社&amp;quot;というものの見方が大きく変わった月だった。&lt;/p&gt;&#xA;&lt;p&gt;「会社は何らかのタイミングでパブリックカンパニーを目指さなくてはならず、そのタイミングは思っていたよりも早く求められる」ということを強く感じた。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ボラティリティを経営する</title>
+				<link>https://chumaltd.github.io/ja/manage-volatility/</link>
+				<pubDate>Mon, 25 May 2015 01:51:02 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/manage-volatility/</guid>
+				<description>&lt;p&gt;経営とは変動（ボラティリティ）を取り扱う仕事だと思う。&lt;br&gt;&#xA;いろいろ経験した結果、いま重視している基本原則は、以下の2点に集約されるようになった。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>人材市場のレモン問題攻略法</title>
+				<link>https://chumaltd.github.io/ja/human-resources-as-lemon/</link>
+				<pubDate>Fri, 25 Oct 2013 22:39:49 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/human-resources-as-lemon/</guid>
+				<description>&lt;p&gt;見通しづらい業界なので市場特性を整理したい。&lt;/p&gt;&#xA;&lt;h2 id=&#34;職業紹介ビジネスの特性&#34;&gt;職業紹介ビジネスの特性&lt;/h2&gt;&#xA;&lt;p&gt;キャリアの観点で関心の高い正社員ポストを前提とすると、職業と人材を仲介するエージェント・ビジネスは、流通業の事業特性を持つ。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>更新重視のホームページ作成を支えるCMS</title>
+				<link>https://chumaltd.github.io/ja/cms-for-fast-update/</link>
+				<pubDate>Fri, 11 Oct 2013 23:55:33 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/cms-for-fast-update/</guid>
+				<description>&lt;p&gt;企業のホームページは、費用対効果の高い販促ツールとして今後とも筆頭候補の座を占め続けるだろう。&lt;/p&gt;&#xA;&lt;p&gt;販促マーケティングでは、認知努力をいかに途切れることなく継続できるかがカギとなる。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>クラウド（安いIT）の限界</title>
+				<link>https://chumaltd.github.io/ja/cloud-limitation/</link>
+				<pubDate>Fri, 30 Aug 2013 23:58:54 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/cloud-limitation/</guid>
+				<description>&lt;p&gt;最近、経営の観点でITを評価するできごとが多く起きている。&lt;/p&gt;&#xA;&lt;p&gt;チームワーク化を進めるためにはITが重要、という点については&#xA;&lt;a href=&#34;https://chumaltd.github.io/ja/sme-requires-it-integration/&#34;&#xA;   &#xA;&gt;以前書いた&lt;/a&gt;&#xA;。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>組織の営業力を強化するニーズ別布陣</title>
+				<link>https://chumaltd.github.io/ja/sales-force-layout/</link>
+				<pubDate>Fri, 31 May 2013 00:47:15 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/sales-force-layout/</guid>
+				<description>&lt;p&gt;サービス仕様が固まってきて顧客成功事例も出てくると、いよいよビジネス開発の最終段階、「営業の組織化」に取り組める。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ビジネス立ち上げの迷いどころと解き方</title>
+				<link>https://chumaltd.github.io/ja/solve-start-up/</link>
+				<pubDate>Thu, 23 May 2013 01:55:42 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/solve-start-up/</guid>
+				<description>&lt;p&gt;新規ビジネス、ベンチャーの立ち上げを牽引するときにぶち当たる組織問題を究極まで簡単化すると、以下のA, Bを両立させるジレンマになる。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>中小企業こそIT経営</title>
+				<link>https://chumaltd.github.io/ja/sme-requires-it-integration/</link>
+				<pubDate>Sun, 28 Apr 2013 23:28:49 +0000</pubDate>
+				<guid>https://chumaltd.github.io/ja/sme-requires-it-integration/</guid>
+				<description>&lt;p&gt;ここ半年ほど自社のシステム構築を細々とやってきたのが、ようやく一段落した。&lt;/p&gt;&#xA;&lt;p&gt;着手前には「中小企業はそこまでシステム化しなくてもええやろ」と思っていたので「Excelでいきますか！」というノリだった。&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>
