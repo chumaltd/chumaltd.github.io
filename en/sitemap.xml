@@ -6,12 +6,12 @@
     <lastmod>2026-09-10T17:53:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/en/kubernetes-os/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/kubernetes-os/"
                 />
   </url><url>
@@ -19,12 +19,12 @@
     <lastmod>2026-09-10T17:53:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/ipv6-transition/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/en/ipv6-transition/"
                 />
   </url><url>
@@ -32,12 +32,12 @@
     <lastmod>2026-09-10T17:53:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/en/voip-integration/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/voip-integration/"
                 />
   </url><url>
@@ -45,12 +45,12 @@
     <lastmod>2026-09-10T17:53:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/society/covid19-2023/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/en/covid19-2023/"
                 />
   </url><url>
@@ -58,12 +58,12 @@
     <lastmod>2026-09-10T17:53:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/en/civilis/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/philosophy/civilis/"
                 />
   </url><url>
@@ -71,12 +71,12 @@
     <lastmod>2026-10-07T22:51:22+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/en/bio/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/bio/"
                 />
   </url><url>
@@ -84,24 +84,24 @@
     <lastmod>2026-09-10T17:53:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/biz/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/biz/"
                 />
   </url><url>
     <loc>https://chumaltd.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/categories/"
                 />
   </url><url>
@@ -109,12 +109,12 @@
     <lastmod>2026-10-07T22:51:58+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/"
                 />
   </url><url>
@@ -122,12 +122,12 @@
     <lastmod>2026-09-10T17:53:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/tech/network/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/tech/network/"
                 />
   </url><url>
@@ -135,12 +135,12 @@
     <lastmod>2026-09-10T17:53:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/philosophy/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/philosophy/"
                 />
   </url><url>
@@ -148,24 +148,24 @@
     <lastmod>2026-09-10T17:53:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/society/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/society/"
                 />
   </url><url>
     <loc>https://chumaltd.github.io/tags/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/tags/"
                 />
   </url><url>
@@ -173,12 +173,12 @@
     <lastmod>2026-09-10T17:53:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/tech/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/tech/"
                 />
   </url><url>
@@ -186,12 +186,12 @@
     <lastmod>2026-09-10T17:53:06+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="en-US"
                 href="https://chumaltd.github.io/tech/web/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
+                hreflang="ja-JP"
                 href="https://chumaltd.github.io/ja/tech/web/"
                 />
   </url>
