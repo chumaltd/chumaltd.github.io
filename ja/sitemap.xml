@@ -370,13 +370,13 @@
     <loc>https://chumaltd.github.io/ja/tags/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="ja-JP"
-                href="https://chumaltd.github.io/ja/tags/"
+                hreflang="en-US"
+                href="https://chumaltd.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en-US"
-                href="https://chumaltd.github.io/tags/"
+                hreflang="ja-JP"
+                href="https://chumaltd.github.io/ja/tags/"
                 />
   </url><url>
     <loc>https://chumaltd.github.io/ja/tech/</loc>
